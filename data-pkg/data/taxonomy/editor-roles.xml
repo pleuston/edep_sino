@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="editor-roles">
+    <category corresp="sino:role:editor">
+        <catDesc xml:lang="en">editor</catDesc>
+        <catDesc xml:lang="de">Bearbeiter/in</catDesc>
+    </category>
+    <category corresp="sino:role:transcriber">
+        <catDesc xml:lang="en">transcriber</catDesc>
+        <catDesc xml:lang="de">Transkription</catDesc>
+    </category>
+    <category corresp="sino:role:translator">
+        <catDesc xml:lang="en">translator</catDesc>
+        <catDesc xml:lang="de">Übersetzung</catDesc>
+    </category>
+</taxonomy>

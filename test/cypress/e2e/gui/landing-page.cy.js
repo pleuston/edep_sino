@@ -14,7 +14,8 @@ describe('TEI-Publisher Landing Page', () => {
 
   describe('Landing Page Structure', () => {
     it('loads the landing page successfully', () => {
-      cy.url().should('match', /\/index\.html$|\/$/)
+      // language.js may append ?lang=<ui language> after load
+      cy.url().should('match', /\/index\.html(\?.*)?$|\/(\?.*)?$/)
       cy.get('body').should('be.visible')
     })
 
@@ -59,11 +60,13 @@ describe('TEI-Publisher Landing Page', () => {
         .should('exist')
     })
 
-    it('explore link navigates to highlights page', () => {
-      cy.get('a.button-link, .hero a[href*="highlights"]')
+    it('explore link navigates into the edition', () => {
+      // EDEp's landing content points the explore button at the browse view,
+      // not at a "highlights" page like the generic landing-page profile
+      cy.get('a.button-link, .hero a[href]')
         .first()
         .should('have.attr', 'href')
-        .and('include', 'highlights')
+        .and('not.include', 'index.html')
     })
   })
 

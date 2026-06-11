@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="preservation">
+    <category corresp="sino:preservation:complete">
+        <catDesc xml:lang="en">complete</catDesc>
+        <catDesc xml:lang="de">vollständig</catDesc>
+        <catDesc xml:lang="zh">完整</catDesc>
+    </category>
+    <category corresp="sino:preservation:fragmentary">
+        <catDesc xml:lang="en">fragmentary</catDesc>
+        <catDesc xml:lang="de">fragmentarisch</catDesc>
+        <catDesc xml:lang="zh">殘缺</catDesc>
+    </category>
+    <category corresp="sino:preservation:weathered">
+        <catDesc xml:lang="en">weathered</catDesc>
+        <catDesc xml:lang="de">verwittert</catDesc>
+        <catDesc xml:lang="zh">風化</catDesc>
+    </category>
+</taxonomy>

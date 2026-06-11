@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="verification">
+    <category corresp="sino:verification:autopsy">
+        <catDesc xml:lang="en">autopsy</catDesc>
+        <catDesc xml:lang="de">Autopsie</catDesc>
+    </category>
+    <category corresp="sino:verification:rubbing">
+        <catDesc xml:lang="en">from rubbing</catDesc>
+        <catDesc xml:lang="de">nach Abklatsch/Abrieb</catDesc>
+        <catDesc xml:lang="zh">據拓本</catDesc>
+    </category>
+    <category corresp="sino:verification:photograph">
+        <catDesc xml:lang="en">from photograph</catDesc>
+        <catDesc xml:lang="de">nach Fotografie</catDesc>
+    </category>
+    <category corresp="sino:verification:literature">
+        <catDesc xml:lang="en">from literature</catDesc>
+        <catDesc xml:lang="de">nach Literatur</catDesc>
+    </category>
+</taxonomy>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="metre">
+    <category corresp="sino:metre:prose">
+        <catDesc xml:lang="en">prose</catDesc>
+        <catDesc xml:lang="de">Prosa</catDesc>
+        <catDesc xml:lang="zh">散文</catDesc>
+    </category>
+    <category corresp="sino:metre:verse">
+        <catDesc xml:lang="en">verse</catDesc>
+        <catDesc xml:lang="de">Vers</catDesc>
+        <catDesc xml:lang="zh">韻文</catDesc>
+    </category>
+</taxonomy>

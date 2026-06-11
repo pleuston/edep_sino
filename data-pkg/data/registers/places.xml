@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-places">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt><title>EDEp Sino register: places</title></titleStmt>
+            <publicationStmt><p>Authority register</p></publicationStmt>
+            <sourceDesc><p>EDEp Sino</p></sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listPlace>
+            <place xml:id="place-xian">
+                <placeName type="main">西安</placeName>
+                <placeName type="sort">Xi'an</placeName>
+                <location><geo>34.3416 108.9398</geo></location>
+                <note>Placeholder entry — full register content arrives with milestone M5/M8.</note>
+            </place>
+        </listPlace>
+    </standOff>
+</TEI>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="ligature">
+    <category corresp="sino:ligature:yes">
+        <catDesc xml:lang="en">ligature present</catDesc>
+        <catDesc xml:lang="de">Ligatur vorhanden</catDesc>
+        <catDesc xml:lang="zh">合文</catDesc>
+    </category>
+    <category corresp="sino:ligature:no">
+        <catDesc xml:lang="en">no ligature</catDesc>
+        <catDesc xml:lang="de">keine Ligatur</catDesc>
+    </category>
+</taxonomy>

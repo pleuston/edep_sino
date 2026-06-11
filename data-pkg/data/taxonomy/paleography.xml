@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="paleography">
+    <category corresp="sino:script:zhuanshu">
+        <catDesc xml:lang="en">seal script</catDesc>
+        <catDesc xml:lang="de">Siegelschrift</catDesc>
+        <catDesc xml:lang="zh">篆書</catDesc>
+    </category>
+    <category corresp="sino:script:lishu">
+        <catDesc xml:lang="en">clerical script</catDesc>
+        <catDesc xml:lang="de">Kanzleischrift</catDesc>
+        <catDesc xml:lang="zh">隸書</catDesc>
+    </category>
+    <category corresp="sino:script:kaishu">
+        <catDesc xml:lang="en">regular script</catDesc>
+        <catDesc xml:lang="de">Regelschrift</catDesc>
+        <catDesc xml:lang="zh">楷書</catDesc>
+    </category>
+    <category corresp="sino:script:xingshu">
+        <catDesc xml:lang="en">running script</catDesc>
+        <catDesc xml:lang="de">Kursivschrift</catDesc>
+        <catDesc xml:lang="zh">行書</catDesc>
+    </category>
+    <category corresp="sino:script:caoshu">
+        <catDesc xml:lang="en">cursive script</catDesc>
+        <catDesc xml:lang="de">Konzeptschrift</catDesc>
+        <catDesc xml:lang="zh">草書</catDesc>
+    </category>
+</taxonomy>

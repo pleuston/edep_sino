@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-bibl">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt><title>EDEp Sino register: bibliography</title></titleStmt>
+            <publicationStmt><p>Authority register</p></publicationStmt>
+            <sourceDesc><p>EDEp Sino</p></sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listBibl>
+            <bibl xml:id="bibl-placeholder">
+                <title>Placeholder bibliography entry</title>
+                <note>Full register content arrives with milestone M5/M8.</note>
+            </bibl>
+        </listBibl>
+    </standOff>
+</TEI>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt><title>EDEp Sino taxonomy</title></titleStmt>
+            <publicationStmt><p>Master classification used for faceted browsing.</p></publicationStmt>
+            <sourceDesc><p>EDEp Sino</p></sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <classDecl>
+                <taxonomy xml:id="genre">
+                    <category xml:id="funerary"><catDesc xml:lang="en">funerary</catDesc><catDesc xml:lang="de">funerär</catDesc><catDesc xml:lang="zh">喪葬</catDesc></category>
+                    <category xml:id="votive"><catDesc xml:lang="en">votive</catDesc><catDesc xml:lang="de">votiv</catDesc><catDesc xml:lang="zh">造像</catDesc></category>
+                    <category xml:id="commemorative"><catDesc xml:lang="en">commemorative</catDesc><catDesc xml:lang="de">kommemorativ</catDesc><catDesc xml:lang="zh">紀念</catDesc></category>
+                </taxonomy>
+            </classDecl>
+        </encodingDesc>
+    </teiHeader>
+    <text><body><p/></body></text>
+</TEI>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="typeins">
+    <category corresp="sino:typeins:funerary">
+        <catDesc xml:lang="en">funerary inscription</catDesc>
+        <catDesc xml:lang="de">Grabinschrift</catDesc>
+        <catDesc xml:lang="zh">墓誌銘</catDesc>
+    </category>
+    <category corresp="sino:typeins:votive">
+        <catDesc xml:lang="en">votive inscription</catDesc>
+        <catDesc xml:lang="de">Votivinschrift</catDesc>
+        <catDesc xml:lang="zh">造像記</catDesc>
+    </category>
+    <category corresp="sino:typeins:commemorative">
+        <catDesc xml:lang="en">commemorative inscription</catDesc>
+        <catDesc xml:lang="de">Gedenkinschrift</catDesc>
+        <catDesc xml:lang="zh">紀功碑</catDesc>
+    </category>
+</taxonomy>

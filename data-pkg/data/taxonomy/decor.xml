@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="decor">
+    <category corresp="sino:decor:chishou">
+        <catDesc xml:lang="en">dragon-head capital</catDesc>
+        <catDesc xml:lang="de">Drachenkopf-Bekrönung</catDesc>
+        <catDesc xml:lang="zh">螭首</catDesc>
+    </category>
+    <category corresp="sino:decor:guifu">
+        <catDesc xml:lang="en">tortoise base</catDesc>
+        <catDesc xml:lang="de">Schildkrötensockel</catDesc>
+        <catDesc xml:lang="zh">龜趺</catDesc>
+    </category>
+    <category corresp="sino:decor:jiege">
+        <catDesc xml:lang="en">ruled grid</catDesc>
+        <catDesc xml:lang="de">Linienraster</catDesc>
+        <catDesc xml:lang="zh">界格</catDesc>
+    </category>
+</taxonomy>

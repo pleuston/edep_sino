@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="publication-status">
+    <category corresp="sino:status:draft">
+        <catDesc xml:lang="en">draft</catDesc>
+        <catDesc xml:lang="de">Entwurf</catDesc>
+    </category>
+    <category corresp="sino:status:review">
+        <catDesc xml:lang="en">in review</catDesc>
+        <catDesc xml:lang="de">in Begutachtung</catDesc>
+    </category>
+    <category corresp="sino:status:published">
+        <catDesc xml:lang="en">published</catDesc>
+        <catDesc xml:lang="de">publiziert</catDesc>
+    </category>
+</taxonomy>

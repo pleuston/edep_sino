@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="languages">
+    <category corresp="lzh">
+        <catDesc xml:lang="en">Literary Chinese</catDesc>
+        <catDesc xml:lang="de">Klassisches Chinesisch</catDesc>
+        <catDesc xml:lang="zh">文言文</catDesc>
+    </category>
+    <category corresp="zh">
+        <catDesc xml:lang="en">Chinese</catDesc>
+        <catDesc xml:lang="de">Chinesisch</catDesc>
+        <catDesc xml:lang="zh">中文</catDesc>
+    </category>
+    <category corresp="sa">
+        <catDesc xml:lang="en">Sanskrit</catDesc>
+        <catDesc xml:lang="de">Sanskrit</catDesc>
+        <catDesc xml:lang="zh">梵語</catDesc>
+    </category>
+</taxonomy>

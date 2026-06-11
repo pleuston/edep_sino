@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-persons">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt><title>EDEp Sino register: persons</title></titleStmt>
+            <publicationStmt><p>Authority register</p></publicationStmt>
+            <sourceDesc><p>EDEp Sino</p></sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listPerson>
+            <person xml:id="person-wang-xizhi">
+                <persName type="main">王羲之</persName>
+                <persName type="sort">Wang Xizhi</persName>
+                <note type="bio">Calligrapher (303–361), Eastern Jin. Placeholder entry — full register content arrives with milestone M5/M8.</note>
+            </person>
+        </listPerson>
+    </standOff>
+</TEI>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="language-scope">
+    <category corresp="sino:lang-scope:main">
+        <catDesc xml:lang="en">main language</catDesc>
+        <catDesc xml:lang="de">Hauptsprache</catDesc>
+    </category>
+    <category corresp="sino:lang-scope:secondary">
+        <catDesc xml:lang="en">secondary language</catDesc>
+        <catDesc xml:lang="de">Nebensprache</catDesc>
+    </category>
+</taxonomy>

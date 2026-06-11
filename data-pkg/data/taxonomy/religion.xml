@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="religion">
+    <category corresp="sino:religion:buddhism">
+        <catDesc xml:lang="en">Buddhism</catDesc>
+        <catDesc xml:lang="de">Buddhismus</catDesc>
+        <catDesc xml:lang="zh">佛教</catDesc>
+    </category>
+    <category corresp="sino:religion:daoism">
+        <catDesc xml:lang="en">Daoism</catDesc>
+        <catDesc xml:lang="de">Daoismus</catDesc>
+        <catDesc xml:lang="zh">道教</catDesc>
+    </category>
+    <category corresp="sino:religion:confucianism">
+        <catDesc xml:lang="en">Confucianism</catDesc>
+        <catDesc xml:lang="de">Konfuzianismus</catDesc>
+        <catDesc xml:lang="zh">儒教</catDesc>
+    </category>
+</taxonomy>

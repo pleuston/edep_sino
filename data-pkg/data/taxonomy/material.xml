@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="material">
+    <category corresp="sino:material:stone">
+        <catDesc xml:lang="en">stone</catDesc>
+        <catDesc xml:lang="de">Stein</catDesc>
+        <catDesc xml:lang="zh">石</catDesc>
+    </category>
+    <category corresp="sino:material:bronze">
+        <catDesc xml:lang="en">bronze</catDesc>
+        <catDesc xml:lang="de">Bronze</catDesc>
+        <catDesc xml:lang="zh">青銅</catDesc>
+    </category>
+    <category corresp="sino:material:brick">
+        <catDesc xml:lang="en">brick</catDesc>
+        <catDesc xml:lang="de">Ziegel</catDesc>
+        <catDesc xml:lang="zh">磚</catDesc>
+    </category>
+</taxonomy>

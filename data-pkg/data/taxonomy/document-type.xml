@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="document-type">
+    <category corresp="sino:doctype:inscription">
+        <catDesc xml:lang="en">inscription</catDesc>
+        <catDesc xml:lang="de">Inschrift</catDesc>
+        <catDesc xml:lang="zh">銘文</catDesc>
+    </category>
+    <category corresp="sino:doctype:rubbing">
+        <catDesc xml:lang="en">rubbing</catDesc>
+        <catDesc xml:lang="de">Abklatsch</catDesc>
+        <catDesc xml:lang="zh">拓本</catDesc>
+    </category>
+</taxonomy>

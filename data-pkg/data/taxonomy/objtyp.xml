@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="objtyp">
+    <category corresp="sino:objtyp:bei">
+        <catDesc xml:lang="en">stele</catDesc>
+        <catDesc xml:lang="de">Stele</catDesc>
+        <catDesc xml:lang="zh">碑</catDesc>
+    </category>
+    <category corresp="sino:objtyp:muzhi">
+        <catDesc xml:lang="en">entombed epitaph</catDesc>
+        <catDesc xml:lang="de">Grabepitaph</catDesc>
+        <catDesc xml:lang="zh">墓誌</catDesc>
+    </category>
+    <category corresp="sino:objtyp:moya">
+        <catDesc xml:lang="en">cliff inscription</catDesc>
+        <catDesc xml:lang="de">Felsinschrift</catDesc>
+        <catDesc xml:lang="zh">摩崖</catDesc>
+    </category>
+    <category corresp="sino:objtyp:zaoxiangji">
+        <catDesc xml:lang="en">votive stele</catDesc>
+        <catDesc xml:lang="de">Votivstele</catDesc>
+        <catDesc xml:lang="zh">造像記</catDesc>
+    </category>
+</taxonomy>
