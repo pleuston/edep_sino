@@ -1,61 +1,127 @@
+<!-- context: teiHeader; Chinese dating per doc/sino-model.md par.1:
+     literal era string = origDate content, @n = era-year token,
+     @when/@notBefore/@notAfter = proleptic-Gregorian ISO (from /api/sino/era),
+     @when-custom = machine-sortable native value "era:year",
+     @period = dynasty CURIE. -->
 <details id="dating" class="group-6">
     <summary>
         <h2><pb-i18n key="form.dating">Datierung</pb-i18n></h2>
     </summary>
     <fx-group ref="fileDesc/sourceDesc/msDesc/history/origin/origDate" id="chronology">
-        <!-- 26), 27)-->
+
+        <!-- the verbatim date string as carved/recorded, e.g. 永和九年歲在癸丑 -->
+        <fx-control ref="." update-event="input" create="create">
+            <label>
+                <pb-i18n key="form.date-literal">Datumsangabe (wörtlich)</pb-i18n>
+                <pb-popover>
+                    <edep-icon name="info-outline"></edep-icon>
+                    <template slot="alternate">
+                        <pb-i18n key="form.hint-date-literal">Verbatim date string as on the object, e.g. 永和九年歲在癸丑</pb-i18n>
+                    </template>
+                </pb-popover>
+            </label>
+            <input class="widget" placeholder="永和九年歲在癸丑"/>
+        </fx-control>
+
+        <!-- era conversion: nianhao + reign year + ganzhi -> ISO -->
+        <section class="form-row sino-era-row">
+            <fx-control ref="instance('i-sino')/era" update-event="input">
+                <label><pb-i18n key="form.era-name">Ära (年號)</pb-i18n></label>
+                <input class="widget" list="era-names" placeholder="永和"/>
+            </fx-control>
+            <fx-control ref="instance('i-sino')/year" update-event="input">
+                <label><pb-i18n key="form.reign-year">Regierungsjahr</pb-i18n></label>
+                <input class="widget" type="number" min="1" max="61" placeholder="9"/>
+            </fx-control>
+            <fx-control ref="instance('i-sino')/ganzhi" update-event="input">
+                <label><pb-i18n key="form.ganzhi">干支</pb-i18n></label>
+                <input class="widget" placeholder="癸丑"/>
+            </fx-control>
+            <fx-trigger id="sino-convert">
+                <button class="convert"><pb-i18n key="form.convert-date">Umrechnen</pb-i18n></button>
+                <fx-send submission="s-sino-era"></fx-send>
+            </fx-trigger>
+        </section>
+        <datalist id="era-names">
+            <fx-repeat ref="instance('era-list')//e">
+                <template>
+                    <option value="{@n}">{@n} ({@d} {@f}–{@t})</option>
+                </template>
+            </fx-repeat>
+        </datalist>
+
+        <!-- candidates returned by the conversion service -->
+        <fx-group ref="instance('i-sino-result')[number(@count) &gt; 0]" class="sino-candidates neutral">
+            <fx-repeat id="r-sino-candidates" ref="instance('i-sino-result')/era">
+                <template>
+                    <div class="sino-candidate">
+                        <span class="era-label">{@dynasty} · {@emperor} · {@name}{if (string(@nToken)) then concat(' — ', @nToken) else ''}</span>
+                        <span class="era-dates">{if (string(@when)) then concat(@when, ' (', @notBefore, ' … ', @notAfter, ')') else concat(@notBefore, '–', @notAfter)}</span>
+                        <span class="era-gz">{@gz}</span>
+                        <span class="era-warning gz-mismatch">{if (@gzMatch = 'false') then concat('干支不合: 應為 ', @gz) else ''}</span>
+                        <span class="era-warning">{if (@yearOutOfRange = 'true') then '年份超出此年號範圍' else ''}</span>
+                        <fx-trigger>
+                            <button class="apply"><pb-i18n key="form.apply-date">Übernehmen</pb-i18n></button>
+                            <fx-setvalue ref="instance('default')//origin/origDate/@when" value="context()/@when"></fx-setvalue>
+                            <fx-setvalue ref="instance('default')//origin/origDate/@notBefore" value="context()/@notBefore"></fx-setvalue>
+                            <fx-setvalue ref="instance('default')//origin/origDate/@notAfter" value="context()/@notAfter"></fx-setvalue>
+                            <fx-setvalue ref="instance('default')//origin/origDate/@n" value="context()/@nToken"></fx-setvalue>
+                            <fx-setvalue ref="instance('default')//origin/origDate/@when-custom" value="concat(context()/@name, ':', context()/@year)"></fx-setvalue>
+                            <fx-setvalue ref="instance('default')//origin/origDate/@period" value="context()/@period"></fx-setvalue>
+                            <fx-setvalue ref="instance('default')//origin/origDate/@datingMethod">#gregorian-converted</fx-setvalue>
+                            <fx-setvalue ref="instance('i-sino')/ganzhi" value="context()/@gz"></fx-setvalue>
+                            <fx-refresh></fx-refresh>
+                        </fx-trigger>
+                    </div>
+                </template>
+            </fx-repeat>
+        </fx-group>
+
+        <!-- the asserted ISO values (editable by hand for special cases) -->
         <section class="form-row">
-            <fx-control ref="@when-custom" create="create">
+            <fx-control id="when-iso" ref="@when" create="create">
                 <label>
                     <pb-i18n key="form.date">Zeitpunkt</pb-i18n>
                 </label>
-                <input
-                  placeholder=""
-                  data-i18n="[placeholder]form.dating-placeholder"
-                  class="widget" />
+                <input placeholder="0353" class="widget"/>
                 <fx-alert>
                     <edep-icon name="warning"></edep-icon>
                     <pb-i18n key="form.date-invalid">Ungültiges Datum</pb-i18n>
                 </fx-alert>
             </fx-control>
-            <fx-control ref="@notBefore-custom" create="create">
+            <fx-control ref="@notBefore" create="create">
                 <label>
                     <pb-i18n key="form.date-after">nach</pb-i18n>
                 </label>
-                <input
-                  placeholder=""
-                  data-i18n="[placeholder]form.dating-placeholder"
-                  class="widget" />
+                <input placeholder="0353-02-21" class="widget"/>
                 <fx-alert>
                     <edep-icon name="warning"></edep-icon>
                     <pb-i18n key="form.date-invalid">Ungültiges Datum</pb-i18n>
                 </fx-alert>
             </fx-control>
-            <fx-control ref="@notAfter-custom" create="create">
+            <fx-control ref="@notAfter" create="create">
                 <label>
                     <pb-i18n key="form.date-before">vor</pb-i18n>
                 </label>
-                <input
-                  placeholder=""
-                  data-i18n="[placeholder]form.dating-placeholder"
-                  class="widget" />
+                <input placeholder="0354-02-09" class="widget"/>
                 <fx-alert>
                     <edep-icon name="warning"></edep-icon>
                     <pb-i18n key="form.date-invalid">Ungültiges Datum</pb-i18n>
                 </fx-alert>
             </fx-control>
         </section>
-        <fx-control ref="." as="node" update-event="leave">
-            <label>
-                <pb-i18n key="form.remarks">Beschreibung/Kommentare</pb-i18n>
-            </label>
-            <edep-xml-editor
-              class="widget"
-              placeholder="[Inline text/markup or sequence of paragraphs]"
-              schema-root="provenance"
-              base-url="[[ $context-path ]]">
-                \
-            </edep-xml-editor>
+
+        <!-- dynasty facet (period), pickable independently of the converter -->
+        <fx-control ref="@period" create="create">
+            <label><pb-i18n key="form.dynasty">Dynastie (時代)</pb-i18n></label>
+            <select class="widget">
+                <option value=""></option>
+                <fx-repeat ref="instance('dynasty')//category">
+                    <template>
+                        <option value="{@corresp}">{catDesc[@xml:lang = $lang]} ({catDesc[@xml:lang='zh']})</option>
+                    </template>
+                </fx-repeat>
+            </select>
         </fx-control>
     </fx-group>
 </details>

@@ -434,6 +434,13 @@ declare %private function api:postprocess($nodes as node()*, $edepId as xs:strin
                     $node/@*,
                     api:postprocess($node/* except ($node/tei:div, $node/tei:facsimile), $edepId)
                 }
+            case element(tei:origDate) return
+                (: sino dating: keep the literal date string and all non-empty
+                   attributes, drop empty placeholders (doc/sino-model.md par.1) :)
+                element { node-name($node) } {
+                    $node/@*[string() ne ''],
+                    $node/node()
+                }
             case element(tei:idno) return
                 if ($node/@type = "EDEp" and exists($edepId)) then
                     element { node-name($node) } {

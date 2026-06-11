@@ -67,7 +67,7 @@
                     </physDesc>
                     <history>
                         <origin>
-                            <origDate when-custom="" notBefore-custom="" notAfter-custom="" datingMethod="http://en.wikipedia.org/wiki/Julian_calendar"/>
+                            <origDate when="" notBefore="" notAfter="" n="" period="" when-custom="" notBefore-custom="" notAfter-custom="" datingMethod=""/>
                             <origPlace corresp=""/>
                         </origin>
                         <provenance type="found" when="" notBefore="" notAfter="">

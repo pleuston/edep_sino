@@ -50,22 +50,10 @@
             </elementSpec>
             
             <elementSpec ident="origDate" mode="add">
-                <model predicate="@when-custom ne ''" behaviour="inline">
-            <desc>Clean-up of element history/origin/origDate when a exact date is provided
-                        (NB: chronological data is mandatory, thus the only clean-up action needed
-                        is to delete unused attributes)</desc>
-            <param name="when-custom" value="@when-custom"/>
-            <param name="datingMethod" value="@datingMethod"/>
-            <pb:template xmlns="" xml:space="preserve"><origDate xmlns="http://www.tei-c.org/ns/1.0" when-custom="[[when-custom]]" datingMethod="[[datingMethod]]">[[content]]</origDate></pb:template>
-        </model>
-                <model predicate="@notBefore-custom ne ''" behaviour="inline">
-            <desc>Clean-up of element history/origin/origDate when a datation range is
-                        provided</desc>
-            <param name="notBefore-custom" value="@notBefore-custom"/>
-            <param name="notAfter-custom" value="@notAfter-custom"/>
-            <param name="datingMethod" value="@datingMethod"/>
-            <pb:template xmlns="" xml:space="preserve"><origDate xmlns="http://www.tei-c.org/ns/1.0" notBefore-custom="[[notBefore-custom]]" notAfter-custom="[[notAfter-custom]]" datingMethod="[[datingMethod]]">[[content]]</origDate></pb:template>
-        </model>
+                <!-- EDEp Sino: empty origDate attributes are stripped in
+                     api:postprocess (custom-api.xql) so the sino dating
+                     attribute set (when/notBefore/notAfter/n/period/calendar +
+                     when-custom native value) survives the cleanup. -->
                 <model behaviour="copy"/>
             </elementSpec>
             <elementSpec ident="physDesc" mode="add">

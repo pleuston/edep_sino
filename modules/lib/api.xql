@@ -24,6 +24,7 @@ import module namespace rview="http://teipublisher.com/api/registers/view" at ".
 (: EDEp Sino: inscription editor + zotero API :)
 import module namespace eapi="http://teipublisher.com/api/custom" at "../custom-api.xql";
 import module namespace zotero="http://e-editiones.org/edep/api/zotero" at "api/zotero.xql";
+import module namespace sino-dates="http://edep-sino.org/api/sino/dates" at "../sino/dates.xqm";
 
 declare option output:indent "no";
 

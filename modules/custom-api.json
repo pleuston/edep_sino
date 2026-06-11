@@ -681,6 +681,84 @@
                     }
                 }
             }
+        },
+        "/api/sino/era": {
+            "get": {
+                "summary": "Convert a Chinese era date (nianhao + reign year) to ISO dates",
+                "description": "Looks the era up in the nianhao authority (DDBC-derived). Returns all candidate eras with proleptic-Gregorian when/notBefore/notAfter for the given reign year and a ganzhi consistency check.",
+                "tags": [
+                    "sino"
+                ],
+                "operationId": "sino-dates:era",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Era name (nianhao), e.g. 永和"
+                    },
+                    {
+                        "name": "year",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "description": "Reign year (1-based)"
+                    },
+                    {
+                        "name": "ganzhi",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Cyclical year for consistency check, e.g. 癸丑"
+                    },
+                    {
+                        "name": "dynasty",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Dynasty name to disambiguate, e.g. 東晉"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Candidate eras with conversions",
+                        "content": {
+                            "application/xml": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/sino/eras": {
+            "get": {
+                "summary": "Full era (nianhao) list for autocomplete",
+                "tags": [
+                    "sino"
+                ],
+                "operationId": "sino-dates:eras",
+                "responses": {
+                    "200": {
+                        "description": "All eras with dynasty and span",
+                        "content": {
+                            "application/xml": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "security": [

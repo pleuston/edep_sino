@@ -80,9 +80,11 @@
                                                 <fx-bind ref="./@notAfter" constraint="checkDate(.)"></fx-bind>
                                             </fx-bind>
                                             <fx-bind ref="origin/origDate">
-                                                <fx-bind ref="./@when-custom" constraint="checkDate(.)"></fx-bind>
-                                                <fx-bind ref="./@notBefore-custom" constraint="checkDate(.)"></fx-bind>
-                                                <fx-bind ref="./@notAfter-custom" constraint="checkDate(.)"></fx-bind>
+                                                <!-- ISO (proleptic Gregorian) values; @when-custom holds the
+                                                     native era:year token and is not date-shaped -->
+                                                <fx-bind ref="./@when" constraint="checkDate(.)"></fx-bind>
+                                                <fx-bind ref="./@notBefore" constraint="checkDate(.)"></fx-bind>
+                                                <fx-bind ref="./@notAfter" constraint="checkDate(.)"></fx-bind>
                                             </fx-bind>
                                         </fx-bind>
                                     </fx-bind>
@@ -183,6 +185,34 @@
                                     <data></data>
                                 </fx-instance>
 
+                                <fx-instance id="dynasty" src="../edep-sino-data/data/taxonomy/dynasty.xml" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+                                    <data></data>
+                                </fx-instance>
+
+                                <!-- sino dating (doc/sino-model.md par.1) -->
+                                <fx-instance id="era-list" src="api/sino/eras">
+                                    <eras></eras>
+                                </fx-instance>
+                                <fx-instance id="i-sino">
+                                    <data>
+                                        <era></era>
+                                        <year></year>
+                                        <ganzhi></ganzhi>
+                                    </data>
+                                </fx-instance>
+                                <fx-instance id="i-sino-result">
+                                    <result count="0"></result>
+                                </fx-instance>
+                                <fx-submission
+                                    id="s-sino-era"
+                                    url="api/sino/era?name={instance('i-sino')/era}&amp;year={instance('i-sino')/year}&amp;ganzhi={instance('i-sino')/ganzhi}"
+                                    method="get"
+                                    replace="instance"
+                                    instance="i-sino-result"
+                                    validate="false">
+                                    <fx-message event="submit-error"><pb-i18n key="form.sino-era-failed">Era lookup failed</pb-i18n></fx-message>
+                                </fx-submission>
+
                                 <fx-instance
                                     id="templates"
                                     src="templates/fore/templates.xml"
@@ -258,6 +288,13 @@
                                         <fx-setvalue
                                             ref="instance('vars')/military-term"
                                             value="if(exists(instance('default')//term[@ref='#military'])) then 'true' else 'false'"></fx-setvalue>
+                                        <!-- repopulate the era fields from the stored native value (era:year) -->
+                                        <fx-setvalue
+                                            ref="instance('i-sino')/era"
+                                            value="substring-before(instance('default')//origin/origDate/@when-custom, ':')"></fx-setvalue>
+                                        <fx-setvalue
+                                            ref="instance('i-sino')/year"
+                                            value="substring-after(instance('default')//origin/origDate/@when-custom, ':')"></fx-setvalue>
                                     </fx-action>
                                 </fx-submission>
 
