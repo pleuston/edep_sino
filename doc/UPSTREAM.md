@@ -27,6 +27,7 @@ Remote: `upstream` = https://github.com/eeditiones/edep.git
   - `test/cypress/e2e/api/authentication.cy.js` "handles missing credentials": roaster 1.12 answers `200` + guest session for a credential-less login (session fallback) — assertion now accepts 200-without-identity or 401.
   - `test/cypress/e2e/gui/landing-page.cy.js`: URL assertion tolerates the `?lang=` query appended by `language.js`; explore-link test no longer assumes a "highlights" page (EDEp's landing links to browse).
   - `test/cypress/e2e/gui/metadata-panel.cy.js`: `describe.skip` + TODO(M7) — the generated suite visits the TEI Publisher demo Kant document with `dta.odd`, which EDEp does not ship.
+- **Editor port** (M2): `templates/edit.html` + `templates/parts/edit/*` + `templates/fore/*` + `templates/geo-picker.html` ported from `upstream/altered-model` (tag `editor-port-src`) into the jinks structure. Conversions: eXist html-templating idioms → jinks-templates (`lib:include` → `[% include %]`, `${app}` → `[[ $context-path ]]`, `pages:parse-params` → `page:parameter`), Polymer shell dropped, `iron-icon` → own `<edep-icon>` component (`resources/scripts/edep-icons.js`), data refs → `edep-sino-data`. New `resources/css/edit.css` reconciles the editor with the jinks grid + pico. Fore bumped to ^3.1.2, `@jinntec/jinn-codemirror` 1.19.0 added (bundle + tei.json copied by `ant xar-local`).
 - (grows per milestone)
 
 ## Coordination issue (draft — to be sent by the maintainer)

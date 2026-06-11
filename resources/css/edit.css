@@ -1,0 +1,95 @@
+/*
+ * Editor page layout — reconciles the EDEp Fore editor (ported from the
+ * classic app) with the jinks fixed-layout grid and pico.css defaults.
+ * Loaded last from templates/edit.html.
+ */
+
+main.editor {
+    width: 100%;
+    min-width: 0;
+    padding: 0 var(--s1, 1rem);
+}
+
+/* two-column grid: section navigation left, form right */
+main.editor > fx-fore {
+    display: grid;
+    grid-template-columns: minmax(13rem, 15rem) minmax(0, 1fr);
+    column-gap: 2.5rem;
+    align-items: start;
+}
+
+main.editor > fx-fore > nav {
+    /* override the classic theme's position:fixed (edep-theme2.css) */
+    position: sticky;
+    top: 0;
+    left: auto;
+    grid-column: 1;
+    grid-row: 1 / span 99;
+    height: auto;
+    max-height: calc(100vh - 6rem);
+    overflow: auto;
+    background: transparent;
+    padding: 1rem 0.5rem 1rem 0.75rem;
+    z-index: 1;
+}
+
+main.editor > fx-fore > :not(nav) {
+    grid-column: 2;
+    min-width: 0;
+}
+
+/* pico.css lays out every nav ul horizontally — restore a vertical list */
+main.editor > fx-fore > nav ul {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+main.editor > fx-fore > nav ul li {
+    display: block;
+    padding: 0.1rem 0;
+}
+
+main.editor > fx-fore > nav a {
+    text-decoration: none;
+}
+
+/* form sections: visible card-like blocks */
+main.editor details {
+    border: 1px solid var(--jinks-colors-200, #ddd);
+    border-radius: 0.3rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.75rem;
+    background: var(--jinks-colors-0, #fff);
+}
+
+main.editor details > summary {
+    cursor: pointer;
+    list-style: revert;
+}
+
+main.editor details > summary h2 {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0.2rem 0;
+}
+
+/* the save/navigation bar */
+main.editor section.buttonBar {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: var(--jinks-colors-50, #f5f5f5);
+    border-top: 1px solid var(--jinks-colors-200, #ddd);
+    padding: 0.6rem 1rem;
+    margin-top: 1rem;
+    z-index: 5;
+}
+
+main.editor section.buttonBar pb-restricted {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}

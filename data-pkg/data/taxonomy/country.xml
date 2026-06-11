@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="country">
-    <category corresp="cn">
-        <catDesc xml:lang="en">China</catDesc>
-        <catDesc xml:lang="de">China</catDesc>
-        <catDesc xml:lang="zh">中國</catDesc>
-    </category>
-    <category corresp="tw">
-        <catDesc xml:lang="en">Taiwan</catDesc>
-        <catDesc xml:lang="de">Taiwan</catDesc>
-        <catDesc xml:lang="zh">臺灣</catDesc>
-    </category>
-    <category corresp="jp">
-        <catDesc xml:lang="en">Japan</catDesc>
-        <catDesc xml:lang="de">Japan</catDesc>
-        <catDesc xml:lang="zh">日本</catDesc>
-    </category>
-    <category corresp="kr">
-        <catDesc xml:lang="en">Korea</catDesc>
-        <catDesc xml:lang="de">Korea</catDesc>
-        <catDesc xml:lang="zh">韓國</catDesc>
-    </category>
-</taxonomy>
+<vocabulary>
+    <term xml:id="cn"><name xml:lang="en">China</name><name xml:lang="de">China</name><name xml:lang="zh">中國</name></term>
+    <term xml:id="tw"><name xml:lang="en">Taiwan</name><name xml:lang="de">Taiwan</name><name xml:lang="zh">臺灣</name></term>
+    <term xml:id="jp"><name xml:lang="en">Japan</name><name xml:lang="de">Japan</name><name xml:lang="zh">日本</name></term>
+    <term xml:id="kr"><name xml:lang="en">Korea</name><name xml:lang="de">Korea</name><name xml:lang="zh">韓國</name></term>
+</vocabulary>

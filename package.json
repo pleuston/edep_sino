@@ -5,8 +5,9 @@
     "license": "GPL-3.0",
     "dependencies": {
         "@teipublisher/pb-components": "^3.3.0",
-        "@jinntec/fore": "^2.8.0",
-        "@picocss/pico": "^2.1.1"
+        "@jinntec/fore": "^3.1.2",
+        "@picocss/pico": "^2.1.1",
+        "@jinntec/jinn-codemirror": "1.19.0"
     },
     "devDependencies": {
         "ajv": "^8.17.1",

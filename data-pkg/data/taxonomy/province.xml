@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="province">
-    <category corresp="sino:province:shaanxi">
-        <catDesc xml:lang="en">Shaanxi</catDesc>
-        <catDesc xml:lang="de">Shaanxi</catDesc>
-        <catDesc xml:lang="zh">陝西</catDesc>
-    </category>
-    <category corresp="sino:province:henan">
-        <catDesc xml:lang="en">Henan</catDesc>
-        <catDesc xml:lang="de">Henan</catDesc>
-        <catDesc xml:lang="zh">河南</catDesc>
-    </category>
-    <category corresp="sino:province:shandong">
-        <catDesc xml:lang="en">Shandong</catDesc>
-        <catDesc xml:lang="de">Shandong</catDesc>
-        <catDesc xml:lang="zh">山東</catDesc>
-    </category>
-    <category corresp="sino:province:gansu">
-        <catDesc xml:lang="en">Gansu</catDesc>
-        <catDesc xml:lang="de">Gansu</catDesc>
-        <catDesc xml:lang="zh">甘肅</catDesc>
-    </category>
-</taxonomy>
+<vocabulary>
+    <term xml:id="shaanxi"><name xml:lang="en">Shaanxi</name><name xml:lang="de">Shaanxi</name><name xml:lang="zh">陝西</name></term>
+    <term xml:id="henan"><name xml:lang="en">Henan</name><name xml:lang="de">Henan</name><name xml:lang="zh">河南</name></term>
+    <term xml:id="shandong"><name xml:lang="en">Shandong</name><name xml:lang="de">Shandong</name><name xml:lang="zh">山東</name></term>
+    <term xml:id="gansu"><name xml:lang="en">Gansu</name><name xml:lang="de">Gansu</name><name xml:lang="zh">甘肅</name></term>
+    <term xml:id="hebei"><name xml:lang="en">Hebei</name><name xml:lang="de">Hebei</name><name xml:lang="zh">河北</name></term>
+    <term xml:id="shanxi"><name xml:lang="en">Shanxi</name><name xml:lang="de">Shanxi</name><name xml:lang="zh">山西</name></term>
+</vocabulary>
