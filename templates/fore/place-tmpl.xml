@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<place xmlns="http://www.tei-c.org/ns/1.0"> <!-- ID automatisch vergeben -->
-    <placeName type="findspot"></placeName> <!-- Fundstelle -->
-    <placeName type="modern"></placeName> <!-- moderner Ortsname -->
-    <placeName type="ancient"></placeName> <!-- antiker Ortsname -->
-    <region type="province"></region> <!-- antike Provinz -->
-    <region type="modern"></region> <!-- modernes Region -->
-    <country></country> <!-- modernes Land -->
+<!-- sino place entity skeleton (doc/sino-model.md par.7); geo coordinates are
+     WGS84 decimal — PRC-published sources are GCJ-02-offset, convert first -->
+<place xmlns="http://www.tei-c.org/ns/1.0" type="">
+    <placeName type="findspot"/>
+    <placeName type="main"/>
+    <placeName xml:lang="zh-Latn-pinyin"/>
+    <placeName type="historical" notBefore="" notAfter=""/>
+    <placeName type="sort"/>
+    <region type="province"/>
+    <region type="modern"/>
+    <country/>
     <location>
-        <!-- Latitude/longitude durch space getrennt -->
-        <geo></geo>
+        <geo/>
     </location>
-    <ptr type="pleiades" target=""/> <!-- Freitext -->
-    <ptr type="geonames" target=""/> <!-- Freitext -->
+    <ptr type="tgaz" target=""/>
+    <note/>
 </place>

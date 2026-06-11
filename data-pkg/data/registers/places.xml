@@ -10,7 +10,7 @@
     <standOff>
         <listPlace>
             <place xml:id="place-taishan" type="feature">
-                <placeName xml:lang="zh">泰山</placeName>
+                <placeName type="main" xml:lang="zh">泰山</placeName>
                 <placeName xml:lang="zh-Latn-pinyin">Taishan</placeName>
                 <placeName type="sort">Taishan</placeName>
                 <location><geo>36.2561 117.1058</geo></location>
@@ -18,7 +18,7 @@
                 <note xml:lang="en">Mount Tai, Shandong; site of the Jingshiyu sutra engraving and numerous cliff inscriptions.</note>
             </place>
             <place xml:id="place-yunfengshan" type="feature">
-                <placeName xml:lang="zh">雲峰山</placeName>
+                <placeName type="main" xml:lang="zh">雲峰山</placeName>
                 <placeName xml:lang="zh-Latn-pinyin">Yunfengshan</placeName>
                 <placeName type="sort">Yunfengshan</placeName>
                 <location><geo>37.1758 120.0950</geo></location>

@@ -52,6 +52,10 @@ Counting unit is always the **character**. Whitespace inside the edition is pres
 
 **Historic relevance / Editing** — subject keywords (religion etc.) and the modern editorial responsibility + publication status.
 
+## Registers
+
+*People* and *Places* list the authority entries. A person entry shows the canonical name with pinyin, the name components (字 courtesy name, 號 sobriquet, 諡 posthumous name, 廟號 temple name), floruit and offices held (官職); a place entry shows the period-resolved historical names (古名), the administrative hierarchy (政區, with period validity) and the location on the map (WGS84). Entries are stored as standOff records; they can be created and updated through the registers API (`PUT /api/register` with a TEI `person`/`place` whose `xml:id` is `person-NEW`/`place-NEW`) — entry forms in the UI follow with the upstream annotation tooling.
+
 ## Validation
 
 Saved documents conform to EpiDoc (tei-epidoc.rng) plus two documented sino extensions (witness lists; glyph records) — checked with:

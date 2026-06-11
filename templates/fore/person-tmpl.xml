@@ -1,14 +1,22 @@
-<person xmlns="http://www.tei-c.org/ns/1.0" sex="M">
-    <persName>
-        <name type="god"/>
-        <name type="praenomen"/>
-        <name type="nomen"/>
-        <name type="cognomen"/>
-        <name type="supernomen"/>
-        <name type="tribus"/>
-        <name type="origo"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sino person entity skeleton (doc/sino-model.md par.6) -->
+<person xmlns="http://www.tei-c.org/ns/1.0" sex="">
+    <persName type="canonical"/>
+    <persName type="personal">
+        <surname/>
+        <forename/>
     </persName>
-    <state type="status"/>
+    <persName xml:lang="zh-Latn-pinyin"/>
+    <persName type="sort"/>
+    <addName type="zi"/>
+    <addName type="hao"/>
+    <addName type="posthumous"/>
+    <addName type="temple-name"/>
+    <floruit notBefore="" notAfter=""/>
+    <persState type="office">
+        <label/>
+    </persState>
     <occupation/>
-    <idno type=""></idno>
+    <note type="bio"/>
+    <idno type=""/>
 </person>

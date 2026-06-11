@@ -31,7 +31,177 @@
     </teiHeader>
     <text>
         <body>
-            <schemaSpec start="TEI teiCorpus" source="teipublisher.odd"> </schemaSpec>
+            <schemaSpec start="TEI teiCorpus" source="teipublisher.odd"> 
+                <!-- EDEp Sino: register-details rendering for the sino person
+                     entry shape (doc/sino-model.md par.6): canonical name +
+                     pinyin, addName rows (zi/hao/posthumous/temple-name),
+                     floruit, offices held (persState). -->
+                <elementSpec ident="person" mode="change">
+                    <model predicate="parent::listPerson and $parameters?mode='register-overview'" behaviour="pass-through">
+            <desc>Register entry overview in list</desc>
+            <param name="id" value="@xml:id"/>
+            <param name="label" value="head((persName[@type='sort'], persName[@type='canonical'], persName[@type='main'], persName[1]))"/>
+            <param name="zh" value="head((persName[@type='canonical'], persName[@type='main']))"/>
+            <param name="description" value="note[@type='bio']"/>
+            <pb:template xmlns="" xml:space="preserve"><div>
+<header>
+    <a href="people/[[ id ]]">[[ zh ]] · [[ label ]]</a>
+</header>
+[[ description ]]
+</div></pb:template>
+        </model>
+                    <model predicate="parent::listPerson and $parameters?mode='register'" behaviour="listItem">
+            <desc>Register sidebar</desc>
+            <param name="content" value="head((persName[@type='canonical'], persName[@type='main'], persName[@type='full']))"/>
+        </model>
+                    <modelSequence predicate="parent::listPerson">
+            <desc>Register details view (sino)</desc>
+            <model behaviour="heading">
+                <desc>Canonical name</desc>
+                <param name="content" value="head((persName[@type='canonical'], persName[@type!='variant']))"/>
+            </model>
+            <model predicate="$parameters?mode='register-details'" behaviour="block" cssClass="pinyin">
+                <desc>Romanisation</desc>
+                <param name="content" value="persName[starts-with(@xml:lang, 'zh-Latn')]"/>
+            </model>
+            <model predicate="$parameters?mode='register-details' and addName[@type='zi']" behaviour="block" cssClass="addnames">
+                <desc>Courtesy name 字</desc>
+                <param name="content" value="string-join(addName[@type='zi'], '、')"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="addname"><span class="nm-label">字</span> [[ content ]]</p></pb:template>
+            </model>
+            <model predicate="$parameters?mode='register-details' and addName[@type='hao']" behaviour="block" cssClass="addnames">
+                <desc>Sobriquet 號</desc>
+                <param name="content" value="string-join(addName[@type='hao'], '、')"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="addname"><span class="nm-label">號</span> [[ content ]]</p></pb:template>
+            </model>
+            <model predicate="$parameters?mode='register-details' and addName[@type='posthumous']" behaviour="block" cssClass="addnames">
+                <desc>Posthumous name 諡</desc>
+                <param name="content" value="string-join(addName[@type='posthumous'], '、')"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="addname"><span class="nm-label">諡</span> [[ content ]]</p></pb:template>
+            </model>
+            <model predicate="$parameters?mode='register-details' and addName[@type='temple-name']" behaviour="block" cssClass="addnames">
+                <desc>Temple name 廟號</desc>
+                <param name="content" value="string-join(addName[@type='temple-name'], '、')"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="addname"><span class="nm-label">廟號</span> [[ content ]]</p></pb:template>
+            </model>
+            <model predicate="$parameters?mode='register-details'" behaviour="block">
+                <desc>Dates: birth/death or floruit</desc>
+                <param name="content" value="(birth, death)"/>
+            </model>
+            <model predicate="$parameters?mode='register-details' and floruit" behaviour="block" cssClass="floruit">
+                <desc>Floruit range</desc>
+                <param name="nb" value="floruit/@notBefore"/>
+                <param name="na" value="floruit/@notAfter"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="floruit">fl. [[ nb ]]–[[ na ]]</p></pb:template>
+            </model>
+            <model predicate="$parameters?mode='register-details' and persState[@type='office']" behaviour="block" cssClass="offices">
+                <desc>Offices held (官職)</desc>
+                <param name="content" value="string-join(persState[@type='office']/label, '、')"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="offices"><span class="nm-label">官職</span> [[ content ]]</p></pb:template>
+            </model>
+            <model behaviour="pass-through">
+                <desc>Short bio note</desc>
+                <param name="content" value="note[@type='bio']"/>
+            </model>
+            <model predicate="$parameters?mode='register-details'" behaviour="pass-through">
+                <desc>Additional notes</desc>
+                <param name="content" value="note[@type!='bio']"/>
+            </model>
+            <model behaviour="list">
+                <desc>External authority links</desc>
+                <param name="content" value="ptr"/>
+            </model>
+            <model predicate="$parameters?mode='register-details' and not($parameters?static)" behaviour="heading">
+                <desc>Documents mentioning this person</desc>
+                <param name="uri" value="$parameters?context-path || '/browse.html?facet-person=' || @xml:id"/>
+                <param name="content" value="let $id := @xml:id return count(                 collection($global:data-default)//text//persName[@key = $id or @ref = $id]/ancestor::TEI                 | collection($global:data-default)//text//rs[@key = $id or @ref = $id]/ancestor::TEI                 )"/>
+                <param name="level" value="4"/>
+                <pb:template xmlns="" xml:space="preserve">
+                    <a href="[[uri]]">
+                        <pb-i18n key="register-details.document-list"/> ( [[content]] )
+                    </a></pb:template>
+            </model>
+        </modelSequence>
+                </elementSpec>
+
+                <!-- EDEp Sino: place register rendering (doc/sino-model.md par.7):
+                     tolerant heading, period-resolved historical names, region
+                     hierarchy, gazetteer links. -->
+                <elementSpec ident="place" mode="change">
+                    <model predicate="$parameters?mode='register-overview'" behaviour="pass-through">
+            <desc>Register entry overview in list</desc>
+            <param name="id" value="@xml:id"/>
+            <param name="label" value="head((placeName[@type='main'], placeName[1]))/string()"/>
+            <param name="longitude" value="tokenize(location/geo)[2]"/>
+            <param name="latitude" value="tokenize(location/geo)[1]"/>
+            <param name="zoom" value="if (@type != 'approximate') then 12 else 9"/>
+            <param name="description" value="note"/>
+            <pb:template xmlns="" xml:space="preserve"><div>
+<header>
+    <a href="places/[[id]]">
+        [[ label ]]
+    </a>
+    <pb-geolocation latitude="[[ latitude ]]" longitude="[[ longitude ]]" label="[[ label ]]" emit="map" event="click" zoom="[[ zoom ]]">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.5.5 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z"/>
+      </svg>
+    </pb-geolocation>
+</header>
+[[ description ]]
+</div></pb:template>
+        </model>
+                    <model predicate="$parameters?mode='register'" behaviour="listItem">
+            <desc>Register sidebar</desc>
+            <param name="content" value="head((placeName[@type='main'], placeName[1]))"/>
+            <param name="longitude" value="tokenize(location/geo, ' ')[2]"/>
+            <param name="latitude" value="tokenize(location/geo, ' ')[1]"/>
+            <param name="label" value="head((placeName[@type='main'], placeName[1]))/node()"/>
+            <pb:template xmlns="" xml:space="preserve"><pb-geolocation event="mouseover" longitude="[[longitude]]" latitude="[[latitude]]" label="[[label]]" auto="auto" wait-for="pb-leaflet-map" zoom="11" emit="map">[[content]]</pb-geolocation></pb:template>
+        </model>
+                    <modelSequence>
+            <desc>Register details view (sino)</desc>
+            <model behaviour="heading">
+                <param name="longitude" value="tokenize(location/geo, ' ')[2]"/>
+                <param name="latitude" value="tokenize(location/geo, ' ')[1]"/>
+                <param name="label" value="head((placeName[@type='main'], placeName[1]))/node()"/>
+                <param name="content" value="head((placeName[@type='main'], placeName[1]))"/>
+                <param name="location" value="string-join((country, region), ', ')"/>
+                <pb:template xmlns="" xml:space="preserve"><pb-geolocation event="click" longitude="[[longitude]]" latitude="[[latitude]]" label="[[label]]" auto="auto" wait-for="#map" subscribe="map" emit="map" zoom="11">[[content]] <small>[[location]]</small></pb-geolocation></pb:template>
+            </model>
+            <model predicate="$parameters?mode='register-details'" behaviour="block" cssClass="pinyin">
+                <desc>Romanisation</desc>
+                <param name="content" value="placeName[starts-with(@xml:lang, 'zh-Latn')]"/>
+            </model>
+            <model predicate="$parameters?mode='register-details' and placeName[@type='historical']" behaviour="block" cssClass="historical-names">
+                <desc>Period-resolved historical names</desc>
+                <param name="content" value="string-join(placeName[@type='historical']/concat(., ' (', @notBefore, '–', @notAfter, ')'), '；')"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="historical-names"><span class="nm-label">古名</span> [[ content ]]</p></pb:template>
+            </model>
+            <model predicate="$parameters?mode='register-details' and region" behaviour="block" cssClass="admin-hierarchy">
+                <desc>Administrative hierarchy with period validity</desc>
+                <param name="content" value="string-join(region/concat(., if (@notBefore or @notAfter) then concat(' (', @notBefore, '–', @notAfter, ')') else ''), ' &gt; ')"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="admin-hierarchy"><span class="nm-label">政區</span> [[ content ]]</p></pb:template>
+            </model>
+            <model behaviour="paragraph">
+                <desc>Additional notes</desc>
+                <param name="content" value="note"/>
+            </model>
+            <model behaviour="list" cssClass="links">
+                <desc>Gazetteer and authority links</desc>
+                <param name="content" value="ptr"/>
+            </model>
+            <model predicate="$parameters?mode='register-details' and not($parameters?static)" behaviour="block">
+                <desc>Documents referring to this place</desc>
+                <param name="uri" value="$parameters?context-path || '/browse.html?facet-place=' || @xml:id"/>
+                <param name="content" value="let $id := @xml:id return count(collection($global:data-default)//text//placeName[@key = $id or @ref = $id]/ancestor::TEI)"/>
+                <pb:template xmlns="" xml:space="preserve">
+                    <a href="[[uri]]">
+                        <pb-i18n key="register-details.document-list"/> ( [[content]] )
+                    </a></pb:template>
+            </model>
+        </modelSequence>
+                </elementSpec>
+</schemaSpec>
         </body>
     </text>
 </TEI>
