@@ -175,7 +175,9 @@
         "witness-type": "Art",
         "witnesses": "Textzeugen (拓本)",
         "writing-direction": "Schreibrichtung",
-        "year-of-find": "Fundjahr/-datum"
+        "year-of-find": "Fundjahr/-datum",
+        "jinshi-id": "Normdatensatz (石刻總目)",
+        "hint-jinshi-id": "Id dieser Inschrift im Jinshi-Normregister, z. B. insc-000001 — verknüpft die Edition mit ihrer Überlieferungsgeschichte."
     },
     "menu": {
         "about": "Über das Projekt",
@@ -188,7 +190,9 @@
         "people": "Personen",
         "places": "Orte",
         "registers": "Register",
-        "sites": "Fundorte"
+        "sites": "Fundorte",
+        "works": "Werke 金石著作",
+        "jinshi": "Inschriften 石刻總目"
     },
     "metadata": {
         "additional": "Allgemeine Angaben",
@@ -214,5 +218,34 @@
         "pick": "Fundort auf der Karte wählen",
         "site-page": "Fundortseite"
     },
-    "title": "Editionstools für eine digitale Epigraphik"
+    "title": "Editionstools für eine digitale Epigraphik",
+    "jinshi": {
+        "works-title": "Jinshi-Werke 金石著作",
+        "inscriptions-title": "Inschriftenkatalog 石刻總目",
+        "author": "Verfasser",
+        "compiled": "Kompiliert",
+        "juan": "juan 卷",
+        "editions": "Ausgaben 版本",
+        "attestations": "Verzeichnet in 歷代著錄",
+        "recorded": "Verzeichnete Inschriften 著錄石刻",
+        "relations": "Verwandte Werke 文獻關係",
+        "rubbings": "Abklatsche 拓本",
+        "works-by": "Jinshi-Werke 金石著作",
+        "title-in-work": "als",
+        "origin": "Entstehung",
+        "corpus-edition": "Edition in diesem Korpus",
+        "authority-record": "Normdatensatz 石刻總目",
+        "attestation-count": "Nachweise",
+        "rel": {
+            "models-on": "Nach dem Vorbild von",
+            "models-on-by": "Vorbild für",
+            "supplements": "Ergänzt",
+            "supplements-by": "Ergänzt durch",
+            "corrects": "Korrigiert",
+            "corrects-by": "Korrigiert durch",
+            "recompiles": "Neu kompiliert",
+            "recompiles-by": "Neu kompiliert durch"
+        },
+        "contributor": "Mitarbeit"
+    }
 }

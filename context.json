@@ -40,7 +40,7 @@
     "metadata-panel"
   ],
   "shortname": "metadata",
-  "label": "edep-sino",
+  "label": "EpiWen",
   "odds": [
     "teipublisher.odd",
     "landing.odd",
@@ -49,7 +49,7 @@
     "output.odd"
   ],
   "version": "1.0.0",
-  "id": "https://jinntec.de/apps/edep-sino",
+  "id": "https://jinntec.de/apps/epiwen",
   "_update": true,
   "styles": [
     "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css",
@@ -73,7 +73,7 @@
     "repo.xml",
     "resources/css/components.css"
   ],
-  "target": "/db/apps/edep-sino",
+  "target": "/db/apps/epiwen",
   "menu": {
     "language": true,
     "delete": true,
@@ -105,6 +105,14 @@
           {
             "url": "bibliography",
             "id": "bibliography"
+          },
+          {
+            "url": "works",
+            "id": "works"
+          },
+          {
+            "url": "jinshi-inscriptions",
+            "id": "jinshi"
           }
         ]
       }
@@ -313,7 +321,7 @@
   "_lastModified": "2026-05-18T13:29:52.785+02:00",
   "pkg": {
     "website": "http://tei-publisher.org",
-    "abbrev": "edep-sino",
+    "abbrev": "epiwen",
     "author": "Wolfgang Meier et al.",
     "version": "1.0.0",
     "dependencies": [
@@ -349,7 +357,7 @@
   "category": "components",
   "_overwrite": "all",
   "defaults": {
-    "data": "/db/apps/edep-sino-data/data",
+    "data": "/db/apps/epiwen-data/data",
     "landing": "index.html",
     "address-by-id": false,
     "odd-root": "resources/odd",
@@ -417,9 +425,13 @@
         "at": "modules/templates/page.xqm",
         "prefix": "page"
       },
-      "http://edep-sino.org/templates/sites": {
+      "http://epiwen.org/templates/sites": {
         "at": "modules/templates/sites.xqm",
         "prefix": "sites"
+      },
+      "http://epiwen.org/templates/jinshi": {
+        "at": "modules/templates/jinshi.xqm",
+        "prefix": "jinshi"
       }
     }
   },

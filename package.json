@@ -1,7 +1,7 @@
 {
-    "name": "edep-sino",
+    "name": "epiwen",
     "version": "1.0.0",
-    "description": "edep-sino",
+    "description": "epiwen",
     "license": "GPL-3.0",
     "dependencies": {
         "@teipublisher/pb-components": "^3.3.0",

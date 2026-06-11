@@ -1,4 +1,4 @@
-/* EDEp Sino — full-page site map (navigation entry point).
+/* EpiWen — full-page site map (navigation entry point).
    Uses the leaflet + markercluster builds shipped with pb-components;
    data from /api/sites (find-spots joined with their inscriptions). */
 (function () {

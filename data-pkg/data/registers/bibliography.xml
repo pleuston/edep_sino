@@ -2,9 +2,9 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-bibl">
     <teiHeader>
         <fileDesc>
-            <titleStmt><title>EDEp Sino register: bibliography</title></titleStmt>
+            <titleStmt><title>EpiWen register: bibliography</title></titleStmt>
             <publicationStmt><p>Authority register</p></publicationStmt>
-            <sourceDesc><p>EDEp Sino</p></sourceDesc>
+            <sourceDesc><p>EpiWen</p></sourceDesc>
         </fileDesc>
     </teiHeader>
     <standOff>

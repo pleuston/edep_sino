@@ -13,18 +13,18 @@
       "palette" : null
     }
   },
-  "label" : "edep-sino",
+  "label" : "EpiWen",
   "odds" : [ "edep.odd", "edep-output.odd", "output.odd" ],
-  "id" : "https://jinntec.de/apps/edep-sino",
+  "id" : "https://jinntec.de/apps/epiwen",
   "defaults" : {
-    "data" : "/db/apps/edep-sino-data/data",
+    "data" : "/db/apps/epiwen-data/data",
     "data-default" : "workspace",
     "view" : "single",
     "odd" : "output.odd"
   },
   "extends" : [ "base10", "theme-base10", "registers", "landing-page", "metadata-panel" ],
   "pkg" : {
-    "abbrev" : "edep-sino"
+    "abbrev" : "epiwen"
   },
   "description" : "Editionstools für eine digitale Epigraphik"
 }

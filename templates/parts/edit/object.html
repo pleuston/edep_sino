@@ -31,7 +31,7 @@
                     origin="instance('templates')/idno"></fx-insert>
             </fx-trigger>
         </legend>
-        <fx-repeat ref="idno[@type != 'EDEp']" class="idno-repeat">
+        <fx-repeat ref="idno[@type != 'EDEp' and @type != 'jinshi']" class="idno-repeat">
             <template>
                 <fx-control ref="@type">
                     <label>Type</label>
@@ -54,6 +54,20 @@
         </fx-repeat>
     </fieldset>
 
+    <!-- jinshi authority cross-reference (doc/sino-model.md par.10): id of the
+         matching record in the inscription authority register 石刻總目 -->
+    <fx-control id="jinshi-id" class="jinshi-id" ref="idno[@type='jinshi']" update-event="input">
+        <label>
+            <pb-i18n key="form.jinshi-id">Authority record (石刻總目)</pb-i18n>
+            <pb-popover>
+                <edep-icon name="info-outline"></edep-icon>
+                <template slot="alternate">
+                    <pb-i18n key="form.hint-jinshi-id">Id of this inscription in the jinshi authority register, e.g. insc-000001 — links the edition to its attestation history.</pb-i18n>
+                </template>
+            </pb-popover>
+        </label>
+        <input class="widget" placeholder="insc-…"/>
+    </fx-control>
 
     <!-- 16a) -->
 

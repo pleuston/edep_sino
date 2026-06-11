@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://expath.org/ns/pkg" name="https://jinntec.de/apps/edep-sino" abbrev="edep-sino" version="1.0.0" spec="1.0">
-    <title>edep-sino</title>
+<package xmlns="http://expath.org/ns/pkg" name="https://jinntec.de/apps/epiwen" abbrev="epiwen" version="1.0.0" spec="1.0">
+    <title>EpiWen</title>
     <dependency processor="http://exist-db.org" semver-min="6.2.0"/>
     
         <dependency package="http://e-editiones.org/roaster" semver="1"/>

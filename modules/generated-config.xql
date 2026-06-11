@@ -19,7 +19,7 @@ declare variable $config:sort-default := "category";
 
 
     
-    declare variable $config:data-root := "/db/apps/edep-sino-data/data";
+    declare variable $config:data-root := "/db/apps/epiwen-data/data";
     
 
 

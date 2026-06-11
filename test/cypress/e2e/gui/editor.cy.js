@@ -29,7 +29,7 @@ describe('Inscription editor', () => {
       'edition', 'commentary', 'dating', 'historic-relevance', 'editor', 'witnesses', 'production']
       .forEach(id => cy.get(`details#${id}`).should('exist'))
 
-    // taxonomy fx-instance loaded from ../edep-sino-data and materialized
+    // taxonomy fx-instance loaded from ../epiwen-data and materialized
     // into select options (sino object-form vocabulary, doc/sino-model.md §8)
     cy.get('#r-objtyp select option', { timeout: 20000 })
       .should('have.length.greaterThan', 8)

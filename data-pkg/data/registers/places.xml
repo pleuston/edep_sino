@@ -2,9 +2,9 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-places">
     <teiHeader>
         <fileDesc>
-            <titleStmt><title>EDEp Sino register: places</title></titleStmt>
+            <titleStmt><title>EpiWen register: places</title></titleStmt>
             <publicationStmt><p>Authority register. Entry shape: doc/sino-model.md §7. Coordinates: WGS84 decimal; PRC-published sources are GCJ-02-offset — convert before entry.</p></publicationStmt>
-            <sourceDesc><p>EDEp Sino</p></sourceDesc>
+            <sourceDesc><p>EpiWen</p></sourceDesc>
         </fileDesc>
     </teiHeader>
     <standOff>

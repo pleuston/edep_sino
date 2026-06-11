@@ -21,10 +21,10 @@ import module namespace deploy="https://teipublisher.org/api/deploy" at "api/dep
 
 import module namespace rview="http://teipublisher.com/api/registers/view" at "../registers-api.xql";
 
-(: EDEp Sino: inscription editor + zotero API :)
+(: EpiWen: inscription editor + zotero API :)
 import module namespace eapi="http://teipublisher.com/api/custom" at "../custom-api.xql";
 import module namespace zotero="http://e-editiones.org/edep/api/zotero" at "api/zotero.xql";
-import module namespace sino-dates="http://edep-sino.org/api/sino/dates" at "../sino/dates.xqm";
+import module namespace sino-dates="http://epiwen.org/api/sino/dates" at "../sino/dates.xqm";
 
 declare option output:indent "no";
 

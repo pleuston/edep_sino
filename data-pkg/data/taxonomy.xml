@@ -2,9 +2,9 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0">
     <teiHeader>
         <fileDesc>
-            <titleStmt><title>EDEp Sino taxonomy</title></titleStmt>
+            <titleStmt><title>EpiWen taxonomy</title></titleStmt>
             <publicationStmt><p>Master classification used for faceted browsing.</p></publicationStmt>
-            <sourceDesc><p>EDEp Sino — aligned with data/taxonomy/typeins.xml (doc/sino-model.md §8)</p></sourceDesc>
+            <sourceDesc><p>EpiWen — aligned with data/taxonomy/typeins.xml (doc/sino-model.md §8)</p></sourceDesc>
         </fileDesc>
         <encodingDesc>
             <classDecl>

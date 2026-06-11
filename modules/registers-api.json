@@ -2,13 +2,13 @@
     "openapi": "3.0.3",
     "info": {
         "version": "1.0.0",
-        "title": "edep-sino – Registers API",
+        "title": "epiwen – Registers API",
         "description": "Endpoints to browse and search the local authority files"
     },
     "servers": [
         {
             "description": "Endpoint for testing on localhost",
-            "url": "/exist/apps/edep-sino"
+            "url": "/exist/apps/epiwen"
         }
     ],
     "components": {
@@ -424,6 +424,374 @@
                     }
 				}
 			}			
+		},
+		"/works": {
+            "get": {
+				"summary": "Landing page for jinshi works 金石著作",
+				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+				"tags": ["view"],
+				"operationId": "vapi:html",
+				"x-error-handler": "vapi:handle-error",
+				"parameters": [
+					{
+						"name": "file",
+						"in": "query",
+						"schema": {
+							"type": "string",
+                            "default": "works"
+						}
+					},
+					{
+                        "name": "search",
+                        "in": "query",
+                        "schema":{
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema":{
+                            "type": "string"
+                        }
+                    }
+				],
+				"responses": {
+					"200": {
+						"description": "HTML of the page",
+						"content": {
+							"text/html": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The document was not found",
+						"content": {
+							"text/html": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+        },
+        "/works/{id}": {
+            "get": {
+				"summary": "Detail page for a jinshi work",
+				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+				"tags": ["registers"],
+				"operationId": "rview:detail-html",
+				"x-error-handler": "vapi:handle-error",
+				"parameters": [
+                    {
+						"name": "id",
+						"in": "path",
+						"description": "ID of the work",
+						"required": true,
+						"schema":{
+							"type": "string",
+							"default": "all"
+						}
+					},
+					{
+						"name": "file",
+						"in": "query",
+						"schema": {
+							"type": "string",
+                            "default": "work"
+						}
+					},
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+				],
+				"responses": {
+					"200": {
+						"description": "HTML of the page",
+						"content": {
+							"text/html": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The document was not found",
+						"content": {
+							"text/html": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+        },
+        "/api/works": {
+            "get": {
+                "summary": "List jinshi works",
+                "description": "Retrieve list of jinshi works in format required by pb-split-list",
+				"tags": ["registers"],
+                "operationId": "rview:works-categories",
+                "parameters": [
+					{
+						"name": "category",
+						"in": "query",
+						"schema": {
+							"type": "string"
+						}
+					},
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 50
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema":{
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Categories and works to display",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+		"/api/works/all": {
+            "get": {
+                "summary": "List all jinshi works",
+                "description": "Retrieve list of all jinshi works",
+				"tags": ["registers"],
+                "operationId": "rview:works-all",
+				"responses": {
+                    "200": {
+                        "description": "List of all jinshi works as JSON array",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+				}
+			}
+		},
+		"/jinshi-inscriptions": {
+            "get": {
+				"summary": "Landing page for the inscription authority register 石刻總目",
+				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+				"tags": ["view"],
+				"operationId": "vapi:html",
+				"x-error-handler": "vapi:handle-error",
+				"parameters": [
+					{
+						"name": "file",
+						"in": "query",
+						"schema": {
+							"type": "string",
+                            "default": "jinshi-inscriptions"
+						}
+					},
+					{
+                        "name": "search",
+                        "in": "query",
+                        "schema":{
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema":{
+                            "type": "string"
+                        }
+                    }
+				],
+				"responses": {
+					"200": {
+						"description": "HTML of the page",
+						"content": {
+							"text/html": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The document was not found",
+						"content": {
+							"text/html": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+        },
+        "/jinshi-inscriptions/{id}": {
+            "get": {
+				"summary": "Detail page for an inscription authority record",
+				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+				"tags": ["registers"],
+				"operationId": "rview:detail-html",
+				"x-error-handler": "vapi:handle-error",
+				"parameters": [
+                    {
+						"name": "id",
+						"in": "path",
+						"description": "ID of the inscription authority record",
+						"required": true,
+						"schema":{
+							"type": "string",
+							"default": "all"
+						}
+					},
+					{
+						"name": "file",
+						"in": "query",
+						"schema": {
+							"type": "string",
+                            "default": "jinshi-inscription"
+						}
+					},
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+				],
+				"responses": {
+					"200": {
+						"description": "HTML of the page",
+						"content": {
+							"text/html": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"404": {
+						"description": "The document was not found",
+						"content": {
+							"text/html": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			}
+        },
+        "/api/jinshi-inscriptions": {
+            "get": {
+                "summary": "List inscription authority records",
+                "description": "Retrieve list of inscription authority records in format required by pb-split-list",
+				"tags": ["registers"],
+                "operationId": "rview:jinshi-categories",
+                "parameters": [
+					{
+						"name": "category",
+						"in": "query",
+						"schema": {
+							"type": "string"
+						}
+					},
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 50
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema":{
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Categories and records to display",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+		"/api/jinshi-inscriptions/all": {
+            "get": {
+                "summary": "List all inscription authority records",
+                "description": "Retrieve list of all inscription authority records",
+				"tags": ["registers"],
+                "operationId": "rview:jinshi-all",
+				"responses": {
+                    "200": {
+                        "description": "List of all inscription authority records as JSON array",
+                        "content": {
+                            "application/json": {
+                                "schema":{
+                                    "type": "array"
+                                }
+                            }
+                        }
+                    }
+				}
+			}
 		},
 		"/places": {
             "get": {

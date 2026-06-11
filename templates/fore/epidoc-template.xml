@@ -26,6 +26,7 @@
                         <idno type="inventory"/>
                         <idno type="EDEp"/>
                         <idno type="TM"/>
+                        <idno type="jinshi"/>
                     </msIdentifier>
                     <msContents class="">
                         <summary/>
@@ -92,7 +93,7 @@
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
-            <p>Encoded following EpiDoc guidelines 9.2 and the EDEp Sino conventions (doc/sino-model.md)</p>
+            <p>Encoded following EpiDoc guidelines 9.2 and the EpiWen conventions (doc/sino-model.md)</p>
             <charDecl/>
         </encodingDesc>
         <profileDesc>

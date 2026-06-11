@@ -1,11 +1,11 @@
 xquery version "3.1";
 
 (:~
- : EDEp Sino — the "site" navigation axis: find-spots joined with the
+ : EpiWen — the "site" navigation axis: find-spots joined with the
  : inscriptions found there (origPlace/@corresp -> place entity files).
  : Used by templates/map.html, templates/sites.html and /api/sites.
  :)
-module namespace sites="http://edep-sino.org/templates/sites";
+module namespace sites="http://epiwen.org/templates/sites";
 
 import module namespace config="http://www.tei-c.org/tei-simple/config" at "../config.xqm";
 

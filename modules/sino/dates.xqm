@@ -1,7 +1,7 @@
 xquery version "3.1";
 
 (:~
- : EDEp Sino — Chinese era-date conversion service (doc/sino-model.md par.1).
+ : EpiWen — Chinese era-date conversion service (doc/sino-model.md par.1).
  :
  : Backed by data/taxonomy/nianhao.xml, derived from the DDBC Time Authority
  : (CC BY-SA 3.0). Reign-year ranges are exact lunisolar spans converted to
@@ -12,7 +12,7 @@ xquery version "3.1";
  : Returns XML (not JSON) so the editor can bind the result as a Fore
  : instance directly.
  :)
-module namespace sino-dates="http://edep-sino.org/api/sino/dates";
+module namespace sino-dates="http://epiwen.org/api/sino/dates";
 
 import module namespace config="http://www.tei-c.org/tei-simple/config" at "../config.xqm";
 

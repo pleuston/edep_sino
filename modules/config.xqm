@@ -330,6 +330,11 @@ declare variable $config:register-map := map {
         "id": "pb-works",
         "default": "work-default",
         "prefix": "work-"
+    },
+    "inscription": map {
+        "id": "pb-jinshi",
+        "default": "inscription-default",
+        "prefix": "insc-"
     }
 };
 
@@ -580,7 +585,7 @@ declare function config:get-fonts-dir() as xs:string? {
 };
 
 (: ===================================================================== :)
-(: EDEp Sino: inscription editor configuration (ported from altered-model) :)
+(: EpiWen: inscription editor configuration (ported from altered-model) :)
 
 (:~ Collections holding the entity files used by the editor pickers :)
 declare variable $config:places := $config:data-root || "/places/";

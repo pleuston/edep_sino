@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns="http://www.tei-c.org/ns/1.0" xml:id="person-zhu-wenzao" sex="M">
+    <persName type="main">朱文藻</persName>
+    <persName type="sort">Zhu Wenzao</persName>
+    <persName type="zi">映漘</persName>
+    <birth when="1735">雍正十三年（1735）</birth>
+    <death when="1806">嘉慶十一年（1806）</death>
+    <note type="bio">Qing scholar (1735–1806); principal collaborator in compiling the 金石萃編.</note>
+    <idno type="EDEp">P000006</idno>
+</person>

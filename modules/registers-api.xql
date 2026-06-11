@@ -120,11 +120,14 @@ declare function rview:detail-html($request as map(*)) {
     let $id := xmldb:decode-uri(xs:anyURI($request?parameters?id))
     let $entry := collection($config:data-root)/id($id) => head()
     let $config := tpu:parse-pi(root($entry), $request?parameters?view, $request?parameters?odd)
-    let $mentions := 
+    let $mentions :=
         if ($entry instance of element(tei:person)) then
             collection($config:data-default)//tei:persName[@key = $id]/ancestor::tei:TEI
         else if ($entry instance of element(tei:bibl)) then
             collection($config:data-default)//tei:bibl[@key = $id]/ancestor::tei:TEI
+        else if ($entry instance of element(tei:object)) then
+            (: corpus documents carrying this authority id in msIdentifier :)
+            collection($config:data-default)//tei:idno[@type = 'jinshi'][. = $id]/ancestor::tei:TEI
         else
             collection($config:data-default)//tei:placeName[@key = $id]/ancestor::tei:TEI
     let $extConfig := map {
@@ -236,8 +239,9 @@ declare function rview:geonames-link($id) {
 };
 
 declare function rview:bibliography-all($request as map(*)) {
-    (: all text content is used as label :)
-    let $entries := collection($config:register-root)//tei:bibl
+    (: all text content is used as label; scope to the bibliography register doc —
+       an unscoped //tei:bibl would also return works, editions and attestations :)
+    let $entries := collection($config:register-root)/id($config:register-map?bibliography?id)//tei:bibl
     let $byKey := for-each($entries, function($entry as element()) {
         let $label := normalize-space($entry)
         return
@@ -314,11 +318,151 @@ declare function rview:output-bibliography-all($list as array(*)*, $letter as xs
     array {
         for $entry in $list
         let $letterParam := if ($letter = "all") then substring($entry?3/@n, 1, 1) else $letter
-        let $note := 
+        let $note :=
             $pm-config:web-transform($entry?3, map { "mode": "register-overview" }, $odd)
         return
             <div class="split-list-item">
             { $note }
             </div>
     }
+};
+
+(: ===================================================================
+ : Jinshi history layer (doc/sino-model.md par.10): the works register
+ : 金石著作 (pb-works, bibl type="work") and the inscription authority
+ : register 石刻總目 (pb-jinshi, listObject/object). Lists sort and
+ : categorise by the romanised sort title so the pb-split-list A–Z
+ : navigation works for Chinese-titled material.
+ : =================================================================== :)
+
+declare %private function rview:work-sort-label($bibl as element()) as xs:string {
+    normalize-space(head(($bibl/tei:title[@xml:lang = 'zh-Latn-x-pinyin'],
+        $bibl/tei:title[@type = 'sort'], $bibl/tei:title)))
+};
+
+declare %private function rview:object-sort-label($object as element()) as xs:string {
+    normalize-space(head(($object//tei:objectName[@type = 'sort'],
+        $object//tei:objectName)))
+};
+
+declare %private function rview:works($search as xs:string?) {
+    let $root := collection($config:register-root)/id($config:register-map?work?id)
+    return
+        if ($search and $search != '') then
+            $root//tei:bibl[@type = 'work'][ft:query(., 'name:(' || $search || '*)')]
+        else
+            $root//tei:bibl[@type = 'work']
+};
+
+declare %private function rview:jinshi-objects($search as xs:string?) {
+    let $root := collection($config:register-root)/id($config:register-map?inscription?id)
+    return
+        if ($search and $search != '') then
+            $root//tei:object[ft:query(., 'name:(' || $search || '*)')]
+        else
+            $root//tei:object
+};
+
+declare function rview:works-all($request as map(*)) {
+    array {
+        for $bibl in rview:works(())
+        let $label := rview:work-sort-label($bibl)
+        order by lower-case($label) collation "?lang=de-DE"
+        return
+            map {
+                "id": $bibl/@xml:id/string(),
+                "name": head(($bibl/tei:title[@xml:lang = 'zh'], $bibl/tei:title))/string(),
+                "sort-name": $label
+            }
+    }
+};
+
+declare function rview:jinshi-all($request as map(*)) {
+    array {
+        for $object in rview:jinshi-objects(())
+        let $label := rview:object-sort-label($object)
+        order by lower-case($label) collation "?lang=de-DE"
+        return
+            map {
+                "id": $object/@xml:id/string(),
+                "name": head(($object//tei:objectName[@type = 'main'], $object//tei:objectName))/string(),
+                "sort-name": $label,
+                "date": $object//tei:origin/tei:origDate/@when/string()
+            }
+    }
+};
+
+(:~ Shared A–Z categories listing for register entries keyed by a sort label. :)
+declare %private function rview:register-categories($entries as element()*, $request as map(*),
+        $label-fn as function(*), $output-fn as function(*)) {
+    let $letterParam := $request?parameters?category
+    let $sortDir := ($request?parameters?dir, 'asc')[1]
+    let $limit := head(($request?parameters?limit, -1))
+    let $odd := head(($request?parameters?odd, $config:default-odd))
+    let $byKey := for-each($entries, function($entry as element()) {
+        let $label := $label-fn($entry)
+        return
+            [lower-case($label), $label, $entry]
+    })
+    let $sorted := rview:sort($byKey, $sortDir)
+    let $letter :=
+        if ($limit < 0 or count($entries) < $limit) then
+            "all"
+        else if ($letterParam = '') then
+            substring($sorted[1]?1, 1, 1) => upper-case()
+        else
+            $letterParam
+    let $byLetter :=
+        if ($letter = 'all') then
+            $sorted
+        else
+            filter($sorted, function($entry) {
+                starts-with($entry?1, lower-case($letter))
+            })
+    return
+        map {
+            "items": $output-fn($byLetter, $odd),
+            "categories":
+                if (count($entries) < $limit) then
+                    []
+                else array {
+                    for $index in 1 to string-length('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+                    let $alpha := substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ', $index, 1)
+                    let $hits := count(filter($sorted, function($entry) { starts-with($entry?1, lower-case($alpha))}))
+                    where $hits > 0
+                    return
+                        map {
+                            "category": $alpha,
+                            "count": $hits
+                        },
+                    map {
+                        "category": "all",
+                        "count": count($sorted)
+                    }
+                }
+        }
+};
+
+declare %private function rview:output-register-entries($list as array(*)*, $odd as xs:string) {
+    array {
+        for $entry in $list
+        return
+            <div class="split-list-item">
+            { $pm-config:web-transform($entry?3, map { "mode": "register-overview" }, $odd) }
+            </div>
+    }
+};
+
+declare function rview:works-categories($request as map(*)) {
+    let $search := normalize-space($request?parameters?search)
+    return
+        rview:register-categories(rview:works($search), $request,
+            rview:work-sort-label#1, rview:output-register-entries#2)
+};
+
+declare function rview:jinshi-categories($request as map(*)) {
+    let $search := normalize-space($request?parameters?search)
+    return
+        rview:register-categories(rview:jinshi-objects($search), $request,
+            rview:object-sort-label#1, rview:output-register-entries#2)
 };

@@ -1,8 +1,8 @@
-# EDEp Sino — User guide for epigraphers
+# EpiWen — User guide for epigraphers
 
 *Covers the editor, registers and reading view. Interface languages: English, Deutsch, 繁體中文 (selector top right).*
 
-EDEp Sino catalogues Chinese inscriptions as EpiDoc TEI. You never see the XML unless you want to: the editing form reads and writes the document directly. The encoding conventions behind every field are specified in `doc/sino-model.md`.
+EpiWen catalogues Chinese inscriptions as EpiDoc TEI. You never see the XML unless you want to: the editing form reads and writes the document directly. The encoding conventions behind every field are specified in `doc/sino-model.md`.
 
 ## Finding your way
 
@@ -16,7 +16,7 @@ The top navigation leads with the spatial entry point:
 
 ## Opening the editor
 
-- New inscription: `…/edep-sino/edit.html` (log in first — default user `tei`).
+- New inscription: `…/epiwen/edit.html` (log in first — default user `tei`).
 - Existing inscription: open it from *Browse* or `…/edit.html?id=<EDEp-id>&collection=workspace`.
 - The left navigation jumps to the form sections. **Save** sits in the bar at the bottom; the first save assigns the EDEp identifier.
 - A worked example ships with the app: the fictional specimen `demo-zaoxiangji` (測試造像記) exercises every field of this guide.

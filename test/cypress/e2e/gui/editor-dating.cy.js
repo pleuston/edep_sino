@@ -9,7 +9,7 @@ describe('Inscription editor: Chinese dating', () => {
     createdIds.forEach(id => {
       cy.request({
         method: 'DELETE',
-        url: `http://localhost:8080/exist/rest/db/apps/edep-sino-data/data/workspace/${id}.xml`,
+        url: `http://localhost:8080/exist/rest/db/apps/epiwen-data/data/workspace/${id}.xml`,
         auth: { user: 'admin', pass: '' },
         failOnStatusCode: false
       })

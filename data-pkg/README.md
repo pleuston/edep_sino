@@ -1,6 +1,6 @@
-# edep-sino-data
+# epiwen-data
 
-Data package for EDEp Sino: inscriptions (`data/workspace`), controlled
+Data package for EpiWen: inscriptions (`data/workspace`), controlled
 vocabularies (`data/taxonomy`), entity files (`data/people`, `data/places`),
 authority registers (`data/registers`), landing content.
 

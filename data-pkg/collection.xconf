@@ -45,6 +45,12 @@
             </text>
             <text qname="tei:bibl">
                 <field name="name" expression="."/>
+                <field name="sort-name" expression="head((tei:title[@xml:lang='zh-Latn-x-pinyin'], tei:title[@type='sort'], tei:title)) =&gt; normalize-unicode('NFD')     =&gt; replace('\p{IsCombiningDiacriticalMarks}', '')"/>
+            </text>
+            <!-- jinshi inscription authority records -->
+            <text qname="tei:object">
+                <field name="name" expression=".//tei:objectName"/>
+                <field name="sort-name" expression="head((.//tei:objectName[@type='sort'], .//tei:objectName)) =&gt; normalize-unicode('NFD')     =&gt; replace('\p{IsCombiningDiacriticalMarks}', '')"/>
             </text>
             <text qname="tei:head"/>
             <text match="//tei:titleStmt/tei:title"/>

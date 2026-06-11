@@ -82,9 +82,10 @@ declare function rapi:save($request as map(*)) {
     let $body := $request?body/*[1]
 
     let $type := local-name($body)
-    let $type := switch($type) 
-                    case "org" return "organization" 
-                    case "bibl" return "work" 
+    let $type := switch($type)
+                    case "org" return "organization"
+                    case "bibl" return "work"
+                    case "object" return "inscription"
                     default return $type
     let $id := ($body/@xml:id, $request?parameters?id)[1]
 
@@ -128,6 +129,8 @@ declare function rapi:insert-point($type as xs:string) {
             collection($config:register-root)/id($root)//tei:taxonomy
         case "work" return
             collection($config:register-root)/id($root)//tei:listBibl
+        case "inscription" return
+            collection($config:register-root)/id($root)//tei:listObject
         default return
             collection($config:register-root)/id($root)//tei:listPerson
 };
@@ -138,9 +141,11 @@ declare function rapi:insert-point($type as xs:string) {
  : all the rest is just passed
  :)
 declare function rapi:prepare-record($node as item()*, $resp, $type) {
-    let $new := $type || '-NEW'
+    (: the new-entry placeholder is TYPE-NEW; also accept PREFIX + NEW for types
+       whose id prefix differs from the type name (inscription -> insc-) :)
+    let $new := ($type || '-NEW', $config:register-map?($type)?prefix || 'NEW')
 
-    let $id := if ($node/@xml:id=$new) then rapi:next($type) else $node/@xml:id
+    let $id := if ($node/@xml:id = $new) then rapi:next($type) else $node/@xml:id
 
     return
       typeswitch($node)
@@ -161,7 +166,44 @@ declare function rapi:prepare-record($node as item()*, $resp, $type) {
                 for $child in $node/node()
                    return $child
               }
-        case element(tei:place) 
+        case element(tei:place)
+            return
+                element {node-name($node)} {
+                (: copy attributes :)
+                for $att in $node/@* except ($node/@xml:id, $node/@resp, $node/@when)
+                   return
+                      $att
+                ,
+                attribute xml:id {$id}
+                ,
+                attribute when {format-date(current-date(), '[Y]-[M,2]-[D,2]')}
+                ,
+                attribute resp {$resp}
+                ,
+                for $child in $node/node()
+                   return $child
+              }
+        (: works (bibl) and inscription authority records (object) need the same
+           rebuild — without it the computed id is silently discarded and a
+           record saved as TYPE-NEW never receives its xml:id :)
+        case element(tei:bibl)
+            return
+                element {node-name($node)} {
+                (: copy attributes :)
+                for $att in $node/@* except ($node/@xml:id, $node/@resp, $node/@when)
+                   return
+                      $att
+                ,
+                attribute xml:id {$id}
+                ,
+                attribute when {format-date(current-date(), '[Y]-[M,2]-[D,2]')}
+                ,
+                attribute resp {$resp}
+                ,
+                for $child in $node/node()
+                   return $child
+              }
+        case element(tei:object)
             return
                 element {node-name($node)} {
                 (: copy attributes :)
@@ -179,7 +221,7 @@ declare function rapi:prepare-record($node as item()*, $resp, $type) {
                    return $child
               }
         (: all the rest pass it through :)
-        default 
+        default
             return $node
 
 };
@@ -204,7 +246,9 @@ declare function rapi:next($type) {
             return collection($config:register-root)/id($config?id)//tei:category[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
         case 'work'
             return collection($config:register-root)/id($config?id)//tei:bibl[@type eq 'work'][starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
-        default 
+        case 'inscription'
+            return collection($config:register-root)/id($config?id)//tei:object[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
+        default
             return collection($config:register-root)/id($config?id)//tei:person[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
     
     let $numeric-ids := for $id in $all-ids return if ($id castable as xs:integer) then $id else ()
@@ -285,13 +329,24 @@ declare function rapi:query($type as xs:string, $query as xs:string?) {
                         "label": $term/tei:catDesc/string()
                     }
             case "work" return
-                for $bibl in collection($config:register-root)//tei:bibl[ft:query(tei:title, $query)]
+                (: scope to the works register doc: an unscoped //tei:bibl would also
+                   sweep up bibliography entries, editions and attestation refs :)
+                for $bibl in collection($config:register-root)/id($config:register-map?work?id)//tei:bibl[@type eq 'work'][ft:query(., 'name:(' || $query || '*)')]
                 return
                     map {
                         "id": $bibl/@xml:id/string(),
-                        "label": $bibl/tei:title[@type="main"]/string(),
+                        "label": head(($bibl/tei:title[@type="main"], $bibl/tei:title))/string(),
                         "details": ``[`{$bibl/tei:author}`; `{$bibl/tei:note/string()}`]``,
                         "link": $bibl/tei:ptr/@target/string()
+                    }
+            case "inscription" return
+                for $object in collection($config:register-root)/id($config:register-map?inscription?id)//tei:object[ft:query(., 'name:(' || $query || '*)')]
+                return
+                    map {
+                        "id": $object/@xml:id/string(),
+                        "label": head(($object//tei:objectName[@type="main"], $object//tei:objectName))/string(),
+                        "details": $object//tei:origin/tei:origDate/string(),
+                        "link": $object/tei:ptr/@target/string()
                     }
             default return
                 ()
@@ -433,6 +488,7 @@ declare function rapi:local-search-strings($type as xs:string, $entry as element
         case "organization" return $entry/tei:orgName/string()
         case "term" return $entry/tei:catDesc/string()
         case "work" return $entry/tei:title/string()
+        case "inscription" return $entry//tei:objectName/string()
         default return $entry/tei:persName/string()
 };
 

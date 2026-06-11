@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns="http://www.tei-c.org/ns/1.0" xml:id="person-lu-zengxiang" sex="M">
+    <persName type="main">陸增祥</persName>
+    <persName type="sort">Lu Zengxiang</persName>
+    <persName type="zi">魁仲</persName>
+    <persName type="hao">星農</persName>
+    <birth when="1816">嘉慶二十一年（1816）</birth>
+    <death when="1882">光緒八年（1882）</death>
+    <note type="bio">Qing epigrapher (1816–1882); his 八瓊室金石補正 supplements the 金石萃編.</note>
+    <idno type="EDEp">P000005</idno>
+</person>

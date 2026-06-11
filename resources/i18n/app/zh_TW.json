@@ -176,7 +176,9 @@
         "witness-type": "類型",
         "witnesses": "文本載體（拓本）",
         "writing-direction": "書寫方向",
-        "year-of-find": "出土年份"
+        "year-of-find": "出土年份",
+        "jinshi-id": "石刻總目編號",
+        "hint-jinshi-id": "本刻石在石刻總目權威檔中的編號（如 insc-000001），用以連結歷代著錄。"
     },
     "menu": {
         "about": "關於",
@@ -189,7 +191,9 @@
         "people": "人物",
         "places": "地點",
         "registers": "索引",
-        "sites": "遺址"
+        "sites": "遺址",
+        "works": "金石著作",
+        "jinshi": "石刻總目"
     },
     "metadata": {
         "additional": "一般資料",
@@ -215,5 +219,34 @@
         "pick": "請在地圖上選擇遺址",
         "site-page": "遺址頁面"
     },
-    "title": "中文石刻數位編輯工具"
+    "title": "中文石刻數位編輯工具",
+    "jinshi": {
+        "works-title": "金石著作",
+        "inscriptions-title": "石刻總目",
+        "author": "撰者",
+        "compiled": "成書",
+        "juan": "卷",
+        "editions": "版本",
+        "attestations": "歷代著錄",
+        "recorded": "著錄石刻",
+        "relations": "文獻關係",
+        "rubbings": "拓本",
+        "works-by": "金石著作",
+        "title-in-work": "題作",
+        "origin": "刊立",
+        "corpus-edition": "本庫錄文",
+        "authority-record": "石刻總目",
+        "attestation-count": "著錄",
+        "rel": {
+            "models-on": "仿",
+            "models-on-by": "為其所仿",
+            "supplements": "補",
+            "supplements-by": "為其所補",
+            "corrects": "正",
+            "corrects-by": "為其所正",
+            "recompiles": "重編",
+            "recompiles-by": "為其所重編"
+        },
+        "contributor": "協纂"
+    }
 }

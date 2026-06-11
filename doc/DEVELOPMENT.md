@@ -1,4 +1,4 @@
-# EDEp Sino — Development guide
+# EpiWen — Development guide
 
 ## Repository layout
 
@@ -24,7 +24,7 @@ Any file already deployed can be synced straight into the running eXist:
 
 ```sh
 curl -s -u admin: -T templates/edit.html -H 'Content-Type: text/html' \
-  http://localhost:8080/exist/rest/db/apps/edep-sino/templates/edit.html
+  http://localhost:8080/exist/rest/db/apps/epiwen/templates/edit.html
 ```
 
 Templates are recompiled per request — no restart needed. (XQuery modules under `modules/` are cached per compilation; re-PUT triggers recompile.)
@@ -60,7 +60,7 @@ Ported from upstream `altered-model` (tag `editor-port-src`); the Fore form edit
 | Editor layout/styling on top of pico + jinks grid | `resources/css/edit.css` (+ inherited `edep-theme*.css`) |
 
 **Conventions when touching the editor:**
-- Controlled vocabularies load as `fx-instance src="../edep-sino-data/data/taxonomy/{name}.xml"` with `xpath-default-namespace` TEI; the files are TEI `<taxonomy>` docs (`category/@corresp` + `catDesc/@xml:lang`) — except `country.xml`/`province.xml`, which the geo-picker consumes as legacy `<vocabulary>/<term @xml:id>/<name @xml:lang>`.
+- Controlled vocabularies load as `fx-instance src="../epiwen-data/data/taxonomy/{name}.xml"` with `xpath-default-namespace` TEI; the files are TEI `<taxonomy>` docs (`category/@corresp` + `catDesc/@xml:lang`) — except `country.xml`/`province.xml`, which the geo-picker consumes as legacy `<vocabulary>/<term @xml:id>/<name @xml:lang>`.
 - Every element/attribute a control binds to **must exist (possibly empty) in `epidoc-template.xml`** — missing nodes hide their controls by design.
 - pico.css styles every `nav ul` as a horizontal flexbox — scope editor overrides in `edit.css`.
 

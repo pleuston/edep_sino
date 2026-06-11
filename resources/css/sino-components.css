@@ -1,5 +1,5 @@
 /* ============================================================ */
-/* EDEp Sino additions to the component theme (injected into    */
+/* EpiWen additions to the component theme (injected into    */
 /* pb-* shadow roots via pb-page/@theme). Custom properties     */
 /* cross the shadow boundary: the page sets --sino-writing-mode */
 /* (toggle in templates/pages/basic.html).                      */

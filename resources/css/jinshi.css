@@ -1,0 +1,153 @@
+/* EpiWen — jinshi history layer: works register & inscription authority
+   detail pages (templates/work.html, templates/jinshi-inscription.html). */
+
+.jinshi-detail h1.zh {
+    font-family: var(--sino-font-zh, "Noto Serif TC", "Noto Serif SC", serif);
+    margin-bottom: 0;
+}
+
+.jinshi-detail .pinyin {
+    color: var(--pico-muted-color, #666);
+    margin-top: 0.15rem;
+    font-style: italic;
+}
+
+.jinshi-detail .altnames {
+    color: var(--pico-muted-color, #666);
+    margin-top: 0;
+}
+
+.jinshi-detail dl.work-meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.25rem 1rem;
+    margin: 1rem 0;
+}
+
+.jinshi-detail dl.work-meta dt {
+    font-weight: 600;
+    color: var(--pico-muted-color, #666);
+}
+
+.jinshi-detail dl.work-meta dd {
+    margin: 0;
+}
+
+.jinshi-detail .collab {
+    margin-left: 0.75rem;
+    color: var(--pico-muted-color, #666);
+}
+
+.jinshi-detail section {
+    margin-top: 1.5rem;
+}
+
+.jinshi-detail section h2 {
+    font-size: 1.1rem;
+    border-bottom: 1px solid var(--pico-muted-border-color, #ddd);
+    padding-bottom: 0.25rem;
+}
+
+.jinshi-detail h2 .count {
+    font-weight: normal;
+    color: var(--pico-muted-color, #666);
+}
+
+.jinshi-detail .editions li,
+.jinshi-detail .relations li,
+.jinshi-detail .recorded-inscriptions li {
+    margin-bottom: 0.4rem;
+}
+
+.jinshi-detail .editions .date,
+.jinshi-detail .editions .publisher {
+    margin-left: 0.6rem;
+    color: var(--pico-muted-color, #666);
+}
+
+.jinshi-detail .editions small.note {
+    display: block;
+    color: var(--pico-muted-color, #666);
+}
+
+.jinshi-detail .rel-label {
+    display: inline-block;
+    min-width: 9rem;
+    color: var(--pico-muted-color, #666);
+}
+
+/* attestation reception list: a vertical timeline-like ordered list */
+.attestation-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0.4rem;
+    border-left: 2px solid var(--pico-muted-border-color, #ddd);
+}
+
+.attestation-list li {
+    position: relative;
+    padding: 0 0 0.9rem 1.1rem;
+}
+
+.attestation-list li::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 0.45em;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--pico-primary, #2b5797);
+}
+
+.attestation-list .work-date {
+    display: inline-block;
+    min-width: 8.5rem;
+    color: var(--pico-muted-color, #666);
+    font-variant-numeric: tabular-nums;
+}
+
+.attestation-list .work-author {
+    margin-left: 0.5rem;
+    color: var(--pico-muted-color, #666);
+}
+
+.attestation-list .title-in-work {
+    margin-left: 0.5rem;
+}
+
+.attestation-list .juan {
+    margin-left: 0.5rem;
+    color: var(--pico-muted-color, #666);
+}
+
+.attestation-list small.note {
+    display: block;
+    margin-left: 9rem;
+    color: var(--pico-muted-color, #666);
+}
+
+.jinshi-detail .title-in-work .zh,
+.jinshi-detail .recorded-inscriptions .title-in-work {
+    color: var(--pico-muted-color, #555);
+}
+
+.corpus-link .corpus-edition {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--pico-primary, #2b5797);
+    border-radius: 0.3rem;
+    text-decoration: none;
+}
+
+/* person page: list of authored works */
+.person-works-list small {
+    margin-left: 0.5rem;
+    color: var(--pico-muted-color, #666);
+}
+
+/* metadata panel block on document view */
+.jinshi-authority .attestation-count {
+    margin-left: 0.4rem;
+    color: var(--pico-muted-color, #666);
+}

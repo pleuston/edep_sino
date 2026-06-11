@@ -106,7 +106,7 @@ li.document .attribution {
     font-size: var(--jinks-footnote-font-size);
 }
 
-/* EDEp Sino: page-level wiring for the CJK direction toggle.
+/* EpiWen: page-level wiring for the CJK direction toggle.
    The component-side rules live in sino-components.css (concatenated
    onto components.css at build) and read these custom properties. */
 .center {

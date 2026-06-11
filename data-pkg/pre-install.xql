@@ -26,7 +26,7 @@ declare function local:mkcol($collection, $path) {
     local:mkcol-recursive($collection, tokenize($path, "/"))
 };
 
-local:mkcol(repo:get-root(), 'edep-sino-data'),
+local:mkcol(repo:get-root(), 'epiwen-data'),
 sm:chgrp(xs:anyURI($target), "tei"),
 sm:chown(xs:anyURI($target), "tei"),
 (: the lucene index module must live next to the indexed collection root :)

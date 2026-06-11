@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns="http://www.tei-c.org/ns/1.0" xml:id="person-wang-chang" sex="M">
+    <persName type="main">王昶</persName>
+    <persName type="sort">Wang Chang</persName>
+    <persName type="zi">德甫</persName>
+    <persName type="hao">述菴</persName>
+    <persName type="hao">蘭泉</persName>
+    <birth when="1725">雍正三年（1725）</birth>
+    <death when="1806">嘉慶十一年（1806）</death>
+    <note type="bio">Qing scholar-official from 青浦 (1725–1806); compiler of the 金石萃編 (1805).</note>
+    <idno type="EDEp">P000004</idno>
+</person>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/content.html",
+            "modules": {
+                "http://epiwen.org/templates/jinshi": {
+                    "at": "modules/templates/jinshi.xqm",
+                    "prefix": "jinshi"
+                }
+            }
+        },
+        "features": {
+            "toolbar": {
+                "zoom": false,
+                "navigation": false
+            },
+            "timeline": {
+                "enabled": false
+            },
+            "upload": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "transform/teipublisher.css",
+            "resources/css/registers-theme.css",
+            "resources/css/jinshi.css"
+        ],
+        "theme": {
+            "layout": {
+                "after-width": "min(30vw, 356px)"
+            }
+        }
+    }
+    ---
+    [% template breadcrumb %]
+    <li>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="[[ $context-path ]]/works"><pb-i18n key="menu.works"/></a></li>
+                <li>[[ head(($entity-data?root/tei:title[@xml:lang = 'zh'], $entity-data?root/tei:title))/string() ]]</li>
+            </ul>
+        </nav>
+    </li>
+    [% endtemplate %]
+    <section class="work jinshi-detail">
+        <h1 class="zh">[[ head(($entity-data?root/tei:title[@xml:lang = 'zh'], $entity-data?root/tei:title))/string() ]]</h1>
+        <p class="pinyin">[[ $entity-data?root/tei:title[@xml:lang = 'zh-Latn-x-pinyin']/string() ]]</p>
+
+        <dl class="work-meta">
+            [% if exists($entity-data?root/tei:author) %]
+            <dt><pb-i18n key="jinshi.author">Author</pb-i18n></dt>
+            <dd>
+                [% for $a in $entity-data?root/tei:author/tei:persName %]
+                [% if $a/@corresp != '' %]
+                <a href="[[ $context-path ]]/people/[[ $a/@corresp ]]">[[ $a/string() ]]</a>
+                [% else %]
+                [[ $a/string() ]]
+                [% endif %]
+                [% endfor %]
+                [% for $r in $entity-data?root/tei:respStmt %]
+                <span class="collab">[[ $r/tei:resp/string() ]]
+                    [% if $r/tei:persName/@corresp != '' %]
+                    <a href="[[ $context-path ]]/people/[[ $r/tei:persName/@corresp ]]">[[ $r/tei:persName/string() ]]</a>
+                    [% else %]
+                    [[ $r/tei:persName/string() ]]
+                    [% endif %]</span>
+                [% endfor %]
+            </dd>
+            [% endif %]
+            [% if $entity-data?root/tei:date[@type = 'compiled'] %]
+            <dt><pb-i18n key="jinshi.compiled">Compiled</pb-i18n></dt>
+            <dd>[[ $entity-data?root/tei:date[@type = 'compiled']/string() ]]</dd>
+            [% endif %]
+            [% if $entity-data?root/tei:extent[@unit = 'juan'] %]
+            <dt><pb-i18n key="jinshi.juan">juan 卷</pb-i18n></dt>
+            <dd>[[ $entity-data?root/tei:extent[@unit = 'juan']/string() ]]</dd>
+            [% endif %]
+        </dl>
+
+        [% for $n in $entity-data?root/tei:note[not(@type = 'source')] %]
+        <p class="note">[[ $n/string() ]]</p>
+        [% endfor %]
+
+        [% if exists($entity-data?root/tei:bibl[@type = 'edition']) %]
+        <section class="editions">
+            <h2><pb-i18n key="jinshi.editions">Editions 版本</pb-i18n></h2>
+            <ul>
+                [% for $ed in $entity-data?root/tei:bibl[@type = 'edition'] %]
+                <li>
+                    <span class="edition zh">[[ $ed/tei:edition/string() ]]</span>
+                    [% if $ed/tei:date != '' %]<span class="date">[[ $ed/tei:date/string() ]]</span>[% endif %]
+                    [% if $ed/tei:publisher != '' %]<span class="publisher zh">[[ $ed/tei:publisher/string() ]]</span>[% endif %]
+                    [% for $n in $ed/tei:note %]<small class="note">[[ $n/string() ]]</small>[% endfor %]
+                </li>
+                [% endfor %]
+            </ul>
+        </section>
+        [% endif %]
+
+        [% let $rels = jinshi:relations-of($entity-data?id) %]
+        [% if exists($rels) %]
+        <section class="relations">
+            <h2><pb-i18n key="jinshi.relations">Related works 文獻關係</pb-i18n></h2>
+            <ul>
+                [% for $r in $rels %]
+                <li>
+                    <span class="rel-label"><pb-i18n key="[[ $r?label-key ]]">[[ $r?type ]]</pb-i18n></span>
+                    <a class="zh" href="[[ $context-path ]]/works/[[ $r?id ]]">[[ $r?title ]]</a>
+                </li>
+                [% endfor %]
+            </ul>
+        </section>
+        [% endif %]
+        [% endlet %]
+
+        [% let $found = jinshi:inscriptions-in-work($entity-data?id) %]
+        [% if exists($found) %]
+        <section class="recorded-inscriptions">
+            <h2><pb-i18n key="jinshi.recorded">Inscriptions recorded 著錄石刻</pb-i18n>
+                <span class="count">([[ count($found) ]])</span></h2>
+            <ul>
+                [% for $i in $found %]
+                <li>
+                    <a class="zh" href="[[ $context-path ]]/jinshi-inscriptions/[[ $i?id ]]">[[ $i?name ]]</a>
+                    [% if $i?title-in-work != '' %]<span class="title-in-work zh">「[[ $i?title-in-work ]]」</span>[% endif %]
+                    [% if $i?juan != '' %]<span class="juan">卷[[ $i?juan ]]</span>[% endif %]
+                    [% if $i?date != '' %]<small class="date">[[ $i?date ]]</small>[% endif %]
+                </li>
+                [% endfor %]
+            </ul>
+        </section>
+        [% endif %]
+        [% endlet %]
+    </section>
+</template>

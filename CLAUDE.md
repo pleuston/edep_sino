@@ -1,4 +1,4 @@
-# EDEp Sino
+# EpiWen
 
 TEI Publisher 10 (Jinks-generated) application for **Chinese epigraphy**, built on eeditiones' EDEp. Edits EpiDoc TEI inscriptions directly in the browser via Fore forms.
 
@@ -16,15 +16,15 @@ TEI Publisher 10 (Jinks-generated) application for **Chinese epigraphy**, built 
 ## Build & deploy
 
 ```sh
-ant                  # plain xar (no npm assets) → build/edep-sino-1.0.0.xar
+ant                  # plain xar (no npm assets) → build/epiwen-1.0.0.xar
 ant xar-local        # npm install + bundle pb-components/fore assets + xar  ← use this one
 # data package:
-cd data-pkg && ant   # → build/edep-sino-data-*.xar
+cd data-pkg && ant   # → build/epiwen-data-*.xar
 ```
 
-Local eXist: `docker start edep-sino-db` (eXist 6.2 on :8080, admin / empty password — see `doc/INSTALL.md`).
+Local eXist: `docker start epiwen-db` (eXist 6.2 on :8080, admin / empty password — see `doc/INSTALL.md`).
 Deploy a xar: upload via `http://localhost:8080/exist/apps/dashboard/` or the REST API (commands in `doc/INSTALL.md`).
-App URL: `http://localhost:8080/exist/apps/edep-sino/` · Data app: `/db/apps/edep-sino-data`.
+App URL: `http://localhost:8080/exist/apps/epiwen/` · Data app: `/db/apps/epiwen-data`.
 
 ## Tests
 

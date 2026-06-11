@@ -25,7 +25,7 @@ declare variable $config:app-root :=
  :)
  
     
-    declare variable $config:data-root := "/db/apps/edep-sino-data/data";
+    declare variable $config:data-root := "/db/apps/epiwen-data/data";
     
 
 

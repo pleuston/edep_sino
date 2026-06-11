@@ -12,7 +12,7 @@ module.exports = defineConfig({
       });
       return config;
     },
-    baseUrl: 'http://localhost:8080/exist/apps/edep-sino',
+    baseUrl: 'http://localhost:8080/exist/apps/epiwen',
     viewportWidth: 1280,
     viewportHeight: 720,
     trashAssetsBeforeRuns: true,

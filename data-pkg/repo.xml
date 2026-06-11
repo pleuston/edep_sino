@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
-    <description>Data package for EDEp Sino: inscriptions, vocabularies, registers</description>
-    <author>EDEp Sino</author>
+    <description>Data package for EpiWen: inscriptions, vocabularies, registers</description>
+    <author>EpiWen</author>
     <website/>
     <status>alpha</status>
     <license>GPLv3</license>
     <copyright>true</copyright>
     <type>application</type>
-    <target>edep-sino-data</target>
+    <target>epiwen-data</target>
     <prepare>pre-install.xql</prepare>
     <finish>post-install.xql</finish>
     <permissions user="tei" group="tei" password="simple" mode="rw-rw-r--"/>

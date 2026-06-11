@@ -20,7 +20,7 @@
                 </respStmt>
             </titleStmt>
             <publicationStmt>
-                <authority>EDEp Sino</authority>
+                <authority>EpiWen</authority>
                 <availability>
                     <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
                 </availability>
@@ -31,6 +31,7 @@
                         <repository>示範收藏（樣本）</repository>
                         <idno type="inventory"/>
                         <idno type="EDEp">demo-zaoxiangji</idno>
+                        <idno type="jinshi">insc-demo-000001</idno>
                         <idno type="TM"/>
                     </msIdentifier>
                     <msContents class="sino:typeins:zaoxiangji">
@@ -127,7 +128,7 @@
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
-            <p>Encoded following EpiDoc guidelines 9.2 and the EDEp Sino conventions (doc/sino-model.md)</p>
+            <p>Encoded following EpiDoc guidelines 9.2 and the EpiWen conventions (doc/sino-model.md)</p>
             <charDecl>
                 <glyph xml:id="g-demo-wei">
                     <mapping type="standardized">為</mapping>

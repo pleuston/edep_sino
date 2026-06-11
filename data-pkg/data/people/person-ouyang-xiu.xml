@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns="http://www.tei-c.org/ns/1.0" xml:id="person-ouyang-xiu" sex="M">
+    <persName type="main">歐陽修</persName>
+    <persName type="sort">Ouyang Xiu</persName>
+    <persName type="zi">永叔</persName>
+    <persName type="hao">醉翁</persName>
+    <persName type="hao">六一居士</persName>
+    <birth when="1007">景德四年（1007）</birth>
+    <death when="1072">熙寧五年（1072）</death>
+    <note type="bio">Northern Song statesman and historian (1007–1072); his 集古錄 colophons founded the jinshi tradition.</note>
+    <idno type="EDEp">P000003</idno>
+</person>

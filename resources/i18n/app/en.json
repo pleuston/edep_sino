@@ -176,7 +176,9 @@
         "witness-type": "Type",
         "witnesses": "Witnesses (拓本)",
         "writing-direction": "Writing direction",
-        "year-of-find": "Year/date of find"
+        "year-of-find": "Year/date of find",
+        "jinshi-id": "Authority record (石刻總目)",
+        "hint-jinshi-id": "Id of this inscription in the jinshi authority register, e.g. insc-000001 — links the edition to its attestation history."
     },
     "menu": {
         "about": "About",
@@ -189,7 +191,9 @@
         "people": "People",
         "places": "Places",
         "registers": "Registers",
-        "sites": "Sites"
+        "sites": "Sites",
+        "works": "Works 金石著作",
+        "jinshi": "Inscriptions 石刻總目"
     },
     "metadata": {
         "additional": "General data",
@@ -215,5 +219,34 @@
         "pick": "Select a site on the map",
         "site-page": "site page"
     },
-    "title": "Editing tools for a digital epigraphy"
+    "title": "Editing tools for a digital epigraphy",
+    "jinshi": {
+        "works-title": "Jinshi works 金石著作",
+        "inscriptions-title": "Inscription catalogue 石刻總目",
+        "author": "Author",
+        "compiled": "Compiled",
+        "juan": "juan 卷",
+        "editions": "Editions 版本",
+        "attestations": "Recorded in 歷代著錄",
+        "recorded": "Inscriptions recorded 著錄石刻",
+        "relations": "Related works 文獻關係",
+        "rubbings": "Rubbings 拓本",
+        "works-by": "Jinshi works 金石著作",
+        "title-in-work": "as",
+        "origin": "Origin",
+        "corpus-edition": "Edition in this corpus",
+        "authority-record": "Authority record 石刻總目",
+        "attestation-count": "attestations",
+        "rel": {
+            "models-on": "Modelled on",
+            "models-on-by": "Model for",
+            "supplements": "Supplements",
+            "supplements-by": "Supplemented by",
+            "corrects": "Corrects",
+            "corrects-by": "Corrected by",
+            "recompiles": "Recompiles",
+            "recompiles-by": "Recompiled by"
+        },
+        "contributor": "contributor"
+    }
 }

@@ -2,9 +2,9 @@
 <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-persons">
     <teiHeader>
         <fileDesc>
-            <titleStmt><title>EDEp Sino register: persons</title></titleStmt>
+            <titleStmt><title>EpiWen register: persons</title></titleStmt>
             <publicationStmt><p>Authority register. Entry shape: doc/sino-model.md §6.</p></publicationStmt>
-            <sourceDesc><p>EDEp Sino</p></sourceDesc>
+            <sourceDesc><p>EpiWen</p></sourceDesc>
         </fileDesc>
     </teiHeader>
     <standOff>
@@ -28,6 +28,55 @@
                 <floruit notBefore="0455" notAfter="0516"/>
                 <persState type="office"><label xml:lang="zh">光州刺史</label></persState>
                 <note type="bio" xml:lang="en">Northern Wei official and calligrapher, associated with the Yunfengshan cliff inscriptions.</note>
+            </person>
+            <person xml:id="person-ouyang-xiu" role="official">
+                <persName type="canonical" xml:lang="zh">歐陽修</persName>
+                <persName type="personal" xml:lang="zh"><surname>歐陽</surname><forename>修</forename></persName>
+                <persName xml:lang="zh-Latn-pinyin">Ouyang Xiu</persName>
+                <persName type="sort">Ouyang Xiu</persName>
+                <addName type="zi" xml:lang="zh">永叔</addName>
+                <addName type="hao" xml:lang="zh">醉翁</addName>
+                <addName type="hao" xml:lang="zh">六一居士</addName>
+                <birth when="1007">景德四年（1007）</birth>
+                <death when="1072">熙寧五年（1072）</death>
+                <note type="bio" xml:lang="en">Northern Song statesman and historian; his Jigu lu
+                    colophons founded the jinshi tradition.</note>
+            </person>
+            <person xml:id="person-wang-chang" role="official">
+                <persName type="canonical" xml:lang="zh">王昶</persName>
+                <persName type="personal" xml:lang="zh"><surname>王</surname><forename>昶</forename></persName>
+                <persName xml:lang="zh-Latn-pinyin">Wang Chang</persName>
+                <persName type="sort">Wang Chang</persName>
+                <addName type="zi" xml:lang="zh">德甫</addName>
+                <addName type="hao" xml:lang="zh">述菴</addName>
+                <addName type="hao" xml:lang="zh">蘭泉</addName>
+                <birth when="1725">雍正三年（1725）</birth>
+                <death when="1806">嘉慶十一年（1806）</death>
+                <note type="bio" xml:lang="en">Qing scholar-official from Qingpu; compiler of the
+                    Jinshi cuibian (1805).</note>
+            </person>
+            <person xml:id="person-lu-zengxiang">
+                <persName type="canonical" xml:lang="zh">陸增祥</persName>
+                <persName type="personal" xml:lang="zh"><surname>陸</surname><forename>增祥</forename></persName>
+                <persName xml:lang="zh-Latn-pinyin">Lu Zengxiang</persName>
+                <persName type="sort">Lu Zengxiang</persName>
+                <addName type="zi" xml:lang="zh">魁仲</addName>
+                <addName type="hao" xml:lang="zh">星農</addName>
+                <birth when="1816">嘉慶二十一年（1816）</birth>
+                <death when="1882">光緒八年（1882）</death>
+                <note type="bio" xml:lang="en">Qing epigrapher; his Baqiongshi jinshi buzheng
+                    supplements the Jinshi cuibian.</note>
+            </person>
+            <person xml:id="person-zhu-wenzao">
+                <persName type="canonical" xml:lang="zh">朱文藻</persName>
+                <persName type="personal" xml:lang="zh"><surname>朱</surname><forename>文藻</forename></persName>
+                <persName xml:lang="zh-Latn-pinyin">Zhu Wenzao</persName>
+                <persName type="sort">Zhu Wenzao</persName>
+                <addName type="zi" xml:lang="zh">映漘</addName>
+                <birth when="1735">雍正十三年（1735）</birth>
+                <death when="1806">嘉慶十一年（1806）</death>
+                <note type="bio" xml:lang="en">Qing scholar; principal collaborator in compiling the
+                    Jinshi cuibian.</note>
             </person>
         </listPerson>
     </standOff>

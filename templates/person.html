@@ -3,7 +3,13 @@
     ---json
     {
         "templating": {
-            "extends": "templates/layouts/content.html"
+            "extends": "templates/layouts/content.html",
+            "modules": {
+                "http://epiwen.org/templates/jinshi": {
+                    "at": "modules/templates/jinshi.xqm",
+                    "prefix": "jinshi"
+                }
+            }
         },
         "features": {
             "toolbar": {
@@ -45,5 +51,23 @@
     [% endtemplate %]
     <section class="person">
         [[ page:transform($entity-data?root, map { "mode": "register-details" , "webcomponents": true()}) ]]
+
+        [% let $works = jinshi:works-of-person($entity-data?id) %]
+        [% if exists($works) %]
+        <section class="person-works">
+            <h2><pb-i18n key="jinshi.works-by">Jinshi works 金石著作</pb-i18n>
+                <span class="count">([[ count($works) ]])</span></h2>
+            <ul class="person-works-list">
+                [% for $w in $works %]
+                <li>
+                    <a class="zh" href="[[ $context-path ]]/works/[[ $w?id ]]">[[ $w?title ]]</a>
+                    [% if $w?date != '' %]<small class="date">[[ $w?date ]]</small>[% endif %]
+                    [% if $w?role = 'contributor' %]<small class="role"><pb-i18n key="jinshi.contributor">contributor</pb-i18n></small>[% endif %]
+                </li>
+                [% endfor %]
+            </ul>
+        </section>
+        [% endif %]
+        [% endlet %]
     </section>
 </template>

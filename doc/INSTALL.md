@@ -1,4 +1,4 @@
-# EDEp Sino — Local installation
+# EpiWen — Local installation
 
 Verified procedure (macOS / Apple Silicon, June 2026). Production deployment: see `doc/DEPLOYMENT.md`.
 
@@ -13,7 +13,7 @@ Verified procedure (macOS / Apple Silicon, June 2026). Production deployment: se
 ## 1. Start eXist-db
 
 ```sh
-docker run -dit -p 8080:8080 --name edep-sino-db existdb/existdb:6.4.0
+docker run -dit -p 8080:8080 --name epiwen-db existdb/existdb:6.4.0
 # wait until it answers (first boot ≈ 1 min):
 curl -s -o /dev/null -w '%{http_code}\n' http://localhost:8080/exist/   # → 302
 ```
@@ -36,14 +36,14 @@ Tested versions: roaster **1.12.1**, tei-publisher-lib **6.1.0** (all EDEp ODDs 
 ```sh
 cd <repo>            # application: npm assets (pb-components, fore, pico) + xar
 npm install
-ant xar-local        # → build/edep-sino-1.0.0.xar
+ant xar-local        # → build/epiwen-1.0.0.xar
 
-cd data-pkg && ant   # data package → data-pkg/build/edep-sino-data-0.1.0.xar
+cd data-pkg && ant   # data package → data-pkg/build/epiwen-data-0.1.0.xar
 ```
 
 ## 4. Install (order matters)
 
-The data package must be installed **before** the app: the app's configuration eagerly reads `taxonomy.xml` and the `registers/` collection from `/db/apps/edep-sino-data/data` at import time, and post-install compiles the ODDs.
+The data package must be installed **before** the app: the app's configuration eagerly reads `taxonomy.xml` and the `registers/` collection from `/db/apps/epiwen-data/data` at import time, and post-install compiles the ODDs.
 
 ```sh
 deploy() {
@@ -56,22 +56,22 @@ deploy() {
 deploy /tmp/xars/roaster-1.12.1.xar
 deploy /tmp/xars/jinks-templates.xar
 deploy /tmp/xars/tei-publisher-lib.xar
-deploy data-pkg/build/edep-sino-data-0.1.0.xar
-deploy build/edep-sino-1.0.0.xar
+deploy data-pkg/build/epiwen-data-0.1.0.xar
+deploy build/epiwen-1.0.0.xar
 ```
 
 Each call must answer `<status … result="ok"/>`.
 
 **Re-deploying after changes**: same `deploy` call; for the data package remove first
-(`_query=repo:remove('https://jinntec.de/apps/edep-sino-data')`) — its install scripts assume a fresh target.
+(`_query=repo:remove('https://jinntec.de/apps/epiwen-data')`) — its install scripts assume a fresh target.
 
 ## 5. Smoke test
 
 ```sh
-open http://localhost:8080/exist/apps/edep-sino/        # landing page
+open http://localhost:8080/exist/apps/epiwen/        # landing page
 # ODD compilation produced the transforms?
 curl -s -u admin: --data-urlencode \
-  "_query=count(xmldb:get-child-resources('/db/apps/edep-sino/transform'))" \
+  "_query=count(xmldb:get-child-resources('/db/apps/epiwen/transform'))" \
   --data-urlencode "_wrap=no" http://localhost:8080/exist/rest/db   # ≈ 38
 # e2e suite:
 npx cypress run
@@ -83,14 +83,14 @@ Login user for editing/tests: `tei` / `simple` (created on app install from `rep
 
 | URL / path | What |
 |---|---|
-| `http://localhost:8080/exist/apps/edep-sino/` | the application |
-| `/db/apps/edep-sino-data/data/workspace` | inscriptions |
-| `/db/apps/edep-sino-data/data/taxonomy/*.xml` | controlled vocabularies |
-| `/db/apps/edep-sino-data/data/registers/` | person/place/bibliography registers |
-| `/db/apps/edep-sino-data/data/landing/landing.xml` | landing page content |
-| `/db/apps/edep-sino/transform/` | compiled ODD transforms (regenerated on install) |
+| `http://localhost:8080/exist/apps/epiwen/` | the application |
+| `/db/apps/epiwen-data/data/workspace` | inscriptions |
+| `/db/apps/epiwen-data/data/taxonomy/*.xml` | controlled vocabularies |
+| `/db/apps/epiwen-data/data/registers/` | person/place/bibliography registers |
+| `/db/apps/epiwen-data/data/landing/landing.xml` | landing page content |
+| `/db/apps/epiwen/transform/` | compiled ODD transforms (regenerated on install) |
 
 ## Known quirks
 
 - `POST /api/login` without credentials answers `200` with the guest session (roaster behavior) — not `401`.
-- The container has no shell; read logs with `docker logs edep-sino-db` or `docker cp edep-sino-db:/exist/logs/exist.log .`.
+- The container has no shell; read logs with `docker logs epiwen-db` or `docker cp epiwen-db:/exist/logs/exist.log .`.

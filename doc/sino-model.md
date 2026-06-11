@@ -1,4 +1,4 @@
-# EDEp Sino — Chinese EpiDoc encoding manual
+# EpiWen — Chinese EpiDoc encoding manual
 
 *The contract for all Chinese-epigraphy fields (milestones M5–M9). Derived from the **Epiwen** element-by-element EpiDoc/TEI analysis (recalled 2026-06-11) and crosswalked against the EDEp data model. Each decision carries a confidence label:*
 **[Epiwen]** = attested decision in the Epiwen walk · **[fill]** = Epiwen silent, best-practice fill · **[divergence]** = Epiwen and EDEp disagree; the v1 resolution is recorded here and is the binding one for this app. *Review this file asynchronously — changing a decision here means re-touching the implementing files listed with it.*
@@ -107,7 +107,7 @@ Register (standOff): canonical `<persName type="canonical">` (emperor→廟號, 
 - **Genres** (`typeins.xml`): 封禪 · 題名 · 題刻 · 造像記 · 經幢 · 墓誌銘 · 刻經 · 詩刻 · 碑頌 · 法帖.
 - **Materials** (`material.xml`): 花崗岩 granite · 石灰岩 limestone · 砂岩 sandstone · 大理石 marble · 玉 jade + living rock (moya); open extension → bronze 青銅, brick 磚 retained **[fill]**. AAT crosswalk glosses where verified.
 - **Decoration** (`decor.xml`): 螭首 chishou · 龜趺 guifu · 碑座 beizuo · 額 e · border; one `<decoNote @type>` per feature; the 額 dual-codes as deco + text zone. **[divergence #5 resolved]**: 界格 stays in `decor.xml` for v1 with a documented broadened scope (Epiwen reads it as a layout fact).
-- `<objectType @ref>` is the canonical token home; vocabularies = TEI `<taxonomy>` of `<category @corresp>` with trilingual `<catDesc>` (zh + en + de here; pinyin in `@xml:id`s). **URI scheme**: CURIEs `sino:{vocab}:{id}`, declared in `<listPrefixDef>` with base `https://pleuston.github.io/edep_sino/voc/` — **placeholder; open fork #7**, changeable in one place.
+- `<objectType @ref>` is the canonical token home; vocabularies = TEI `<taxonomy>` of `<category @corresp>` with trilingual `<catDesc>` (zh + en + de here; pinyin in `@xml:id`s). **URI scheme**: CURIEs `sino:{vocab}:{id}`, declared in `<listPrefixDef>` with base `https://pleuston.github.io/epiwen/voc/` — **placeholder; open fork #7**, changeable in one place.
 
 **Implements:** all vocabulary files in `data-pkg/data/taxonomy/` (M5) · `listPrefixDef` in template (M7).
 

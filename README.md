@@ -1,4 +1,4 @@
-# EDEp Sino 中文石刻數位編輯工具
+# EpiWen 中文石刻數位編輯工具
 
 **Editing tools for Chinese digital epigraphy**, built on [TEI Publisher 10](https://teipublisher.com/) and descended from [eeditiones/edep](https://github.com/eeditiones/edep). The application catalogues and edits Chinese inscriptions (碑/碣/摩崖/造像記/經幢/墓誌…) as EpiDoc TEI — the editing form operates directly on the XML in the browser, no mapping layer in between.
 
@@ -15,12 +15,12 @@ Every encoding decision is specified in **[doc/sino-model.md](doc/sino-model.md)
 ## Quick start
 
 ```sh
-docker run -dit -p 8080:8080 --name edep-sino-db existdb/existdb:6.4.0
+docker run -dit -p 8080:8080 --name epiwen-db existdb/existdb:6.4.0
 npm install && ant xar-local          # application xar
 (cd data-pkg && ant)                  # data package xar
 # install: roaster, jinks-templates, tei-publisher-lib 6, data package, app
 # (exact commands: doc/INSTALL.md)
-open http://localhost:8080/exist/apps/edep-sino/
+open http://localhost:8080/exist/apps/epiwen/
 ```
 
 Login `tei` / `simple`. A fictional specimen inscription (`demo-zaoxiangji` 測試造像記) demonstrates every field.
