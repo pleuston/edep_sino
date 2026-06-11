@@ -21,7 +21,9 @@ import module namespace deploy="https://teipublisher.org/api/deploy" at "api/dep
 
 import module namespace rview="http://teipublisher.com/api/registers/view" at "../registers-api.xql";
 
-
+(: EDEp Sino: inscription editor + zotero API :)
+import module namespace eapi="http://teipublisher.com/api/custom" at "../custom-api.xql";
+import module namespace zotero="http://e-editiones.org/edep/api/zotero" at "api/zotero.xql";
 
 declare option output:indent "no";
 
@@ -34,11 +36,11 @@ let $lookup := function($name as xs:string) {
 }
 let $resp := roaster:route(
     (
-        
-        
+        "modules/custom-api.json",
+
         "modules/registers-api.json",
-        
-        
+
+
         "modules/lib/api.json"
     ), $lookup)
 return

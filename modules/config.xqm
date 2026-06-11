@@ -578,3 +578,32 @@ declare function config:get-fonts-dir() as xs:string? {
         else
             ()
 };
+
+(: ===================================================================== :)
+(: EDEp Sino: inscription editor configuration (ported from altered-model) :)
+
+(:~ Collections holding the entity files used by the editor pickers :)
+declare variable $config:places := $config:data-root || "/places/";
+declare variable $config:people := $config:data-root || "/people/";
+
+(:~ Collection the editor stores inscriptions in :)
+declare variable $config:inscription := $config:data-root || "/workspace/";
+
+(:~ Blank EpiDoc skeleton loaded for new inscriptions :)
+declare variable $config:inscription-templ := $config:app-root || "/templates/fore/epidoc-template.xml";
+
+(: ZOTERO CONFIG :)
+(: Base URL of Zotero Web API :)
+declare variable $config:zotero-api-base := "https://api.zotero.org";
+(: Optional API key; leave empty for public groups :)
+declare variable $config:zotero-api-key := "";
+(: Zotero group id (inherited from upstream EDEp; replace with a sino group) :)
+declare variable $config:zotero-group-id := "2519759";
+(: Base dir where all groups live; must already exist :)
+declare variable $config:zotero-base-dir := $config:data-root || "/zotero/groups";
+(: Derived paths for this group :)
+declare variable $config:zotero-group-dir := $config:zotero-base-dir || "/" || $config:zotero-group-id;
+declare variable $config:zotero-items-dir := $config:zotero-group-dir || "/items";
+declare variable $config:zotero-items-xml-dir := $config:zotero-group-dir || "/items-xml";
+declare variable $config:zotero-meta-path := $config:zotero-group-dir || "/meta.json";
+declare variable $config:zotero-style := "digital-humanities-im-deutschsprachigen-raum";

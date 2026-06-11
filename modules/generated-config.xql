@@ -43,7 +43,7 @@ declare variable $config:data-exclude := (
 declare variable $config:odd-root := $config:app-root || "/resources/odd";
 declare variable $config:default-odd := "output.odd";
 declare variable $config:odd-internal := 
-    (  );
+    ( "edep-clean.odd" );
 
 declare variable $config:odd-available :=
 

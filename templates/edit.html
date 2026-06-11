@@ -266,9 +266,14 @@
                                     url="api/inscription?collection={instance('params')/collection}"
                                     method="post"
                                     replace="instance">
-                                    <fx-message event="submit-done">
-                                        <pb-i18n key="form.data-saved"></pb-i18n>
-                                    </fx-message>
+                                    <fx-action event="submit-done">
+                                        <fx-message><pb-i18n key="form.data-saved"></pb-i18n></fx-message>
+                                        <fx-unmodified></fx-unmodified>
+                                        <!-- response replaced the instance with the stored document:
+                                             reflect its id in the page URL and the params instance -->
+                                        <fx-setvalue ref="instance('params')/id" value="instance('default')/@xml:id"></fx-setvalue>
+                                        <fx-call function="updateUrl(instance('default')/@xml:id)"></fx-call>
+                                    </fx-action>
                                     <fx-action event="submit-error">
                                         <fx-message><pb-i18n key="form.invalid-data"></pb-i18n></fx-message>
                                         <fx-action src="resources/scripts/showErrors.js"></fx-action>
@@ -283,7 +288,7 @@
                                     <fx-action event="submit-done">
                                         <fx-message><pb-i18n key="form.data-saved"></pb-i18n></fx-message>
                                         <fx-unmodified></fx-unmodified>
-                                        <fx-call function="updateUrl(instance('default')/@xml:id)" if="not(ends-with(uri-path(),'.xml'))"></fx-call>
+                                        <fx-call function="updateUrl(instance('default')/@xml:id)"></fx-call>
                                     </fx-action>
                                     <fx-action event="submit-error">
                                         <fx-message><pb-i18n key="form.invalid-data"></pb-i18n></fx-message>
@@ -312,7 +317,7 @@
                                 </fx-submission>
                                 <fx-function signature="updateUrl($id as xs:string)" type="text/javascript">
                                     const url = new URL(window.location.href);
-                                    url.pathname += $id + '.xml';
+                                    url.searchParams.set('id', $id);
                                     history.pushState(null, '', url.toString());
                                 </fx-function>
 

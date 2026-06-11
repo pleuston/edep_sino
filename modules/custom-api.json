@@ -26,6 +26,666 @@
     },
     "tags": [],
     "paths": {
+        "/api/editor/places": {
+            "get": {
+                "summary": "List places",
+                "description": "Retrieve list of places in format required by pb-split-list",
+                "operationId": "eapi:places-browse",
+                "parameters": [
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 50
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Categories and places to display",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/places": {
+            "post": {
+                "summary": "update/add places",
+                "x-constraints": {
+                    "group": [
+                        "tei"
+                    ]
+                },
+                "operationId": "eapi:places-add",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/xml": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "places-add",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/places/{id}": {
+            "get": {
+                "summary": "show place",
+                "operationId": "eapi:load-place",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "places-list",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "update/add place",
+                "x-constraints": {
+                    "group": "tei"
+                },
+                "operationId": "eapi:places-add",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/xml": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "places-add",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/places/{id}/findSpot": {
+            "get": {
+                "summary": "Retrieve the find spot of an inscription",
+                "description": "Retrieve a place in format required by pb-split-list",
+                "operationId": "eapi:find-spot",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Categories and places to display",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "categories": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "category": {
+                                                        "type": "string"
+                                                    },
+                                                    "count": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/geopicker/places": {
+            "get": {
+                "summary": "shortlist of places for geodata-picker page",
+                "operationId": "eapi:geopicker-places",
+                "responses": {
+                    "200": {
+                        "description": "places-list for geo picker page",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/editor/people": {
+            "get": {
+                "summary": "List people",
+                "description": "Retrieve list of places in format required by pb-split-list",
+                "operationId": "eapi:people-browse",
+                "parameters": [
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer",
+                            "default": 50
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Categories and people to display",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/people": {
+            "post": {
+                "summary": "update/add person",
+                "x-constraints": {
+                    "group": "tei"
+                },
+                "operationId": "eapi:person-add",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/xml": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "places-add",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/people/{id}": {
+            "get": {
+                "summary": "show person",
+                "operationId": "eapi:load-person",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "person record",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "update/add person",
+                "x-constraints": {
+                    "group": "tei"
+                },
+                "operationId": "eapi:person-add",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/xml": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "places-add",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/inscription": {
+            "get": {
+                "summary": "get template",
+                "operationId": "eapi:inscription-template",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "collection",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get template",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "update/add inscription",
+                "x-constraints": {
+                    "group": "tei"
+                },
+                "operationId": "eapi:inscription",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "collection",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/xml": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "inscription",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/fragment": {
+            "post": {
+                "summary": "update/add fragment",
+                "x-constraints": {
+                    "group": "tei"
+                },
+                "operationId": "eapi:fragment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "collection",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/xml": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "fragment",
+                        "content": {
+                            "application/xml": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/render": {
+            "post": {
+                "summary": "Render the transcription",
+                "operationId": "eapi:render",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/xml": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "rendered transcription",
+                        "content": {
+                            "text/html": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/document/{id}/epidoc": {
+            "get": {
+                "summary": "Get the Epidoc source of a document",
+                "description": "Get the source of a document, either as XML, text or binary.",
+                "tags": [
+                    "documents"
+                ],
+                "operationId": "eapi:epidoc",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Content of the document",
+                        "content": {
+                            "application/xml": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "text/markdown": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            },
+                            "text/text": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "410": {
+                        "description": "Document deleted"
+                    }
+                }
+            }
+        },
+        "/api/zotero/sync": {
+            "get": {
+                "summary": "Incrementally sync local cache.",
+                "tags": [
+                    "zotero"
+                ],
+                "operationId": "zotero:sync",
+                "responses": {
+                    "200": {
+                        "description": "Sync result.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "304": {
+                        "description": "No updates."
+                    }
+                }
+            }
+        },
+        "/api/zotero/items/suggest": {
+            "get": {
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "summary": "Lightweight suggestions for autocomplete (key, tag, label HTML).",
+                "tags": [
+                    "zotero"
+                ],
+                "operationId": "zotero:items-suggest",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "tag",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer",
+                            "default": 8
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "top",
+                        "schema": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Suggestion list",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/zotero/items/search": {
+            "get": {
+                "security": [
+                    {
+                        "basicAuth": []
+                    }
+                ],
+                "summary": "Search cached items. JSON only.",
+                "tags": [
+                    "zotero"
+                ],
+                "operationId": "zotero:items-search",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "q",
+                        "schema": {
+                            "type": "string",
+                            "default": "Ama"
+                        },
+                        "description": "Full-text over title/creators/DOI."
+                    },
+                    {
+                        "in": "query",
+                        "name": "tag",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "description": "Restrict to items having this tag."
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "schema": {
+                            "type": "integer",
+                            "default": 15
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Array of items (key + data).",
+                        "content": {
+                            "text/plain": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     },
     "security": [
         {
