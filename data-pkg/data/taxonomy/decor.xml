@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Decoration per doc/sino-model.md §8 -->
 <taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="decor">
-    <category corresp="sino:decor:chishou">
+    <category xml:id="chishou" corresp="sino:decor:chishou">
+        <catDesc xml:lang="zh">螭首</catDesc>
         <catDesc xml:lang="en">dragon-head capital</catDesc>
         <catDesc xml:lang="de">Drachenkopf-Bekrönung</catDesc>
-        <catDesc xml:lang="zh">螭首</catDesc>
     </category>
-    <category corresp="sino:decor:guifu">
+    <category xml:id="guifu" corresp="sino:decor:guifu">
+        <catDesc xml:lang="zh">龜趺</catDesc>
         <catDesc xml:lang="en">tortoise base</catDesc>
         <catDesc xml:lang="de">Schildkrötensockel</catDesc>
-        <catDesc xml:lang="zh">龜趺</catDesc>
     </category>
-    <category corresp="sino:decor:jiege">
+    <category xml:id="beizuo" corresp="sino:decor:beizuo">
+        <catDesc xml:lang="zh">碑座</catDesc>
+        <catDesc xml:lang="en">stele base</catDesc>
+        <catDesc xml:lang="de">Stelensockel</catDesc>
+    </category>
+    <category xml:id="e" corresp="sino:decor:e">
+        <catDesc xml:lang="zh">額</catDesc>
+        <catDesc xml:lang="en">stele head panel</catDesc>
+        <catDesc xml:lang="de">Stelenkopffeld</catDesc>
+        <note>Dual-coded: decoration feature and a text zone (msItem n="額").</note>
+    </category>
+    <category xml:id="bian" corresp="sino:decor:bian">
+        <catDesc xml:lang="zh">邊框</catDesc>
+        <catDesc xml:lang="en">border ornament</catDesc>
+        <catDesc xml:lang="de">Randornament</catDesc>
+    </category>
+    <category xml:id="jiege" corresp="sino:decor:jiege">
+        <catDesc xml:lang="zh">界格</catDesc>
         <catDesc xml:lang="en">ruled grid</catDesc>
         <catDesc xml:lang="de">Linienraster</catDesc>
-        <catDesc xml:lang="zh">界格</catDesc>
+        <note>Broadened scope: Epiwen treats the grid as a layout/structural fact; kept here for v1 (doc/sino-model.md §8).</note>
     </category>
 </taxonomy>

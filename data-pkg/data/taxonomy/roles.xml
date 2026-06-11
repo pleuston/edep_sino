@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Production roles per doc/sino-model.md §9a — never <author>; one person may hold several roles; unfilled roles recorded as 未詳 -->
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="roles">
+    <category xml:id="zhuan" corresp="sino:role:zhuan">
+        <catDesc xml:lang="zh">撰文</catDesc>
+        <catDesc xml:lang="en">composer of the text</catDesc>
+        <catDesc xml:lang="de">Verfasser des Textes</catDesc>
+    </category>
+    <category xml:id="shu" corresp="sino:role:shu">
+        <catDesc xml:lang="zh">書丹</catDesc>
+        <catDesc xml:lang="en">calligrapher</catDesc>
+        <catDesc xml:lang="de">Kalligraph</catDesc>
+    </category>
+    <category xml:id="ke" corresp="sino:role:ke">
+        <catDesc xml:lang="zh">刻</catDesc>
+        <catDesc xml:lang="en">carver / engraver</catDesc>
+        <catDesc xml:lang="de">Steinmetz / Graveur</catDesc>
+    </category>
+    <category xml:id="tie" corresp="sino:role:tie">
+        <catDesc xml:lang="zh">題額</catDesc>
+        <catDesc xml:lang="en">writer of the heading</catDesc>
+        <catDesc xml:lang="de">Schreiber der Kopfzeile</catDesc>
+    </category>
+    <category xml:id="lishi" corresp="sino:role:lishi">
+        <catDesc xml:lang="zh">立石</catDesc>
+        <catDesc xml:lang="en">erector / donor</catDesc>
+        <catDesc xml:lang="de">Errichter / Stifter</catDesc>
+    </category>
+    <category xml:id="jianzao" corresp="sino:role:jianzao">
+        <catDesc xml:lang="zh">監造</catDesc>
+        <catDesc xml:lang="en">production supervisor</catDesc>
+        <catDesc xml:lang="de">Bauaufseher</catDesc>
+    </category>
+</taxonomy>

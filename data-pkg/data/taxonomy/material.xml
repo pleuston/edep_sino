@@ -1,18 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Materials per doc/sino-model.md §8; bronze/brick are open-extension fills -->
 <taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="material">
-    <category corresp="sino:material:stone">
-        <catDesc xml:lang="en">stone</catDesc>
-        <catDesc xml:lang="de">Stein</catDesc>
-        <catDesc xml:lang="zh">石</catDesc>
+    <category xml:id="huagangyan" corresp="sino:material:huagangyan">
+        <catDesc xml:lang="zh">花崗岩</catDesc>
+        <catDesc xml:lang="en">granite</catDesc>
+        <catDesc xml:lang="de">Granit</catDesc>
     </category>
-    <category corresp="sino:material:bronze">
+    <category xml:id="shihuiyan" corresp="sino:material:shihuiyan">
+        <catDesc xml:lang="zh">石灰岩</catDesc>
+        <catDesc xml:lang="en">limestone</catDesc>
+        <catDesc xml:lang="de">Kalkstein</catDesc>
+    </category>
+    <category xml:id="shayan" corresp="sino:material:shayan">
+        <catDesc xml:lang="zh">砂岩</catDesc>
+        <catDesc xml:lang="en">sandstone</catDesc>
+        <catDesc xml:lang="de">Sandstein</catDesc>
+    </category>
+    <category xml:id="dalishi" corresp="sino:material:dalishi">
+        <catDesc xml:lang="zh">大理石</catDesc>
+        <catDesc xml:lang="en">marble</catDesc>
+        <catDesc xml:lang="de">Marmor</catDesc>
+    </category>
+    <category xml:id="yu" corresp="sino:material:yu">
+        <catDesc xml:lang="zh">玉</catDesc>
+        <catDesc xml:lang="en">jade</catDesc>
+        <catDesc xml:lang="de">Jade</catDesc>
+    </category>
+    <category xml:id="shanyan" corresp="sino:material:shanyan">
+        <catDesc xml:lang="zh">山體岩石</catDesc>
+        <catDesc xml:lang="en">living rock (moya)</catDesc>
+        <catDesc xml:lang="de">anstehender Fels (Moya)</catDesc>
+    </category>
+    <category xml:id="qingtong" corresp="sino:material:qingtong">
+        <catDesc xml:lang="zh">青銅</catDesc>
         <catDesc xml:lang="en">bronze</catDesc>
         <catDesc xml:lang="de">Bronze</catDesc>
-        <catDesc xml:lang="zh">青銅</catDesc>
     </category>
-    <category corresp="sino:material:brick">
+    <category xml:id="zhuan" corresp="sino:material:zhuan">
+        <catDesc xml:lang="zh">磚</catDesc>
         <catDesc xml:lang="en">brick</catDesc>
         <catDesc xml:lang="de">Ziegel</catDesc>
-        <catDesc xml:lang="zh">磚</catDesc>
     </category>
 </taxonomy>

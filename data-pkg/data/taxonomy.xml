@@ -4,14 +4,21 @@
         <fileDesc>
             <titleStmt><title>EDEp Sino taxonomy</title></titleStmt>
             <publicationStmt><p>Master classification used for faceted browsing.</p></publicationStmt>
-            <sourceDesc><p>EDEp Sino</p></sourceDesc>
+            <sourceDesc><p>EDEp Sino — aligned with data/taxonomy/typeins.xml (doc/sino-model.md §8)</p></sourceDesc>
         </fileDesc>
         <encodingDesc>
             <classDecl>
                 <taxonomy xml:id="genre">
-                    <category xml:id="funerary"><catDesc xml:lang="en">funerary</catDesc><catDesc xml:lang="de">funerär</catDesc><catDesc xml:lang="zh">喪葬</catDesc></category>
-                    <category xml:id="votive"><catDesc xml:lang="en">votive</catDesc><catDesc xml:lang="de">votiv</catDesc><catDesc xml:lang="zh">造像</catDesc></category>
-                    <category xml:id="commemorative"><catDesc xml:lang="en">commemorative</catDesc><catDesc xml:lang="de">kommemorativ</catDesc><catDesc xml:lang="zh">紀念</catDesc></category>
+                    <category xml:id="fengshan"><catDesc xml:lang="zh">封禪刻石</catDesc><catDesc xml:lang="en">feng/shan sacrifice</catDesc><catDesc xml:lang="de">Feng-und-Shan-Opfer</catDesc></category>
+                    <category xml:id="timing"><catDesc xml:lang="zh">題名</catDesc><catDesc xml:lang="en">name inscription</catDesc><catDesc xml:lang="de">Namensinschrift</catDesc></category>
+                    <category xml:id="tike"><catDesc xml:lang="zh">題刻</catDesc><catDesc xml:lang="en">occasional inscription</catDesc><catDesc xml:lang="de">Gelegenheitsinschrift</catDesc></category>
+                    <category xml:id="zaoxiangji"><catDesc xml:lang="zh">造像記</catDesc><catDesc xml:lang="en">votive inscription</catDesc><catDesc xml:lang="de">Votivinschrift</catDesc></category>
+                    <category xml:id="jingchuang"><catDesc xml:lang="zh">經幢</catDesc><catDesc xml:lang="en">dhāraṇī pillar</catDesc><catDesc xml:lang="de">Dhāraṇī-Pfeiler</catDesc></category>
+                    <category xml:id="muzhiming"><catDesc xml:lang="zh">墓誌銘</catDesc><catDesc xml:lang="en">entombed epitaph</catDesc><catDesc xml:lang="de">Grabinschrift</catDesc></category>
+                    <category xml:id="kejing"><catDesc xml:lang="zh">刻經</catDesc><catDesc xml:lang="en">sutra engraving</catDesc><catDesc xml:lang="de">Sutrengravur</catDesc></category>
+                    <category xml:id="shike"><catDesc xml:lang="zh">詩刻</catDesc><catDesc xml:lang="en">engraved poetry</catDesc><catDesc xml:lang="de">Gedichtinschrift</catDesc></category>
+                    <category xml:id="beisong"><catDesc xml:lang="zh">碑頌</catDesc><catDesc xml:lang="en">eulogy stele</catDesc><catDesc xml:lang="de">Lobpreisstele</catDesc></category>
+                    <category xml:id="fatie"><catDesc xml:lang="zh">法帖</catDesc><catDesc xml:lang="en">model calligraphy</catDesc><catDesc xml:lang="de">Musterkalligraphie</catDesc></category>
                 </taxonomy>
             </classDecl>
         </encodingDesc>

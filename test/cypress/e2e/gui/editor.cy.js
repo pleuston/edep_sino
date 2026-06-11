@@ -30,9 +30,13 @@ describe('Inscription editor', () => {
       .forEach(id => cy.get(`details#${id}`).should('exist'))
 
     // taxonomy fx-instance loaded from ../edep-sino-data and materialized
-    // into select options (stub vocabulary ships 4 object types)
+    // into select options (sino object-form vocabulary, doc/sino-model.md §8)
     cy.get('#r-objtyp select option', { timeout: 20000 })
-      .should('have.length.greaterThan', 1)
+      .should('have.length.greaterThan', 8)
+    cy.get('#r-objtyp select option').should($opts => {
+      const texts = [...$opts].map(o => o.textContent)
+      expect(texts.join('|')).to.include('cliff inscription')
+    })
 
     // open the object description section and keep a visual record
     cy.get('details#objectdesc').invoke('attr', 'open', 'open')

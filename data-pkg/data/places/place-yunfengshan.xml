@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<place xmlns="http://www.tei-c.org/ns/1.0" xml:id="place-yunfengshan">
+    <placeName type="findspot">雲峰山</placeName>
+    <placeName type="modern">雲峰山 Yunfengshan</placeName>
+    <placeName type="ancient"/>
+    <placeName type="sort">Yunfengshan</placeName>
+    <region type="province">shandong</region>
+    <region type="modern">萊州市</region>
+    <country>cn</country>
+    <location>
+        <geo>37.1758 120.0950</geo>
+    </location>
+    <ptr type="tgaz" target=""/>
+</place>

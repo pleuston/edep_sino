@@ -1,18 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Text genres per doc/sino-model.md §8 -->
 <taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="typeins">
-    <category corresp="sino:typeins:funerary">
-        <catDesc xml:lang="en">funerary inscription</catDesc>
-        <catDesc xml:lang="de">Grabinschrift</catDesc>
-        <catDesc xml:lang="zh">墓誌銘</catDesc>
+    <category xml:id="fengshan" corresp="sino:typeins:fengshan">
+        <catDesc xml:lang="zh">封禪刻石</catDesc>
+        <catDesc xml:lang="en">feng and shan sacrifice inscription</catDesc>
+        <catDesc xml:lang="de">Feng-und-Shan-Opferinschrift</catDesc>
     </category>
-    <category corresp="sino:typeins:votive">
+    <category xml:id="timing" corresp="sino:typeins:timing">
+        <catDesc xml:lang="zh">題名</catDesc>
+        <catDesc xml:lang="en">name inscription</catDesc>
+        <catDesc xml:lang="de">Namensinschrift</catDesc>
+    </category>
+    <category xml:id="tike" corresp="sino:typeins:tike">
+        <catDesc xml:lang="zh">題刻</catDesc>
+        <catDesc xml:lang="en">occasional inscription</catDesc>
+        <catDesc xml:lang="de">Gelegenheitsinschrift</catDesc>
+    </category>
+    <category xml:id="zaoxiangji" corresp="sino:typeins:zaoxiangji">
+        <catDesc xml:lang="zh">造像記</catDesc>
         <catDesc xml:lang="en">votive inscription</catDesc>
         <catDesc xml:lang="de">Votivinschrift</catDesc>
-        <catDesc xml:lang="zh">造像記</catDesc>
     </category>
-    <category corresp="sino:typeins:commemorative">
-        <catDesc xml:lang="en">commemorative inscription</catDesc>
-        <catDesc xml:lang="de">Gedenkinschrift</catDesc>
-        <catDesc xml:lang="zh">紀功碑</catDesc>
+    <category xml:id="jingchuang" corresp="sino:typeins:jingchuang">
+        <catDesc xml:lang="zh">經幢</catDesc>
+        <catDesc xml:lang="en">dhāraṇī pillar text</catDesc>
+        <catDesc xml:lang="de">Dhāraṇī-Pfeilertext</catDesc>
+    </category>
+    <category xml:id="muzhiming" corresp="sino:typeins:muzhiming">
+        <catDesc xml:lang="zh">墓誌銘</catDesc>
+        <catDesc xml:lang="en">entombed epitaph inscription</catDesc>
+        <catDesc xml:lang="de">Grabinschrift</catDesc>
+    </category>
+    <category xml:id="kejing" corresp="sino:typeins:kejing">
+        <catDesc xml:lang="zh">刻經</catDesc>
+        <catDesc xml:lang="en">sutra engraving</catDesc>
+        <catDesc xml:lang="de">Sutrengravur</catDesc>
+    </category>
+    <category xml:id="shike" corresp="sino:typeins:shike">
+        <catDesc xml:lang="zh">詩刻</catDesc>
+        <catDesc xml:lang="en">engraved poetry</catDesc>
+        <catDesc xml:lang="de">Gedichtinschrift</catDesc>
+    </category>
+    <category xml:id="beisong" corresp="sino:typeins:beisong">
+        <catDesc xml:lang="zh">碑頌</catDesc>
+        <catDesc xml:lang="en">eulogy stele</catDesc>
+        <catDesc xml:lang="de">Lobpreisstele</catDesc>
+    </category>
+    <category xml:id="fatie" corresp="sino:typeins:fatie">
+        <catDesc xml:lang="zh">法帖</catDesc>
+        <catDesc xml:lang="en">model calligraphy engraving</catDesc>
+        <catDesc xml:lang="de">Musterkalligraphie-Gravur</catDesc>
     </category>
 </taxonomy>

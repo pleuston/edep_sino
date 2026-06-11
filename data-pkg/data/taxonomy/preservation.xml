@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Condition per doc/sino-model.md §9f — weathering vs intentional kept distinct -->
 <taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="preservation">
-    <category corresp="sino:preservation:complete">
+    <category xml:id="wanzheng" corresp="sino:preservation:wanzheng">
+        <catDesc xml:lang="zh">完整</catDesc>
         <catDesc xml:lang="en">complete</catDesc>
         <catDesc xml:lang="de">vollständig</catDesc>
-        <catDesc xml:lang="zh">完整</catDesc>
     </category>
-    <category corresp="sino:preservation:fragmentary">
-        <catDesc xml:lang="en">fragmentary</catDesc>
-        <catDesc xml:lang="de">fragmentarisch</catDesc>
+    <category xml:id="manhuan" corresp="sino:preservation:manhuan">
+        <catDesc xml:lang="zh">漫漶</catDesc>
+        <catDesc xml:lang="en">effaced (weathering)</catDesc>
+        <catDesc xml:lang="de">verwaschen (Verwitterung)</catDesc>
+    </category>
+    <category xml:id="canque" corresp="sino:preservation:canque">
         <catDesc xml:lang="zh">殘缺</catDesc>
+        <catDesc xml:lang="en">damaged / incomplete</catDesc>
+        <catDesc xml:lang="de">beschädigt / unvollständig</catDesc>
     </category>
-    <category corresp="sino:preservation:weathered">
-        <catDesc xml:lang="en">weathered</catDesc>
-        <catDesc xml:lang="de">verwittert</catDesc>
-        <catDesc xml:lang="zh">風化</catDesc>
+    <category xml:id="yishi" corresp="sino:preservation:yishi">
+        <catDesc xml:lang="zh">佚失</catDesc>
+        <catDesc xml:lang="en">lost</catDesc>
+        <catDesc xml:lang="de">verloren</catDesc>
+    </category>
+    <category xml:id="mogai" corresp="sino:preservation:mogai">
+        <catDesc xml:lang="zh">磨改</catDesc>
+        <catDesc xml:lang="en">ground and recut</catDesc>
+        <catDesc xml:lang="de">abgeschliffen und neu graviert</catDesc>
+    </category>
+    <category xml:id="fuke" corresp="sino:preservation:fuke">
+        <catDesc xml:lang="zh">覆刻</catDesc>
+        <catDesc xml:lang="en">recut over / overcut</catDesc>
+        <catDesc xml:lang="de">übergraviert</catDesc>
     </category>
 </taxonomy>

@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Languages per doc/sino-model.md §9l — carved text defaults to lzh; ids are BCP-47 tags -->
 <taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="languages">
-    <category corresp="lzh">
+    <category xml:id="lzh" corresp="sino:lang:lzh">
+        <catDesc xml:lang="zh">文言文</catDesc>
         <catDesc xml:lang="en">Literary Chinese</catDesc>
         <catDesc xml:lang="de">Klassisches Chinesisch</catDesc>
-        <catDesc xml:lang="zh">文言文</catDesc>
     </category>
-    <category corresp="zh">
-        <catDesc xml:lang="en">Chinese</catDesc>
-        <catDesc xml:lang="de">Chinesisch</catDesc>
-        <catDesc xml:lang="zh">中文</catDesc>
+    <category xml:id="zh-Hant" corresp="sino:lang:zh-Hant">
+        <catDesc xml:lang="zh">中文（繁體）</catDesc>
+        <catDesc xml:lang="en">Chinese (traditional)</catDesc>
+        <catDesc xml:lang="de">Chinesisch (traditionell)</catDesc>
     </category>
-    <category corresp="sa">
+    <category xml:id="zh-Hans" corresp="sino:lang:zh-Hans">
+        <catDesc xml:lang="zh">中文（简体）</catDesc>
+        <catDesc xml:lang="en">Chinese (simplified)</catDesc>
+        <catDesc xml:lang="de">Chinesisch (vereinfacht)</catDesc>
+    </category>
+    <category xml:id="sa" corresp="sino:lang:sa">
+        <catDesc xml:lang="zh">梵語</catDesc>
         <catDesc xml:lang="en">Sanskrit</catDesc>
         <catDesc xml:lang="de">Sanskrit</catDesc>
-        <catDesc xml:lang="zh">梵語</catDesc>
+    </category>
+    <category xml:id="sa-Sidd" corresp="sino:lang:sa-Sidd">
+        <catDesc xml:lang="zh">悉曇</catDesc>
+        <catDesc xml:lang="en">Sanskrit in Siddhaṃ script</catDesc>
+        <catDesc xml:lang="de">Sanskrit in Siddhaṃ-Schrift</catDesc>
+    </category>
+    <category xml:id="en" corresp="sino:lang:en">
+        <catDesc xml:lang="zh">英語</catDesc>
+        <catDesc xml:lang="en">English</catDesc>
+        <catDesc xml:lang="de">Englisch</catDesc>
+    </category>
+    <category xml:id="de" corresp="sino:lang:de">
+        <catDesc xml:lang="zh">德語</catDesc>
+        <catDesc xml:lang="en">German</catDesc>
+        <catDesc xml:lang="de">Deutsch</catDesc>
     </category>
 </taxonomy>

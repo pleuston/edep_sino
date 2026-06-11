@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Dynasty periodisation per doc/sino-model.md §1 — @n carries the machine range ISOfrom:ISOto (proleptic Gregorian); the era-level conversion authority is nianhao.xml -->
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="dynasty">
+    <category xml:id="qin" corresp="sino:dynasty:qin" n="-0220:-0206">
+        <catDesc xml:lang="zh">秦</catDesc>
+        <catDesc xml:lang="en">Qin</catDesc>
+        <catDesc xml:lang="de">Qin</catDesc>
+    </category>
+    <category xml:id="xihan" corresp="sino:dynasty:xihan" n="-0205:0008">
+        <catDesc xml:lang="zh">西漢</catDesc>
+        <catDesc xml:lang="en">Western Han</catDesc>
+        <catDesc xml:lang="de">Westliche Han</catDesc>
+    </category>
+    <category xml:id="xin" corresp="sino:dynasty:xin" n="0009:0023">
+        <catDesc xml:lang="zh">新</catDesc>
+        <catDesc xml:lang="en">Xin (Wang Mang)</catDesc>
+        <catDesc xml:lang="de">Xin (Wang Mang)</catDesc>
+    </category>
+    <category xml:id="donghan" corresp="sino:dynasty:donghan" n="0025:0220">
+        <catDesc xml:lang="zh">東漢</catDesc>
+        <catDesc xml:lang="en">Eastern Han</catDesc>
+        <catDesc xml:lang="de">Östliche Han</catDesc>
+    </category>
+    <category xml:id="sanguo-wei" corresp="sino:dynasty:sanguo-wei" n="0220:0266">
+        <catDesc xml:lang="zh">曹魏</catDesc>
+        <catDesc xml:lang="en">Cao Wei</catDesc>
+        <catDesc xml:lang="de">Cao Wei</catDesc>
+    </category>
+    <category xml:id="sanguo-shu" corresp="sino:dynasty:sanguo-shu" n="0221:0263">
+        <catDesc xml:lang="zh">蜀漢</catDesc>
+        <catDesc xml:lang="en">Shu Han</catDesc>
+        <catDesc xml:lang="de">Shu Han</catDesc>
+    </category>
+    <category xml:id="sanguo-wu" corresp="sino:dynasty:sanguo-wu" n="0222:0280">
+        <catDesc xml:lang="zh">孫吳</catDesc>
+        <catDesc xml:lang="en">Eastern Wu</catDesc>
+        <catDesc xml:lang="de">Östliche Wu</catDesc>
+    </category>
+    <category xml:id="xijin" corresp="sino:dynasty:xijin" n="0266:0316">
+        <catDesc xml:lang="zh">西晉</catDesc>
+        <catDesc xml:lang="en">Western Jin</catDesc>
+        <catDesc xml:lang="de">Westliche Jin</catDesc>
+    </category>
+    <category xml:id="dongjin" corresp="sino:dynasty:dongjin" n="0317:0420">
+        <catDesc xml:lang="zh">東晉</catDesc>
+        <catDesc xml:lang="en">Eastern Jin</catDesc>
+        <catDesc xml:lang="de">Östliche Jin</catDesc>
+    </category>
+    <category xml:id="liusong" corresp="sino:dynasty:liusong" n="0420:0479">
+        <catDesc xml:lang="zh">劉宋</catDesc>
+        <catDesc xml:lang="en">Liu Song</catDesc>
+        <catDesc xml:lang="de">Liu Song</catDesc>
+    </category>
+    <category xml:id="nanqi" corresp="sino:dynasty:nanqi" n="0479:0502">
+        <catDesc xml:lang="zh">南齊</catDesc>
+        <catDesc xml:lang="en">Southern Qi</catDesc>
+        <catDesc xml:lang="de">Südliche Qi</catDesc>
+    </category>
+    <category xml:id="liang" corresp="sino:dynasty:liang" n="0502:0557">
+        <catDesc xml:lang="zh">梁</catDesc>
+        <catDesc xml:lang="en">Liang</catDesc>
+        <catDesc xml:lang="de">Liang</catDesc>
+    </category>
+    <category xml:id="chen" corresp="sino:dynasty:chen" n="0557:0589">
+        <catDesc xml:lang="zh">陳</catDesc>
+        <catDesc xml:lang="en">Chen</catDesc>
+        <catDesc xml:lang="de">Chen</catDesc>
+    </category>
+    <category xml:id="beiwei" corresp="sino:dynasty:beiwei" n="0386:0534">
+        <catDesc xml:lang="zh">北魏</catDesc>
+        <catDesc xml:lang="en">Northern Wei</catDesc>
+        <catDesc xml:lang="de">Nördliche Wei</catDesc>
+    </category>
+    <category xml:id="dongwei" corresp="sino:dynasty:dongwei" n="0534:0550">
+        <catDesc xml:lang="zh">東魏</catDesc>
+        <catDesc xml:lang="en">Eastern Wei</catDesc>
+        <catDesc xml:lang="de">Östliche Wei</catDesc>
+    </category>
+    <category xml:id="xiwei" corresp="sino:dynasty:xiwei" n="0535:0557">
+        <catDesc xml:lang="zh">西魏</catDesc>
+        <catDesc xml:lang="en">Western Wei</catDesc>
+        <catDesc xml:lang="de">Westliche Wei</catDesc>
+    </category>
+    <category xml:id="beiqi" corresp="sino:dynasty:beiqi" n="0550:0577">
+        <catDesc xml:lang="zh">北齊</catDesc>
+        <catDesc xml:lang="en">Northern Qi</catDesc>
+        <catDesc xml:lang="de">Nördliche Qi</catDesc>
+    </category>
+    <category xml:id="beizhou" corresp="sino:dynasty:beizhou" n="0557:0581">
+        <catDesc xml:lang="zh">北周</catDesc>
+        <catDesc xml:lang="en">Northern Zhou</catDesc>
+        <catDesc xml:lang="de">Nördliche Zhou</catDesc>
+    </category>
+    <category xml:id="sui" corresp="sino:dynasty:sui" n="0581:0618">
+        <catDesc xml:lang="zh">隋</catDesc>
+        <catDesc xml:lang="en">Sui</catDesc>
+        <catDesc xml:lang="de">Sui</catDesc>
+    </category>
+    <category xml:id="tang" corresp="sino:dynasty:tang" n="0618:0907">
+        <catDesc xml:lang="zh">唐</catDesc>
+        <catDesc xml:lang="en">Tang</catDesc>
+        <catDesc xml:lang="de">Tang</catDesc>
+    </category>
+    <category xml:id="wudai" corresp="sino:dynasty:wudai" n="0907:0960">
+        <catDesc xml:lang="zh">五代</catDesc>
+        <catDesc xml:lang="en">Five Dynasties</catDesc>
+        <catDesc xml:lang="de">Fünf Dynastien</catDesc>
+    </category>
+    <category xml:id="beisong" corresp="sino:dynasty:beisong" n="0960:1127">
+        <catDesc xml:lang="zh">北宋</catDesc>
+        <catDesc xml:lang="en">Northern Song</catDesc>
+        <catDesc xml:lang="de">Nördliche Song</catDesc>
+    </category>
+    <category xml:id="nansong" corresp="sino:dynasty:nansong" n="1127:1279">
+        <catDesc xml:lang="zh">南宋</catDesc>
+        <catDesc xml:lang="en">Southern Song</catDesc>
+        <catDesc xml:lang="de">Südliche Song</catDesc>
+    </category>
+    <category xml:id="liao" corresp="sino:dynasty:liao" n="0916:1125">
+        <catDesc xml:lang="zh">遼</catDesc>
+        <catDesc xml:lang="en">Liao</catDesc>
+        <catDesc xml:lang="de">Liao</catDesc>
+    </category>
+    <category xml:id="jin" corresp="sino:dynasty:jin" n="1115:1234">
+        <catDesc xml:lang="zh">金</catDesc>
+        <catDesc xml:lang="en">Jin (Jurchen)</catDesc>
+        <catDesc xml:lang="de">Jin (Jurchen)</catDesc>
+    </category>
+    <category xml:id="xixia" corresp="sino:dynasty:xixia" n="1038:1227">
+        <catDesc xml:lang="zh">西夏</catDesc>
+        <catDesc xml:lang="en">Western Xia</catDesc>
+        <catDesc xml:lang="de">Westliche Xia</catDesc>
+    </category>
+    <category xml:id="yuan" corresp="sino:dynasty:yuan" n="1271:1368">
+        <catDesc xml:lang="zh">元</catDesc>
+        <catDesc xml:lang="en">Yuan</catDesc>
+        <catDesc xml:lang="de">Yuan</catDesc>
+    </category>
+    <category xml:id="ming" corresp="sino:dynasty:ming" n="1368:1644">
+        <catDesc xml:lang="zh">明</catDesc>
+        <catDesc xml:lang="en">Ming</catDesc>
+        <catDesc xml:lang="de">Ming</catDesc>
+    </category>
+    <category xml:id="qing" corresp="sino:dynasty:qing" n="1644:1912">
+        <catDesc xml:lang="zh">清</catDesc>
+        <catDesc xml:lang="en">Qing</catDesc>
+        <catDesc xml:lang="de">Qing</catDesc>
+    </category>
+</taxonomy>

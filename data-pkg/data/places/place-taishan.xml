@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<place xmlns="http://www.tei-c.org/ns/1.0" xml:id="place-taishan">
+    <placeName type="findspot">泰山</placeName>
+    <placeName type="modern">泰山 Taishan</placeName>
+    <placeName type="ancient">岱宗</placeName>
+    <placeName type="sort">Taishan</placeName>
+    <region type="province">shandong</region>
+    <region type="modern">泰安市</region>
+    <country>cn</country>
+    <location>
+        <geo>36.2561 117.1058</geo>
+    </location>
+    <ptr type="tgaz" target=""/>
+</place>

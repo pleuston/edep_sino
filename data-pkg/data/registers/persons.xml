@@ -3,16 +3,31 @@
     <teiHeader>
         <fileDesc>
             <titleStmt><title>EDEp Sino register: persons</title></titleStmt>
-            <publicationStmt><p>Authority register</p></publicationStmt>
+            <publicationStmt><p>Authority register. Entry shape: doc/sino-model.md §6.</p></publicationStmt>
             <sourceDesc><p>EDEp Sino</p></sourceDesc>
         </fileDesc>
     </teiHeader>
     <standOff>
         <listPerson>
-            <person xml:id="person-wang-xizhi">
-                <persName type="main">王羲之</persName>
+            <person xml:id="person-wang-xizhi" role="official">
+                <persName type="canonical" xml:lang="zh">王羲之</persName>
+                <persName type="personal" xml:lang="zh"><surname>王</surname><forename>羲之</forename></persName>
+                <persName xml:lang="zh-Latn-pinyin">Wang Xizhi</persName>
                 <persName type="sort">Wang Xizhi</persName>
-                <note type="bio">Calligrapher (303–361), Eastern Jin. Placeholder entry — full register content arrives with milestone M5/M8.</note>
+                <addName type="zi" xml:lang="zh">逸少</addName>
+                <floruit notBefore="0303" notAfter="0361"/>
+                <persState type="office"><label xml:lang="zh">右軍將軍</label></persState>
+                <note type="bio" xml:lang="en">Calligrapher (303–361), Eastern Jin.</note>
+            </person>
+            <person xml:id="person-zheng-daozhao" role="official">
+                <persName type="canonical" xml:lang="zh">鄭道昭</persName>
+                <persName type="personal" xml:lang="zh"><surname>鄭</surname><forename>道昭</forename></persName>
+                <persName xml:lang="zh-Latn-pinyin">Zheng Daozhao</persName>
+                <persName type="sort">Zheng Daozhao</persName>
+                <addName type="zi" xml:lang="zh">僖伯</addName>
+                <floruit notBefore="0455" notAfter="0516"/>
+                <persState type="office"><label xml:lang="zh">光州刺史</label></persState>
+                <note type="bio" xml:lang="en">Northern Wei official and calligrapher, associated with the Yunfengshan cliff inscriptions.</note>
             </person>
         </listPerson>
     </standOff>

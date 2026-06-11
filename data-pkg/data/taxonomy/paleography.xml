@@ -1,28 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Script styles per doc/sino-model.md §3 — closed list; 榜書 bangshu is a size register (@subtype), not a script -->
 <taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="paleography">
-    <category corresp="sino:script:zhuanshu">
+    <category xml:id="zhuan" corresp="sino:script:zhuan">
+        <catDesc xml:lang="zh">篆書</catDesc>
         <catDesc xml:lang="en">seal script</catDesc>
         <catDesc xml:lang="de">Siegelschrift</catDesc>
-        <catDesc xml:lang="zh">篆書</catDesc>
     </category>
-    <category corresp="sino:script:lishu">
+    <category xml:id="li" corresp="sino:script:li">
+        <catDesc xml:lang="zh">隸書</catDesc>
         <catDesc xml:lang="en">clerical script</catDesc>
         <catDesc xml:lang="de">Kanzleischrift</catDesc>
-        <catDesc xml:lang="zh">隸書</catDesc>
     </category>
-    <category corresp="sino:script:kaishu">
+    <category xml:id="bafen" corresp="sino:script:bafen">
+        <catDesc xml:lang="zh">八分</catDesc>
+        <catDesc xml:lang="en">bafen clerical script</catDesc>
+        <catDesc xml:lang="de">Bafen-Kanzleischrift</catDesc>
+        <note>Contested boundary: conventionally a subtype of 隸書 (clerical); record editor call with @cert when disputed.</note>
+    </category>
+    <category xml:id="kai" corresp="sino:script:kai">
+        <catDesc xml:lang="zh">楷書</catDesc>
         <catDesc xml:lang="en">regular script</catDesc>
         <catDesc xml:lang="de">Regelschrift</catDesc>
-        <catDesc xml:lang="zh">楷書</catDesc>
     </category>
-    <category corresp="sino:script:xingshu">
+    <category xml:id="xing" corresp="sino:script:xing">
+        <catDesc xml:lang="zh">行書</catDesc>
         <catDesc xml:lang="en">running script</catDesc>
         <catDesc xml:lang="de">Kursivschrift</catDesc>
-        <catDesc xml:lang="zh">行書</catDesc>
     </category>
-    <category corresp="sino:script:caoshu">
+    <category xml:id="cao" corresp="sino:script:cao">
+        <catDesc xml:lang="zh">草書</catDesc>
         <catDesc xml:lang="en">cursive script</catDesc>
         <catDesc xml:lang="de">Konzeptschrift</catDesc>
-        <catDesc xml:lang="zh">草書</catDesc>
+    </category>
+    <category xml:id="weibei" corresp="sino:script:weibei">
+        <catDesc xml:lang="zh">魏碑</catDesc>
+        <catDesc xml:lang="en">Northern Wei stele script</catDesc>
+        <catDesc xml:lang="de">Nordwei-Stelenschrift</catDesc>
+        <note>Contested boundary: conventionally a subtype of 楷書 (regular); record editor call with @cert when disputed.</note>
     </category>
 </taxonomy>

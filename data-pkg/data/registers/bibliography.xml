@@ -9,9 +9,11 @@
     </teiHeader>
     <standOff>
         <listBibl>
-            <bibl xml:id="bibl-placeholder">
-                <title>Placeholder bibliography entry</title>
-                <note>Full register content arrives with milestone M5/M8.</note>
+            <bibl xml:id="bibl-yzjsh">
+                <author xml:lang="zh">王昶</author>
+                <title xml:lang="zh">金石萃編</title>
+                <date when="1805">1805</date>
+                <note xml:lang="en">Jinshi cuibian — classical epigraphic compendium, 160 juan.</note>
             </bibl>
         </listBibl>
     </standOff>

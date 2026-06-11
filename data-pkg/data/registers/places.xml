@@ -3,17 +3,27 @@
     <teiHeader>
         <fileDesc>
             <titleStmt><title>EDEp Sino register: places</title></titleStmt>
-            <publicationStmt><p>Authority register</p></publicationStmt>
+            <publicationStmt><p>Authority register. Entry shape: doc/sino-model.md §7. Coordinates: WGS84 decimal; PRC-published sources are GCJ-02-offset — convert before entry.</p></publicationStmt>
             <sourceDesc><p>EDEp Sino</p></sourceDesc>
         </fileDesc>
     </teiHeader>
     <standOff>
         <listPlace>
-            <place xml:id="place-xian">
-                <placeName type="main">西安</placeName>
-                <placeName type="sort">Xi'an</placeName>
-                <location><geo>34.3416 108.9398</geo></location>
-                <note>Placeholder entry — full register content arrives with milestone M5/M8.</note>
+            <place xml:id="place-taishan" type="feature">
+                <placeName xml:lang="zh">泰山</placeName>
+                <placeName xml:lang="zh-Latn-pinyin">Taishan</placeName>
+                <placeName type="sort">Taishan</placeName>
+                <location><geo>36.2561 117.1058</geo></location>
+                <region type="sheng" xml:lang="zh">山東</region>
+                <note xml:lang="en">Mount Tai, Shandong; site of the Jingshiyu sutra engraving and numerous cliff inscriptions.</note>
+            </place>
+            <place xml:id="place-yunfengshan" type="feature">
+                <placeName xml:lang="zh">雲峰山</placeName>
+                <placeName xml:lang="zh-Latn-pinyin">Yunfengshan</placeName>
+                <placeName type="sort">Yunfengshan</placeName>
+                <location><geo>37.1758 120.0950</geo></location>
+                <region type="sheng" xml:lang="zh">山東</region>
+                <note xml:lang="en">Cliff-inscription site near Laizhou associated with Zheng Daozhao (Northern Wei).</note>
             </place>
         </listPlace>
     </standOff>

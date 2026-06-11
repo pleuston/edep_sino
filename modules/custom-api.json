@@ -67,9 +67,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/places": {
+            },
             "post": {
                 "summary": "update/add places",
                 "x-constraints": {
@@ -98,7 +96,7 @@
                 }
             }
         },
-        "/api/places/{id}": {
+        "/api/editor/places/{id}": {
             "get": {
                 "summary": "show place",
                 "operationId": "eapi:load-place",
@@ -159,7 +157,7 @@
                 }
             }
         },
-        "/api/places/{id}/findSpot": {
+        "/api/editor/places/{id}/findSpot": {
             "get": {
                 "summary": "Retrieve the find spot of an inscription",
                 "description": "Retrieve a place in format required by pb-split-list",
@@ -267,9 +265,7 @@
                         }
                     }
                 }
-            }
-        },
-        "/api/people": {
+            },
             "post": {
                 "summary": "update/add person",
                 "x-constraints": {
@@ -296,7 +292,7 @@
                 }
             }
         },
-        "/api/people/{id}": {
+        "/api/editor/people/{id}": {
             "get": {
                 "summary": "show person",
                 "operationId": "eapi:load-person",

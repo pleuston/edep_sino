@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Metre per doc/sino-model.md §9g — verse subtypes mirror lg/@subtype -->
 <taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="metre">
-    <category corresp="sino:metre:prose">
+    <category xml:id="sanwen" corresp="sino:metre:sanwen">
+        <catDesc xml:lang="zh">散文</catDesc>
         <catDesc xml:lang="en">prose</catDesc>
         <catDesc xml:lang="de">Prosa</catDesc>
-        <catDesc xml:lang="zh">散文</catDesc>
     </category>
-    <category corresp="sino:metre:verse">
+    <category xml:id="yunwen" corresp="sino:metre:yunwen">
+        <catDesc xml:lang="zh">韻文</catDesc>
         <catDesc xml:lang="en">verse</catDesc>
         <catDesc xml:lang="de">Vers</catDesc>
-        <catDesc xml:lang="zh">韻文</catDesc>
+    </category>
+    <category xml:id="siyan" corresp="sino:metre:siyan">
+        <catDesc xml:lang="zh">四言</catDesc>
+        <catDesc xml:lang="en">four-character verse</catDesc>
+        <catDesc xml:lang="de">Vierzeichen-Vers</catDesc>
+    </category>
+    <category xml:id="wuyan" corresp="sino:metre:wuyan">
+        <catDesc xml:lang="zh">五言</catDesc>
+        <catDesc xml:lang="en">five-character verse</catDesc>
+        <catDesc xml:lang="de">Fünfzeichen-Vers</catDesc>
+    </category>
+    <category xml:id="qiyan" corresp="sino:metre:qiyan">
+        <catDesc xml:lang="zh">七言</catDesc>
+        <catDesc xml:lang="en">seven-character verse</catDesc>
+        <catDesc xml:lang="de">Siebenzeichen-Vers</catDesc>
     </category>
 </taxonomy>

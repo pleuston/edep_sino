@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns="http://www.tei-c.org/ns/1.0" xml:id="person-zheng-daozhao" sex="M">
+    <persName type="main">鄭道昭</persName>
+    <persName type="sort">Zheng Daozhao</persName>
+    <persName type="zi">僖伯</persName>
+    <state type="status"><label>光州刺史</label></state>
+    <note type="bio">Northern Wei official and calligrapher (c. 455–516).</note>
+    <idno type="EDEp">P000002</idno>
+</person>

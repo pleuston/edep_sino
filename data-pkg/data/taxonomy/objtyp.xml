@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Object forms per doc/sino-model.md §8 — form is distinct from genre (typeins.xml) -->
 <taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="objtyp">
-    <category corresp="sino:objtyp:bei">
+    <category xml:id="bei" corresp="sino:objtyp:bei">
+        <catDesc xml:lang="zh">碑</catDesc>
         <catDesc xml:lang="en">stele</catDesc>
         <catDesc xml:lang="de">Stele</catDesc>
-        <catDesc xml:lang="zh">碑</catDesc>
     </category>
-    <category corresp="sino:objtyp:muzhi">
-        <catDesc xml:lang="en">entombed epitaph</catDesc>
-        <catDesc xml:lang="de">Grabepitaph</catDesc>
-        <catDesc xml:lang="zh">墓誌</catDesc>
+    <category xml:id="jie" corresp="sino:objtyp:jie">
+        <catDesc xml:lang="zh">碣</catDesc>
+        <catDesc xml:lang="en">rounded stele</catDesc>
+        <catDesc xml:lang="de">Rundstele</catDesc>
     </category>
-    <category corresp="sino:objtyp:moya">
+    <category xml:id="moya" corresp="sino:objtyp:moya">
+        <catDesc xml:lang="zh">摩崖</catDesc>
         <catDesc xml:lang="en">cliff inscription</catDesc>
         <catDesc xml:lang="de">Felsinschrift</catDesc>
-        <catDesc xml:lang="zh">摩崖</catDesc>
     </category>
-    <category corresp="sino:objtyp:zaoxiangji">
-        <catDesc xml:lang="en">votive stele</catDesc>
-        <catDesc xml:lang="de">Votivstele</catDesc>
-        <catDesc xml:lang="zh">造像記</catDesc>
+    <category xml:id="zaoxiang" corresp="sino:objtyp:zaoxiang">
+        <catDesc xml:lang="zh">造像</catDesc>
+        <catDesc xml:lang="en">votive image with inscription</catDesc>
+        <catDesc xml:lang="de">Votivbildwerk mit Inschrift</catDesc>
+    </category>
+    <category xml:id="jingchuang" corresp="sino:objtyp:jingchuang">
+        <catDesc xml:lang="zh">經幢</catDesc>
+        <catDesc xml:lang="en">sutra pillar</catDesc>
+        <catDesc xml:lang="de">Sutrenpfeiler</catDesc>
+    </category>
+    <category xml:id="muzhi" corresp="sino:objtyp:muzhi">
+        <catDesc xml:lang="zh">墓誌</catDesc>
+        <catDesc xml:lang="en">entombed epitaph</catDesc>
+        <catDesc xml:lang="de">Grabepitaph</catDesc>
+    </category>
+    <category xml:id="shizhu" corresp="sino:objtyp:shizhu">
+        <catDesc xml:lang="zh">石柱</catDesc>
+        <catDesc xml:lang="en">stone pillar</catDesc>
+        <catDesc xml:lang="de">Steinpfeiler</catDesc>
+    </category>
+    <category xml:id="huaxiangshi" corresp="sino:objtyp:huaxiangshi">
+        <catDesc xml:lang="zh">畫像石</catDesc>
+        <catDesc xml:lang="en">pictorial stone</catDesc>
+        <catDesc xml:lang="de">Bildstein</catDesc>
+    </category>
+    <category xml:id="taming" corresp="sino:objtyp:taming">
+        <catDesc xml:lang="zh">塔銘</catDesc>
+        <catDesc xml:lang="en">pagoda inscription</catDesc>
+        <catDesc xml:lang="de">Pagodeninschrift</catDesc>
     </category>
 </taxonomy>

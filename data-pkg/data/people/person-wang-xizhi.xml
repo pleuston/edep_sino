@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person xmlns="http://www.tei-c.org/ns/1.0" xml:id="person-wang-xizhi" sex="M">
+    <persName type="main">王羲之</persName>
+    <persName type="sort">Wang Xizhi</persName>
+    <persName type="zi">逸少</persName>
+    <state type="status"><label>右軍將軍</label></state>
+    <note type="bio">Calligrapher (303–361), Eastern Jin.</note>
+    <idno type="EDEp">P000001</idno>
+</person>
