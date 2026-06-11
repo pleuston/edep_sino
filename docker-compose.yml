@@ -1,0 +1,15 @@
+# EDEp Sino — production composition (doc/DEPLOYMENT.md)
+services:
+  edep-sino:
+    build: .
+    image: edep-sino:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      # the eXist database (inscriptions, registers, configuration) survives
+      # container replacement; back this volume up
+      - exist-data:/exist/data
+    restart: unless-stopped
+
+volumes:
+  exist-data:

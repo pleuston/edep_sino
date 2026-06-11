@@ -1,0 +1,56 @@
+name: build
+
+on:
+  push:
+    branches: [sino-tp10]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Build XAR packages
+        run: |
+          sudo apt-get update && sudo apt-get install -y ant
+          npm install --no-audit --no-fund
+          ant xar-local
+          (cd data-pkg && ant)
+
+      - name: Validate demo content against EpiDoc
+        run: npm run validate:demo
+
+      - name: Build and boot the production image
+        run: |
+          docker build -t edep-sino .
+          docker run -d -p 8080:8080 --name edep-sino edep-sino
+          for i in $(seq 1 60); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/exist/apps/edep-sino/index.html || true)
+            [ "$code" = "200" ] && break
+            sleep 10
+          done
+          curl -sf -o /dev/null http://localhost:8080/exist/apps/edep-sino/index.html
+
+      - name: End-to-end suite
+        run: npx cypress run
+
+      - name: Container log on failure
+        if: failure()
+        run: docker logs edep-sino | tail -100
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: xars
+          path: |
+            build/*.xar
+            data-pkg/build/*.xar
