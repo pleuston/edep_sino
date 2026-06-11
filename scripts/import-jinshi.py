@@ -377,15 +377,18 @@ def parse_dates(dates_str, nianhao):
 # ── Work file import ──────────────────────────────────────────────────────────
 
 def _extract_section(text, *headers):
-    """Return text of the first matching markdown section (## Header)."""
+    """Return text of the first matching markdown section (# or ## Header).
+    Single-hash (top-level) sections are supported in addition to ## subsections.
+    The section body ends at the next heading of the same or higher level."""
     for hdr in headers:
-        pat = re.compile(
-            rf'^##+ {re.escape(hdr)}\s*\n(.*?)(?=^##|\Z)',
-            re.MULTILINE | re.DOTALL,
-        )
-        mo = pat.search(text)
-        if mo:
-            return mo.group(1).strip()
+        for prefix in (r'##+ ', r'# '):
+            pat = re.compile(
+                rf'^{prefix}{re.escape(hdr)}\s*\n(.*?)(?=^#|\Z)',
+                re.MULTILINE | re.DOTALL,
+            )
+            mo = pat.search(text)
+            if mo:
+                return mo.group(1).strip()
     return ''
 
 
@@ -436,12 +439,19 @@ def _parse_work(stem, text, fm, id_map, alias_map):
         author_pinyin = ''
         author_zh     = ''
 
-    # Pinyin title from aliases
+    # Pinyin title from aliases — strip author-pinyin prefix if present
     title_pinyin = ''
     for alias in fm_list(fm, 'aliases'):
         if re.match(r'^[A-Za-z]', alias) and '《' not in alias:
-            title_pinyin = alias
+            candidate = alias
+            if author_pinyin and candidate.lower().startswith(author_pinyin.lower() + ' '):
+                candidate = candidate[len(author_pinyin) + 1:]
+            title_pinyin = candidate
             break
+    # Pinyin override from id-map takes priority
+    pinyin_override = id_map.get('title_pinyin_overrides', {}).get(work_id, '')
+    if pinyin_override:
+        title_pinyin = pinyin_override
 
     # Edition list (will be filled later from edition files)
     edition_list = _parse_inline_editions(text)
@@ -465,8 +475,68 @@ def _parse_work(stem, text, fm, id_map, alias_map):
         'year_label':    year_label,
         'juan':          juan,
         'editions':      edition_list,
-        'relations':     [],          # placeholder
+        'relations':     _parse_work_relations(text, alias_map, id_map),
     }
+
+
+# Maps bold-label keywords (lower-cased, stripped) → TEI relatedItem/@type
+_REL_LABEL_MAP = {
+    'models on':            'models-on',
+    'modelled on':          'models-on',
+    'built on':             'models-on',
+    'based on':             'models-on',
+    'supplements':          'supplements',
+    'supplement of':        'supplements',
+    '补正':                  'supplements',
+    '補正':                  'supplements',
+    '补正 / supplement of': 'supplements',
+    '補正 / supplement of': 'supplements',
+    'corrects':             'corrects',
+    'correction of':        'corrects',
+    'recompiles':           'recompiles',
+    'recompilation of':     'recompiles',
+}
+
+
+def _parse_work_relations(text, alias_map, id_map):
+    """Parse outbound inter-work relations from '# Relations to other works'."""
+    section = _extract_section(text, 'Relations to other works', 'Relations')
+    if not section:
+        return []
+
+    relations = []
+    current_type = None
+    current_links = []
+
+    def _flush():
+        if current_type:
+            for link in current_links:
+                wid = _resolve_work_id(link, alias_map, id_map)
+                if wid and wid.startswith('work-'):
+                    relations.append({'type': current_type, 'target_id': wid})
+
+    for line in section.splitlines():
+        stripped = line.strip()
+        if stripped.startswith('-') or stripped.startswith('*'):
+            _flush()
+            current_links = []
+            current_type = None
+            # Detect the bold label at the start of this bullet
+            label_mo = re.match(r'^[-*]\s+\*\*([^*]+)\*\*\s*[:/]?', stripped)
+            if label_mo:
+                label = label_mo.group(1).strip().lower().rstrip(':/')
+                for key, rel_type in _REL_LABEL_MAP.items():
+                    if key in label:
+                        current_type = rel_type
+                        break
+            if current_type:
+                current_links.extend(_WIKILINK_RE.findall(stripped))
+        elif current_type and stripped and not stripped.startswith('#'):
+            # Continuation of a multi-line bullet
+            current_links.extend(_WIKILINK_RE.findall(stripped))
+
+    _flush()
+    return relations
 
 
 def _parse_inline_editions(text):
@@ -692,6 +762,20 @@ def _parse_attestation_section(text, stem, alias_map, id_map=None):
                                'Attestations (Full list)',
                                'Attestations (full list)',
                                'Attestations')
+    # Also gather attestation lines in the preamble of a top-level
+    # "# Attestations" heading (before any ## sub-section).  Some files have
+    # hand-curated lines there in addition to (or instead of) the ## subsection.
+    top_mo = re.search(
+        r'^# Attestations[^\n]*\n(.*?)(?=^#|\Z)',
+        text, re.MULTILINE | re.DOTALL
+    )
+    if top_mo:
+        preamble = top_mo.group(1)
+        # Strip everything from the first ## heading onwards (that's the mined subsection)
+        subsect_start = re.search(r'^##', preamble, re.MULTILINE)
+        if subsect_start:
+            preamble = preamble[:subsect_start.start()]
+        section = preamble.strip() + '\n' + section
     atts      = []
     n_total   = 0
     n_parsed  = 0

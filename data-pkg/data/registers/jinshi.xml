@@ -29,7 +29,20 @@
                     </origin>
                 </history>
                 <additional>
+                    <surrogates>
+                        <bibl type="rubbing">
+                            <title xml:lang="zh">漢乙瑛碑　軸 - 故宮</title>
+                            <ref target="https://digitalarchive.npm.gov.tw/Collection/Detail/2028?dep=P">漢乙瑛碑　軸 - 故宮</ref>
+                        </bibl>
+                        <bibl type="rubbing">
+                            <title xml:lang="zh">ColBase</title>
+                            <ref target="https://colbase.nich.go.jp/collection_items/tnm/TB-1349?locale=ja">ColBase</ref>
+                        </bibl>
+                    </surrogates>
                     <listBibl type="attestations">
+                        <bibl corresp="work-000002">
+                            <note xml:lang="zh">Han 卷 (exact 卷 to verify against [[knowledge base/Texts/Epigraphy 金石學/Editions/《金石萃編》 — 經訓堂刊本 (同治十年補刊本)|the 經訓堂刊本]]; SKSLXB reprint: [[knowledge base/Texts/Epigraphy 金石學/Editions/《金石萃編》 — 石刻史料新編 第一輯 (</note>
+                        </bibl>
                         <bibl corresp="work-000001">
                             <title type="title-in-work" xml:lang="zh">後漢魯相置孔子廟卒史碑</title>
                             <note xml:lang="zh">元嘉元年 曲阜 魯相乙瑛請置百石卒史守廟</note>
@@ -7299,6 +7312,30 @@
                     <objectName type="alt" xml:lang="zh">登泰山謝天書述二聖功德之銘</objectName>
                     <objectName type="alt" xml:lang="zh">謝天書並述聖功德銘</objectName>
                 </objectIdentifier>
+                <additional>
+                    <surrogates>
+                        <bibl type="rubbing">
+                            <title xml:lang="zh">digicoll.lib.berkeley.edu/record/244590</title>
+                            <ref target="https://digicoll.lib.berkeley.edu/record/244590">digicoll.lib.berkeley.edu/record/244590</ref>
+                        </bibl>
+                        <bibl type="rubbing">
+                            <title xml:lang="zh">digicoll.lib.berkeley.edu/record/244591</title>
+                            <ref target="https://digicoll.lib.berkeley.edu/record/244591">digicoll.lib.berkeley.edu/record/244591</ref>
+                        </bibl>
+                        <bibl type="rubbing">
+                            <title xml:lang="zh">digicoll.lib.berkeley.edu/record/244592</title>
+                            <ref target="https://digicoll.lib.berkeley.edu/record/244592">digicoll.lib.berkeley.edu/record/244592</ref>
+                        </bibl>
+                        <bibl type="rubbing">
+                            <title xml:lang="zh">digicoll.lib.berkeley.edu/record/244593</title>
+                            <ref target="https://digicoll.lib.berkeley.edu/record/244593">digicoll.lib.berkeley.edu/record/244593</ref>
+                        </bibl>
+                        <bibl type="rubbing">
+                            <title xml:lang="zh">digicoll.lib.berkeley.edu/record/244594</title>
+                            <ref target="https://digicoll.lib.berkeley.edu/record/244594">digicoll.lib.berkeley.edu/record/244594</ref>
+                        </bibl>
+                    </surrogates>
+                </additional>
                 <note type="source">vault: 登泰山謝天書述二聖功德之銘（1008）- 宋真宗</note>
             </object>
             <object xml:id="insc-000179">

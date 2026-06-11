@@ -39,5 +39,14 @@ for $resource in xmldb:get-child-resources($target || "/data/workspace")
 return
     sm:chmod(xs:anyURI($target || "/data/workspace/" || $resource), "rw-rw-r--"),
 
+(: register XML files must be writable by tei — eXist acquires write locks on the
+   whole collection when executing update statements, so every file needs tei ownership :)
+for $resource in xmldb:get-child-resources($target || "/data/registers")
+return (
+    sm:chown(xs:anyURI($target || "/data/registers/" || $resource), "tei"),
+    sm:chgrp(xs:anyURI($target || "/data/registers/" || $resource), "tei"),
+    sm:chmod(xs:anyURI($target || "/data/registers/" || $resource), "rw-rw-r--")
+),
+
 (: apply the index configuration stored by pre-install :)
 xdb:reindex($target || "/data")

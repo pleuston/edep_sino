@@ -10,8 +10,8 @@
 | Works with year | 134 |
 | Works with author | 538 |
 | Inscriptions processed | 259 |
-| Attestation lines total | 1761 |
-| Attestations parsed | 1758 (99.8%) |
+| Attestation lines total | 1762 |
+| Attestations parsed | 1759 (99.8%) |
 | Persons processed | 1 |
 | Persons with dates | 0 |
 

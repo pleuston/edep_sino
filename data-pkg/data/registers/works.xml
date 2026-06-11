@@ -14,12 +14,14 @@
         <listBibl>
             <bibl xml:id="work-000001" type="work">
                 <title xml:lang="zh">集古錄</title>
+                <title xml:lang="zh-Latn-x-pinyin">Jiguolu</title>
                 <author><persName corresp="person-ouyang-xiu" xml:lang="zh">歐陽修</persName></author>
                 <extent unit="juan">120</extent>
                 <note type="source">vault: Ouyang Xiu 歐陽修《集古錄》</note>
             </bibl>
             <bibl xml:id="work-000002" type="work">
                 <title xml:lang="zh">金石萃編</title>
+                <title xml:lang="zh-Latn-x-pinyin">Jinshi cuibian</title>
                 <author><persName corresp="person-wang-chang" xml:lang="zh">王昶</persName></author>
                 <bibl type="edition" xml:id="work-000002-ed-01">
                     <edition xml:lang="zh">《金石萃編》 — 經訓堂刊本 (同治十年補刊本)</edition>
@@ -32,10 +34,20 @@
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
                 </bibl>
+                <bibl type="edition" xml:id="work-000002-ed-03">
+                    <edition xml:lang="zh">經訓堂刊本 (同治十年補刊本)</edition>
+                </bibl>
+                <bibl type="edition" xml:id="work-000002-ed-04">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
+                </bibl>
+                <relatedItem type="models-on" target="work-000105"/>
+                <relatedItem type="models-on" target="work-000001"/>
+                <relatedItem type="models-on" target="work-000511"/>
                 <note type="source">vault: Wang Chang 王昶《金石萃編》</note>
             </bibl>
             <bibl xml:id="work-000003" type="work">
                 <title xml:lang="zh">八瓊室金石補正</title>
+                <title xml:lang="zh-Latn-x-pinyin">Ba qiongshi jinshi buzheng</title>
                 <author><persName corresp="person-lu-zengxiang" xml:lang="zh">陸增祥</persName></author>
                 <bibl type="edition" xml:id="work-000003-ed-01">
                     <edition xml:lang="zh">《八瓊室金石補正》 — 希古樓刊本 (民國十四年)</edition>
@@ -48,6 +60,16 @@
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
                 </bibl>
+                <bibl type="edition" xml:id="work-000003-ed-03">
+                    <edition xml:lang="zh">希古樓刊本 (民國十四年)</edition>
+                </bibl>
+                <bibl type="edition" xml:id="work-000003-ed-04">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
+                </bibl>
+                <bibl type="edition" xml:id="work-000003-ed-05">
+                    <edition xml:lang="zh">《續修四庫全書》- 金石類</edition>
+                </bibl>
+                <relatedItem type="supplements" target="work-000002"/>
                 <note type="source">vault: Lu Zengxiang 陸增祥 《八瓊室金石補正》</note>
             </bibl>
             <bibl xml:id="work-000004" type="work">
@@ -261,11 +283,13 @@
                 <bibl type="edition" xml:id="work-000017-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000276"/>
+                <relatedItem type="supplements" target="work-000278"/>
                 <note type="source">vault: Chen Hanzhang 陳漢章《集古録補目補》</note>
             </bibl>
             <bibl xml:id="work-000018" type="work">
                 <title xml:lang="zh">碑藪</title>
-                <title xml:lang="zh-Latn-x-pinyin">Chen Jian Bisou</title>
+                <title xml:lang="zh-Latn-x-pinyin">Bisou</title>
                 <author><persName xml:lang="zh">陳鑑</persName></author>
                 <extent unit="juan">26</extent>
                 <bibl type="edition" xml:id="work-000018-ed-01">
@@ -769,6 +793,10 @@
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
                 </bibl>
+                <bibl type="edition" xml:id="work-000048-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
+                </bibl>
+                <relatedItem type="models-on" target="work-000105"/>
                 <note type="source">vault: Du Mu 都穆《金薤琳琅》</note>
             </bibl>
             <bibl xml:id="work-000049" type="work">
@@ -842,6 +870,7 @@ Or</date>
                     <edition xml:lang="zh">《陶齋吉金録》 — 金陵刊本 (光緒三十四年-宣統元年)</edition>
                     <publisher xml:lang="zh">金陵 / 端方陶齋</publisher>
                 </bibl>
+                <relatedItem type="models-on" target="work-000352"/>
                 <note type="source">vault: Duanfang 端方《陶齋吉金録》</note>
             </bibl>
             <bibl xml:id="work-000053" type="work">
@@ -947,6 +976,7 @@ Or</date>
                 <author><persName xml:lang="zh">方履籛</persName></author>
                 <date type="compiled" when="1894" cert="medium">inted only in 光緒二十年 (1894) by 張祖翼, i</date>
                 <extent unit="juan">13</extent>
+                <relatedItem type="corrects" target="work-000002"/>
                 <note type="source">vault: Fang Lüjian 方履籛《金石萃編補正》</note>
             </bibl>
             <bibl xml:id="work-000060" type="work">
@@ -1465,6 +1495,9 @@ part o</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
                 </bibl>
+                <bibl type="edition" xml:id="work-000089-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
+                </bibl>
                 <note type="source">vault: Gu Yanwu 顧炎武《金石文字記》</note>
             </bibl>
             <bibl xml:id="work-000090" type="work">
@@ -1523,6 +1556,7 @@ part o</date>
                 <bibl type="edition" xml:id="work-000092-ed-04">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000132"/>
                 <note type="source">vault: Guo Lin 郭麐《金石例補》</note>
             </bibl>
             <bibl xml:id="work-000093" type="work">
@@ -1606,6 +1640,7 @@ part o</date>
                 <title xml:lang="zh-Latn-x-pinyin">Shijing Kaoyi</title>
                 <author><persName xml:lang="zh">杭世駿</persName></author>
                 <extent unit="juan">2</extent>
+                <relatedItem type="corrects" target="work-000088"/>
                 <note type="source">vault: Hang Shijun 杭世駿《石經考異》</note>
             </bibl>
             <bibl xml:id="work-000099" type="work">
@@ -1707,6 +1742,10 @@ part o</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
                 </bibl>
+                <bibl type="edition" xml:id="work-000105-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
+                </bibl>
+                <relatedItem type="models-on" target="work-000002"/>
                 <note type="source">vault: Hong Kuo 洪適《隸釋》</note>
             </bibl>
             <bibl xml:id="work-000106" type="work">
@@ -2485,6 +2524,8 @@ part o</date>
                 <bibl type="edition" xml:id="work-000156-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000366"/>
+                <relatedItem type="supplements" target="work-000367"/>
                 <note type="source">vault: Li Tiaoyuan 李調元《蜀碑記補》</note>
             </bibl>
             <bibl xml:id="work-000157" type="work">
@@ -2608,6 +2649,9 @@ part o</date>
                     <date when="1979">1979</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
+                </bibl>
+                <bibl type="edition" xml:id="work-000164-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
                 <note type="source">vault: Li Zuoxian 李佐賢《石泉書屋金石題跋》</note>
             </bibl>
@@ -3208,6 +3252,12 @@ Printed 民國十一年 (1922) 吳興劉氏希古樓刊本</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
                 </bibl>
+                <bibl type="edition" xml:id="work-000198-ed-03">
+                    <edition xml:lang="zh">道光二十六年刊本</edition>
+                </bibl>
+                <bibl type="edition" xml:id="work-000198-ed-04">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
+                </bibl>
                 <note type="source">vault: Liu Xihai 劉喜海《金石苑》</note>
             </bibl>
             <bibl xml:id="work-000199" type="work">
@@ -3334,6 +3384,7 @@ the 雙白</date>
                 <bibl type="edition" xml:id="work-000206-ed-04">
                     <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000002"/>
                 <note type="source">vault: Lu Yaoyu 陸耀遹《金石續編》</note>
             </bibl>
             <bibl xml:id="work-000207" type="work">
@@ -3986,6 +4037,7 @@ Source:</date>
                 <bibl type="edition" xml:id="work-000245-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第三輯 (新文豐, 1986)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000244"/>
                 <note type="source">vault: Luo Zhenyu 羅振玉《貞松堂集古遺文續編》</note>
             </bibl>
             <bibl xml:id="work-000246" type="work">
@@ -4076,6 +4128,7 @@ Source:</date>
                 <bibl type="edition" xml:id="work-000250-ed-04">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="corrects" target="work-000002"/>
                 <note type="source">vault: Luo Zhenyu 羅振玉《金石萃編校字記》</note>
             </bibl>
             <bibl xml:id="work-000251" type="work">
@@ -4231,6 +4284,7 @@ Source:</date>
                 <bibl type="edition" xml:id="work-000260-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000111"/>
                 <note type="source">vault: Mao Fengzhi 毛鳳枝《古誌石華續編》</note>
             </bibl>
             <bibl xml:id="work-000261" type="work">
@@ -4247,6 +4301,7 @@ Source:</date>
                 <bibl type="edition" xml:id="work-000261-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000002"/>
                 <note type="source">vault: Mao Fengzhi 毛鳳枝《金石萃編補遺》</note>
             </bibl>
             <bibl xml:id="work-000262" type="work">
@@ -5386,6 +5441,7 @@ Source:</date>
                 <author><persName corresp="person-wang-chang" xml:lang="zh">王昶</persName></author>
                 <date type="compiled" when="1918" cert="medium">henyu 羅振玉]] in 民國七年 (1918), from a m</date>
                 <extent unit="juan">13</extent>
+                <relatedItem type="supplements" target="work-000002"/>
                 <note type="source">vault: Wang Chang 王昶《金石萃編未刻稾》</note>
             </bibl>
             <bibl xml:id="work-000336" type="work">
@@ -5909,6 +5965,7 @@ Source:</date>
                 <author><persName xml:lang="zh">王言</persName></author>
                 <date type="compiled" when="1882" cert="medium">s]]. Reprinted 光緒八年 (1882) by 盧文弨's</date>
                 <extent unit="juan">13</extent>
+                <relatedItem type="supplements" target="work-000002"/>
                 <note type="source">vault: Wang Yan 王言《金石萃編補畧》</note>
             </bibl>
             <bibl xml:id="work-000371" type="work">
@@ -5921,6 +5978,9 @@ Source:</date>
                     <date when="1979">1979</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
+                </bibl>
+                <bibl type="edition" xml:id="work-000371-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
                 <note type="source">vault: Wang Yinglin 王應遴《墨華通考》</note>
             </bibl>
@@ -6013,6 +6073,7 @@ Source:</date>
                 <bibl type="edition" xml:id="work-000377-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="corrects" target="work-000002"/>
                 <note type="source">vault: Wei Xizeng 魏錫曾《績語堂碑録》</note>
             </bibl>
             <bibl xml:id="work-000378" type="work">
@@ -6085,6 +6146,9 @@ Source:</date>
                     <date when="1977">1977</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
+                </bibl>
+                <bibl type="edition" xml:id="work-000382-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
                 </bibl>
                 <note type="source">vault: Weng Fanggang 翁方綱《兩漢金石記》(1789)</note>
             </bibl>
@@ -6239,6 +6303,7 @@ Source:</date>
                 <bibl type="edition" xml:id="work-000392-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000051"/>
                 <note type="source">vault: Wu Dongfa 吳東發《商周文拾遺》</note>
             </bibl>
             <bibl xml:id="work-000393" type="work">
@@ -6584,7 +6649,7 @@ Source:</date>
             </bibl>
             <bibl xml:id="work-000413" type="work">
                 <title xml:lang="zh">金石跋</title>
-                <title xml:lang="zh-Latn-x-pinyin">Wu Yi Jinshi bawei</title>
+                <title xml:lang="zh-Latn-x-pinyin">Jinshi bawei</title>
                 <author><persName xml:lang="zh">武億</persName></author>
                 <extent unit="juan">13</extent>
                 <bibl type="edition" xml:id="work-000413-ed-01">
@@ -6606,6 +6671,9 @@ Source:</date>
                     <date when="1977">1977</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
+                </bibl>
+                <bibl type="edition" xml:id="work-000414-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
                 </bibl>
                 <note type="source">vault: Wu Yujin 吳玉搢《金石存》</note>
             </bibl>
@@ -6723,7 +6791,7 @@ Source:</date>
             </bibl>
             <bibl xml:id="work-000421" type="work">
                 <title xml:lang="zh">粵東金石略</title>
-                <title xml:lang="zh-Latn-x-pinyin">Xie Qikun Yuedong jinshi lüe</title>
+                <title xml:lang="zh-Latn-x-pinyin">Yuedong jinshi lüe</title>
                 <author><persName xml:lang="zh">謝啓昆</persName></author>
                 <date type="compiled" when="1771" cert="medium">Fanggang 翁方綱《粵東金石略》(1771) 1|翁方綱's 9</date>
                 <extent unit="juan">13</extent>
@@ -7067,6 +7135,7 @@ Source:</date>
                 <bibl type="edition" xml:id="work-000440-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000422"/>
                 <note type="source">vault: Yang Shaolian 楊紹廉《金石文字辨異補編》</note>
             </bibl>
             <bibl xml:id="work-000441" type="work">
@@ -7489,6 +7558,11 @@ reprinte</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
                 </bibl>
+                <bibl type="edition" xml:id="work-000465-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
+                </bibl>
+                <relatedItem type="supplements" target="work-000511"/>
+                <relatedItem type="supplements" target="work-000188"/>
                 <note type="source">vault: Ye Yibao 葉奕苞《金石錄補》</note>
             </bibl>
             <bibl xml:id="work-000466" type="work">
@@ -8206,6 +8280,13 @@ reprinte</date>
                     <publisher xml:lang="zh">新文豐出版公司</publisher>
                     <note type="in-collection" xml:lang="zh">《石刻史料新編》 (新文豐, 1977–2006)</note>
                 </bibl>
+                <bibl type="edition" xml:id="work-000511-ed-02">
+                    <edition xml:lang="zh">石刻史料新編 第一輯 (新文豐, 1977)</edition>
+                </bibl>
+                <relatedItem type="models-on" target="work-000001"/>
+                <relatedItem type="models-on" target="work-000002"/>
+                <relatedItem type="models-on" target="work-000465"/>
+                <relatedItem type="models-on" target="work-000188"/>
                 <note type="source">vault: Zhao Mingcheng 趙明誠《金石錄》</note>
             </bibl>
             <bibl xml:id="work-000512" type="work">
@@ -8809,6 +8890,7 @@ reprinte</date>
                 <bibl type="edition" xml:id="work-000549-ed-02">
                     <edition xml:lang="zh">石刻史料新編 第二輯 (新文豐, 1979)</edition>
                 </bibl>
+                <relatedItem type="supplements" target="work-000159"/>
                 <note type="source">vault: Zou Bosen 鄒柏森《栝蒼金石志補遺》</note>
             </bibl>
             <bibl xml:id="work-000550" type="work">

@@ -267,6 +267,11 @@
     "Zhu Wenzao 朱文藻": "person-zhu-wenzao",
     "陳伯玉": "person-"
   },
+  "title_pinyin_overrides": {
+    "work-000001": "Jiguolu",
+    "work-000002": "Jinshi cuibian",
+    "work-000003": "Ba qiongshi jinshi buzheng"
+  },
   "works": {
     "Bao Changxi 鮑昌熙《金石屑》": "work-000004",
     "Bao Ding 鮑鼎《朱子金石學》": "work-000005",
