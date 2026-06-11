@@ -1,0 +1,85 @@
+<!-- context: teiHeader; witnesses per doc/sino-model.md par.5:
+     a rubbing 拓本 is a first-class witness with its own msDesc — never a
+     surrogate, never bibl/@type='rubbing'. -->
+<details id="witnesses">
+    <summary>
+        <h2><pb-i18n key="form.witnesses">Textzeugen (拓本)</pb-i18n>
+            <pb-popover>
+                <edep-icon name="info-outline"></edep-icon>
+                <template slot="alternate">
+                    <pb-i18n key="form.hint-witnesses">Rubbings and transmitted copies as witnesses with their own description</pb-i18n>
+                </template>
+            </pb-popover>
+        </h2>
+    </summary>
+
+    <fx-group ref="fileDesc/sourceDesc/listWit">
+        <fx-trigger class="add">
+            <pb-popover>
+                <edep-icon name="add-circle-outline"></edep-icon>
+                <template slot="alternate">
+                    <pb-i18n key="form.hint-add-witness">Add a witness</pb-i18n>
+                </template>
+            </pb-popover>
+            <fx-insert context="." ref="witness" origin="instance('templates')/witness"></fx-insert>
+        </fx-trigger>
+
+        <fx-repeat id="r-witnesses" ref="witness" class="nested-repeat">
+            <template>
+                <fx-group class="neutral witness-entry">
+                    <section class="form-row">
+                        <fx-control ref="@type" create="create">
+                            <label><pb-i18n key="form.witness-type">Art</pb-i18n></label>
+                            <select class="widget">
+                                <option value="rubbing" data-i18n="form.witness-rubbing">Abklatsch (拓本)</option>
+                                <option value="autopsy" data-i18n="form.witness-autopsy">Originalstein (原石)</option>
+                                <option value="transmitted" data-i18n="form.witness-transmitted">Überlieferung (録文)</option>
+                            </select>
+                        </fx-control>
+                        <fx-control ref="@xml:id" create="create" update-event="input">
+                            <label><pb-i18n key="form.witness-siglum">Sigle</pb-i18n></label>
+                            <input class="widget" placeholder="W-tuoben-1"/>
+                        </fx-control>
+                    </section>
+                    <section class="form-row">
+                        <fx-control ref="msDesc/msIdentifier/repository" update-event="input">
+                            <label><pb-i18n key="form.repository">Aufbewahrung</pb-i18n></label>
+                            <input class="widget"/>
+                        </fx-control>
+                        <fx-control ref="msDesc/msIdentifier/idno" update-event="input">
+                            <label><pb-i18n key="form.inventory-number">Inventarnummer</pb-i18n></label>
+                            <input class="widget"/>
+                        </fx-control>
+                    </section>
+                    <section class="form-row">
+                        <fx-control ref="msDesc/history/origin/date/@notBefore" create="create" update-event="input">
+                            <label><pb-i18n key="form.date-after">nach</pb-i18n></label>
+                            <input class="widget" placeholder="1920"/>
+                        </fx-control>
+                        <fx-control ref="msDesc/history/origin/date/@notAfter" create="create" update-event="input">
+                            <label><pb-i18n key="form.date-before">vor</pb-i18n></label>
+                            <input class="widget" placeholder="1935"/>
+                        </fx-control>
+                        <fx-control ref="msDesc/history/origin/persName[@role='taker']" update-event="input">
+                            <label><pb-i18n key="form.witness-taker">Hersteller (拓工)</pb-i18n></label>
+                            <input class="widget"/>
+                        </fx-control>
+                    </section>
+                    <fx-control ref="msDesc/physDesc/objectDesc/supportDesc/condition" update-event="input">
+                        <label><pb-i18n key="form.preservation">Erhaltung</pb-i18n></label>
+                        <input class="widget" placeholder="下截漫漶"/>
+                    </fx-control>
+                    <fx-trigger>
+                        <pb-popover>
+                            <edep-icon name="remove-circle-outline"></edep-icon>
+                            <template slot="alternate">
+                                <pb-i18n key="form.hint-delete-witness">Delete this witness</pb-i18n>
+                            </template>
+                        </pb-popover>
+                        <fx-delete ref="."></fx-delete>
+                    </fx-trigger>
+                </fx-group>
+            </template>
+        </fx-repeat>
+    </fx-group>
+</details>

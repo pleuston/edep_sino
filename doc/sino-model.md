@@ -65,14 +65,14 @@ Epiwen models an edition as **one inscribed text (E-TXT) on one support (E-SUP),
 | Phenomenon | Markup |
 |---|---|
 | 誤字 carver error | `<choice><sic>戊</sic><corr>戌</corr></choice>` |
-| 通假字 phonetic loan | `<choice type="jiajie"><orig>蚤</orig><reg>早</reg></choice>` |
+| 通假字 phonetic loan | `<choice ana="#jiajie"><orig>蚤</orig><reg>早</reg></choice>` |
 | 合文 ligature | `<choice><abbr>廿</abbr><expan><ex>二十</ex></expan></choice>` |
 | 重文 ditto 〻 | `子<choice><abbr><g ref="#chong-wen"/></abbr><expan>子</expan></choice>` |
 | **異體字/缺字** | **`<g ref>` + `<charDecl>`** — glyph identity, *never* `orig/reg` |
 
 - Variant **with** Unicode codepoint (incl. Ext B–G): encode the carved codepoint directly. **[Epiwen]**
 - Variant **without** codepoint: `<g ref="#g-…"/>` + `<glyph>` with `<glyphName>`, **IDS decomposition**, `<mapping type="standardized">` + GlyphWiki/CHISE mappings. 缺字 = `<char>` with IDS `<charProp>`. **[Epiwen]**
-- Taboo: ground-out → `<del rend="erasure"><gap…/></del>` + note · recut 諱改 → `<subst>` · in witness → `<rdg cause="transmission">` · as dating evidence → `@evidence="bihui"` on origDate. **[Epiwen]** In-carving avoidance (缺筆 stroke omission → `<g>`+glyph with taboo note; substituted homophone → `<choice type="bihui"><orig/><reg/></choice>`). **[fill]**
+- Taboo: ground-out → `<del rend="erasure"><gap…/></del>` + note · recut 諱改 → `<subst>` · in witness → `<rdg cause="transmission">` · as dating evidence → `@evidence="bihui"` on origDate. **[Epiwen]** In-carving avoidance (缺筆 stroke omission → `<g>`+glyph with taboo note; substituted homophone → `<choice ana="#bihui"><orig/><reg/></choice>`). **[fill]**
 - 繁/簡 is an `xml:lang` register distinction, never `<choice>`. **[Epiwen]**
 
 **Implements:** jinn-codemirror toolbar snippets for the routing table (M7) · `charDecl` slot in template `encodingDesc` (M7) · shared glyph register `data-pkg/data/registers/glyphs.xml` (deferred to v1.x — open fork #1; v1 uses per-file charDecl).
@@ -125,6 +125,13 @@ Register (standOff): canonical `<persName type="canonical">` (emperor→廟號, 
 - **Languages**: template default `lzh`; editorial `zh-Hant/zh-Hans/en/de`; romanisation `zh-Latn-pinyin`; 五體碑 multilingual = separate parallel editions. `languages.xml` extended. (M5/M7)
 - **Provenance**: `@type` list extended `found(≈excavation)|re-erection|burial|excavation|relocation|history`. (M7)
 - **Religious affiliation**: subject keywords (`religion.xml`) — not an Epiwen category **[fill]**; attested Buddhist specifics: 邑義 donor society = `orgName @type="donor-society"`, sutra quotes = `<quote source="cbeta:…">`.
+
+## Schema-conformance adjustments (v1, found by the tei-epidoc.rng gate)
+
+- **`choice/@type` → `choice/@ana`** (`#jiajie`, `#bihui`): the EpiDoc schema does not admit `@type` on `choice`; `@ana` is valid and semantically the analysis pointer. Deviates in letter, not intent, from the Epiwen snippet.
+- **`listWit` in `sourceDesc` is NOT in the EpiDoc schema** — kept regardless (contract par.5 is non-negotiable) and carried as a sanctioned extension in the validation gate (`scripts/validate-epidoc.sh` allowlist) until the sino ODD/RNG exists (open fork).
+- **Gaiji pruning**: EpiDoc keeps `glyph` + `mapping` but prunes `glyphName`/`charProp`/`char` — IDS decompositions for 缺字 are deferred to the sino ODD (open fork #1); v1 glyph records use `mapping` (+ prose `desc`).
+- Classic EDEp placeholders that are schema-invalid when empty (`resp/@when`, empty `facsimile`, `term/@ref=""`) are stripped by the save cleanup; the upstream template still carries them (logged in doc/UPSTREAM.md).
 
 ## Open Epiwen forks (not silently resolved here)
 

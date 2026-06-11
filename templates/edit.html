@@ -189,6 +189,10 @@
                                     <data></data>
                                 </fx-instance>
 
+                                <fx-instance id="roles" src="../edep-sino-data/data/taxonomy/roles.xml" xpath-default-namespace="http://www.tei-c.org/ns/1.0">
+                                    <data></data>
+                                </fx-instance>
+
                                 <!-- sino dating (doc/sino-model.md par.1) -->
                                 <fx-instance id="era-list" src="api/sino/eras">
                                     <eras></eras>
@@ -463,6 +467,12 @@
                                     </li>
                                     <li>
                                         <a
+                                            href="{uri-path()}#production">
+                                            <pb-i18n key="form.production">Herstellung</pb-i18n>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
                                             href="{uri-path()}#findspot">
                                             <pb-i18n key="form.finding"></pb-i18n>
                                         </a>
@@ -477,6 +487,12 @@
                                         <a
                                             href="{uri-path()}#verification">
                                             <pb-i18n key="form.verification"></pb-i18n>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a
+                                            href="{uri-path()}#witnesses">
+                                            <pb-i18n key="form.witnesses">Textzeugen</pb-i18n>
                                         </a>
                                     </li>
                                     <li>
@@ -580,6 +596,11 @@
 [% include "templates/parts/edit/object.html" %]
 </div>
 
+                                <!-- PRODUCTION ROLES -->
+                                <div id="production-wrapper">
+[% include "templates/parts/edit/production.html" %]
+</div>
+
                                 <fx-group
                                     ref="fileDesc/sourceDesc/msDesc"
                                     id="inscription"
@@ -599,6 +620,11 @@
                                     <!-- VERIFICATION -->
                                     <div id="verification-wrapper">
 [% include "templates/parts/edit/verification.html" %]
+</div>
+
+                                    <!-- WITNESSES (rubbings) -->
+                                    <div id="witnesses-wrapper">
+[% include "templates/parts/edit/witnesses.html" %]
 </div>
 
                                 <fx-group

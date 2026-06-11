@@ -26,7 +26,7 @@ describe('Inscription editor', () => {
 
     // all form sections from the included parts are in the DOM
     ;['findspot', 'objectdesc', 'inscription-field', 'text-description',
-      'edition', 'commentary', 'dating', 'historic-relevance', 'editor']
+      'edition', 'commentary', 'dating', 'historic-relevance', 'editor', 'witnesses', 'production']
       .forEach(id => cy.get(`details#${id}`).should('exist'))
 
     // taxonomy fx-instance loaded from ../edep-sino-data and materialized

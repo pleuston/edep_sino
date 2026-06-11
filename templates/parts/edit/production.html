@@ -1,0 +1,62 @@
+<!-- context: teiHeader; production roles per doc/sino-model.md par.9a:
+     撰文 composer, 書丹 calligrapher, 刻 carver, 題額 titler, 立石 erector —
+     typed respStmt entries; never <author>; unfilled roles recorded as 未詳. -->
+<details id="production">
+    <summary>
+        <h2><pb-i18n key="form.production">Herstellung (撰書刻)</pb-i18n>
+            <pb-popover>
+                <edep-icon name="info-outline"></edep-icon>
+                <template slot="alternate">
+                    <pb-i18n key="form.hint-production">Who composed, wrote, carved, titled and erected the inscription</pb-i18n>
+                </template>
+            </pb-popover>
+        </h2>
+    </summary>
+
+    <fx-group ref="fileDesc/titleStmt">
+        <fx-trigger class="add">
+            <pb-popover>
+                <edep-icon name="add-circle-outline"></edep-icon>
+                <template slot="alternate">
+                    <pb-i18n key="form.hint-add-production-role">Add a production role</pb-i18n>
+                </template>
+            </pb-popover>
+            <fx-insert context="." ref="respStmt" origin="instance('templates')/respStmt[resp/@key]"></fx-insert>
+        </fx-trigger>
+
+        <fx-repeat id="r-production" ref="respStmt[resp/@key]" class="nested-repeat">
+            <template>
+                <fx-group class="form-row">
+                    <fx-control ref="resp/@key">
+                        <label><pb-i18n key="form.production-role">Rolle</pb-i18n></label>
+                        <select class="widget">
+                            <option value=""></option>
+                            <fx-repeat ref="instance('roles')//category">
+                                <template>
+                                    <option value="{@corresp}">{catDesc[@xml:lang='zh']} — {catDesc[@xml:lang = $lang]}</option>
+                                </template>
+                            </fx-repeat>
+                        </select>
+                    </fx-control>
+                    <fx-control ref="persName" update-event="input">
+                        <label><pb-i18n key="form.person-name">Name</pb-i18n></label>
+                        <input class="widget" placeholder="未詳"/>
+                    </fx-control>
+                    <fx-control ref="persName/@key" create="create" update-event="input">
+                        <label><pb-i18n key="form.person-key">Register-ID</pb-i18n></label>
+                        <input class="widget" placeholder="person-..."/>
+                    </fx-control>
+                    <fx-trigger>
+                        <pb-popover>
+                            <edep-icon name="remove-circle-outline"></edep-icon>
+                            <template slot="alternate">
+                                <pb-i18n key="form.hint-delete-production-role">Delete this role</pb-i18n>
+                            </template>
+                        </pb-popover>
+                        <fx-delete ref="."></fx-delete>
+                    </fx-trigger>
+                </fx-group>
+            </template>
+        </fx-repeat>
+    </fx-group>
+</details>

@@ -46,7 +46,7 @@
                                 <condition/>
                             </supportDesc>
                             <layoutDesc>
-                                <layout>
+                                <layout columns="" writtenLines="" style="">
                                     <dimensions>
                                         <height/>
                                         <width/>
@@ -77,6 +77,7 @@
                         <provenance type="history"/>
                     </history>
                 </msDesc>
+                <listWit/>
                 <listBibl>
                     <listBibl type="transmission">
                     </listBibl>
@@ -90,7 +91,8 @@
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
-            <p>Encoded following EpiDoc guidelines 9.2</p>
+            <p>Encoded following EpiDoc guidelines 9.2 and the EDEp Sino conventions (doc/sino-model.md)</p>
+            <charDecl/>
         </encodingDesc>
         <profileDesc>
             <textClass>
@@ -103,7 +105,7 @@
             </textClass>
             <langUsage>
                 <language ident="edep"></language>
-                <language ident="lat" ana="main"></language>
+                <language ident="lzh" ana="main"></language>
             </langUsage>
         </profileDesc>
         <revisionDesc status="draft"/>
@@ -111,7 +113,7 @@
     <facsimile/>
     <text>
         <body>
-            <div type="edition"/>
+            <div type="edition" xml:lang="lzh" xml:space="preserve"/>
             <div type="apparatus"/>
             <div type="translation" resp=""/>
             <div type="commentary"/>

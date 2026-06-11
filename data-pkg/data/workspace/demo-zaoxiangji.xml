@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="demo-zaoxiangji">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>測試造像記（示範樣本 demo sample）</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:zhuan">撰文</resp>
+                    <persName key="">張某（樣本）</persName>
+                </respStmt>
+                <respStmt>
+                    <resp key="sino:role:shu">書丹</resp>
+                    <persName key="">李某（樣本）</persName>
+                </respStmt>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EDEp Sino</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>示範收藏（樣本）</repository>
+                        <idno type="inventory"/>
+                        <idno type="EDEp">demo-zaoxiangji</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:zaoxiangji">
+                        <summary>Fictional specimen votive inscription exercising every EDEp-Sino field (doc/sino-model.md).</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc>
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:zaoxiang"/>
+                                    <material ref="sino:material:shihuiyan"/>
+                                    <note>龕下題記（樣本）</note>
+                                    <dimensions unit="cm">
+                                        <width quantity="90">九十釐米</width>
+                                        <height quantity="40">四十釐米</height>
+                                        <depth/>
+                                    </dimensions>
+                                </support>
+                                <condition corresp="sino:preservation:manhuan"/>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="10" writtenLines="20" style="writing-mode: vertical-rl">
+                                    <dimensions>
+                                        <height/>
+                                        <width/>
+                                    </dimensions>
+                                    <note type="paleography" corresp="sino:script:weibei"/>
+                                    <note type="metre"/>
+                                    <ab>界格內魏碑體十行，滿行二十字（樣本說明）。</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <locus>碑身</locus>
+                                <dimensions>
+                                    <height min="3" max="4"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                        <decoDesc>
+                            <decoNote corresp="sino:decor:jiege"/>
+                        </decoDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate when="0498" notBefore="0498-02-08" notAfter="0499-01-28"
+                                n="太和二十二年" period="sino:dynasty:beiwei"
+                                when-custom="太和:22" datingMethod="#gregorian-converted">太和廿二年九月十四日</origDate>
+                            <origPlace corresp="place-yunfengshan"/>
+                        </origin>
+                        <provenance type="found" when="1920">
+                            <note type="context">出土地點不詳（樣本）。</note>
+                            <note type="found-date"/>
+                        </provenance>
+                        <provenance type="history"/>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing" xml:id="W-tuoben-demo">
+                        <msDesc>
+                            <msIdentifier>
+                                <repository>示範圖書館（樣本）</repository>
+                                <idno>拓 0001</idno>
+                            </msIdentifier>
+                            <history>
+                                <origin>
+                                    <date notBefore="1920" notAfter="1935"/>
+                                    <persName role="taker">未詳</persName>
+                                </origin>
+                            </history>
+                            <physDesc>
+                                <objectDesc>
+                                    <supportDesc>
+                                        <support>紙本墨拓</support>
+                                        <condition>下截漫漶</condition>
+                                    </supportDesc>
+                                </objectDesc>
+                            </physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission"/>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography"/>
+                    <listBibl type="images"/>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines 9.2 and the EDEp Sino conventions (doc/sino-model.md)</p>
+            <charDecl>
+                <glyph xml:id="g-demo-wei">
+                    <mapping type="standardized">為</mapping>
+                </glyph>
+            </charDecl>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="edep"/>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-11T12:00:00Z" who="tei"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="1"/>太和廿二年九月十四日佛弟子王
+<lb n="2"/>某<choice><sic>戊</sic><corr>戌</corr></choice>為亡父母敬造石像一<choice ana="#jiajie"><orig>區</orig><reg>軀</reg></choice>
+<lb n="3" rend="taitou-ping"/>願 皇帝陛下<space dim="vertical" quantity="1" unit="character" subtype="que-zi"/>聖壽無窮
+<lb n="4"/>七世父母咸同<g ref="#g-demo-wei">為</g>福<gap reason="lost" quantity="4" unit="character"/>
+<lb n="5"/>一切眾生普蒙<gap reason="illegible" quantity="2" unit="character"/>樂
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>Sample translation: On the fourteenth day of the ninth month of the twenty-second year of Taihe, the lay Buddhist Wang X reverently made one stone image for his deceased parents …</p>
+            </div>
+            <div type="commentary">
+                <p>示範用虛構文本：句式仿北朝造像記常見格式，非真實文物。Fictional specimen following the common formula of Northern-Dynasties votive inscriptions; not a real artifact.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

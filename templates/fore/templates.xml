@@ -38,4 +38,33 @@
     <objectType ref=""/>
     <material ref=""/>
     <idno type=""></idno>
+    <!-- rubbing/transmitted witness skeleton (doc/sino-model.md par.5) -->
+    <witness type="rubbing" xml:id="">
+        <msDesc>
+            <msIdentifier>
+                <repository/>
+                <idno/>
+            </msIdentifier>
+            <history>
+                <origin>
+                    <date notBefore="" notAfter=""/>
+                    <persName role="taker"/>
+                </origin>
+            </history>
+            <physDesc>
+                <objectDesc>
+                    <supportDesc>
+                        <support/>
+                        <condition/>
+                    </supportDesc>
+                </objectDesc>
+            </physDesc>
+        </msDesc>
+    </witness>
+
+    <!-- typed production role (doc/sino-model.md par.9a) -->
+    <respStmt>
+        <resp key=""/>
+        <persName key=""/>
+    </respStmt>
 </body>

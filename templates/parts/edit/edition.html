@@ -133,6 +133,55 @@
                       title="Insert expan/abbr">
                         &lt;expan&gt;
                     </button>
+                    <!-- sino routing table, doc/sino-model.md par.4 + par.2 -->
+                    <button class="sep"
+                      data-command="snippet"
+                      data-params="&lt;choice&gt;&lt;sic&gt;$|1|&lt;/sic&gt;&lt;corr&gt;$|_|&lt;/corr&gt;&lt;/choice&gt;"
+                      title="誤字 carver error: sic/corr">
+                        誤字
+                    </button>
+                    <button
+                      data-command="snippet"
+                      data-params="&lt;choice ana=&#34;#jiajie&#34;&gt;&lt;orig&gt;$|1|&lt;/orig&gt;&lt;reg&gt;$|_|&lt;/reg&gt;&lt;/choice&gt;"
+                      title="通假字 phonetic loan: orig/reg">
+                        通假
+                    </button>
+                    <button
+                      data-command="snippet"
+                      data-params="&lt;choice ana=&#34;#bihui&#34;&gt;&lt;orig&gt;$|1|&lt;/orig&gt;&lt;reg&gt;$|_|&lt;/reg&gt;&lt;/choice&gt;"
+                      title="避諱 taboo substitution: orig/reg">
+                        避諱
+                    </button>
+                    <button
+                      data-command="snippet"
+                      data-params="&lt;g ref=&#34;#$|1|&#34;&gt;$|_|&lt;/g&gt;"
+                      title="異體字/缺字 glyph reference (charDecl)">
+                        異體
+                    </button>
+                    <button
+                      data-command="snippet"
+                      data-params="&lt;space dim=&#34;vertical&#34; quantity=&#34;1&#34; unit=&#34;character&#34; subtype=&#34;que-zi&#34;/&gt;"
+                      title="闕字 honorific blank">
+                        闕字
+                    </button>
+                    <button
+                      data-command="snippet"
+                      data-params="&lt;lb n=&#34;$|1|&#34; rend=&#34;taitou-ping&#34;/&gt;"
+                      title="抬頭 raised head column break">
+                        抬頭
+                    </button>
+                    <button
+                      data-command="snippet"
+                      data-params="&lt;gap reason=&#34;lost&#34; quantity=&#34;$|1|&#34; unit=&#34;character&#34;/&gt;"
+                      title="缺/殘 lost characters">
+                        缺
+                    </button>
+                    <button
+                      data-command="snippet"
+                      data-params="&lt;gap reason=&#34;illegible&#34; quantity=&#34;$|1|&#34; unit=&#34;character&#34;/&gt;"
+                      title="漫漶 illegible characters">
+                        漫漶
+                    </button>
                     <button
                       data-command="snippet"
                       data-params="&lt;gap reason=&#34;lost&#34; extent=&#34;unknown&#34; unit=&#34;character&#34;/&gt;$|1|"

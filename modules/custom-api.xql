@@ -442,7 +442,11 @@ declare %private function api:postprocess($nodes as node()*, $edepId as xs:strin
                     $node/node()
                 }
             case element(tei:idno) return
-                if ($node/@type = "EDEp" and exists($edepId)) then
+                (: guard against UI-created placeholder nodes on imported
+                   documents that lack the template skeleton :)
+                if (not($node/@type) and not($node/node())) then
+                    ()
+                else if ($node/@type = "EDEp" and exists($edepId)) then
                     element { node-name($node) } {
                         $node/@*,
                         $edepId
