@@ -1,0 +1,16 @@
+{
+  "inscriptions": {
+    "乙瑛碑（153 CE）": "insc-000001"
+  },
+  "persons": {
+    "Lu Zengxiang 陸增祥": "person-lu-zengxiang",
+    "Ouyang Xiu 歐陽修": "person-ouyang-xiu",
+    "Wang Chang 王昶": "person-wang-chang",
+    "Zhu Wenzao 朱文藻": "person-zhu-wenzao"
+  },
+  "works": {
+    "Lu Zengxiang 陸增祥 《八瓊室金石補正》": "work-000003",
+    "Ouyang Xiu 歐陽修《集古錄》": "work-000001",
+    "Wang Chang 王昶《金石萃編》": "work-000002"
+  }
+}
