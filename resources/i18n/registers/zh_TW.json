@@ -1,0 +1,13 @@
+{
+    "form": {
+        "description": "顯示說明"
+    },
+    "menu": {
+        "bibliography": "書目",
+        "people": "人物",
+        "places": "地點"
+    },
+    "tabs": {
+        "register": "索引"
+    }
+}

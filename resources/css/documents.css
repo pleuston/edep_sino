@@ -105,3 +105,22 @@ li.document .attribution {
 .documents .sample-description {
     font-size: var(--jinks-footnote-font-size);
 }
+
+/* EDEp Sino: page-level wiring for the CJK direction toggle.
+   The component-side rules live in sino-components.css (concatenated
+   onto components.css at build) and read these custom properties. */
+.center {
+    --sino-writing-mode: vertical-rl;
+    --sino-text-orientation: upright;
+}
+.center.cjk-horizontal {
+    --sino-writing-mode: horizontal-tb;
+    --sino-text-orientation: mixed;
+}
+.center .cjk-direction-toggle {
+    float: right;
+    font-size: 0.8rem;
+    padding: 0.15rem 0.6rem;
+    margin: 0 0 0.5rem 0.5rem;
+    width: auto;
+}

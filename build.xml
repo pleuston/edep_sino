@@ -126,6 +126,13 @@
         <copy todir="${app.build.dir}/resources/i18n/common">
             <fileset dir="${basedir}/node_modules/@teipublisher/pb-components/i18n/common"/>
         </copy>
+        <!-- append the sino component theme to the css injected into pb-* shadow roots -->
+        <concat destfile="${app.build.dir}/resources/css/components.css" append="true">
+            <fileset file="${basedir}/resources/css/sino-components.css"/>
+        </concat>
+        <!-- the language selector offers zh_TW; pb-components ships zh_Hant -->
+        <copy file="${basedir}/node_modules/@teipublisher/pb-components/i18n/common/zh_Hant.json"
+              tofile="${app.build.dir}/resources/i18n/common/zh_TW.json" overwrite="true"/>
         <antcall target="xar"/>
     </target>
 

@@ -1,6 +1,6 @@
 # EDEp Sino — User guide for epigraphers
 
-*State: M7 — covers the editor for Chinese inscriptions. Registers and the Chinese interface follow in later milestones.*
+*Covers the editor, registers and reading view. Interface languages: English, Deutsch, 繁體中文 (selector top right).*
 
 EDEp Sino catalogues Chinese inscriptions as EpiDoc TEI. You never see the XML unless you want to: the editing form reads and writes the document directly. The encoding conventions behind every field are specified in `doc/sino-model.md`.
 

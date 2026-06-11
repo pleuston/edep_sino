@@ -9,6 +9,12 @@
     ---
     <!-- Basic template for a page with a single document -->
     <div class="center">
+        <!-- EDEp Sino: editions in Literary Chinese (lang=lzh) render in
+             vertical columns by default (doc/sino-model.md par.2); the button
+             toggles a horizontal fallback. -->
+        <button class="cjk-direction-toggle" type="button"
+                onclick="this.parentElement.classList.toggle('cjk-horizontal')"
+                title="豎排／橫排">豎排／橫排</button>
         <pb-view src="document1" column-separator=".tei-cb" append-footnotes="append-footnotes" subscribe="transcription" emit="transcription" direction="[[$context?defaults?direction]]"/>
     </div>
 </template>
