@@ -31,7 +31,7 @@
                         <summary/>
                     </msContents>
                     <physDesc>
-                        <objectDesc>
+                        <objectDesc form="">
                             <supportDesc>
                                 <support>
                                     <objectType ref=""/>
@@ -64,6 +64,7 @@
                         <decoDesc>
                             <decoNote corresp=""/>
                         </decoDesc>
+                        <sealDesc/>
                     </physDesc>
                     <history>
                         <origin>

@@ -67,4 +67,9 @@
         <resp key=""/>
         <persName key=""/>
     </respStmt>
+
+    <!-- seal 鈐印 (doc/sino-model.md 8bis) -->
+    <seal type="">
+        <p></p>
+    </seal>
 </body>

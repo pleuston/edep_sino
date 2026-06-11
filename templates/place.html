@@ -3,7 +3,13 @@
     ---json
     {
         "templating": {
-            "extends": "templates/layouts/content.html"
+            "extends": "templates/layouts/content.html",
+            "modules": {
+                "http://edep-sino.org/templates/sites": {
+                    "at": "modules/templates/sites.xqm",
+                    "prefix": "sites"
+                }
+            }
         },
         "features": {
             "toolbar": {
@@ -30,7 +36,8 @@
         },
         "styles": [
             "transform/teipublisher.css",
-            "resources/css/registers-theme.css"
+            "resources/css/registers-theme.css",
+            "resources/css/sites.css"
         ],
         "theme": {
             "layout": {
@@ -61,5 +68,22 @@
     [% endtemplate %]
     <section class="place">
         [[ page:transform($entity-data?root, map { "mode": "register-details" }) ]]
+
+        [% let $found = sites:inscriptions-at($entity-data?id) %]
+        [% if exists($found) %]
+        <section class="site-holdings">
+            <h2><pb-i18n key="sites.inscriptions-here">Inscriptions at this site</pb-i18n>
+                <span class="count">([[ count($found) ]])</span></h2>
+            <ul class="site-inscriptions">
+                [% for $i in $found %]
+                <li>
+                    <a href="[[ $context-path ]]/[[ $i?file ]]">[[ if ($i?title != '') then $i?title else $i?id ]]</a>
+                    <small>[[ string-join(($i?period[. != ''], $i?objtype[. != '']), ' · ') ]]</small>
+                </li>
+                [% endfor %]
+            </ul>
+        </section>
+        [% endif %]
+        [% endlet %]
     </section>
 </template>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Seal types (seal/@type), doc/sino-model.md section 8bis. -->
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="sealtype">
+    <category xml:id="jiancang" corresp="sino:sealtype:jiancang">
+        <catDesc xml:lang="zh">鑑藏印</catDesc>
+        <catDesc xml:lang="en">collector seal</catDesc>
+        <catDesc xml:lang="de">Sammlersiegel</catDesc>
+    </category>
+    <category xml:id="zhcustomer" corresp="sino:sealtype:zhcustomer">
+        <catDesc xml:lang="zh">名章</catDesc>
+        <catDesc xml:lang="en">name seal</catDesc>
+        <catDesc xml:lang="de">Namenssiegel</catDesc>
+    </category>
+    <category xml:id="zhai" corresp="sino:sealtype:zhai">
+        <catDesc xml:lang="zh">齋館印</catDesc>
+        <catDesc xml:lang="en">studio seal</catDesc>
+        <catDesc xml:lang="de">Atelier-Siegel</catDesc>
+    </category>
+    <category xml:id="yinshou" corresp="sino:sealtype:yinshou">
+        <catDesc xml:lang="zh">引首印</catDesc>
+        <catDesc xml:lang="en">leading seal</catDesc>
+        <catDesc xml:lang="de">Anfangssiegel</catDesc>
+    </category>
+    <category xml:id="xianzhang" corresp="sino:sealtype:xianzhang">
+        <catDesc xml:lang="zh">閒章</catDesc>
+        <catDesc xml:lang="en">leisure seal</catDesc>
+        <catDesc xml:lang="de">Devisensiegel</catDesc>
+    </category>
+</taxonomy>

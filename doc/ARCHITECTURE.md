@@ -62,7 +62,9 @@ test/cypress         e2e suite (run against local eXist)
 
 ## Navigation & the sites axis
 
-The menu (`context.json → menu.items`) leads with **Map → Inscriptions → Sites → Registers ▾**. "Sites" are *find-spots joined with their holdings*: `modules/templates/sites.xqm` resolves place entity files against `origPlace/@corresp` of the workspace documents and powers three surfaces — `templates/map.html` (full-page Leaflet + markercluster from the pb-components bundle, data via `GET /api/sites`), `templates/sites.html` (server-rendered index) and the API. The Places register stays the broader gazetteer. The editor is reachable via the login-gated ＋New menu entry and an Edit button in the document toolbar.
+The menu (`context.json → menu.items`) leads with **Map → Inscriptions → Sites → Registers ▾**. "Sites" are *find-spots joined with their holdings*: `modules/templates/sites.xqm` resolves place entity files against `origPlace/@corresp` of the workspace documents and powers three surfaces — `templates/map.html` (full-page Leaflet + markercluster from the pb-components bundle, data via `GET /api/sites`), `templates/sites.html` (server-rendered index) and the API. The Places register stays the broader gazetteer, and each place page lists the inscriptions found at that site inline (`sites:inscriptions-at`). The editor is reachable via the login-gated ＋New menu entry and an Edit button in the document toolbar.
+
+Beyond carved stone, objects record a **visual form** (`objectDesc/@form`, `medium` taxonomy: calligraphy/painting/ink-on-paper/seal-impression…) and **seals** (`physDesc/sealDesc/seal`, `sealtype` taxonomy; owner via `@corresp` to the person register) — see `doc/sino-model.md` §8bis.
 
 ## Upgradability
 

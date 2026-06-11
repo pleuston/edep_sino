@@ -72,16 +72,24 @@ describe('Inscription editor roundtrip', () => {
 
     cy.url().then(u => {
       const id = new URL(u).searchParams.get('id')
-      createdIds.push(id, `${id}-1`)
+      createdIds.push(id)
 
       // the fragment block in the nav shows the add button (parent has xml:id)
       cy.get('#addFragment button', { timeout: 20000 }).should('be.visible').click()
 
-      // parent gains @fragments; fragment doc exists with @corresp/@type
-      cy.request(`/api/inscription?id=${id}-1&collection=workspace`)
-        .its('body')
-        .should('include', `corresp="${id}"`)
-        .and('include', 'type="partial"')
+      // the parent gains a space-separated @fragments list; read the real
+      // assigned fragment id from it (id may not be "-1" if siblings exist)
+      cy.get('#r-fragments a', { timeout: 20000 })
+        .last()
+        .invoke('text')
+        .then(fragId => {
+          const fid = fragId.trim()
+          createdIds.push(fid)
+          cy.request(`/api/inscription?id=${fid}&collection=workspace`)
+            .its('body')
+            .should('include', `corresp="${id}"`)
+            .and('include', 'type="partial"')
+        })
     })
   })
 })

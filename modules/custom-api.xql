@@ -442,6 +442,18 @@ declare %private function api:postprocess($nodes as node()*, $edepId as xs:strin
                     $node/@*[string() ne ''],
                     $node/node()
                 }
+            case element(tei:seal) return
+                (: drop empty pointer/type placeholders (doc/sino-model.md 8bis) :)
+                element { node-name($node) } {
+                    $node/@*[string() ne ''],
+                    api:postprocess($node/node(), $edepId)
+                }
+            case element(tei:objectDesc) return
+                (: drop the empty @form placeholder (doc/sino-model.md 8bis) :)
+                element { node-name($node) } {
+                    $node/@*[not(name() = 'form' and string() eq '')],
+                    api:postprocess($node/node(), $edepId)
+                }
             case element(tei:idno) return
                 (: guard against UI-created placeholder nodes on imported
                    documents that lack the template skeleton :)

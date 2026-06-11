@@ -31,7 +31,9 @@ The top navigation leads with the spatial entry point:
 
 **Witnesses (拓本)** — rubbings and transmitted copies are *witnesses with their own description*, not images of the stone: type (拓本 rubbing / 原石 stone autopsy / 録文 transmitted), siglum, holding institution, shelfmark, date of taking, taker (拓工), condition. Photographs of the stone itself belong under *Images*, not here.
 
-**Description of object** — object form (碑/碣/摩崖/造像/經幢/墓誌…), material, decoration (螭首, 龜趺, 額, 界格…), measurements (cm; keep the source 尺/寸 statement in the text field).
+**Description of object** — object form (碑/碣/摩崖/造像/經幢/墓誌…), material, decoration (螭首, 龜趺, 額, 界格…), measurements (cm; keep the source 尺/寸 statement in the text field). Also:
+  - **Visual form 視覺形式** — the medium when the object is not (only) carved stone: 法書 calligraphy, 墨跡 ink on paper, 繪畫 painting, 鈐印 seal impression, 拓本 rubbing, 寫本/刻本.
+  - **Seals 鈐印** — repeatable: seal type (鑑藏印 collector, 名章 name, 齋館印 studio…), the legend 印文, and optionally the owner's register id. Photographs of the seal go under Images.
 
 **Inscription field** — the inscribed zone: height/width, **columns 行數**, **characters per full column 滿行**, **writing direction** (vertical right-to-left for most carved texts), character heights (字徑) per zone.
 
@@ -64,7 +66,7 @@ Counting unit is always the **character**. Whitespace inside the edition is pres
 
 ## Registers
 
-*People* and *Places* list the authority entries. A person entry shows the canonical name with pinyin, the name components (字 courtesy name, 號 sobriquet, 諡 posthumous name, 廟號 temple name), floruit and offices held (官職); a place entry shows the period-resolved historical names (古名), the administrative hierarchy (政區, with period validity) and the location on the map (WGS84). Entries are stored as standOff records; they can be created and updated through the registers API (`PUT /api/register` with a TEI `person`/`place` whose `xml:id` is `person-NEW`/`place-NEW`) — entry forms in the UI follow with the upstream annotation tooling.
+*People* and *Places* list the authority entries. Each site (place) page also lists the inscriptions found there, linking into the reading view. A person entry shows the canonical name with pinyin, the name components (字 courtesy name, 號 sobriquet, 諡 posthumous name, 廟號 temple name), floruit and offices held (官職); a place entry shows the period-resolved historical names (古名), the administrative hierarchy (政區, with period validity) and the location on the map (WGS84). Entries are stored as standOff records; they can be created and updated through the registers API (`PUT /api/register` with a TEI `person`/`place` whose `xml:id` is `person-NEW`/`place-NEW`) — entry forms in the UI follow with the upstream annotation tooling.
 
 ## Validation
 

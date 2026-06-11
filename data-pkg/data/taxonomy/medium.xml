@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Visual form / medium of the object (objectDesc/@form), doc/sino-model.md
+     section 8bis. Extends EDEp beyond carved stone to the calligraphy,
+     painting, ink-on-paper and seal forms discussed in the DRECE design. -->
+<taxonomy xmlns="http://www.tei-c.org/ns/1.0" xml:id="medium">
+    <category xml:id="keshi" corresp="sino:medium:keshi">
+        <catDesc xml:lang="zh">刻石</catDesc>
+        <catDesc xml:lang="en">carved stone</catDesc>
+        <catDesc xml:lang="de">Steininschrift</catDesc>
+        <note>The default for the carved corpus; explicit value for mixed collections.</note>
+    </category>
+    <category xml:id="fashu" corresp="sino:medium:fashu">
+        <catDesc xml:lang="zh">法書</catDesc>
+        <catDesc xml:lang="en">calligraphy (model writing)</catDesc>
+        <catDesc xml:lang="de">Kalligraphie (Musterschrift)</catDesc>
+    </category>
+    <category xml:id="mojixie" corresp="sino:medium:mojixie">
+        <catDesc xml:lang="zh">墨跡</catDesc>
+        <catDesc xml:lang="en">ink on paper/silk</catDesc>
+        <catDesc xml:lang="de">Tusche auf Papier/Seide</catDesc>
+    </category>
+    <category xml:id="huihua" corresp="sino:medium:huihua">
+        <catDesc xml:lang="zh">繪畫</catDesc>
+        <catDesc xml:lang="en">painting</catDesc>
+        <catDesc xml:lang="de">Malerei</catDesc>
+    </category>
+    <category xml:id="qianyin" corresp="sino:medium:qianyin">
+        <catDesc xml:lang="zh">鈐印</catDesc>
+        <catDesc xml:lang="en">seal impression</catDesc>
+        <catDesc xml:lang="de">Siegelabdruck</catDesc>
+    </category>
+    <category xml:id="tuoben" corresp="sino:medium:tuoben">
+        <catDesc xml:lang="zh">拓本</catDesc>
+        <catDesc xml:lang="en">rubbing</catDesc>
+        <catDesc xml:lang="de">Abklatsch</catDesc>
+        <note>When the catalogued object IS a rubbing rather than the stone (cf. witnesses).</note>
+    </category>
+    <category xml:id="xieben" corresp="sino:medium:xieben">
+        <catDesc xml:lang="zh">寫本</catDesc>
+        <catDesc xml:lang="en">manuscript</catDesc>
+        <catDesc xml:lang="de">Handschrift</catDesc>
+    </category>
+    <category xml:id="keben" corresp="sino:medium:keben">
+        <catDesc xml:lang="zh">刻本</catDesc>
+        <catDesc xml:lang="en">woodblock print</catDesc>
+        <catDesc xml:lang="de">Blockdruck</catDesc>
+    </category>
+</taxonomy>

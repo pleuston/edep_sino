@@ -37,7 +37,7 @@
                         <summary>Fictional specimen votive inscription exercising every EDEp-Sino field (doc/sino-model.md).</summary>
                     </msContents>
                     <physDesc>
-                        <objectDesc>
+                        <objectDesc form="sino:medium:keshi">
                             <supportDesc>
                                 <support>
                                     <objectType ref="sino:objtyp:zaoxiang"/>
@@ -74,6 +74,11 @@
                         <decoDesc>
                             <decoNote corresp="sino:decor:jiege"/>
                         </decoDesc>
+                        <sealDesc>
+                            <seal type="sino:sealtype:jiancang">
+                                <p>示範藏印（樣本）</p>
+                            </seal>
+                        </sealDesc>
                     </physDesc>
                     <history>
                         <origin>

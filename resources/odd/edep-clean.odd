@@ -68,6 +68,19 @@
         </model>
                 <model behaviour="copy"/>
             </elementSpec>
+            <!-- EDEp Sino: visual form / seals (doc/sino-model.md 8bis) -->
+            <elementSpec ident="sealDesc" mode="add">
+                <model predicate="not(seal)" behaviour="omit">
+            <desc>Delete sealDesc when it holds no seals</desc>
+        </model>
+                <model behaviour="copy"/>
+            </elementSpec>
+            <elementSpec ident="seal" mode="add">
+                <model predicate="normalize-space(@type) eq '' and normalize-space(string-join(p, '')) eq ''" behaviour="omit">
+            <desc>Delete a seal with neither type nor legend</desc>
+        </model>
+                <model behaviour="copy"/>
+            </elementSpec>
             <elementSpec ident="material" mode="add">
                 <model predicate="@ref eq ''" behaviour="omit">
             <desc>Delete element material if attribute @ref is empty</desc>

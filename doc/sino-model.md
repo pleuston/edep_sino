@@ -126,6 +126,14 @@ Register (standOff): canonical `<persName type="canonical">` (emperor→廟號, 
 - **Provenance**: `@type` list extended `found(≈excavation)|re-erection|burial|excavation|relocation|history`. (M7)
 - **Religious affiliation**: subject keywords (`religion.xml`) — not an Epiwen category **[fill]**; attested Buddhist specifics: 邑義 donor society = `orgName @type="donor-society"`, sutra quotes = `<quote source="cbeta:…">`.
 
+## 8bis. Visual form & seals (medium beyond carved stone) **[fill — DRECE design]**
+
+EDEp's corpus is carved stone, but the DRECE design and the NPM examples (法書 calligraphy, 經塔 with 朱書 + 繪畫 + 鑑藏印) require recording other visual/material forms on the same object model.
+
+- **Visual form** = `objectDesc/@form` keyed into a new `medium` taxonomy: 刻石 carved stone · 法書 calligraphy · 墨跡 ink on paper/silk · 繪畫 painting · 鈐印 seal impression · 拓本 rubbing-as-object · 寫本 manuscript · 刻本 woodblock print. EpiDoc-valid (`@form` is free on `objectDesc`); empty placeholder stripped on save (`api:postprocess`). Editor: a select in `objectdesc.html`.
+- **Seals 鈐印** = `physDesc/sealDesc/seal`, each `seal/@type` (new `sealtype` taxonomy: 鑑藏印 collector · 名章 name · 齋館印 studio · 引首印 leading · 閒章 leisure), `seal/p` for the legend 印文, optional `@corresp` → person register for the seal's owner. EpiDoc-valid **only with non-empty `@corresp`** — the empty placeholder is dropped in `api:postprocess` (`seal` case) and empty `sealDesc`/`seal` are omitted by `edep-clean.odd`. Editor: repeatable seal rows in `objectdesc.html`.
+- Deferred: a shared **seals register** (a collector's 鑑藏印 reused across objects, like persons/places) — `@corresp` already points at the person register for owners; a dedicated seal authority is v1.x. Metadata-display ODD rendering of `@form`/`sealDesc` (the inscription view) is also a follow-on; the editor + stored XML are complete.
+
 ## Schema-conformance adjustments (v1, found by the tei-epidoc.rng gate)
 
 - **`choice/@type` → `choice/@ana`** (`#jiajie`, `#bihui`): the EpiDoc schema does not admit `@type` on `choice`; `@ana` is valid and semantically the analysis pointer. Deviates in letter, not intent, from the Epiwen snippet.

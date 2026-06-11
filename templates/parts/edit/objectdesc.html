@@ -39,8 +39,31 @@
                     <!-- prettier-ignore -->
                     <option value="{@xml:id}">{catDesc[@xml:lang = $lang]}</option>
                 </template>
-            </select>     
+            </select>
         </fx-control>
+
+        <!-- visual form / medium of the object (doc/sino-model.md 8bis):
+             carved stone, calligraphy, painting, ink-on-paper, seal impression… -->
+        <fx-control id="visual-form" ref="objectDesc/@form" create="create" update-event="input">
+            <label>
+                <pb-i18n key="form.visual-form">Visual form</pb-i18n>
+                <pb-popover>
+                    <edep-icon name="info-outline"></edep-icon>
+                    <template slot="alternate">
+                        <pb-i18n key="form.hint-visual-form">Medium of the object beyond carved stone — calligraphy, painting, ink on paper, seal impression…</pb-i18n>
+                    </template>
+                </pb-popover>
+            </label>
+            <select class="widget">
+                <option value=""></option>
+                <fx-repeat ref="instance('medium')//category">
+                    <template>
+                        <option value="{@corresp}">{catDesc[@xml:lang='zh']} — {catDesc[@xml:lang = $lang]}</option>
+                    </template>
+                </fx-repeat>
+            </select>
+        </fx-control>
+
         <fx-group ref="objectDesc/supportDesc/support" class="neutral">
             <fieldset>
                 <legend>
@@ -237,5 +260,51 @@
             </fx-group>
         </fx-group>
     </div>
+
+    <!-- seals 鈐印 (collector & artist seals), doc/sino-model.md 8bis -->
+    <fx-group class="neutral" ref="physDesc/sealDesc" id="seals">
+        <fieldset>
+            <legend><pb-i18n key="form.seals">Seals (鈐印)</pb-i18n></legend>
+            <fx-repeat id="r-seals" ref="seal" class="nested-repeat">
+                <template>
+                    <fx-group class="form-row">
+                        <fx-control ref="@type" create="create">
+                            <label><pb-i18n key="form.seal-type">Seal type</pb-i18n></label>
+                            <select class="widget">
+                                <option value=""></option>
+                                <fx-repeat ref="instance('sealtype')//category">
+                                    <template>
+                                        <option value="{@corresp}">{catDesc[@xml:lang='zh']} — {catDesc[@xml:lang = $lang]}</option>
+                                    </template>
+                                </fx-repeat>
+                            </select>
+                        </fx-control>
+                        <fx-control ref="p" update-event="input">
+                            <label><pb-i18n key="form.seal-legend">Seal legend (印文)</pb-i18n></label>
+                            <input class="widget" placeholder="乾隆御覽之寶"/>
+                        </fx-control>
+                        <fx-control ref="@corresp" create="create" update-event="input">
+                            <label><pb-i18n key="form.person-key">Register id</pb-i18n></label>
+                            <input class="widget" placeholder="person-…"/>
+                        </fx-control>
+                        <fx-trigger>
+                            <pb-popover>
+                                <edep-icon name="remove-circle-outline"></edep-icon>
+                                <template slot="alternate"><pb-i18n key="form.hint-delete-seal">Delete this seal</pb-i18n></template>
+                            </pb-popover>
+                            <fx-delete ref="."></fx-delete>
+                        </fx-trigger>
+                    </fx-group>
+                </template>
+            </fx-repeat>
+            <fx-trigger class="add">
+                <pb-popover>
+                    <edep-icon name="add-circle-outline"></edep-icon>
+                    <template slot="alternate"><pb-i18n key="form.hint-add-seal">Add a seal</pb-i18n></template>
+                </pb-popover>
+                <fx-insert context="." ref="seal" origin="instance('templates')/seal"></fx-insert>
+            </fx-trigger>
+        </fieldset>
+    </fx-group>
 
 </details>
