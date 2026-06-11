@@ -2,13 +2,13 @@
 	"openapi": "3.0.3",
 	"info": {
 		"version": "1.0.0",
-		"title": "edep-jinks",
+		"title": "edep-sino",
 		"description": "This is the core API for TEI Publisher. It describes all endpoints used by TEI Publisher web components, plus additional operations added for external access."
 	},
 	"servers": [
 		{
 			"description": "Endpoint for testing on localhost",
-			"url": "/exist/apps/edep-jinks"
+			"url": "/exist/apps/edep-sino"
 		}
 	],
 	"tags": [

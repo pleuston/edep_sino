@@ -1,7 +1,7 @@
 {
-    "name": "edep-jinks",
+    "name": "edep-sino",
     "version": "1.0.0",
-    "description": "edep-jinks",
+    "description": "edep-sino",
     "license": "GPL-3.0",
     "dependencies": {
         "@teipublisher/pb-components": "^3.3.0",

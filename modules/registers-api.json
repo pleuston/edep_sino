@@ -2,13 +2,13 @@
     "openapi": "3.0.3",
     "info": {
         "version": "1.0.0",
-        "title": "edep-jinks – Registers API",
+        "title": "edep-sino – Registers API",
         "description": "Endpoints to browse and search the local authority files"
     },
     "servers": [
         {
             "description": "Endpoint for testing on localhost",
-            "url": "/exist/apps/edep-jinks"
+            "url": "/exist/apps/edep-sino"
         }
     ],
     "components": {

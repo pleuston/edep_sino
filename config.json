@@ -13,18 +13,18 @@
       "palette" : null
     }
   },
-  "label" : "edep-jinks",
+  "label" : "edep-sino",
   "odds" : [ "edep.odd", "edep-output.odd", "output.odd" ],
-  "id" : "https://jinntec.de/apps/edep-jinks",
+  "id" : "https://jinntec.de/apps/edep-sino",
   "defaults" : {
-    "data" : "/db/apps/edep-data/data",
+    "data" : "/db/apps/edep-sino-data/data",
     "data-default" : "workspace",
     "view" : "single",
     "odd" : "output.odd"
   },
   "extends" : [ "base10", "theme-base10", "registers", "landing-page", "metadata-panel" ],
   "pkg" : {
-    "abbrev" : "edep-jinks"
+    "abbrev" : "edep-sino"
   },
   "description" : "Editionstools für eine digitale Epigraphik"
 }

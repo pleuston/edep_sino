@@ -78,7 +78,7 @@
                 <elementSpec ident="persName" mode="add">
                     <model behaviour="alternate">
             <param name="default" value="."/>
-            <param name="alternate" value="collection('/db/apps/edep-data/people')/id(@key)"/>
+            <param name="alternate" value="collection('/db/apps/edep-sino-data/people')/id(@key)"/>
         </model>
                 </elementSpec>
             <elementSpec ident="expan" mode="change">

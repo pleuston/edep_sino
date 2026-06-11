@@ -2,13 +2,13 @@
     "openapi": "3.0.3",
     "info": {
         "version": "1.0.0",
-        "title": "edep-jinks – Custom API",
+        "title": "edep-sino – Custom API",
         "description": "This is the place to add your own path endpoints"
     },
     "servers": [
         {
             "description": "Endpoint for testing on localhost",
-            "url": "/exist/apps/edep-jinks"
+            "url": "/exist/apps/edep-sino"
         }
     ],
     "components": {

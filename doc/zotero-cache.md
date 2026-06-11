@@ -9,7 +9,7 @@ This document describes the local Zotero cache used by the app, the expected col
 
 ## Preconditions
 
-* you must install edep-data.xar BEFORE edep.xar so the latter can create the necessary structure (see below)
+* you must install edep-sino-data.xar BEFORE edep.xar so the latter can create the necessary structure (see below)
 
 ## What is does
 
@@ -25,7 +25,7 @@ Note: Currently only one group is supported for syncing. However the structure a
 multiple groups with their items. 
 
 ```
-/edep-data
+/edep-sino-data
 └── zotero/                        (collection)   [pre-created]
     └── groups/                          (collection)   [pre-created]
         └── <GROUP_ID>/                  (collection)   [created by post-install]
@@ -190,8 +190,8 @@ declare function zotero:sync($config as map(*), $root as element()) as xs:string
 
 ## Troubleshooting
 
-- **make sure edep-data.xar has been installed before edep.xar**
-  post-install of edep.xar creates the needed collections in edep-data
+- **make sure edep-sino-data.xar has been installed before edep.xar**
+  post-install of edep.xar creates the needed collections in edep-sino-data
 
 - **First run fails reading meta**  
   Ensure post‑install created `meta.json`. If absent, running post‑install again will seed it.

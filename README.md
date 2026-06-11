@@ -1,4 +1,4 @@
-# edep-jinks – edep-jinks
+# edep-sino – edep-sino
 
 > Editionstools für eine digitale Epigraphik
 

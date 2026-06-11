@@ -65,7 +65,7 @@
                 <elementSpec ident="objectType" mode="add"><model predicate="not(@ref) or @ref = ''" behaviour="inline">
             <pb:template xml:space="preserve"><span xmlns="" xml:space="preserve"><pb-i18n key="form.type-of-monument"/>  <pb-i18n key="form.unknown"/></span></pb:template>
         </model><model behaviour="inline">
-            <param name="content" value="let $lang := replace($parameters?language, '([^-]+)-?.*$', '$1') let $ref := @ref return doc(&#34;/db/apps/edep-data/data/taxonomy/objtyp.xml&#34;)//category[@corresp=$ref]/catDesc[@xml:lang=$lang]/string()"/>
+            <param name="content" value="let $lang := replace($parameters?language, '([^-]+)-?.*$', '$1') let $ref := @ref return doc(&#34;/db/apps/edep-sino-data/data/taxonomy/objtyp.xml&#34;)//category[@corresp=$ref]/catDesc[@xml:lang=$lang]/string()"/>
         </model></elementSpec>
                 <elementSpec ident="msItem" mode="add"><model behaviour="inline">
             <param name="content" value="let $lang := replace($parameters?language, '([^-]+)-?.*$', '$1') let $ref := @class  return doc($global:data-root || &#34;/typeins.xml&#34;)//*:term[@ref=$ref]/*:name[@xml:lang=$lang]/string()"/>
@@ -342,7 +342,7 @@
             <elementSpec ident="person" mode="add"/>
                 <elementSpec ident="name" mode="add"/>
             <elementSpec ident="term" mode="add"><model predicate="@ref" behaviour="inline">
-            <param name="content" value="let $lang := replace($parameters?language, '([^-]+)-?.*$', '$1') let $vocab := switch(parent::keywords/@scheme) case &#34;https://edh.ub.uni-heidelberg.de/edep/inscription-type&#34; return doc('/db/apps/edep-data/data/taxonomy/typeins.xml')     default return () let $ref := @ref return $vocab//category[@corresp = $ref]/catDesc[@xml:lang = $lang]"/>
+            <param name="content" value="let $lang := replace($parameters?language, '([^-]+)-?.*$', '$1') let $vocab := switch(parent::keywords/@scheme) case &#34;https://edh.ub.uni-heidelberg.de/edep/inscription-type&#34; return doc('/db/apps/edep-sino-data/data/taxonomy/typeins.xml')     default return () let $ref := @ref return $vocab//category[@corresp = $ref]/catDesc[@xml:lang = $lang]"/>
         </model></elementSpec>
             </schemaSpec>
         </body>

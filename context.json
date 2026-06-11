@@ -27,10 +27,10 @@
   } ],
   "profiles" : [ "base10", "theme-base10", "registers", "landing-page", "metadata-panel" ],
   "shortname" : "metadata",
-  "label" : "edep-jinks",
+  "label" : "edep-sino",
   "odds" : [ "teipublisher.odd", "landing.odd", "edep.odd", "edep-output.odd", "output.odd" ],
   "version" : "1.0.0",
-  "id" : "https://jinntec.de/apps/edep-jinks",
+  "id" : "https://jinntec.de/apps/edep-sino",
   "_update" : true,
   "styles" : [ "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css", "resources/css/pico-components.css", "resources/css/jinks-theme.css" ],
   "_noDeploy" : false,
@@ -45,7 +45,7 @@
   "profile-changes" : { },
   "template-suffix" : "\\.tpl",
   "ignore" : [ "repo.xml", "resources/css/components.css" ],
-  "target" : "/db/apps/edep-jinks",
+  "target" : "/db/apps/edep-sino",
   "menu" : {
     "language" : true,
     "delete" : true,
@@ -257,7 +257,7 @@
   "_lastModified" : "2026-05-18T13:29:52.785+02:00",
   "pkg" : {
     "website" : "http://tei-publisher.org",
-    "abbrev" : "edep-jinks",
+    "abbrev" : "edep-sino",
     "author" : "Wolfgang Meier et al.",
     "version" : "1.0.0",
     "dependencies" : [ {
@@ -285,7 +285,7 @@
   "category" : "components",
   "_overwrite" : "all",
   "defaults" : {
-    "data" : "/db/apps/edep-data/data",
+    "data" : "/db/apps/edep-sino-data/data",
     "landing" : "index.html",
     "address-by-id" : false,
     "odd-root" : "resources/odd",
