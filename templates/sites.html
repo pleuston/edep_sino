@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/base.html"
+        },
+        "features": {
+            "toolbar": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "resources/css/sites.css"
+        ]
+    }
+    ---
+    <main class="sites-index">
+        <h1><pb-i18n key="menu.sites">Sites</pb-i18n></h1>
+        [% for $site in sites:all($context) %]
+        <div class="site-card">
+            <span class="count">[[ $site?count ]]</span>
+            <span class="names">
+                [[ $site?name ]]
+                <small>[[ $site?pinyin ]] · [[ $site?region ]]</small>
+            </span>
+            <span class="links">
+                <a href="[[ $context-path ]]/places/[[ $site?id ]]"><pb-i18n key="sites.site-page">site page</pb-i18n></a>
+                <a href="[[ $context-path ]]/map.html"><pb-i18n key="menu.map">Map</pb-i18n></a>
+            </span>
+        </div>
+        [% endfor %]
+    </main>
+</template>

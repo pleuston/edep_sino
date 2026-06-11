@@ -1,340 +1,446 @@
 {
-  "actions" : [ {
-    "app" : "jinks",
-    "description" : "Reindex the data",
-    "label" : "Reindex data",
-    "name" : "reindex"
-  }, {
-    "description" : "Rebuild list of ODDs and recompile",
-    "label" : "Fix ODDs",
-    "name" : "fix-odds"
-  }, {
-    "app" : "jinks",
-    "description" : "Download the app as a `.xar` file",
-    "label" : "Download",
-    "name" : "download"
-  }, {
-    "app" : "jinks",
-    "description" : "Sync the app to a directory on the local file system",
-    "label" : "Sync",
-    "name" : "file-sync",
-    "parameters" : [ {
-      "required" : true,
-      "description" : "The path to the target directory",
-      "label" : "Directory",
-      "name" : "target"
-    } ]
-  } ],
-  "profiles" : [ "base10", "theme-base10", "registers", "landing-page", "metadata-panel" ],
-  "shortname" : "metadata",
-  "label" : "edep-sino",
-  "odds" : [ "teipublisher.odd", "landing.odd", "edep.odd", "edep-output.odd", "output.odd" ],
-  "version" : "1.0.0",
-  "id" : "https://jinntec.de/apps/edep-sino",
-  "_update" : true,
-  "styles" : [ "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css", "resources/css/pico-components.css", "resources/css/jinks-theme.css" ],
-  "_noDeploy" : false,
-  "profile-versions" : {
-    "metadata-panel" : "1.0.0",
-    "base10" : "1.0.0",
-    "theme-base10" : "1.0.0",
-    "landing-page" : "1.0.0",
-    "registers" : "1.0.0"
+  "actions": [
+    {
+      "app": "jinks",
+      "description": "Reindex the data",
+      "label": "Reindex data",
+      "name": "reindex"
+    },
+    {
+      "description": "Rebuild list of ODDs and recompile",
+      "label": "Fix ODDs",
+      "name": "fix-odds"
+    },
+    {
+      "app": "jinks",
+      "description": "Download the app as a `.xar` file",
+      "label": "Download",
+      "name": "download"
+    },
+    {
+      "app": "jinks",
+      "description": "Sync the app to a directory on the local file system",
+      "label": "Sync",
+      "name": "file-sync",
+      "parameters": [
+        {
+          "required": true,
+          "description": "The path to the target directory",
+          "label": "Directory",
+          "name": "target"
+        }
+      ]
+    }
+  ],
+  "profiles": [
+    "base10",
+    "theme-base10",
+    "registers",
+    "landing-page",
+    "metadata-panel"
+  ],
+  "shortname": "metadata",
+  "label": "edep-sino",
+  "odds": [
+    "teipublisher.odd",
+    "landing.odd",
+    "edep.odd",
+    "edep-output.odd",
+    "output.odd"
+  ],
+  "version": "1.0.0",
+  "id": "https://jinntec.de/apps/edep-sino",
+  "_update": true,
+  "styles": [
+    "https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.min.css",
+    "resources/css/pico-components.css",
+    "resources/css/jinks-theme.css"
+  ],
+  "_noDeploy": false,
+  "profile-versions": {
+    "metadata-panel": "1.0.0",
+    "base10": "1.0.0",
+    "theme-base10": "1.0.0",
+    "landing-page": "1.0.0",
+    "registers": "1.0.0"
   },
-  "depends" : [ "base10" ],
-  "profile-changes" : { },
-  "template-suffix" : "\\.tpl",
-  "ignore" : [ "repo.xml", "resources/css/components.css" ],
-  "target" : "/db/apps/edep-sino",
-  "menu" : {
-    "language" : true,
-    "delete" : true,
-    "dark-mode" : false,
-    "items" : [ {
-      "url" : "browse.html",
-      "id" : "Start"
-    }, {
-      "url" : "people",
-      "id" : "people"
-    }, {
-      "url" : "places",
-      "id" : "places"
-    } ],
-    "login" : true,
-    "download" : true,
-    "search" : true
+  "depends": [
+    "base10"
+  ],
+  "profile-changes": {},
+  "template-suffix": "\\.tpl",
+  "ignore": [
+    "repo.xml",
+    "resources/css/components.css"
+  ],
+  "target": "/db/apps/edep-sino",
+  "menu": {
+    "language": true,
+    "delete": true,
+    "dark-mode": false,
+    "items": [
+      {
+        "url": "map.html",
+        "id": "map"
+      },
+      {
+        "url": "browse.html",
+        "id": "inscriptions"
+      },
+      {
+        "url": "sites.html",
+        "id": "sites"
+      },
+      {
+        "id": "registers",
+        "subitems": [
+          {
+            "url": "people",
+            "id": "people"
+          },
+          {
+            "url": "places",
+            "id": "places"
+          },
+          {
+            "url": "bibliography",
+            "id": "bibliography"
+          }
+        ]
+      }
+    ],
+    "login": true,
+    "download": true,
+    "search": true
   },
-  "theme" : {
-    "layout" : {
-      "class" : "fixed-layout",
-      "search" : "before-top",
-      "footer" : {
-        "mobile" : {
-          "enabled" : true
+  "theme": {
+    "layout": {
+      "class": "fixed-layout",
+      "search": "before-top",
+      "footer": {
+        "mobile": {
+          "enabled": true
         }
       },
-      "after" : {
-        "width" : "min(30vw, 356px)",
-        "hidden" : false,
-        "toggle" : true,
-        "collapsible" : true
+      "after": {
+        "width": "min(30vw, 356px)",
+        "hidden": false,
+        "toggle": true,
+        "collapsible": true
       },
-      "before" : {
-        "width" : "min(30vw, 356px)",
-        "hidden" : false,
-        "toggle" : true,
-        "collapsible" : true
+      "before": {
+        "width": "min(30vw, 356px)",
+        "hidden": false,
+        "toggle": true,
+        "collapsible": true
       },
-      "max-width" : "84rem"
+      "max-width": "84rem"
     },
-    "landing" : {
-      "hero" : {
-        "background-position" : "center",
-        "background-color" : "rgba(0, 0, 0, 0.6)",
-        "class" : "two-column",
-        "background-size" : "cover",
-        "background-image" : "../images/inscription.png",
-        "background-repeat" : "no-repeat"
+    "landing": {
+      "hero": {
+        "background-position": "center",
+        "background-color": "rgba(0, 0, 0, 0.6)",
+        "class": "two-column",
+        "background-size": "cover",
+        "background-image": "../images/inscription.png",
+        "background-repeat": "no-repeat"
       },
-      "bottom" : {
-        "background-color" : "rgba(0, 0, 0, 0)",
-        "background-size" : "cover",
-        "background-image" : "../images/open-book.jpg",
-        "background-repeat" : "no-repeat"
+      "bottom": {
+        "background-color": "rgba(0, 0, 0, 0)",
+        "background-size": "cover",
+        "background-image": "../images/open-book.jpg",
+        "background-repeat": "no-repeat"
       }
     },
-    "menubar" : {
-      "background-color" : "var(--jinks-colors-500)",
-      "color" : "#ffffff",
-      "background-image" : "none"
+    "menubar": {
+      "background-color": "var(--jinks-colors-500)",
+      "color": "#ffffff",
+      "background-image": "none"
     },
-    "registers" : {
-      "columns" : 2
+    "registers": {
+      "columns": 2
     },
-    "icons" : [ ],
-    "splash" : {
-      "width" : "320px",
-      "image" : "../images/tei-publisher-logo-color.svg",
-      "height" : "auto"
+    "icons": [],
+    "splash": {
+      "width": "320px",
+      "image": "../images/tei-publisher-logo-color.svg",
+      "height": "auto"
     },
-    "body" : {
-      "background-color" : "var(--jinks-colors-100)"
+    "body": {
+      "background-color": "var(--jinks-colors-100)"
     },
-    "logo" : {
-      "width" : "140px",
-      "image" : "../images/tei-publisher-logo-contrast-color.svg",
-      "height" : "48px"
+    "logo": {
+      "width": "140px",
+      "image": "../images/tei-publisher-logo-contrast-color.svg",
+      "height": "48px"
     },
-    "breadcrumbs" : {
-      "max" : "40ch"
+    "breadcrumbs": {
+      "max": "40ch"
     },
-    "content" : {
-      "max-width" : "70ch"
+    "content": {
+      "max-width": "70ch"
     },
-    "texture" : {
-      "background-image" : null
+    "texture": {
+      "background-image": null
     },
-    "colors" : {
-      "palettes" : {
-        "green" : "palette-green.css",
-        "teal" : "palette-teal.css",
-        "neutral" : "palette-neutral.css",
-        "blue" : "palette-blue.css",
-        "beige" : "palette-beige.css",
-        "dark" : "palette-dark.css"
+    "colors": {
+      "palettes": {
+        "green": "palette-green.css",
+        "teal": "palette-teal.css",
+        "neutral": "palette-neutral.css",
+        "blue": "palette-blue.css",
+        "beige": "palette-beige.css",
+        "dark": "palette-dark.css"
       },
-      "palette" : null
+      "palette": null
     },
-    "fonts" : {
-      "toc" : {
-        "size" : "1.125rem"
+    "fonts": {
+      "toc": {
+        "size": "1.125rem"
       },
-      "menubar" : {
-        "size" : "14px"
+      "menubar": {
+        "size": "14px"
       },
-      "footnote" : {
-        "size" : "0.9em"
+      "footnote": {
+        "size": "0.9em"
       },
-      "base" : {
-        "family" : "'Inter', 'Noto', sans-serif",
-        "line-height" : "1.4",
-        "size" : "16px",
-        "weight" : "400"
+      "base": {
+        "family": "'Inter', 'Noto', sans-serif",
+        "line-height": "1.4",
+        "size": "16px",
+        "weight": "400"
       },
-      "heading" : {
-        "family" : "'Inter', 'Noto', sans-serif",
-        "size" : "1.2rem",
-        "weight" : "600"
+      "heading": {
+        "family": "'Inter', 'Noto', sans-serif",
+        "size": "1.2rem",
+        "weight": "600"
       },
-      "breadcrumbs" : {
-        "size" : "0.9rem"
+      "breadcrumbs": {
+        "size": "0.9rem"
       },
-      "content" : {
-        "family" : "JunicodeVF, Georgia, 'Times New Roman', serif",
-        "line-height" : "150%",
-        "size" : "1.25rem",
-        "weight" : "400"
+      "content": {
+        "family": "JunicodeVF, Georgia, 'Times New Roman', serif",
+        "line-height": "150%",
+        "size": "1.25rem",
+        "weight": "400"
       }
     },
-    "toolbar" : {
-      "background-color" : "var(--jinks-colors-200)",
-      "color" : "var(--jinks-color-primary)"
+    "toolbar": {
+      "background-color": "var(--jinks-colors-200)",
+      "color": "var(--jinks-color-primary)"
     }
   },
-  "features" : {
-    "metadata" : {
-      "enabled" : true
+  "features": {
+    "metadata": {
+      "enabled": true
     },
-    "browse" : {
-      "sort" : {
-        "options" : [ {
-          "label" : "Category",
-          "value" : "category",
-          "key" : "browse.category"
-        }, {
-          "label" : "Title",
-          "value" : "title",
-          "key" : "browse.title"
-        }, {
-          "label" : "Author",
-          "value" : "author",
-          "key" : "browse.author"
-        } ],
-        "default" : "category"
+    "browse": {
+      "sort": {
+        "options": [
+          {
+            "label": "Category",
+            "value": "category",
+            "key": "browse.category"
+          },
+          {
+            "label": "Title",
+            "value": "title",
+            "key": "browse.title"
+          },
+          {
+            "label": "Author",
+            "value": "author",
+            "key": "browse.author"
+          }
+        ],
+        "default": "category"
       },
-      "field" : {
-        "options" : [ {
-          "label" : "Content",
-          "value" : "text",
-          "key" : "search.content"
-        }, {
-          "label" : "Title",
-          "value" : "title",
-          "key" : "search.title"
-        } ],
-        "default" : "text"
+      "field": {
+        "options": [
+          {
+            "label": "Content",
+            "value": "text",
+            "key": "search.content"
+          },
+          {
+            "label": "Title",
+            "value": "title",
+            "key": "search.title"
+          }
+        ],
+        "default": "text"
       }
     },
-    "menubar" : true,
-    "register" : {
-      "description" : "auto",
-      "enabled" : false
+    "menubar": true,
+    "register": {
+      "description": "auto",
+      "enabled": false
     },
-    "toolbar" : {
-      "zoom" : true,
-      "navigation" : true,
-      "enabled" : true,
-      "progress" : {
-        "subscribe" : "transcription",
-        "enabled" : true
+    "toolbar": {
+      "zoom": true,
+      "navigation": true,
+      "enabled": true,
+      "progress": {
+        "subscribe": "transcription",
+        "enabled": true
       }
     },
-    "toolbar-toggles" : {
-      "toggle-reading" : false,
-      "enabled" : false
+    "toolbar-toggles": {
+      "toggle-reading": false,
+      "enabled": false
     },
-    "hero" : false,
-    "toc" : {
-      "collapse" : false,
-      "enabled" : false
+    "hero": false,
+    "toc": {
+      "collapse": false,
+      "enabled": false
     }
   },
-  "indexing" : {
-    "tei" : {
-      "enable" : true,
-      "context" : "div"
+  "indexing": {
+    "tei": {
+      "enable": true,
+      "context": "div"
     },
-    "docbook" : {
-      "enable" : true
+    "docbook": {
+      "enable": true
     },
-    "jats" : {
-      "enable" : true
+    "jats": {
+      "enable": true
     }
   },
-  "data" : {
-    "landing" : "landing/landing.xml"
+  "data": {
+    "landing": "landing/landing.xml"
   },
-  "_lastModified" : "2026-05-18T13:29:52.785+02:00",
-  "pkg" : {
-    "website" : "http://tei-publisher.org",
-    "abbrev" : "edep-sino",
-    "author" : "Wolfgang Meier et al.",
-    "version" : "1.0.0",
-    "dependencies" : [ {
-      "semver" : "1",
-      "package" : "http://e-editiones.org/roaster"
-    }, {
-      "semver" : "6",
-      "package" : "http://existsolutions.com/apps/tei-publisher-lib"
-    }, {
-      "semver" : "1",
-      "package" : "http://tei-publisher.com/library/jinks-templates"
-    } ],
-    "permissions" : "rw-r--r--",
-    "user" : {
-      "password" : "simple",
-      "name" : "tei",
-      "group" : "tei"
-    }
-  },
-  "description" : "Editionstools für eine digitale Epigraphik",
-  "_dry" : false,
-  "source" : "/db/apps/jinks/profiles/metadata-panel",
-  "type" : "feature",
-  "skip" : [ "^doc/.*$", "setup.xql", "config.json" ],
-  "category" : "components",
-  "_overwrite" : "all",
-  "defaults" : {
-    "data" : "/db/apps/edep-sino-data/data",
-    "landing" : "index.html",
-    "address-by-id" : false,
-    "odd-root" : "resources/odd",
-    "languages" : [ "bg", "cs", "zh_CN", "zh_TW", "de", "en", "es", "el", "fr", "fi", "it", "ka", "nl", "no", "pl", "pt", "ro", "ru", "sl", "sv", "tr", "uk" ],
-    "data-default" : "workspace",
-    "direction" : "ltr",
-    "template" : "basic.html",
-    "browse" : "browse.html",
-    "search" : "div",
-    "view" : "single",
-    "data-exclude" : [ "doc($config:data-root || '/taxonomy.xml')//tei:text", "collection($config:register-root)//tei:text" ],
-    "odd" : "output.odd",
-    "pagination" : {
-      "fill" : 5,
-      "depth" : 10
-    },
-    "media" : [ "web", "print", "epub" ],
-    "register-root" : "registers"
-  },
-  "templating" : {
-    "use" : [ "templates/register-blocks.html", "templates/metadata-blocks.html" ],
-    "modules" : {
-      "http://teipublisher.com/ns/templates/browse" : {
-        "at" : "modules/templates/browse.xqm",
-        "prefix" : "browse"
+  "_lastModified": "2026-05-18T13:29:52.785+02:00",
+  "pkg": {
+    "website": "http://tei-publisher.org",
+    "abbrev": "edep-sino",
+    "author": "Wolfgang Meier et al.",
+    "version": "1.0.0",
+    "dependencies": [
+      {
+        "semver": "1",
+        "package": "http://e-editiones.org/roaster"
       },
-      "http://teipublisher.com/ns/templates/landing-page" : {
-        "at" : "modules/templates/landing-page.xqm",
-        "prefix" : "landing"
+      {
+        "semver": "6",
+        "package": "http://existsolutions.com/apps/tei-publisher-lib"
       },
-      "http://teipublisher.com/ns/templates/page" : {
-        "at" : "modules/templates/page.xqm",
-        "prefix" : "page"
+      {
+        "semver": "1",
+        "package": "http://tei-publisher.com/library/jinks-templates"
+      }
+    ],
+    "permissions": "rw-r--r--",
+    "user": {
+      "password": "simple",
+      "name": "tei",
+      "group": "tei"
+    }
+  },
+  "description": "Editionstools für eine digitale Epigraphik",
+  "_dry": false,
+  "source": "/db/apps/jinks/profiles/metadata-panel",
+  "type": "feature",
+  "skip": [
+    "^doc/.*$",
+    "setup.xql",
+    "config.json"
+  ],
+  "category": "components",
+  "_overwrite": "all",
+  "defaults": {
+    "data": "/db/apps/edep-sino-data/data",
+    "landing": "index.html",
+    "address-by-id": false,
+    "odd-root": "resources/odd",
+    "languages": [
+      "bg",
+      "cs",
+      "zh_CN",
+      "zh_TW",
+      "de",
+      "en",
+      "es",
+      "el",
+      "fr",
+      "fi",
+      "it",
+      "ka",
+      "nl",
+      "no",
+      "pl",
+      "pt",
+      "ro",
+      "ru",
+      "sl",
+      "sv",
+      "tr",
+      "uk"
+    ],
+    "data-default": "workspace",
+    "direction": "ltr",
+    "template": "basic.html",
+    "browse": "browse.html",
+    "search": "div",
+    "view": "single",
+    "data-exclude": [
+      "doc($config:data-root || '/taxonomy.xml')//tei:text",
+      "collection($config:register-root)//tei:text"
+    ],
+    "odd": "output.odd",
+    "pagination": {
+      "fill": 5,
+      "depth": 10
+    },
+    "media": [
+      "web",
+      "print",
+      "epub"
+    ],
+    "register-root": "registers"
+  },
+  "templating": {
+    "use": [
+      "templates/register-blocks.html",
+      "templates/metadata-blocks.html"
+    ],
+    "modules": {
+      "http://teipublisher.com/ns/templates/browse": {
+        "at": "modules/templates/browse.xqm",
+        "prefix": "browse"
+      },
+      "http://teipublisher.com/ns/templates/landing-page": {
+        "at": "modules/templates/landing-page.xqm",
+        "prefix": "landing"
+      },
+      "http://teipublisher.com/ns/templates/page": {
+        "at": "modules/templates/page.xqm",
+        "prefix": "page"
+      },
+      "http://edep-sino.org/templates/sites": {
+        "at": "modules/templates/sites.xqm",
+        "prefix": "sites"
       }
     }
   },
-  "script" : {
-    "custom" : [ ],
-    "webcomponents" : "3.3.0",
-    "extra-components" : [ ],
-    "cdn" : "https://cdn.jsdelivr.net/npm/@teipublisher/pb-components"
+  "script": {
+    "custom": [],
+    "webcomponents": "3.3.0",
+    "extra-components": [],
+    "cdn": "https://cdn.jsdelivr.net/npm/@teipublisher/pb-components"
   },
-  "order" : 102,
-  "$schema" : "../../schema/jinks.json",
-  "i18n" : [ "registers", "landing-page" ],
-  "api" : [ {
-    "spec" : "registers-api.json",
-    "prefix" : "rview",
-    "id" : "http://teipublisher.com/api/registers/view",
-    "path" : "registers-api.xql"
-  } ]
+  "order": 102,
+  "$schema": "../../schema/jinks.json",
+  "i18n": [
+    "registers",
+    "landing-page"
+  ],
+  "api": [
+    {
+      "spec": "registers-api.json",
+      "prefix": "rview",
+      "id": "http://teipublisher.com/api/registers/view",
+      "path": "registers-api.xql"
+    }
+  ]
 }

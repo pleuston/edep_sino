@@ -60,6 +60,10 @@ test/cypress         e2e suite (run against local eXist)
 - **Editor (from M2/M3)**: `templates/pages/edit.html` hosts an `<fx-fore>` model bound to an EpiDoc instance; modular form sections live in `templates/parts/edit/`; EpiDoc skeleton/templates in `templates/fore/`; persistence via `/api/inscription` (POST = save), fragments as separate TEI docs linked through `TEI/@fragments` / `@corresp`.
 - **Chinese layer (from M4)**: encoding decisions in `doc/sino-model.md`; era-date conversion service `modules/sino/` + `/api/sino/*`; vocabularies and nianhao table in the data package.
 
+## Navigation & the sites axis
+
+The menu (`context.json → menu.items`) leads with **Map → Inscriptions → Sites → Registers ▾**. "Sites" are *find-spots joined with their holdings*: `modules/templates/sites.xqm` resolves place entity files against `origPlace/@corresp` of the workspace documents and powers three surfaces — `templates/map.html` (full-page Leaflet + markercluster from the pb-components bundle, data via `GET /api/sites`), `templates/sites.html` (server-rendered index) and the API. The Places register stays the broader gazetteer. The editor is reachable via the login-gated ＋New menu entry and an Edit button in the document toolbar.
+
 ## Upgradability
 
 Three independent update channels, by design:

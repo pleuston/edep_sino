@@ -14,6 +14,7 @@ import module namespace pm-config="http://www.tei-c.org/tei-simple/pm-config" at
 import module namespace tpu="http://www.tei-c.org/tei-publisher/util" at "lib/util.xql";
 import module namespace errors = "http://e-editiones.org/roaster/errors";
 import module namespace zotero = "http://e-editiones.org/edep/api/zotero" at "lib/api/zotero.xql";
+import module namespace sites = "http://edep-sino.org/templates/sites" at "templates/sites.xqm";
 
 declare namespace json="http://www.json.org";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
@@ -536,4 +537,9 @@ declare function api:render($request as map(*)) {
                 $request?body
     return
         $pm-config:web-transform(api:clean-namespace($xml), map { "root": $xml, "webcomponents": 7 }, $config:default-odd)
+};
+
+(: EDEp Sino: sites = find-spots joined with their inscriptions (navigation) :)
+declare function api:sites($request as map(*)) {
+    map { "sites": array { sites:all(()) } }
 };

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/base.html"
+        },
+        "features": {
+            "toolbar": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "resources/css/leaflet/leaflet.css",
+            "resources/css/leaflet/MarkerCluster.css",
+            "resources/css/leaflet/MarkerCluster.Default.css",
+            "resources/css/sites.css"
+        ]
+    }
+    ---
+    [% template scripts %]
+    <script src="[[ $context-path ]]/resources/lib/leaflet-src.js"/>
+    <script src="[[ $context-path ]]/resources/lib/leaflet.markercluster-src.js"/>
+    [% endtemplate %]
+
+    <main class="sites-map-page" data-app="[[ $context-path ]]">
+        <div id="sites-map"></div>
+        <aside id="site-panel" class="empty">
+            <p class="placeholder"><pb-i18n key="sites.pick">Select a site on the map</pb-i18n></p>
+        </aside>
+    </main>
+    <script src="[[ $context-path ]]/resources/scripts/sites-map.js" defer="defer"/>
+</template>

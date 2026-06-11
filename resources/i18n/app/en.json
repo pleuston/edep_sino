@@ -173,9 +173,16 @@
     },
     "menu": {
         "about": "About",
+        "bibliography": "Bibliography",
+        "edit": "Edit",
         "geodata": "Geodata",
         "inscriptions": "Inscriptions",
-        "people": "People"
+        "map": "Map",
+        "new": "New inscription",
+        "people": "People",
+        "places": "Places",
+        "registers": "Registers",
+        "sites": "Sites"
     },
     "metadata": {
         "additional": "General data",
@@ -194,6 +201,11 @@
     },
     "place": {
         "geolocation": "Geolocation"
+    },
+    "sites": {
+        "holdings": "inscriptions",
+        "pick": "Select a site on the map",
+        "site-page": "site page"
     },
     "title": "Editing tools for a digital epigraphy"
 }

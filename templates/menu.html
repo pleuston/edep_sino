@@ -29,6 +29,14 @@
         [% endif %]
         [% endfor %]
 
+                <li class="hidden-mobile">
+            <pb-restricted group="tei">
+                <a href="[[ $context-path ]]/edit.html" class="menu-new">
+                    <pb-i18n key="menu.new">New</pb-i18n>
+                </a>
+            </pb-restricted>
+        </li>
+
         [# display download menu if in document view #]
         [% if exists($context?doc) and $menu?download %]
         <li class="hidden-mobile">

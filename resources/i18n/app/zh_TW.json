@@ -173,9 +173,16 @@
     },
     "menu": {
         "about": "關於",
+        "bibliography": "書目",
+        "edit": "編輯",
         "geodata": "地理資料",
-        "inscriptions": "銘文",
-        "people": "人物"
+        "inscriptions": "石刻",
+        "map": "地圖",
+        "new": "新建",
+        "people": "人物",
+        "places": "地點",
+        "registers": "索引",
+        "sites": "遺址"
     },
     "metadata": {
         "additional": "一般資料",
@@ -194,6 +201,11 @@
     },
     "place": {
         "geolocation": "地理座標"
+    },
+    "sites": {
+        "holdings": "件石刻",
+        "pick": "請在地圖上選擇遺址",
+        "site-page": "遺址頁面"
     },
     "title": "中文石刻數位編輯工具"
 }

@@ -17,20 +17,30 @@
    <text>
       <body>
          <div type="hero" xml:lang="en" rend="two-column">
-            <head>Jinks<hi rend="strong">edition</hi></head>
-            <p>This site presents the results of the digital humanities projects created with TEI
-               Publisher and Jinks. It is a part of the environment for the development of digital
-               scholarly editions and a space for their presentation.</p>
+            <head>EDEp<hi rend="strong">Sino</hi></head>
+            <p>Chinese inscriptions — steles, cliff inscriptions, votive and entombed
+               epitaphs — catalogued and edited as EpiDoc TEI. Start from the map of
+               find-spots, browse the corpus, or enter through the sites.</p>
             <list type="links">
-               <item><ref target="#">explore</ref></item>
+               <item><ref target="map.html">explore the map</ref></item>
             </list>
          </div>
         <div type="hero" xml:lang="de" rend="two-column">
-            <head>Jinks<hi rend="strong">edition</hi></head>
-            <p>Diese Seite präsentiert die Ergebnisse von Projekten aus den Digital Humanities, die
-               mit TEI Publisher und Jinks erstellt wurden. Sie ist Teil der Umgebung für die
-               Entwicklung digitaler wissenschaftlicher Editionen und bietet einen Raum für deren
-               Präsentation.</p>
+            <head>EDEp<hi rend="strong">Sino</hi></head>
+            <p>Chinesische Inschriften — Stelen, Felsinschriften, Votiv- und
+               Grabinschriften — erfasst und ediert als EpiDoc-TEI. Einstieg über die
+               Fundortkarte, den Bestand oder die Fundorte.</p>
+            <list type="links">
+               <item><ref target="map.html">Zur Karte</ref></item>
+            </list>
+         </div>
+         <div type="hero" xml:lang="zh" rend="two-column">
+            <head>中文石刻<hi rend="strong">數位編輯</hi></head>
+            <p>碑、摩崖、造像記、墓誌——以 EpiDoc TEI 著錄與編輯。可由出土地地圖、
+               石刻目錄或遺址進入。</p>
+            <list type="links">
+               <item><ref target="map.html">瀏覽地圖</ref></item>
+            </list>
          </div>
          <div type="about" xml:lang="en" n="About" rend="two-column">
             <head>Working environment for creating and publishing of digital scholarly
@@ -81,20 +91,28 @@
          <div type="highlights" xml:lang="en">
             <head>Highlights</head>
             <list>
-               <item n="Corpus">
-                  <desc><ref target="#">Collection of sources encoded with the TEI standard</ref></desc>
-                  <note>Fascinating collection of sources encoded in the TEI standard, comprising records of rulers and individuals belonging to the social elite of European states provide insight into the mechanisms of power, the relationship between the center and the peripheries of a state, and the way of life of different social groups. They reveal the mobility of their representatives, networks of contacts, and their engagement in social, political, and economic life.</note>
-                  <ptr type="image" target="resources/images/books.jpg"/>
-                  <list type="links">
-                     <item><ref target="#">Explore</ref></item>
-                  </list>
-               </item>
-               <item n="Indexes">
-                  <desc><ref target="places">Registers of individuals and places</ref></desc>
-                  <note>Registers of individuals and places mentioned in the corpus offer a point of entry into the intricate social and geographical network of that era.</note>
+               <item n="Map">
+                  <desc><ref target="map.html">The find-spots of the corpus on a map</ref></desc>
+                  <note>Every inscription is bound to the place where it stands or was found. The map clusters the sites and opens each one with the inscriptions recorded there.</note>
                   <ptr type="image" target="resources/images/header-bg.jpg"/>
                   <list type="links">
-                     <item><ref target="places">Explore</ref></item>
+                     <item><ref target="map.html">Explore</ref></item>
+                  </list>
+               </item>
+               <item n="Corpus">
+                  <desc><ref target="browse.html">The inscriptions, encoded as EpiDoc TEI</ref></desc>
+                  <note>Steles, cliff inscriptions, votive and entombed epitaphs with transcription, dating by era name and cyclical year, witnesses and registers — faceted by dynasty, genre and object form.</note>
+                  <ptr type="image" target="resources/images/books.jpg"/>
+                  <list type="links">
+                     <item><ref target="browse.html">Browse</ref></item>
+                  </list>
+               </item>
+               <item n="Sites">
+                  <desc><ref target="sites.html">Sites and their holdings</ref></desc>
+                  <note>The epigraphic landscape site by site: each find-spot with its historical names, administrative hierarchy and the inscriptions found there.</note>
+                  <ptr type="image" target="resources/images/inscription.png"/>
+                  <list type="links">
+                     <item><ref target="sites.html">Explore</ref></item>
                   </list>
                </item>
                <item n="User Guide">

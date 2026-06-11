@@ -1,0 +1,70 @@
+/* EDEp Sino — map page and sites index */
+
+main.sites-map-page {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+    gap: 0;
+    width: 100%;
+    height: calc(100vh - 7.5rem);
+    min-height: 24rem;
+}
+
+#sites-map {
+    height: 100%;
+    z-index: 1;
+}
+
+#site-panel {
+    overflow: auto;
+    padding: 1rem 1.25rem;
+    border-left: 1px solid var(--jinks-colors-200, #ddd);
+    background: var(--jinks-colors-0, #fff);
+}
+
+#site-panel h2 { margin: 0 0 0.25rem; font-size: 1.3rem; }
+#site-panel h2 small { font-weight: normal; color: var(--jinks-colors-500, #777); }
+#site-panel .site-meta { margin: 0 0 0.75rem; color: var(--jinks-colors-600, #555); font-size: 0.9rem; }
+#site-panel ul.site-inscriptions { list-style: none; padding: 0; margin: 0; }
+#site-panel ul.site-inscriptions li {
+    padding: 0.45rem 0;
+    border-top: 1px solid var(--jinks-colors-100, #eee);
+}
+#site-panel ul.site-inscriptions li small { display: block; color: var(--jinks-colors-500, #888); }
+#site-panel .placeholder { color: var(--jinks-colors-500, #888); }
+
+.site-marker span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #1f6feb;
+    color: #fff;
+    font-weight: 600;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+/* sites index */
+.sites-index { width: 100%; max-width: 60rem; margin: 0 auto; padding: 1rem; }
+.sites-index .site-card {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--jinks-colors-200, #ddd);
+    border-radius: 0.3rem;
+    margin-bottom: 0.6rem;
+    background: var(--jinks-colors-0, #fff);
+}
+.sites-index .site-card .count {
+    font-size: 1.4rem;
+    font-weight: 600;
+    min-width: 2.5rem;
+    text-align: center;
+    color: #1f6feb;
+}
+.sites-index .site-card .names { flex: 1; }
+.sites-index .site-card .names small { display: block; color: var(--jinks-colors-500, #888); }
+.sites-index .site-card .links a { margin-left: 0.8rem; white-space: nowrap; }

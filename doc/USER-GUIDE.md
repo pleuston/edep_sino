@@ -4,6 +4,16 @@
 
 EDEp Sino catalogues Chinese inscriptions as EpiDoc TEI. You never see the XML unless you want to: the editing form reads and writes the document directly. The encoding conventions behind every field are specified in `doc/sino-model.md`.
 
+## Finding your way
+
+The top navigation leads with the spatial entry point:
+
+- **Map 地圖** — all find-spots, clustered; clicking a site opens its panel with the inscriptions recorded there, each linking into the reading view (and onward to the site page).
+- **Inscriptions 石刻** — the corpus list with facets.
+- **Sites 遺址** — the find-spots as an index, sorted by holdings, linking to each site's page.
+- **Registers 索引 ▾** — the authority lists: People 人物, Places 地點 (the full gazetteer — broader than the find-spot sites), Bibliography 書目.
+- **＋New 新建** appears in the menu once you are logged in; every document view carries an **edit pencil** in its toolbar.
+
 ## Opening the editor
 
 - New inscription: `…/edep-sino/edit.html` (log in first — default user `tei`).

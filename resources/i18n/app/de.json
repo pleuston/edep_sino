@@ -172,9 +172,16 @@
     },
     "menu": {
         "about": "Über das Projekt",
+        "bibliography": "Bibliographie",
+        "edit": "Bearbeiten",
         "geodata": "Geodaten",
         "inscriptions": "Inschriften",
-        "people": "Personen"
+        "map": "Karte",
+        "new": "Neuer Eintrag",
+        "people": "Personen",
+        "places": "Orte",
+        "registers": "Register",
+        "sites": "Fundorte"
     },
     "metadata": {
         "additional": "Allgemeine Angaben",
@@ -193,6 +200,11 @@
     },
     "place": {
         "geolocation": "Geolocation"
+    },
+    "sites": {
+        "holdings": "Inschriften",
+        "pick": "Fundort auf der Karte wählen",
+        "site-page": "Fundortseite"
     },
     "title": "Editionstools für eine digitale Epigraphik"
 }

@@ -759,6 +759,28 @@
                     }
                 }
             }
+        },
+        "/api/sites": {
+            "get": {
+                "summary": "Sites (find-spots) with their inscriptions",
+                "description": "Place entity files joined with the inscriptions whose origPlace points at them; sorted by holdings.",
+                "tags": [
+                    "sino"
+                ],
+                "operationId": "eapi:sites",
+                "responses": {
+                    "200": {
+                        "description": "Site list",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "security": [
