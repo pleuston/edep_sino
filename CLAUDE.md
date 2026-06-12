@@ -39,4 +39,6 @@ The lossless save→reopen roundtrip spec is the regression keystone — keep it
 
 `doc/ARCHITECTURE.md` (structure) · `doc/INSTALL.md` (bring-up) · `doc/DEVELOPMENT.md` (how to extend) · `doc/sino-model.md` (Chinese EpiDoc encoding decisions — the contract for all sino fields) · `doc/USER-GUIDE.md` (for epigraphers) · `doc/UPSTREAM.md` (sync log) · `doc/DEPLOYMENT.md` (production).
 
+Registers are authority data under `data-pkg/data/registers/`; the **Stone Sutras** register (`sutras.xml`, imported by `scripts/import-sutras-data.py` from the stonesutras.org dataset) is documented in `doc/sino-model.md` §"Stone Sutras corpus" and `doc/DEVELOPMENT.md`.
+
 When adding/changing features, update the matching doc in the same commit.

@@ -106,6 +106,44 @@ curl -u admin: --data-urlencode '_query=xmldb:reindex("/db/apps/epiwen-data/data
 
 New ids are appended to `scripts/jinshi-id-map.json` (committed). Hand-seeded ids (`work-000001`, `work-000002`, `insc-000001`, etc.) are pre-registered there; the importer merges rather than duplicates. Import report at `scripts/jinshi-import-report.md` lists parse rates, unresolved links, and unparsed attestation lines.
 
+## Stone-sutra import pipeline (sutras-data → sutras register)
+
+Imports the **stonesutras.org** dataset (real catalog + TEI XML, not markdown) into the
+separate **Stone Sutras** register. Pilot is per-site; see `doc/sino-model.md` §"Stone Sutras corpus".
+
+```sh
+# Source = the stonesutras.org eXist data tree; one site at a time (idempotent):
+python3 scripts/import-sutras-data.py \
+  --source /Users/sassmann/Documents/sutras-data \
+  --site HDS                       # Hongdingshan (洪頂山)
+
+# Writes (per site):
+#   data-pkg/data/registers/sutras.xml        — <object type="sutra"> authority records
+#   data-pkg/data/registers/places.xml        — site merged in (register cross-ref store)
+#   data-pkg/data/places/place-<site>.xml     — per-place file (/api/places + map store)
+#   data-pkg/data/workspace/<catalog-id>.xml  — full EpiDoc editions (the transcriptions)
+#   scripts/sutras-id-map.json                — stable sutra-NNNNNN ids (committed)
+#   scripts/sutras-import-report.md           — per-inscription table + missing-doc log
+
+# Gate every generated edition BEFORE deploying (hard requirement):
+sh scripts/validate-epidoc.sh data-pkg/data/workspace/HDS_*.xml   # all must say "ok:"
+
+# Fixture test (id stability + idempotency + gate-valid editions):
+python3 scripts/test_import_sutras_data.py
+```
+
+Deploy = REST PUT the changed app files (`config.xqm`, `registers.xql`, `registers-api.{xql,json}`,
+`context.json`, i18n, `templates/sutra{,s}.html`, taxonomy) and data files (`sutras.xml`,
+`places.xml`, `places/place-*.xml`, `workspace/*.xml`), restore `tei` ownership on the data
+files (see permissions note below), then reindex. The roaster router only re-registers the new
+`/sutras` routes after the spec is re-PUT **and** the router module is touched (re-PUT
+`modules/lib/api.xql`).
+
+> **Gotcha (fixed in M-S1):** imported editions carry non-`E` `idno[@type='EDEp']` (e.g. `HDS_11`).
+> `custom-api.xql`'s new-EDEp-id query now filters `[matches(., '^E\d+$')]` so they don't poison
+> the `E0000001…` sequence. And `registers.xql` `rapi:save` read `$id` before it was bound (a
+> latent break from the rubbings commit, affecting **all** register CRUD) — now reordered.
+
 ## Data permissions (why editor saves 500)
 
 The editor saves as `tei`/simple via `xmldb:store`, so the data collections must be **`tei:tei`, group-writable**. `data-pkg/post-install.xql` sets this (`rwxrwxr-x` on collections, `rw-rw-r--` on files) for `workspace`, `registers`, `places`, `people`, etc. If a save returns **500 "Write permission is not granted on the Collection"** — or in-place register edits fail — the deployed permissions have drifted (commonly: files re-stored by `admin` via REST PUT). Fix by re-running the `post-install.xql` chown/chgrp/chmod block as admin. Register files specifically need **`tei` ownership** (eXist takes a collection-wide write lock for in-place updates), so after deploying a register XML via admin PUT, restore `tei` ownership.

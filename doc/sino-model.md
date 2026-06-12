@@ -224,6 +224,28 @@ Graded precision (from import): `YYYY–YYYY` → birth/death (`exact`); `fl. <e
 - Work markers: solid diamond = `cert="high"` (exact); translucent = `cert="medium"` or `approx`.
 - Attestation strip reads `data-year` attributes from `.work-date` spans (numeric ISO year), not the Chinese literal — avoids parsing era names in the browser.
 
+## Stone Sutras corpus 石經 **[M-S1]**
+
+Buddhist stone-sutra and Buddha-name inscriptions imported directly from the
+**stonesutras.org** research dataset (`/Users/sassmann/Documents/sutras-data/`,
+custom `exist-db catalog` ns + TEI transcriptions). Pilot site: **Hongdingshan 洪頂山
+(HDS)**, Northern Qi. The source split maps onto the §-frame's *text ≠ support ≠ place*
+non-negotiable as a **three-way** import:
+
+| source (sutras-data) | EpiWen target | home |
+|---|---|---|
+| catalog `@type="site"` (`HDS_site.xml`) | `<place>` (geo, WGS84 — **swap** the source's lon,lat → `lat lon`) | merged into `registers/places.xml` **and** a per-place `data/places/place-*.xml` (the store `/api/places` + the map read) |
+| catalog `@type="inscription"` (`HDS_11` …) | `<object type="sutra" xml:id="sutra-NNNNNN">` | **new register** `registers/sutras.xml` (`pb-sutras`) |
+| docs transcription (`<catalog xlink:href>` / `<text xml:id>`) | full EpiDoc edition | `data/workspace/{catalog-id}.xml` |
+
+- **Separate register**, not merged into 石刻總目 (`jinshi.xml`): the stone-sutra corpus is archaeological (transcriptions + Taishō), distinct from the attestation-based jinshi catalogue. `sutra-` id space, own nav/section/detail (`templates/sutra{,s}.html`), own routes (`/sutras`, `/api/sutras`).
+- **Linkage**: authority `idno[@type='corpus']` = edition id · edition `idno[@type='jinshi']` = `sutra-NNNNNN` (reuses the jinshi cross-ref machinery) · inscription `origPlace/@corresp` = `place-…`.
+- **Authority `<object>` idno set**: `corpus` (edition), `genre` (`sino:typeins:*`), `taisho` (one per `T_*` ref), `sutra-corpus` (site), `corpus-loc` (`HDS 11; lon,lat`). Dating: `origDate` with `@when` **or** `@notBefore/@notAfter` (ranges), `@n` = reign-era literal (e.g. `天保元年至河清三年`), `@period` resolved from the era literal (north/south disambiguator) falling back to a northern-preferring year lookup against `dynasty.xml`.
+- **Genre heuristic**: name ends 佛/菩薩 → `foming` (佛名, Buddha-name); contains 經 / has a Sanskrit title → `kejing`; else `tiji`.
+- **Editions** mirror `workspace/demo-zaoxiangji.xml` so they clear `scripts/validate-epidoc.sh` (EpiDoc RNG; only `listWit`/`witness` tolerated). Edition bodies carry the zh transcription as `div[@type='edition' xml:space='preserve']` (`lb/@n` preserved; editorial wrappers `persName`/`supplied reason="lost"`/`unclear` flattened to **text-only** — EpiDoc rejects nested wrappers and `lb` inside them); the en parallel div → `div[@type='translation']`.
+- **Vocab additions**: `typeins.xml` `foming` 佛名; `material.xml` `baiyunyan` 白雲岩 (dolomite); `objtyp.xml` `jingshi` 經石.
+- **Importer**: `scripts/import-sutras-data.py --site HDS` (idempotent; `scripts/sutras-id-map.json`). Pilot only; the full 605-inscription / 4,978-doc corpus is the next milestone.
+
 ## Milestone map
 
 | Milestone | Implements from this contract |
@@ -234,3 +256,4 @@ Graded precision (from import): `YYYY–YYYY` → birth/death (`exact`); `fl. <e
 | M8 | Registers: person entry shape + nym system, place entry shape + period names + WGS84 (§6–7) |
 | M9 | Rendition set + vertical preview, variant-char display, zh UI |
 | M-J1–M-J5 | §10: works register, inscription authority register, person lifespans, timelines |
+| M-S1 | Stone Sutras corpus: separate `sutras` register, site→place, transcription→edition; `import-sutras-data.py` (pilot: Hongdingshan) |
