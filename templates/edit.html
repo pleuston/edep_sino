@@ -750,6 +750,13 @@
                                         </a>
                                     </fx-trigger>
                                 </pb-restricted>
+                                <fx-group ref="instance('params')/id[string-length(.) > 0]">
+                                    <fx-trigger>
+                                        <a href="{concat(instance('vars')/appdir, '/', instance('params')/collection, '/', instance('params')/id, '.xml')}">
+                                            <pb-i18n key="form.view">View inscription</pb-i18n>
+                                        </a>
+                                    </fx-trigger>
+                                </fx-group>
                                 <fx-trigger>
                                     <a href="[[ $context-path ]]/browse.html">
                                         <pb-i18n key="form.list">Zur Liste</pb-i18n>

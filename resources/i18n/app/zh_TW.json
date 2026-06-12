@@ -178,7 +178,9 @@
         "writing-direction": "書寫方向",
         "year-of-find": "出土年份",
         "jinshi-id": "石刻總目編號",
-        "hint-jinshi-id": "本刻石在石刻總目權威檔中的編號（如 insc-000001），用以連結歷代著錄。"
+        "hint-jinshi-id": "本刻石在石刻總目權威檔中的編號（如 insc-000001），用以連結歷代著錄。",
+        "identifier": "識別資訊",
+        "view": "查看石刻"
     },
     "menu": {
         "about": "關於",

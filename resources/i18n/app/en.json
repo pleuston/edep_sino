@@ -178,7 +178,9 @@
         "writing-direction": "Writing direction",
         "year-of-find": "Year/date of find",
         "jinshi-id": "Authority record (石刻總目)",
-        "hint-jinshi-id": "Id of this inscription in the jinshi authority register, e.g. insc-000001 — links the edition to its attestation history."
+        "hint-jinshi-id": "Id of this inscription in the jinshi authority register, e.g. insc-000001 — links the edition to its attestation history.",
+        "identifier": "Identifier",
+        "view": "View inscription"
     },
     "menu": {
         "about": "About",

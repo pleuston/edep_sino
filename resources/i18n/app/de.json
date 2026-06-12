@@ -177,7 +177,9 @@
         "writing-direction": "Schreibrichtung",
         "year-of-find": "Fundjahr/-datum",
         "jinshi-id": "Normdatensatz (石刻總目)",
-        "hint-jinshi-id": "Id dieser Inschrift im Jinshi-Normregister, z. B. insc-000001 — verknüpft die Edition mit ihrer Überlieferungsgeschichte."
+        "hint-jinshi-id": "Id dieser Inschrift im Jinshi-Normregister, z. B. insc-000001 — verknüpft die Edition mit ihrer Überlieferungsgeschichte.",
+        "identifier": "Identifikator",
+        "view": "Inschrift ansehen"
     },
     "menu": {
         "about": "Über das Projekt",
