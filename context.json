@@ -92,11 +92,23 @@
         "id": "sites"
       },
       {
+        "url": "works",
+        "id": "works"
+      },
+      {
+        "url": "people",
+        "id": "people"
+      },
+      {
+        "url": "chronology",
+        "id": "chronology"
+      },
+      {
         "id": "registers",
         "subitems": [
           {
-            "url": "people",
-            "id": "people"
+            "url": "jinshi-inscriptions",
+            "id": "jinshi"
           },
           {
             "url": "places",
@@ -105,20 +117,8 @@
           {
             "url": "bibliography",
             "id": "bibliography"
-          },
-          {
-            "url": "works",
-            "id": "works"
-          },
-          {
-            "url": "jinshi-inscriptions",
-            "id": "jinshi"
           }
         ]
-      },
-      {
-        "url": "chronology",
-        "id": "chronology"
       }
     ],
     "login": true,
