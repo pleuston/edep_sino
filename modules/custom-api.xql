@@ -183,41 +183,50 @@ declare function api:places-add($request as map(*)) {
 declare function api:people-browse($request as map(*)) {
     let $search := normalize-space($request?parameters?search)
     let $letterParam := $request?parameters?category
-    let $limit := $request?parameters?limit
+    let $limit := head(($request?parameters?limit, -1))
     let $people :=
         if ($search and $search != '') then
             collection($config:register-root)/id('pb-persons')//tei:person[ft:query(tei:persName, $search || '*')]
         else
             collection($config:register-root)/id('pb-persons')//tei:person
+    (: sort key = romanisation (pinyin/sort), falling back to the canonical name :)
+    let $key := function($p as element()) as xs:string {
+        lower-case(normalize-space(head((
+            $p/tei:persName[@type='sort'],
+            $p/tei:persName[@xml:lang='zh-Latn-pinyin'],
+            $p/tei:persName[@type='canonical'],
+            $p/tei:persName[@type='main'],
+            $p/tei:persName[1], ''))))
+    }
     let $sorted :=
         for $person in $people
-        order by $person/tei:persName[@type='nomen']
+        order by $key($person) collation "?lang=de-DE"
         return
             $person
     let $letter :=
-        if (count($people) < $limit) then
-            "Alle"
-        else if ($letterParam = '') then
-            substring($sorted[1], 1, 1) => upper-case()
+        if ($limit < 0 or count($people) < $limit) then
+            "all"
+        else if (not($letterParam) or $letterParam = '') then
+            upper-case(substring($key(head($sorted)), 1, 1))
         else
             $letterParam
     let $byLetter :=
-        if ($letter = 'Alle') then
+        if ($letter = 'all') then
             $sorted
         else
-            filter($sorted, function($entry) {
-                starts-with(lower-case($entry/tei:persName/tei:name[@type='nomen']), lower-case($letter))
+            filter($sorted, function($p) {
+                starts-with($key($p), lower-case($letter))
             })
     return
         map {
             "items": api:output-person($byLetter, $letter, $search),
             "categories":
-                if (count($people) < $limit) then
+                if ($limit < 0 or count($people) < $limit) then
                     []
                 else array {
                     for $index in 1 to string-length('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
                     let $alpha := substring('ABCDEFGHIJKLMNOPQRSTUVWXYZ', $index, 1)
-                    let $hits := count(filter($sorted, function($entry) { starts-with(lower-case($entry/tei:persName/tei:name[@type='nomen']), lower-case($alpha))}))
+                    let $hits := count(filter($sorted, function($p) { starts-with($key($p), lower-case($alpha))}))
                     where $hits > 0
                     return
                         map {
@@ -225,7 +234,7 @@ declare function api:people-browse($request as map(*)) {
                             "count": $hits
                         },
                     map {
-                        "category": "Alle",
+                        "category": "all",
                         "count": count($sorted)
                     }
                 }
@@ -235,16 +244,13 @@ declare function api:people-browse($request as map(*)) {
 declare function api:output-person($list, $category as xs:string, $search as xs:string?) {
     array {
         for $person in $list
-        let $categoryParam := if ($category = "all") then substring($person/tei:persName/tei:name[@type='nomen'], 1, 1) else $category
-        let $params := "id=" || $person/@xml:id || "&amp;category=" || $categoryParam || "&amp;search=" || $search
-        let $label := string-join((
-            $person/tei:persName/tei:name[@type='praenomen'][node()],
-            $person/tei:persName/tei:name[@type='cognomen'][node()],
-            $person/tei:persName/tei:name[@type='nomen'][node()]
-        ), ' ')
+        let $params := "id=" || $person/@xml:id || "&amp;category=" || $category || "&amp;search=" || $search
+        let $zh := head(($person/tei:persName[@type='canonical'], $person/tei:persName[@type='main'], $person/tei:persName[1]))
+        let $roman := head(($person/tei:persName[@type='sort'], $person/tei:persName[@xml:lang='zh-Latn-pinyin']))
+        let $label := string-join(($zh, $roman)[normalize-space(.) != ''], ' · ')
         return
             <span class="person">
-                <a href="person.html?{$params}">{$label}</a>
+                <a href="people/{$person/@xml:id}">{$label}</a>
                 <paper-icon-button id="{$person/@xml:id}" class="place-id" icon="icons:content-copy"
                     title="ID kopieren"></paper-icon-button>
             </span>
