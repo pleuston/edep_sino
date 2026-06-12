@@ -1,6 +1,6 @@
 # EpiWen — Architecture
 
-*Living document; updated at every milestone. State: M0 (baseline after rename).*
+*Living document; updated at every milestone. State: M-J5 (jinshi 金石學 history layer complete).*
 
 ## What this application is
 
@@ -59,12 +59,41 @@ test/cypress         e2e suite (run against local eXist)
 - **Registers**: authority data as standOff TEI docs (`pb-persons`, `pb-places`, `pb-bibl`) in the data app under `registers/`; Fore entry-forms are *data-package* templates (`registers/templates`) served by the registers API.
 - **Editor (from M2/M3)**: `templates/pages/edit.html` hosts an `<fx-fore>` model bound to an EpiDoc instance; modular form sections live in `templates/parts/edit/`; EpiDoc skeleton/templates in `templates/fore/`; persistence via `/api/inscription` (POST = save), fragments as separate TEI docs linked through `TEI/@fragments` / `@corresp`.
 - **Chinese layer (from M4)**: encoding decisions in `doc/sino-model.md`; era-date conversion service `modules/sino/` + `/api/sino/*`; vocabularies and nianhao table in the data package.
+- **Jinshi history layer (M-J1–M-J5)**: registers for the field's historiography (works 金石著作, inscription authority 石刻總目); joins module `modules/templates/jinshi.xqm`; timelines `resources/scripts/jinshi-timeline.js`. See §Jinshi below.
 
 ## Navigation & the sites axis
 
 The menu (`context.json → menu.items`) leads with **Map → Inscriptions → Sites → Registers ▾**. "Sites" are *find-spots joined with their holdings*: `modules/templates/sites.xqm` resolves place entity files against `origPlace/@corresp` of the workspace documents and powers three surfaces — `templates/map.html` (full-page Leaflet + markercluster from the pb-components bundle, data via `GET /api/sites`), `templates/sites.html` (server-rendered index) and the API. The Places register stays the broader gazetteer, and each place page lists the inscriptions found at that site inline (`sites:inscriptions-at`). The editor is reachable via the login-gated ＋New menu entry and an Edit button in the document toolbar.
 
 Beyond carved stone, objects record a **visual form** (`objectDesc/@form`, `medium` taxonomy: calligraphy/painting/ink-on-paper/seal-impression…) and **seals** (`physDesc/sealDesc/seal`, `sealtype` taxonomy; owner via `@corresp` to the person register) — see `doc/sino-model.md` §8bis.
+
+## Jinshi history layer (金石學, M-J1–M-J5)
+
+Three new register types layered on the existing register machinery:
+
+| Register | File | TEI shape | Route |
+|---|---|---|---|
+| Works 金石著作 | `data/registers/works.xml` (`pb-works`, `listBibl`) | `<bibl type="work">` with `<date type="compiled">`, editions as nested `<bibl type="edition">`, `<relatedItem>` for inter-work links | `/works`, `/works/{id}` |
+| Inscriptions 石刻總目 | `data/registers/jinshi.xml` (`pb-jinshi`, `listObject`) | `<object>` with `<objectName>`, `<history/origin>`, `<additional/listBibl type="attestations">` | `/jinshi-inscriptions`, `/jinshi-inscriptions/{id}` |
+| Bibliography link | `data/registers/bibliography.xml` | `<bibl corresp="work-NNNNNN">` → the works authority record | unchanged |
+
+**Joins module** `modules/templates/jinshi.xqm`:
+- `jinshi:attestations-of($insc-id)` — reception timeline of a stone, ordered by compilation date
+- `jinshi:works-of-person($id)` / `jinshi:inscriptions-in-work($id)` / `jinshi:relations-of($id)` — cross-register lookups
+- `jinshi:authority-for-corpus-doc($doc)` — powers the 著錄 block on document view pages
+
+**Timelines** `resources/scripts/jinshi-timeline.js` (vanilla SVG, zero new deps):
+- Surfaces: `/chronology` page; mini-timeline on person/work detail; attestation strip on inscription detail
+- API: `GET /api/sino/chronology` — dynasty bands + person lifespans + work dates as JSON; filters `dynasty`, `from`/`to`, `type`
+- Dynasty bands from `data/taxonomy/dynasty.xml`; person/work dates from TEI register attributes
+
+**Import pipeline** `scripts/import-jinshi.py` — stdlib-only Python, reads vault read-only, outputs well-formed XML; committed id-map ensures stable ids across re-runs; import report committed at `scripts/jinshi-import-report.md`.
+
+**Register machinery fixes** (upstream-relevant, documented in `doc/UPSTREAM.md`):
+- `rapi:prepare-record` — added `tei:bibl` and `tei:object` cases so PUT of `work-NEW` / `insc-NEW` assigns a real id
+- `rview:bibliography-all` and `rapi:query` — scoped XPath to avoid works.xml bibls polluting the bibliography list
+
+**Jinks deployment note**: files tracked in `.jinks.json` are protected from xar overwrite (the manifest SHA256 check treats modified files as user-preserved). To deploy modified tracked files use direct REST PUT: `curl -u admin: -X PUT --data-binary @file -H 'Content-Type: ...' http://localhost:8080/exist/rest/db/apps/epiwen/file`. New untracked files install normally from the xar.
 
 ## Upgradability
 

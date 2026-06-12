@@ -145,6 +145,85 @@ EDEp's corpus is carved stone, but the DRECE design and the NPM examples (法書
 
 (1) glyph bank scale/registry mechanics · (4) 書丹-vs-刻 one event or two (v1: one creation, multiple typed agents) · (5) 抬頭 `@rend`-on-`<lb>` extension · (6) TEI↔IIIF binding · (7) final CURIE base URIs · (8) 撰 never as `<author>` (walk says never) · TP rendering of external double-end-point apparatus.
 
+## §10 Jinshi history layer — Works, Inscription authority, Timelines (M-J1–M-J5)
+
+This section extends the model to cover the *historiography* of Chinese epigraphy (金石學): the scholarly tradition of compiling and studying inscriptions, from 歐陽修's 《集古錄》 (1063) to modern catalogues.
+
+### Works register (`pb-works`, `data/registers/works.xml`, standOff/listBibl)
+
+```xml
+<bibl xml:id="work-000123" type="work">
+  <title xml:lang="zh">金石萃編</title>
+  <title xml:lang="zh-Latn-x-pinyin">Jinshi cuibian</title>
+  <author><persName corresp="person-000042">王昶</persName></author>
+  <date type="compiled" when="1805" cert="high">嘉慶十年</date>
+  <extent unit="juan">160</extent>
+  <bibl type="edition" xml:id="work-000123-ed-01">
+    <edition>1805 刻本</edition><date when="1805"/><publisher>經訓堂</publisher>
+  </bibl>
+  <relatedItem type="supplements" target="work-000045"/>
+  <note type="source">vault provenance (lossless unparsed content)</note>
+</bibl>
+```
+
+- `@type="work"` distinguishes the authority record from nested `@type="edition"` bibls and from `pb-bibl` bibliography entries.
+- `<date type="compiled">`: graded precision — `@when` (exact year), `@notBefore`/`@notAfter` (era-derived range), `@cert="low"` (dynasty-only). Literal content preserved. Work date fallback: if no `<date type="compiled">`, the API uses the earliest edition `<date @when>`.
+- `<relatedItem @type>`: `supplements | corrects | recompiles | models-on`. Inbound relations are *derived*, never stored twice (voice inversion: "supplemented-by" = query on `relatedItem[@type='supplements'][@target=id]`).
+- `<respStmt><resp @key="sino:role:collab"/>` for non-author contributors (variant scribes, compilers).
+- `@corresp` in `pb-bibl` bibliography entries points to the work authority: `<bibl xml:id="bibl-yzjsh" corresp="work-000002">`. Policy: bibliography register = citable short-form references in apparatus (`<bibl corresp="bibl-yzjsh">`); works register = full authority with editions and attestations.
+
+### Inscription authority register (`pb-jinshi`, `data/registers/jinshi.xml`, standOff/listObject)
+
+```xml
+<object xml:id="insc-000007">
+  <objectIdentifier>
+    <objectName type="main" xml:lang="zh">乙瑛碑</objectName>
+    <objectName type="sort" xml:lang="zh-Latn-x-pinyin">Yi Ying bei</objectName>
+    <objectName type="alt">漢魯相乙瑛請置百石卒史碑</objectName>
+    <idno type="corpus">E000123</idno>
+  </objectIdentifier>
+  <history><origin>
+    <origDate when="0153" cert="high">永興元年</origDate>
+    <origPlace corresp="place-…"/>
+  </origin></history>
+  <additional>
+    <surrogates>
+      <bibl type="rubbing"><ref target="https://…npm…"/></bibl>
+    </surrogates>
+    <listBibl type="attestations">
+      <bibl corresp="work-000045">
+        <citedRange unit="juan">13</citedRange>
+        <title type="title-in-work">魯相乙瑛碑</title>
+        <note>有跋</note>
+      </bibl>
+    </listBibl>
+  </additional>
+</object>
+```
+
+- Attestations live on the inscription as the single source of truth. The work's "inscriptions recorded" list is derived by `jinshi:inscriptions-in-work`.
+- `@corresp` on `<bibl>` inside `listBibl[@type='attestations']` points to the work authority id.
+- `idno @type="corpus"` links to an EpiDoc edition when one exists. Corpus side: `msIdentifier/idno @type="jinshi"` (value `insc-NNNNNN`) in workspace docs.
+
+### Person lifespans (merged into `persons.xml`)
+
+```xml
+<person xml:id="person-000042">
+  <birth when="1725"/><death when="1806"/>          <!-- exact: "1725–1806" -->
+  <floruit notBefore="1796" notAfter="1820" cert="low">fl. 嘉慶</floruit>  <!-- era-derived -->
+</person>
+```
+
+Graded precision (from import): `YYYY–YYYY` → birth/death (`exact`); `fl. <era>` → floruit span resolved from nianhao.xml (`floruit`); dynasty-only → floruit = dynasty span, `@cert="low"`; `?–?` / unknown → no dates (excluded from timelines). Literals preserved as element content.
+
+### Timeline data model and rendering
+
+- API `GET /api/sino/chronology` returns JSON `{dynasties, persons, works}` from TEI dates + dynasty taxonomy.
+- Route is under `/api/sino/` to avoid the `/{docid}` catch-all in `lib/api.json` (which uses `allowReserved: true` on the path parameter).
+- Person bars: solid fill = exact/partial; hatched fill (`url(#fh-full)`) = floruit or era-estimated.
+- Work markers: solid diamond = `cert="high"` (exact); translucent = `cert="medium"` or `approx`.
+- Attestation strip reads `data-year` attributes from `.work-date` spans (numeric ISO year), not the Chinese literal — avoids parsing era names in the browser.
+
 ## Milestone map
 
 | Milestone | Implements from this contract |
@@ -154,3 +233,4 @@ EDEp's corpus is carved stone, but the DRECE design and the NPM examples (法書
 | M7 | Template extensions (origDate attrs, layout, handNote, listWit, charDecl, dimensions, respStmt, textpart/damage snippets, lzh defaults, listPrefixDef), editor parts, roundtrip fixture |
 | M8 | Registers: person entry shape + nym system, place entry shape + period names + WGS84 (§6–7) |
 | M9 | Rendition set + vertical preview, variant-char display, zh UI |
+| M-J1–M-J5 | §10: works register, inscription authority register, person lifespans, timelines |

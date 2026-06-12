@@ -84,6 +84,43 @@ npx cypress run --spec 'test/cypress/e2e/gui/editor.cy.js'
 
 `test/cypress/e2e/gui/editor.cy.js` guards the editor render (Fore init, taxonomy loading, console-error-free). From M3 the inscription roundtrip spec is the regression keystone. Screenshots land in `test/cypress/screenshots/`.
 
+## Jinshi import pipeline
+
+```sh
+# Re-import from the vault (vault is read-only; script is idempotent):
+python3 scripts/import-jinshi.py \
+  --vault /Users/sassmann/Documents/obsidian-vault \
+  --id-map scripts/jinshi-id-map.json \
+  --out-works  data-pkg/data/registers/works.xml \
+  --out-jinshi data-pkg/data/registers/jinshi.xml \
+  --out-persons data-pkg/data/registers/persons.xml \
+  --report scripts/jinshi-import-report.md
+
+# Re-run produces byte-identical XML if vault is unchanged (idempotency check).
+# After import: build and deploy data package, then reindex:
+cd data-pkg && ant
+# deploy epiwen-data-*.xar via REST, then:
+curl -u admin: --data-urlencode '_query=xmldb:reindex("/db/apps/epiwen-data/data")' \
+  http://localhost:8080/exist/rest/db
+```
+
+New ids are appended to `scripts/jinshi-id-map.json` (committed). Hand-seeded ids (`work-000001`, `work-000002`, `insc-000001`, etc.) are pre-registered there; the importer merges rather than duplicates. Import report at `scripts/jinshi-import-report.md` lists parse rates, unresolved links, and unparsed attestation lines.
+
+## Adding a new register type
+
+Checklist (pattern: the `inscription` type added in M-J1):
+
+1. **Config**: add entry to `$config:register-map` in `modules/config.xqm` (`id`, `prefix`, `type-name`, `root-element`).
+2. **Register doc**: create `data-pkg/data/registers/{type}.xml` with a top-level `standOff` element and the list element (`listObject`, `listBibl`, etc.) bearing the register `@xml:id`.
+3. **`registers.xql`**: add `case element(tei:{element})` to `rapi:prepare-record`, `rapi:insert-point`, `rapi:next`, and `rapi:save`.
+4. **`registers-api.json`/`.xql`**: add browse (`/{type}`, `/{type}/{id}`) and API (`/api/{type}`, `/api/{type}/all`) routes; implement `rview:{type}-categories` and `rview:{type}-all`.
+5. **Templates**: `templates/{types}.html` (list) + `templates/{type}.html` (detail) — clone the place pair.
+6. **ODD**: add element overrides in `resources/odd/output.odd`; recompile via `POST /api/odd`.
+7. **Lucene**: `data-pkg/collection.xconf` — add fields for the new element type; reindex.
+8. **i18n**: add keys under `registers.{type}` in `resources/i18n/app/{en,de,zh_TW}.json`.
+9. **Menu**: add to `context.json` menu.items (under `registers` subitems or top-level).
+10. **Tests**: api spec (`PUT {type}-NEW` assigns real id) + gui spec (list renders, detail renders, joins work).
+
 ## Known cosmetic issues (tracked for the polish milestone)
 
 - The top menu wraps long entries character-by-character (`menu.css` column sizing) — app-global, not editor-specific.

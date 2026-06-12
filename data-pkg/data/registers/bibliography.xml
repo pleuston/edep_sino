@@ -9,11 +9,11 @@
     </teiHeader>
     <standOff>
         <listBibl>
-            <bibl xml:id="bibl-yzjsh">
+            <bibl xml:id="bibl-yzjsh" corresp="work-000002">
                 <author xml:lang="zh">王昶</author>
                 <title xml:lang="zh">金石萃編</title>
                 <date when="1805">1805</date>
-                <note xml:lang="en">Jinshi cuibian — classical epigraphic compendium, 160 juan.</note>
+                <note xml:lang="en">Jinshi cuibian — classical epigraphic compendium, 160 juan. Authority record: work-000002.</note>
             </bibl>
         </listBibl>
     </standOff>

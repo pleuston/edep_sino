@@ -64,6 +64,37 @@ Counting unit is always the **character**. Whitespace inside the edition is pres
 
 **Historic relevance / Editing** — subject keywords (religion etc.) and the modern editorial responsibility + publication status.
 
+## Jinshi history of epigraphic studies (金石學)
+
+The **Registers** submenu (and top-level **Chronology 年表**) expose the historiography layer:
+
+### Works 金石著作 (`/works`)
+Catalogues the ~1,100 jinshi compilations from 歐陽修's 《集古錄》 (1063) to the Republican period. Each work page shows:
+- Editions (版本) with publisher, date, and collection notes
+- Relations to other works (corrects / supplements / recompiles / models-on)
+- Inscriptions recorded (著錄石刻 — derived from the attestations in jinshi.xml)
+- A mini-timeline showing the author's lifespan with this work marked
+
+### Inscriptions 石刻總目 (`/jinshi-inscriptions`)
+The inscription authority register — one record per known stone. Each inscription page shows:
+- Object names and alternate titles
+- Origin date and provenance
+- Rubbing surrogates (拓本) with links to NPM, ColBase, Harvard, EFEO digital libraries
+- Attestation history 歷代著錄 — every catalogue that records the stone, ordered chronologically
+- An attestation strip: a timeline from the stone's origin date through its reception history
+
+### Chronology 年表 (`/chronology`)
+A full-field timeline showing the arc of jinshi studies from the Tang to the Republic:
+- Dynasty bands as backdrop (from the dynasty taxonomy)
+- Person lifespans as lane-packed bars (solid = exact birth/death; hatched = floruit/era-estimated)
+- Work dates as diamond markers
+- Dynasty filter buttons + persons/works toggles
+- Click through to person or work detail pages
+
+### Linking a corpus document to its inscription authority
+
+When creating or editing a corpus document (EpiDoc edition in `data/workspace`), the **Identifier** section has a *Jinshi authority id* field (`idno type="jinshi"`). Enter `insc-NNNNNN` to link the edition to its authority record — the edition's document view will then show the attestation history inline.
+
 ## Registers
 
 *People* and *Places* list the authority entries. Each site (place) page also lists the inscriptions found there, linking into the reading view. A person entry shows the canonical name with pinyin, the name components (字 courtesy name, 號 sobriquet, 諡 posthumous name, 廟號 temple name), floruit and offices held (官職); a place entry shows the period-resolved historical names (古名), the administrative hierarchy (政區, with period validity) and the location on the map (WGS84). Entries are stored as standOff records; they can be created and updated through the registers API (`PUT /api/register` with a TEI `person`/`place` whose `xml:id` is `person-NEW`/`place-NEW`) — entry forms in the UI follow with the upstream annotation tooling.
