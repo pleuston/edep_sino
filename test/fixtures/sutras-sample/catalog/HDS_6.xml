@@ -1,0 +1,891 @@
+<c:object xmlns="http://www.tei-c.org/ns/1.0" xmlns:c="http://exist-db.org/ns/catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="inscription" xml:id="HDS_6" xsi:schemaLocation="http://exist-db.org/ns/catalog http://www.stonesutras.org:8080/exist/rest/db/schema/catalog.xsd" site="HDS">
+    <c:header>
+        <c:title lang="zh" type="given">《佛說仁王般若波羅蜜經》節文</c:title>
+        <c:title lang="en" type="given">Passage from the <hi rend="italic">Sutra Spoken by the
+                Buddha on the Perfection of Wisdom of Humane Kings</hi>
+        </c:title>
+        <c:producer role="signatory" type="signatory"/>
+        <c:date>
+            <c:gregorian type="case-date-point">
+                <c:range lower="550" upper="564"/>
+                <c:point/>
+            </c:gregorian>
+            <c:original/>
+            <c:given source="discussion">天保元年至河清三年</c:given>
+        </c:date>
+    <c:province lang="en">Shandong Province</c:province>
+        <c:province lang="zh">山東省  </c:province>
+    </c:header>
+    <c:physicalDescription>
+        <c:dimensions height="212" width="200">213/160</c:dimensions>
+        <c:character-dimensions>
+            <c:character char="佛" column="1" row="1" height="26" width="33">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="告" column="1" row="2" height="17" width="29">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="波" column="1" row="3" height="20" width="30">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="斯" column="1" row="4" height="20" width="*18">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="玉" column="1" row="6" height="14" width="18">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="是" column="1" row="7" height="19" width="19">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="般" column="1" row="8" height="12" width="*21">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="若" column="1" row="9" height="13" width="24">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="波" column="10" row="" height="15" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="羅" column="2" row="1" height="22" width="29">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="蜜" column="2" row="2" height="19" width="36">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="是" column="2" row="3" height="21" width="20">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="諸" column="2" row="4" height="*10" width="22">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="佛" column="2" row="5" height="21" width="25">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="菩" column="2" row="6" height="16" width="20">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="薩" column="2" row="7" height="18" width="22">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="一" column="2" row="8" height="5" width="19">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="切" column="2" row="9" height="14" width="22">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="衆" column="3" row="1" height="19" width="23">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="生" column="3" row="2" height="17" width="17">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="心" column="3" row="3" height="11" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="識" column="3" row="4" height="17" width="*10">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="神" column="3" row="6" height="17" width="24">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="本" column="3" row="7" height="18" width="27">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="也" column="3" row="8" height="14" width="24">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="一" column="3" row="9" height="6" width="24">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="切" column="3" row="10" height="14" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="國" column="4" row="1" height="17" width="20">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="玉" column="4" row="2" height="16" width="22">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="也" column="4" row="6" height="17" width="*15">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="亦" column="4" row="7" height="14" width="18">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="名" column="4" row="8" height="16" width="21">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="神" column="4" row="9" height="17" width="25">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="符" column="4" row="10" height="21" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="亦" column="5" row="1" height="16" width="23">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="名" column="5" row="2" height="17" width="24">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="辟" column="5" row="3" height="20" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="鬼" column="5" row="4" height="*16" width="20">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="珠" column="5" row="5" height="15" width="25">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="亦" column="5" row="6" height="17" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="名" column="5" row="7" height="17" width="21">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="如" column="5" row="8" height="13" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="意" column="5" row="9" height="24" width="20">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="珠" column="5" row="10" height="16" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="亦" column="6" row="1" height="17" width="25">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="名" column="6" row="2" height="17" width="23">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="護" column="6" row="3" height="22" width="27">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="國" column="6" row="4" height="18" width="25">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="珠" column="6" row="5" height="15" width="27">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="亦" column="6" row="6" height="20" width="30">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="名" column="6" row="7" height="17" width="24">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="天" column="6" row="8" height="13" width="24">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="地" column="6" row="9" height="14" width="25">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="鏡" column="6" row="10" height="17" width="26">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="亦" column="7" row="1" height="17" width="23">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="名" column="7" row="2" height="18" width="22">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="龍" column="7" row="3" height="19" width="16">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="寶" column="7" row="4" height="20" width="25">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="神" column="7" row="5" height="15" width="23">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="玉" column="7" row="6" height="16" width="22">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+        </c:character-dimensions>
+        <c:condition grade="">
+            <c:label xml:lang="en"> good, the fourth row weathered</c:label>
+            <c:label xml:lang="zh">尚佳，第四排風化嚴重</c:label>
+        </c:condition>
+        <c:format>
+            <c:label xml:lang="zh">縱長方形</c:label>
+            <c:label xml:lang="en">vertical rectangle</c:label>
+        </c:format>
+        <c:frame>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:frame>
+        <c:grid>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:grid>
+        <c:decor>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:decor>
+        <c:polishing>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:polishing>
+        <c:technique>
+            <c:label xml:lang="zh">“V”形刻法</c:label>
+            <c:label xml:lang="en"> V-shaped carving</c:label>
+        </c:technique>
+        <c:script/>
+        <c:mineral>
+            <c:label xml:lang="zh">蘆台特階含化石的石灰岩</c:label>
+            <c:label xml:lang="en">fossiliferous Lutetian limestone</c:label>
+        </c:mineral>
+    </c:physicalDescription>
+    <c:references>
+        <c:rubbing>
+            <c:note xml:lang="zh">洪頂山6號1998年拓片，山東省石刻藝術博物館典藏；刊於 <ref target="LaiFei2000a" type="biblio">
+                    <pages>48</pages>
+                </ref>。</c:note>
+            <c:note xml:lang="en">Rubbing of HDS 6 made in 1998. Shandong Stone Carving Art Museum
+                in Jinan, published in <ref target="LaiFei2000a" type="biblio">
+                    <pages>48</pages>
+                </ref>.</c:note>
+        </c:rubbing>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="ZhangZong1997">
+            <c:note/>
+            <c:pages>113</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="LaiFei2000a">
+            <c:note/>
+            <c:pages>265</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="Kiriya2003a">
+            <c:note/>
+            <c:pages>67</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="LaiFei2004">
+            <c:note/>
+            <c:pages>107-108</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="SDSKYS_HAW2006">
+            <c:note/>
+            <c:pages>81</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="LaiFei2007">
+            <c:note/>
+            <c:pages>23</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="illustration" type="modern" xlink:href="LiuWenjin1997">
+            <c:note/>
+            <c:pages>33</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="illustration" type="modern" xlink:href="LaiFei2000a">
+            <c:note/>
+            <c:pages>48</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="illustration" type="modern" xlink:href="SDSKYS_HAW2006">
+            <c:note/>
+            <c:pages>84</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" type="modern" value="illustration" xlink:href="LaiFei2007">
+            <c:pages>23</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" type="taisho" xlink:href="T_245">
+            <c:note/>
+            <c:pages>832c23-26</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2000a">
+            <c:pages>265</c:pages>
+            <c:note lang="en">Lai Fei dates the inscription to around the year 564.</c:note>
+            <c:note lang="zh">賴非將此處刻經的年代定為公元564年前後。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="ZhangZong2000a">
+            <c:pages>70</c:pages>
+            <c:note lang="en">Zhang Zong relates the text passage to the doctrine of the End of Law
+                    (<hi rend="italic">mofa</hi>).</c:note>
+            <c:note lang="zh">張總認為此處石刻節文與末法說有關。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="ZhangZong2003a">
+            <c:pages>10, 25</c:pages>
+            <c:note lang="en">Zhang Zong identifies the source text and interprets it as a
+                combination of the Mahayana doctrine of emptiness and the practical needs of
+                government.</c:note>
+            <c:note lang="zh">張總指明節文出處，並認為體現了大乘空觀與政治實際需要的結合。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="Kiriya2003a">
+            <c:pages>50, 67</c:pages>
+            <c:note lang="en">Kiriya identifies the text passage, dates it to the years between 553
+                and 564, and attributes the calligraphy to An Daoyi.</c:note>
+            <c:note lang="zh">桐谷征一指出了刻文的出處，將其年代定為公元553和564年之間，並認為這是安道壹的書法。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2003c">
+            <c:pages>126</c:pages>
+            <c:note lang="en">Lai Fei holds that the inscription belongs to the first of two periods
+                of Seng’an Daoyi’s work, either by his own hand, or under his patronage.</c:note>
+            <c:note lang="zh">賴非認為該銘文為僧安道壹前期作品，或由他親手所書，或由他出資贊助。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2004">
+            <c:note lang="en">Lai Fei gives the inscription’s location, its measurements and a
+                transcription. He remarks that the carved passage must have been taken from <foreign xml:lang="sa">Kumārajīva’s</foreign> translation of the <hi rend="italic">Sutra
+                    Spoken by the Buddha on the Perfection of Wisdom of Humane Kings</hi>. </c:note>
+            <c:note lang="zh">賴非提供了該題刻的位置、測量數據和錄文。他評述說,所刻經文應當出自鳩摩羅什所譯之《佛說仁王般若波羅蜜經》。</c:note>
+            <c:pages>107-108</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2007">
+            <c:note lang="en">Lai Fei gives the inscription’s location, its measurements and a
+                transcription, and gives a description of each character’s state of
+                preservation.</c:note>
+            <c:note lang="zh">賴非提供了題刻的位置、測量數據和錄文，並描述了每個字的保存狀況。</c:note>
+            <c:pages>23-24</c:pages>
+        </c:ref>
+    </c:references>
+    <c:fileDescription>
+        <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="rubbing" view="default" xlink:href="HDS_06.jpg">
+            <c:caption xml:lang="zh">洪頂山6號拓片</c:caption>
+            <c:caption xml:lang="en">Rubbing of HDS 6</c:caption>
+        </c:link>
+        <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="stone" view="default" xlink:href="HDS_r_6_total_IMG_0412.JPG">
+            <c:caption xml:lang="zh">洪頂山6號摩崖，2004年照片</c:caption>
+            <c:caption xml:lang="en">Mount Hongding, rock carving HDS 6; photograph taken in
+                2004</c:caption>
+        </c:link>
+    </c:fileDescription>
+    <c:location azimuth="220" slope="33" zenith="57">
+        <c:distance ref="HDS_5" relation="neighbor">3.03</c:distance>
+        <c:distance ref="HDS_7" relation="neighbor">11.63</c:distance>
+        <c:coordinates height="144.3 " srsName="EPSG:4326">116.238457,36.064570</c:coordinates>
+    </c:location>
+</c:object>

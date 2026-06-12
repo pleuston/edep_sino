@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/content.html"
+        },
+        "features": {
+            "toolbar": {
+                "zoom": false,
+                "navigation": false
+            },
+            "timeline": {
+                "enabled": false
+            },
+            "upload": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "transform/teipublisher.css",
+            "resources/css/registers-theme.css"
+        ]
+    }
+    ---
+    [% template breadcrumb %]
+    <li>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="[[ $context-path ]]/sutras"><pb-i18n key="menu.sutras"/></a></li>
+                <li>[[ head(($entity-data?root//tei:objectName[@type='main'], $entity-data?root//tei:objectName))/string() ]]</li>
+            </ul>
+        </nav>
+    </li>
+    [% endtemplate %]
+    <section class="sutra jinshi-detail">
+        <h1 class="zh">[[ head(($entity-data?root//tei:objectName[@type='main'], $entity-data?root//tei:objectName))/string() ]]</h1>
+        [% if $entity-data?root//tei:objectName[@type='sort'] != '' %]
+        <p class="pinyin">[[ $entity-data?root//tei:objectName[@type='sort']/string() ]]</p>
+        [% endif %]
+        [% if exists($entity-data?root//tei:objectName[@type='alt']) %]
+        <p class="altnames">[[ string-join($entity-data?root//tei:objectName[@type='alt'], '；') ]]</p>
+        [% endif %]
+
+        <dl class="work-meta">
+            [% if $entity-data?root//tei:origin/tei:origDate != '' %]
+            <dt><pb-i18n key="jinshi.origin">Origin</pb-i18n></dt>
+            <dd><span class="zh">[[ $entity-data?root//tei:origin/tei:origDate/string() ]]</span></dd>
+            [% endif %]
+            [% let $place = $entity-data?root//tei:origin/tei:origPlace/@corresp/string() %]
+            [% if $place != '' %]
+            <dt><pb-i18n key="sutras.location">Site</pb-i18n></dt>
+            <dd><a href="[[ $context-path ]]/places/[[ $place ]]">[[ head((collection($config:register-root)/id($place)//tei:placeName[@type='main']/string(), $place)) ]]</a>
+                [% if $entity-data?root//tei:idno[@type='corpus-loc'] != '' %]
+                <small class="corpus-loc">· [[ $entity-data?root//tei:idno[@type='corpus-loc']/string() ]]</small>
+                [% endif %]</dd>
+            [% endif %]
+            [% endlet %]
+            [% if $entity-data?root//tei:idno[@type='sutra-corpus'] != '' %]
+            <dt><pb-i18n key="sutras.corpus">Corpus</pb-i18n></dt>
+            <dd>[[ $entity-data?root//tei:idno[@type='sutra-corpus']/string() ]]</dd>
+            [% endif %]
+            [% if exists($entity-data?root//tei:idno[@type='taisho']) %]
+            <dt><pb-i18n key="sutras.taisho">Taishō canon</pb-i18n></dt>
+            <dd>[[ string-join($entity-data?root//tei:idno[@type='taisho'] ! replace(., '_', ' '), '; ') ]]</dd>
+            [% endif %]
+        </dl>
+
+        [% let $cid = $entity-data?root//tei:idno[@type='corpus']/string() %]
+        [% if $cid != '' %]
+        <section class="corpus-link">
+            <a class="corpus-edition" href="[[ $context-path ]]/[[ $cid ]].xml">
+                <pb-i18n key="sutras.edition">Transcription (this corpus)</pb-i18n>
+            </a>
+        </section>
+        [% endif %]
+        [% endlet %]
+
+        [% for $n in $entity-data?root/tei:note[not(@type='source')] %]
+        <p class="note">[[ $n/string() ]]</p>
+        [% endfor %]
+    </section>
+</template>

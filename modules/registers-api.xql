@@ -543,3 +543,41 @@ declare function rview:rubbings-categories($request as map(*)) {
         rview:register-categories(rview:rubbings($search), $request,
             rview:rubbing-sort-label#1, rview:output-register-entries#2)
 };
+
+(: ─── Sutras (石經) ─────────────────────────────────────────────────────── :)
+
+declare %private function rview:sutra-sort-label($obj as element()) as xs:string {
+    normalize-space(head(($obj//tei:objectName[@type='sort'],
+        $obj//tei:objectName[@type='main'], $obj//tei:objectName)))
+};
+
+declare %private function rview:sutras($search as xs:string?) {
+    let $root := collection($config:register-root)/id($config:register-map?sutra?id)
+    return
+        if ($search and $search != '') then
+            $root//tei:object[@type='sutra'][ft:query(., 'name:(' || $search || '*)')]
+        else
+            $root//tei:object[@type='sutra']
+};
+
+declare function rview:sutras-all($request as map(*)) {
+    array {
+        for $object in rview:sutras(())
+        let $label := rview:sutra-sort-label($object)
+        order by lower-case($label) collation "?lang=de-DE"
+        return
+            map {
+                "id": $object/@xml:id/string(),
+                "name": head(($object//tei:objectName[@type='main'], $object//tei:objectName))/string(),
+                "sort-name": $label,
+                "date": $object//tei:origin/tei:origDate/@when/string()
+            }
+    }
+};
+
+declare function rview:sutras-categories($request as map(*)) {
+    let $search := normalize-space($request?parameters?search)
+    return
+        rview:register-categories(rview:sutras($search), $request,
+            rview:sutra-sort-label#1, rview:output-register-entries#2)
+};

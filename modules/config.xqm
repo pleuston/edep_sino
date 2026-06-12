@@ -345,6 +345,11 @@ declare variable $config:register-map := map {
         "id": "pb-rubbings",
         "default": "rubbing-default",
         "prefix": "rub-"
+    },
+    "sutra": map {
+        "id": "pb-sutras",
+        "default": "sutra-default",
+        "prefix": "sutra-"
     }
 };
 

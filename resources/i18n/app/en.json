@@ -198,7 +198,8 @@
         "jinshi": "Catalogue",
         "chronology": "Chronology",
         "collections": "Collections",
-        "rubbings": "Rubbings"
+        "rubbings": "Rubbings",
+        "sutras": "Stone Sutras"
     },
     "metadata": {
         "additional": "General data",
@@ -281,5 +282,11 @@
     },
     "register-details": {
         "document-list": "Mentioned in documents"
+    },
+    "sutras": {
+        "location": "Site",
+        "corpus": "Corpus",
+        "taisho": "Taishō canon",
+        "edition": "Transcription (this corpus)"
     }
 }

@@ -197,7 +197,8 @@
         "jinshi": "Katalog",
         "chronology": "Chronologie",
         "collections": "Sammlungen",
-        "rubbings": "Abreibungen"
+        "rubbings": "Abreibungen",
+        "sutras": "Steinsutren"
     },
     "metadata": {
         "additional": "Allgemeine Angaben",
@@ -269,5 +270,11 @@
     },
     "register-details": {
         "document-list": "In Dokumenten erwähnt"
+    },
+    "sutras": {
+        "location": "Standort",
+        "corpus": "Korpus",
+        "taisho": "Taishō-Kanon",
+        "edition": "Transkription (dieses Korpus)"
     }
 }

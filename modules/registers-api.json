@@ -1517,6 +1517,202 @@
                     }
                 }
             }
+        },
+        "/sutras": {
+            "get": {
+                "summary": "Landing page for stone sutras 石經",
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "tags": [
+                    "view"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "sutras"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sutras/{id}": {
+            "get": {
+                "summary": "Detail page for a stone sutra inscription",
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the sutra",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "sutra"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/sutras": {
+            "get": {
+                "summary": "Browse stone sutras A-Z",
+                "operationId": "rview:sutras-categories",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/sutras/all": {
+            "get": {
+                "summary": "All stone sutras as a flat array",
+                "operationId": "rview:sutras-all",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "security": [

@@ -1,0 +1,191 @@
+<c:object xmlns="http://www.tei-c.org/ns/1.0" xmlns:c="http://exist-db.org/ns/catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="inscription" xml:id="HDS_11" xsi:schemaLocation="http://exist-db.org/ns/catalog http://www.stonesutras.org:8080/exist/rest/db/schema/catalog.xsd" site="HDS">
+    <c:header>
+        <c:title lang="zh" type="given">“安王佛”</c:title>
+        <c:title lang="en" type="given">“Buddha King of Serenity”</c:title>
+        <c:producer role="signatory" type="signatory"/>
+        <c:date>
+            <c:gregorian type="case-date-point">
+                <c:range lower="550" upper="564"/>
+                <c:point/>
+            </c:gregorian>
+            <c:original/>
+            <c:given source="discussion">天保元年至河清三年</c:given>
+        </c:date>
+    <c:province lang="en">Shandong Province</c:province>
+        <c:province lang="zh">山東省  </c:province>
+    </c:header>
+    <c:physicalDescription>
+        <c:dimensions height="150" width="100"/>
+        <c:character-dimensions>
+            <c:character char="安" column="1" height="49.0" row="1" width="99.0">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="王" column="1" height="44.0" row="2" width="39.0">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="佛" column="1" height="47.0" row="3" width="51.0">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+        </c:character-dimensions>
+        <c:condition grade="">
+            <c:label xml:lang="zh">佳</c:label>
+            <c:label xml:lang="en">very good</c:label>
+        </c:condition>
+        <c:format>
+            <c:label xml:lang="zh">縱長方形</c:label>
+            <c:label xml:lang="en">vertical rectangle</c:label>
+        </c:format>
+        <c:frame>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:frame>
+        <c:grid>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:grid>
+        <c:decor>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:decor>
+        <c:polishing>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:polishing>
+        <c:technique>
+            <c:label xml:lang="zh">“V”形刻法、“└┘”形刻法和“飛白刻”</c:label>
+            <c:label xml:lang="en"> V-shaped carving, rectangular U-shaped carving, and “flying
+                white” carving</c:label>
+        </c:technique>
+        <c:script/>
+        <c:mineral>
+            <c:label xml:lang="zh">白雲岩？</c:label>
+            <c:label xml:lang="en">dolomite?</c:label>
+        </c:mineral>
+    </c:physicalDescription>
+    <c:references>
+        <c:rubbing>
+            <c:note xml:lang="zh">洪頂山11號1998年拓片，山東省石刻藝術博物館典藏。</c:note>
+            <c:note xml:lang="en">Rubbing of rock carving HDS 11 made in 1998. Shandong Stone
+                Carving Art Museum in Jinan.</c:note>
+        </c:rubbing>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="ZhangZong1997">
+            <c:note/>
+            <c:pages>114</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="Kiriya2003a">
+            <c:note/>
+            <c:pages>71</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="SDSKYS_HAW2006">
+            <c:note/>
+            <c:pages>82</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="LaiFei2007">
+            <c:note/>
+            <c:pages>28</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="illustration" type="modern" xlink:href="LiuWenjin1997">
+            <c:note/>
+            <c:pages>57</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" type="taisho" xlink:href="T_657">
+            <c:note/>
+            <c:pages>140b5-14</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" type="taisho" xlink:href="T_442">
+            <c:note/>
+            <c:pages>316a28-29</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" type="taisho" xlink:href="T_448">
+            <c:note/>
+            <c:pages>394b28</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="AnTingshan1997">
+            <c:pages>109-110, 128</c:pages>
+            <c:note lang="en">An Tingshan briefly mentions the inscription.</c:note>
+            <c:note lang="zh">安廷山簡略提到了該銘文。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LiJingjie1997a">
+            <c:pages>45</c:pages>
+            <c:note lang="en">Li Jingjie attributes the inscription to Seng’an Daoyi.</c:note>
+            <c:note lang="zh">李靜杰認為該銘文出自僧安道壹之手。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="ZhangZong1997">
+            <c:pages>109</c:pages>
+            <c:note lang="en">Zhang Zong holds that this Buddha name is an allusion to Seng’an
+                Daoyi’s name.</c:note>
+            <c:note lang="zh">張總認為該佛名暗示了僧安道壹的名字。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2000b">
+            <c:pages>8</c:pages>
+            <c:note lang="en">Lai Fei mentions the inscription.</c:note>
+            <c:note lang="zh">賴非提到了該銘文。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="ZhangZong2003a">
+            <c:pages>16-17</c:pages>
+            <c:note lang="en">Zhang Zong refers to occurrences of this Buddha name in the printed
+                    <hi rend="italic">
+                    <foreign xml:lang="ja">Taishō</foreign>
+                </hi> edition. He
+                suggests that the name may have resonated with Seng’an Daoyi’s own name, conferring
+                on him additional prestige.</c:note>
+            <c:note lang="zh">張總提到該佛名見於《大正藏》，並假設這個佛名也許和僧安道壹本人的名字相呼應，由此提高他的聲望。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="Kiriya2003a">
+            <c:pages>71</c:pages>
+            <c:note lang="en">Kiriya holds that this Buddha name alludes to the name of Seng’an
+                Daoyi and to the Chan practice of quieting the mind (<hi rend="italic">anxin</hi>
+                <foreign xml:lang="zh">安心</foreign>).</c:note>
+            <c:note lang="zh">桐谷征一認為該佛名暗指僧安道壹的名字以及禪修中的“安心”。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2007">
+            <c:note lang="en">Lai Fei gives the inscription’s location, its measurements and a
+                transcription, and says that the three characters are well preserved. See also <ref type="biblio" target="LaiFei2000b">109</ref>.</c:note>
+            <c:note lang="zh">賴非提供了銘文的位置、測量數據及錄文，並說這三個字都保存良好。參見<ref type="biblio" target="LaiFei2000b">109</ref>。</c:note>
+            <c:pages>28</c:pages>
+        </c:ref>
+    </c:references>
+    <c:fileDescription>
+        <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="rubbing" view="default" xlink:href="HDS_11.tif">
+            <c:caption xml:lang="zh">洪頂山11號拓片</c:caption>
+            <c:caption xml:lang="en">Rubbing of rock carving HDS 11</c:caption>
+        </c:link>
+        <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="stone" view="default" xlink:href="HDS_r_11_part_F1000045.JPG">
+            <c:caption xml:lang="zh">洪頂山11號摩崖，2004年照片</c:caption>
+            <c:caption xml:lang="en">Mount Hongding, rock carving HDS 11, photograph taken in
+                2004</c:caption>
+        </c:link>
+    </c:fileDescription>
+    <c:location azimuth="290" slope="3" zenith="87">
+        <c:distance ref="HDS_10" relation="prior">2.12</c:distance>
+        <c:distance ref="HDS_12" relation="next">2.36</c:distance>
+        <c:coordinates height="152.4" srsName="EPSG:4326">116.238662,36.064470</c:coordinates>
+    </c:location>
+</c:object>

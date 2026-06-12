@@ -1,0 +1,245 @@
+<c:object xmlns="http://www.tei-c.org/ns/1.0" xmlns:c="http://exist-db.org/ns/catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="inscription" xml:id="HDS_5" xsi:schemaLocation="http://exist-db.org/ns/catalog http://www.stonesutras.org:8080/exist/rest/db/schema/catalog.xsd" site="HDS">
+    <c:header>
+        <c:title lang="zh" type="given">《摩訶衍經》碑十八空節文</c:title>
+        <c:title lang="en" type="given">“Mahayana Sutra” Stele with a Passage on Eighteen Aspects of
+            Emptiness</c:title>
+        <c:producer role="signatory" type="signatory"/>
+        <c:date>
+            <c:gregorian type="case-date-point">
+                <c:range lower="550" upper="564"/>
+                <c:point/>
+            </c:gregorian>
+            <c:original/>
+            <c:given source="discussion">天保元年至河清三年</c:given>
+        </c:date>
+    <c:province lang="en">Shandong Province</c:province>
+        <c:province lang="zh">山東省  </c:province>
+    </c:header>
+    <c:physicalDescription>
+        <c:dimensions height="736" width="370">730/310</c:dimensions>
+        <c:character-dimensions>
+            <c:character char="" column="" height="" row="" width="">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="薩" column="1" height="39" row="12" width="34">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="空" column="2" height="*32" row="12" width="*25">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+            <c:character char="散" column="4" height="34" row="12" width="50">
+                <c:engraving>
+                    <c:width type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:width>
+                    <c:depth type="">
+                        <c:point/>
+                        <c:range lower="" upper=""/>
+                    </c:depth>
+                </c:engraving>
+            </c:character>
+        </c:character-dimensions>
+        <c:condition grade="">
+            <c:label xml:lang="en">decor better preserved; inscription on body of stele never
+                completed</c:label>
+            <c:label xml:lang="zh">紋飾保存較好，碑身銘文未完成</c:label>
+        </c:condition>
+        <c:format>
+            <c:label xml:lang="zh">縱長方形</c:label>
+            <c:label xml:lang="en">vertical rectangle</c:label>
+        </c:format>
+        <c:frame>
+            <c:label xml:lang="zh">有</c:label>
+            <c:label xml:lang="en">yes</c:label>
+        </c:frame>
+        <c:grid>
+            <c:label xml:lang="zh">有</c:label>
+            <c:label xml:lang="en">yes</c:label>
+        </c:grid>
+        <c:decor>
+            <c:label xml:lang="zh">龜趺龍首碑，線刻</c:label>
+            <c:label xml:lang="en">tortoise support, round stele head with dragons, line
+                carving</c:label>
+        </c:decor>
+        <c:polishing>
+            <c:label xml:lang="zh">無</c:label>
+            <c:label xml:lang="en">no</c:label>
+        </c:polishing>
+        <c:technique>
+            <c:label xml:lang="zh">“U”形邊框；文字“凵”形刻法和雙鈎刻法</c:label>
+            <c:label xml:lang="en">Frame in U-shaped carving; characters in rectangular U-shaped
+                carving and double-outline carving</c:label>
+        </c:technique>
+        <c:script/>
+        <c:mineral>
+            <c:label xml:lang="zh">蘆台特階含化石的石灰岩</c:label>
+            <c:label xml:lang="en">fossiliferous Lutetian limestone</c:label>
+        </c:mineral>
+    </c:physicalDescription>
+    <c:references>
+        <c:rubbing>
+            <c:note xml:lang="zh">A: 洪頂山5號拓片，山東省石刻藝術博物館典藏，2004年照片。</c:note>
+            <c:note xml:lang="en">A: Rubbing of HDS 5. Shandong Stone Carving Art Museum in Jinan;
+                photograph taken in 2004.</c:note>
+        </c:rubbing>
+        <c:rubbing>
+            <c:note xml:lang="zh">B: 洪頂山5號1998年拓片，山東省石刻藝術博物館典藏；刊於<ref target="LaiFei2000a" type="biblio">47</ref>。</c:note>
+            <c:note xml:lang="en">B: Rubbing of HDS 5 made in 1998. Shandong Stone Carving Art
+                Museum in Jinan; published in <ref target="LaiFei2000a" type="biblio">47</ref>.</c:note>
+        </c:rubbing>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="ZhangZong1997">
+            <c:note/>
+            <c:pages>113-114</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="LaiFei2000a">
+            <c:note/>
+            <c:pages>265</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="LaiFei2007">
+            <c:note/>
+            <c:pages>22</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="Kiriya2003a">
+            <c:note/>
+            <c:pages>67</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="transcription" type="modern" xlink:href="SDSKYS_HAW2006">
+            <c:note/>
+            <c:pages>81</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="illustration" type="modern" xlink:href="LiuWenjin1997">
+            <c:note/>
+            <c:pages>35-39 (reconstruction)</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="illustration" type="modern" xlink:href="LaiFei2000a">
+            <c:note/>
+            <c:pages>47</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="illustration" type="modern" xlink:href="Harrist2004">
+            <c:note/>
+            <c:pages>11</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" type="modern" value="illustration" xlink:href="LaiFei2007">
+            <c:pages>22</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" type="taisho" xlink:href="T_223">
+            <c:note/>
+            <c:pages>250b3-7</c:pages>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="AnTingshan1997">
+            <c:pages>128</c:pages>
+            <c:note lang="en">An Tingshan mentions the inscription without identifying it and gives
+                the measurements of the character <hi rend="italic">san</hi>
+                <foreign xml:lang="zh">散</foreign>.</c:note>
+            <c:note lang="zh">安廷山提及此處銘文，但沒有確定該銘文出處，並提供了“散”字的測量數據。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="XuQing2000">
+            <c:pages>4</c:pages>
+            <c:note lang="en">Xu Qing briefly mentions the inscription, but does not identify the
+                text passage.</c:note>
+            <c:note lang="zh">徐清簡短提及此處銘文，但沒有給出節文出處。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="ZhangZong2000a">
+            <c:pages>66-68</c:pages>
+            <c:note lang="en">Zhang Zong identifies the text passage as taken from the <hi rend="italic">Great Perfection of Wisdom Sutra</hi> (<hi rend="italic">
+                    <foreign xml:lang="sa">Mahāprajñāpāramitā-sūtra</foreign>
+                </hi>), compares it to
+                Dunhuang manuscripts and relates it to Nanyue Huisi.</c:note>
+            <c:note lang="zh">張總認定節文出自《般若波羅蜜經》，並將其與敦煌寫經相比較，指出其與南嶽慧思的關係。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2000a">
+            <c:pages>265</c:pages>
+            <c:note>Lai Fei dates the inscription around the year 564.</c:note>
+            <c:note lang="zh">賴非將此處刻經的年代定為公元564年前後。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="XuHongguo2000">
+            <c:pages>34</c:pages>
+            <c:note lang="en">Xu Hongguo dates the inscription around the year 564.</c:note>
+            <c:note lang="zh">許洪國將此處刻經的年代定為公元564年前後。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="ZhangZong2003a">
+            <c:pages>9-10, 24</c:pages>
+            <c:note lang="en">Zhang Zong identifies the text passage also in the <hi rend="italic">Treatise on the Great Perfection of Wisdom</hi>, <hi rend="italic">Da zhidu
+                    lun</hi>, compares it to the inscription on the single boulder on Mount Culai,
+                which is located east of Guanghua Monastery, and also discusses the Eighteen Aspects
+                of Emptiness.</c:note>
+            <c:note lang="zh">張總認定節文也出現在《大智度論》中，將其與位於徂徠山光化寺東面一處巨石的題刻進行比較，並且論及“十八空”。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2003c">
+            <c:pages>125-126</c:pages>
+            <c:note lang="en">Lai Fei identifies the inscription as a text on the Eighteen Aspects
+                of Emptiness and relates it to the inscription on the boulder on Mount
+                Culai.</c:note>
+            <c:note lang="zh">賴非確定該銘文是有關“十八空”的經文，並與徂徠山巨石上的題刻相聯繫。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="Kiriya2003a">
+            <c:pages>74</c:pages>
+            <c:note lang="en">Kiriya remarks that the rock cut sutras stand in the tradition of
+                Chinese stone stelae, starting in the Eastern Han dynasty, as this inscription and
+                the giant stone stele at Mount Tie show.</c:note>
+            <c:note lang="zh">桐谷征一評述說，石刻佛經屬於東漢以來中國碑刻的傳統，正如該銘文和鐵山巨大的石碑所示。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="Harrist2004">
+            <c:pages>10-11</c:pages>
+            <c:note lang="en">Harrist sees the inscription as a predecessor of the sutra text carved
+                at Mount Tie and characterizes it as a “virtual stele.”</c:note>
+            <c:note lang="zh">韓文彬認為此銘文是鐵山刻經的先例，並形容它為“虛擬之碑”。</c:note>
+        </c:ref>
+        <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="LaiFei2007">
+            <c:note lang="en">Lai Fei gives the inscription’s location, its measurements and a
+                description of the carved stele decor, as well as a reconstruction of the unfinished
+                text. He also describes the remaining three characters’ state of preservation, see
+                also <ref type="biblio" target="LaiFei2004">107</ref>.</c:note>
+            <c:note lang="zh">賴非提供了題刻的位置和測量數據，描述了刻在石碑上的裝飾，並復原了該未完成的文本。他還描述了殘餘的三個字的保存狀況，參見<ref type="biblio" target="LaiFei2004">107</ref>。</c:note>
+            <c:pages>21-23</c:pages>
+        </c:ref>
+    </c:references>
+    <c:fileDescription>
+        <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="rubbing" view="default" xlink:href="HDS_05.jpg">
+            <c:caption xml:lang="zh">洪頂山5號拓片A</c:caption>
+            <c:caption xml:lang="en">Rubbing A of HDS 5</c:caption>
+        </c:link>
+        <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="rubbing" view="variant" xlink:href="HDS_rub_JN_5_LaiFei2000a.jpg">
+            <c:caption xml:lang="zh">洪頂山5號拓片B</c:caption>
+            <c:caption xml:lang="en">Rubbing B of HDS 5</c:caption>
+        </c:link>
+        <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="stone" view="default" xlink:href="HDS_r_5_total_IMG_0341.JPG">
+            <c:caption xml:lang="zh">洪頂山5號摩崖，2004年照片</c:caption>
+            <c:caption xml:lang="en">Mount Hongding, rock carving HDS 5; photograph taken in
+                2004</c:caption>
+        </c:link>
+    </c:fileDescription>
+    <c:location azimuth="225" slope="35" zenith="55">
+        <c:distance ref="HDS_4" relation="neighbor">9.82</c:distance>
+        <c:distance ref="HDS_6" relation="neighbor">3.30</c:distance>
+        <c:coordinates height="145.8" srsName="EPSG:4326">116.238438,36.064593</c:coordinates>
+    </c:location>
+</c:object>

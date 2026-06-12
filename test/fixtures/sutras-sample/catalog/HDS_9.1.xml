@@ -1,0 +1,159 @@
+<c:object xmlns="http://www.tei-c.org/ns/1.0" xmlns:c="http://exist-db.org/ns/catalog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="inscription" xml:id="HDS_9.1" xsi:schemaLocation="http://exist-db.org/ns/catalog http://www.stonesutras.org:8080/exist/rest/db/schema/catalog.xsd" site="HDS">
+                <c:header>
+                                <c:title lang="zh" type="given">“式佛”</c:title>
+                                <c:title lang="en" type="given">“<foreign xml:lang="sa">Buddha
+                                                  Śikhin</foreign>”</c:title>
+                                <c:producer xmlns:xlink="http://www.w3.org/1999/xlink" role="signatory" type="" xlink:href=""/>
+                                <c:date>
+                                                <c:gregorian type="case-date-point">
+                                                                <c:range lower="550" upper="564"/>
+                                                                <c:point/>
+                                                </c:gregorian>
+                                                <c:original/>
+                                                <c:given source="discussion">天保元年至河清三年</c:given>
+                                </c:date>
+                <c:province lang="en">Shandong Province</c:province>
+        <c:province lang="zh">山東省  </c:province>
+    </c:header>
+                <c:physicalDescription>
+                                <c:dimensions height="126" width="65"/>
+                                <c:character-dimensions>
+                                                <c:character char="式" column="1" height="42" row="1" width="60">
+                                                  <c:engraving>
+                                                  <c:width type="">
+                                                  <c:point/>
+                                                  <c:range lower="" upper=""/>
+                                                  </c:width>
+                                                  <c:depth type="">
+                                                  <c:point/>
+                                                  <c:range lower="" upper=""/>
+                                                  </c:depth>
+                                                  </c:engraving>
+                                                </c:character>
+                                                <c:character char="佛" column="1" height="66" row="2" width="49">
+                                                  <c:engraving>
+                                                  <c:width type="">
+                                                  <c:point/>
+                                                  <c:range lower="" upper=""/>
+                                                  </c:width>
+                                                  <c:depth type="">
+                                                  <c:point/>
+                                                  <c:range lower="" upper=""/>
+                                                  </c:depth>
+                                                  </c:engraving>
+                                                </c:character>
+                                </c:character-dimensions>
+                                <c:condition grade="">
+                                                <c:label xml:lang="en">good</c:label>
+                                                <c:label xml:lang="zh">尚佳</c:label>
+                                </c:condition>
+                                <c:format>
+                                                <c:label xml:lang="zh">縱長方形</c:label>
+                                                <c:label xml:lang="en">vertical rectangle</c:label>
+                                </c:format>
+                                <c:frame>
+                                                <c:label xml:lang="zh">無</c:label>
+                                                <c:label xml:lang="en">no</c:label>
+                                </c:frame>
+                                <c:grid>
+                                                <c:label xml:lang="zh">無</c:label>
+                                                <c:label xml:lang="en">no</c:label>
+                                </c:grid>
+                                <c:decor>
+                                                <c:label xml:lang="zh">無</c:label>
+                                                <c:label xml:lang="en">no</c:label>
+                                </c:decor>
+                                <c:polishing>
+                                                <c:label xml:lang="zh">無</c:label>
+                                                <c:label xml:lang="en">no</c:label>
+                                </c:polishing>
+                                <c:technique>
+                                                <c:label xml:lang="zh">“凵”形刻法和“飛白”刻</c:label>
+                                                <c:label xml:lang="en"> rectangular U-shaped carving
+                                                  and “flying white” carving</c:label>
+                                </c:technique>
+                                <c:script/>
+                                <c:mineral>
+                                                <c:label xml:lang="zh">蘆台特階含化石的石灰岩</c:label>
+                                                <c:label xml:lang="en">fossiliferous Lutetian
+                                                  limestone</c:label>
+                                </c:mineral>
+                                <c:appearance columns="">
+                                                <c:characters extent="">
+                                                  <c:original/>
+                                                </c:characters>
+                                </c:appearance>
+                </c:physicalDescription>
+                <c:references>
+                                <c:rubbing>
+                                                <c:note xml:lang="zh">A:
+                                                  洪頂山9.1號至9.16號整體拓片，製作於1998年，山東省石刻藝術博物館典藏。</c:note>
+                                                <c:note xml:lang="en">A: Rubbing of the group of
+                                                  rock carvings HDS 9.1-9.16 made in 1998. Shandong
+                                                  Stone Carving Art Museum in Jinan.</c:note>
+                                </c:rubbing>
+                                <c:rubbing>
+                                                <c:note xml:lang="zh">B:
+                                                  洪頂山9.1號至9.16號尚未發表的整體拓片，山東省石刻藝術博物館典藏，局部照片拍攝於2004年。</c:note>
+                                                <c:note xml:lang="en">B: Rubbing of the group of
+                                                  rock carvings HDS 9.1-9.16. Shandong Stone Carving
+                                                  Art Museum in Jinan; photographed in
+                                                  2004.</c:note>
+                                </c:rubbing>
+                                <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" epigraphic="entry" type="taisho" xlink:href="T_1332">
+                                                <c:note/>
+                                                <c:pages>536c3</c:pages>
+                                </c:ref>
+                                <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" epigraphic="entry" type="taisho" xlink:href="T_1336">
+                                                <c:note/>
+                                                <c:pages>627a20</c:pages>
+                                                <c:pages>627c28</c:pages>
+                                </c:ref>
+                                <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" epigraphic="entry" type="taisho" xlink:href="T_1339">
+                                                <c:note/>
+                                                <c:pages>650c3</c:pages>
+                                                <c:pages>653a3-13</c:pages>
+                                </c:ref>
+                                <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" epigraphic="entry" type="taisho" xlink:href="T_1393">
+                                                <c:note/>
+                                                <c:pages>910b16</c:pages>
+                                </c:ref>
+                                <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" epigraphic="entry" type="taisho" xlink:href="T_2045">
+                                                <c:note/>
+                                                <c:pages>178a13</c:pages>
+                                </c:ref>
+                                <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" type="modern" xlink:href="ZhangZong2003a">
+                                                <c:note lang="en">Zhang Zong holds that the
+                                                  inscription’s calligraphy is close to that of the
+                                                  inscriptions HDS 9.14 and HDS 9.15, and that,
+                                                  starting with this Buddha name, another set of
+                                                  Seven Buddhas of the Past was planned, but never
+                                                  completed.</c:note>
+                                                <c:note lang="zh">張總認為該銘文的書法接近洪頂山9.14號及9.15號，並以此佛名為出發點還計劃了另外一組過去七佛佛名，但未及刊刻。</c:note>
+                                                <c:pages>15</c:pages>
+                                </c:ref>
+                                <c:ref xmlns:xlink="http://www.w3.org/1999/xlink" value="discussion" xlink:href="LaiFei2007">
+                                                <c:pages>26-27</c:pages>
+                                                <c:note lang="en">Lai Fei says that the two
+                                                  characters are well preserved.</c:note>
+                                                <c:note lang="zh"> 賴非稱這兩個字保存良好。</c:note>
+                                </c:ref>
+                </c:references>
+                <c:fileDescription>
+                                <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="rubbing" view="default" xlink:href="HDS_09.01.tif">
+                                                <c:caption xml:lang="zh">洪頂山9.1號拓片，拓片A局部</c:caption>
+                                                <c:caption xml:lang="en">Rubbing of HDS 9.1, detail
+                                                  of rubbing A</c:caption>
+                                </c:link>
+                                <c:link xmlns:xlink="http://www.w3.org/1999/xlink" type="stone" view="default" xlink:href="HDS_r_9.1_total_IMG_0416.JPG">
+                                                <c:caption xml:lang="zh">洪頂山9.1
+                                                  號摩崖，2004年照片</c:caption>
+                                                <c:caption xml:lang="en">Mount Hongding, rock
+                                                  carving HDS 9.1; photograph taken in
+                                                  2004</c:caption>
+                                </c:link>
+                </c:fileDescription>
+                <c:location azimuth="221" slope="14" zenith="76">
+                                <c:coordinates height="147.2" srsName="EPSG:4326">116.238655,36.064448</c:coordinates>
+                </c:location>
+</c:object>

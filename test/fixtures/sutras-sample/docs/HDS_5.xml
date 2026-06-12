@@ -1,0 +1,188 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://data.stonesutras.org:8080/exist/rest/db/schema/stone.xsd">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="engraved" xml:lang="zh">摩訶衍經</title>
+                <title type="translated" xml:lang="en">“Mahayana Sutra” </title>
+                <title type="given" xml:lang="zh">《摩訶衍經》碑十八空節文</title>
+                <title type="translated" xml:lang="en">“Mahayana Sutra” Stele with a Passage on
+                    Eighteen Aspects of Emptiness</title>
+                <title type="subordinate">Machine-readable transcript</title>
+            </titleStmt>
+            <editionStmt>
+                <edition>first XML edition, <date>N.N.</date>
+                </edition>
+                <respStmt>
+                    <resp>The excerpt was translated into English by</resp>
+                    <name>N.N.</name>
+                </respStmt>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>N.N.</publisher>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Framework can be seen cut into the cliff face. However, most of the characters
+                    are not readable. Probably the engraving may have never been completed.</p>
+                <p>There are two rubbings of this inscription. The rubbing chosen is better than the
+                    one printed in Lai Fei’s book since the character 外 (second last character of
+                    the second column) is more clearly shown in that rubbing.</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>01.04.2009</date>
+                <respStmt>CW</respStmt>
+                <item>Korrekturen der Markette in introduction eingearbeitet.</item>
+            </change>
+        </revisionDesc>
+        <catalog xlink:href="HDS_5"/>
+        <profileDesc>
+            <creation>
+                <date>around 564</date>
+                <placeName>Dongping, Shangdong</placeName>
+            </creation>
+            <langUsage>
+                <language ident="zh">Chinese</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date>08.01.2007</date>
+                <respStmt>
+                    <name>Ho</name>
+                </respStmt>
+                <item>Header, xml:id, markups revised, markups of terms reduced.</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text n="5" xml:id="HDS_5">
+        <front>
+            <div>
+                <witList>
+                    <witness sigil="Zhang">
+                        <witDetail target="ZhangZong1997" wit="Zhang">114</witDetail>
+                    </witness>
+                    <witness sigil="Kiriya">
+                        <witDetail target="Kiriya2003a" wit="Kiriya">67</witDetail>
+                    </witness>
+                    <witness sigil="T_223">
+                        <witDetail target="T_223" wit="T_223">250b02-07</witDetail>
+                    </witness>
+                    <witness sigil="T_1509">
+                        <witDetail target="T_1509" wit="T_1509">393c01-05</witDetail>
+                    </witness>
+                    <witness sigil="T_1509_3">
+                        <witDetail target="Taisho_3" wit="T_1509_3"/>
+                    </witness>
+                    <witness sigil="T_1509_Shoso-in">
+                        <witDetail target="Taisho_Shoso-in" wit="T_1509_Shoso-in"/>
+                    </witness>
+                </witList>
+            </div>
+        </front>
+        <body>
+            <div xml:lang="zh">
+                <head rend="up center large">
+                    <lb n="01"/>
+                    <title level="a" type="sutra" xlink:href="T_223">摩訶<lb n="02"/>衍<g xlink:href="U+26007" rend="standard">經</g>
+                    </title>
+                </head>
+                <div>
+                    <p>
+                        <lb n="01"/>
+                        <lb n=" T08n0223_0250b02" ed="T"/>
+                        <supplied reason="unfinished" source="T_223 T_1509">
+                            <term xlink:href="DFB21434">
+                                <app>
+                                    <lem wit="T_223 T_1509">菩</lem>
+                                    <rdg wit="Zhang Kiriya" type="interpretative">大</rdg>
+                                </app>
+                                <g rend="variant">薩</g>
+                            </term>
+                            <app>
+                                <lem/>
+                                <rdg wit="T_223 T_1509" type="textcritical">摩訶薩</rdg>
+                            </app>
+                            <term xlink:href="DFB26640">摩<lb n=" T08n0223_0250b03" ed="T"/>訶衍</term>，復次，<persName corresp="en-a1" key="rh0002" reg="Subhuti" type="disciple of Buddha" xml:id="zh-a1">須菩提</persName>
+                        </supplied>！<term xlink:href="DFB21478">
+                            <supplied reason="unfinished" source="T_223 T_1509">菩</supplied>
+                            <g rend="variant">薩</g>
+                            <lb n="02"/>
+                            <supplied reason="unfinished" source="T_223 T_1509">
+                                <term xlink:href="DFB26658">摩訶薩</term>
+                            </supplied>
+                        </term>
+                        <app>
+                            <lem wit="T_1509_3 T_1509_Shoso-in"/>
+                            <rdg wit="T_223 T_1509" type="textcritical">復有</rdg>
+                        </app>
+                        <supplied reason="unfinished" source="T_223 T_1509">摩訶衍，<lb n=" T08n0223_0250b04" ed="T"/>所謂内<term xlink:href="DFB12060">空</term>
+                        </supplied>、<term xlink:href="DFB08299">外空</term>、<lb n="03"/>
+                        <supplied reason="unfinished" source="T_223 T_1509">内外空，<term xlink:href="DFB12093">空空</term>、<term xlink:href="DFB03163">大空</term>，</supplied>
+                        <term xlink:href="DFB19359">弟<supplied reason="unfinished" source="T_223 T_1509">一<lb n=" T08n0223_0250b05" ed="T"/>義空</supplied>
+                        </term>，<term xlink:href="DFB09193">有<lb n="04"/>
+                            <supplied reason="unfinished" source="T_223 T_1509">為空</supplied>
+                        </term>、<supplied reason="unfinished" source="T_223 T_1509">
+                            <term xlink:href="DFB22182">無爲空</term>，<term xlink:href="DFB20636">畢竟空</term>、<term xlink:href="DFB21976">無始空</term>，</supplied>
+                        <term xlink:href="DFB23309">散</term>
+                        <lb n="05"/>
+                        <lb n=" T08n0223_0250b06" ed="T"/>
+                        <damage type="indiscernible">空</damage>、<supplied reason="unfinished" source="T_223 T_1509">
+                            <term xlink:href="DFB14284">性</term>空，<term xlink:href="DFB08500">自相</term>空、<term xlink:href="DFB28138">
+                                <term xlink:href="DFB23680">諸法</term>空</term>
+                        </supplied>
+                        <ptr target="note_zh_1"/>、<term xlink:href="DFB04878">
+                            <supplied source="T_223 T_1509">不</supplied>
+                            <damage type="indiscernible">可</damage>
+                            <supplied source="T_223 T_1509">得</supplied>
+                        </term>
+                        <lb n="06"/>
+                        <supplied source="T_223 T_1509">空，無法<lb n=" T08n0223_0250b07" ed="T"/>空、<term xlink:href="DFB09138">有法</term>空、無法有法空。</supplied>
+                    </p>
+                </div>
+            </div>
+            <div type="intro">
+                <p>Introduction to the Passage from the <hi rend="italic">Sutra on the Great
+                        Perfection of Wisdom</hi> on the 18 Aspects of Emptiness</p>
+                <p>The passage is drawn from the Kumārajīva translation of the <hi rend="italic">Mahā-prajñā-pāramitā sūtra</hi>, T#223, 8: 250b2-7. The Kuchean translator
+                    Kumārajīva arrived in China in the year 401, where he arguably became the single
+                    most influential translator in the history of East Asian Buddhism. His
+                    translations include versions of the <hi rend="italic">Lotus Sutra</hi> and the
+                        <hi rend="italic">Diamond Sutra</hi>. The received version in <hi rend="italic">Taishō</hi> version differs slightly, reading “This
+                    constitutes the Mahāyāna of the bodhisattva. And then, Subhuti, the
+                    bodhisattva-mahāsattva also has a Mahāyāna . . .”. The Mount Hongding text
+                    begins with the last sentence of the previous section within the source text,
+                    which it seems to present as a subject line of the text as a whole. The <hi rend="italic">Treatise on the Great Perfection of Wisdom</hi> commentary on
+                    the passage is located at T#1509, 25: 393b-c.</p>
+            </div>
+            <div xml:lang="en">
+                <head>
+                    <title level="a" type="sutra" xlink:href="T_223"> “Mahayana Sutra” </title>
+                </head>
+                <div>
+                    <p>The Mahayana of the bodhisattva—furthermore, <persName corresp="zh-a1" key="rh0002" reg="Subhuti" type="disciple of Buddha" xml:id="en-a1">
+                            <foreign xml:lang="sa">Subhūti</foreign>
+                        </persName>, the Mahayana
+                        of the <hi rend="italic">
+                            <foreign xml:lang="sa">bodhisattva-mahāsattva</foreign>
+                        </hi>—[consists of] what is called
+                        the emptiness of the internal, the emptiness of the external, the emptiness
+                        of what is both internal and external, the emptiness of emptiness, the great
+                        emptiness, the emptiness of the supreme truth, the emptiness of the
+                        conditioned, the emptiness of the unconditioned, the emptiness of the final,
+                        the emptiness of the beginningless, the emptiness of the analyzed, the
+                        emptiness of [intrinsic] nature, the emptiness of self attributes, the
+                        emptiness of all entities, the emptiness of non-obtainability, the emptiness
+                        of non-existent entities, the emptiness of existent entities, [and] the
+                        emptiness of entities that are both existent and non-existent. </p>
+                </div>
+            </div>
+        </body>
+        <back>
+            <div>
+                <note type="ref" xml:id="note_zh_1">The inscription of the same passage on <ref target="culaishan_guanghuasi_s"> Mount Culai Guanghua Si <foreign xml:lang="zh">徂徠山光化寺</foreign>
+                    </ref> reads “<foreign xml:lang="zh">諸法空自性</foreign> (or <foreign xml:lang="zh">相</foreign>) <foreign xml:lang="zh">空</foreign>.”</note>
+            </div>
+        </back>
+    </text>
+</TEI>

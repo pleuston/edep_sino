@@ -198,7 +198,8 @@
         "jinshi": "石刻總目",
         "chronology": "年表",
         "collections": "拓片收藏",
-        "rubbings": "拓片"
+        "rubbings": "拓片",
+        "sutras": "石經"
     },
     "metadata": {
         "additional": "一般資料",
@@ -270,5 +271,11 @@
     },
     "register-details": {
         "document-list": "見於文獻"
+    },
+    "sutras": {
+        "location": "位置",
+        "corpus": "石經叢",
+        "taisho": "大正藏",
+        "edition": "本庫錄文"
     }
 }

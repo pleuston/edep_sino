@@ -1,0 +1,184 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://data.stonesutras.org:8080/exist/rest/db/schema/stone.xsd">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title type="given" xml:lang="zh">《佛說仁王般若波羅蜜經》節文</title>
+                <title type="translated" xml:lang="en">Passage from the <hi rend="italic">Sutra
+                        Spoken by the Buddha on the Perfection of Wisdom of Humane
+                    Kings</hi>
+                </title>
+                <title type="subordinate">Machine-readable transcript</title>
+            </titleStmt>
+            <editionStmt>
+                <edition>first XML edition, <date>N.N.</date>
+                </edition>
+                <respStmt>
+                    <resp>The excerpt was translated into English by</resp>
+                    <name>Orzech1998, p. 85 [pending for further information]</name>
+                </respStmt>
+            </editionStmt>
+            <publicationStmt>
+                <publisher>N.N.</publisher>
+            </publicationStmt>
+            <sourceDesc>
+                <p>Most of the carved characters are still identifiable. Supplements are taken from
+                    the relevant sutra text.</p>
+                <p>There is so far only one rubbing of this inscription which is printed in Lai
+                    Fei’s book (2000a, 48).</p>
+            </sourceDesc>
+        </fileDesc>
+        <revisionDesc>
+            <change>
+                <date>31.03.2009</date>
+                <respStmt>CW</respStmt>
+                <item>Introduction checked, initials PC added</item>
+            </change>
+            <change>
+                <date>01.04.2009</date>
+                <respStmt>CW</respStmt>
+                <item>Introduction changed, since Kumarajiva was not the translator of the
+                    scripture, which is apocryphal and was compiled in China, see Orzech1998,
+                    74-78.</item>
+            </change>
+        </revisionDesc>
+        <catalog xlink:href="HDS_6"/>
+        <profileDesc>
+            <creation>
+                <date>around 564</date>
+                <placeName>Dongping, Shangdong</placeName>
+            </creation>
+            <langUsage>
+                <language ident="zh">Chinese</language>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc>
+            <change>
+                <date>08.01.2007</date>
+                <respStmt>
+                    <name>Ho</name>
+                </respStmt>
+                <item>Header, xml:id, markups revised</item>
+            </change>
+            <change>
+                <date>25.03.2009</date>
+                <respStmt>CW</respStmt>
+                <item>Inscription title adjusted to Paul’s translation</item>
+            </change>
+        </revisionDesc>
+    </teiHeader>
+    <text n="6" xml:id="HDS_6">
+        <front>
+            <div>
+                <witList>
+                    <witness sigil="LF1">
+                        <witDetail target="LaiFei2000a" wit="LF1">265</witDetail>
+                    </witness>
+                    <witness sigil="LF2">
+                        <witDetail target="LaiFei2007" wit="LF2">23</witDetail>
+                    </witness>
+                    <witness sigil="Ki">
+                        <witDetail target="Kiriya2003a" wit="Ki">67</witDetail>
+                    </witness>
+                    <witness sigil="T_245">
+                        <witDetail target="T_245" wit="T_245">832c23</witDetail>
+                    </witness>
+                    <witness sigil="R-Default">
+                        <witDetail target="HDS_06.jpg" wit="R-Default"/>
+                    </witness>
+                </witList>
+            </div>
+        </front>
+        <body>
+            <div xml:lang="zh">
+                <p>
+                    <lb n="01"/>
+                    <name corresp="en-a1" key="bg0004" reg="Sakyamuni" type="Buddha" xml:id="zh-a1">佛</name>告<persName corresp="en-a2" key="rh0003" reg="Prasenajit" type="emperor" xml:id="zh-a2">波斯<choice>
+                            <unclear cert="0.8" reason="damage" resp="LF2">
+                                <damage type="indiscernible">匿</damage>
+                            </unclear>
+                            <lb n="T08n0245_0832c23" ed="T"/>
+                            <unclear cert="0.2" reason="damage" resp="T_245 LF1">大</unclear>
+                        </choice>
+                        <roleName type="royal">玉</roleName>
+                    </persName>
+                        ：<ptr target="note_zh_1"/>“是<term xlink:href="DFB18363">
+                        <g rend="variant">般</g>若波<lb n="02"/>
+                        <g rend="variant">羅</g>
+                        <g rend="variant">蜜</g>
+                    </term>，是諸<term xlink:href="DFB10724">佛</term>
+                    <term xlink:href="DFB21434">菩<g rend="variant">薩</g>
+                    </term>一<g rend="variant">切</g>
+                    <lb n="03"/>
+                    <g xlink:href="U+25133" rend="standard">眾</g>生<term xlink:href="DFB06003">
+                        <lb n="T08n0245_0832c24" ed="T"/>
+                        <term xlink:href="DFB05874">心</term>
+                        <term xlink:href="DFB29979">識</term>
+                    </term>
+                    <supplied reason="damage" source="T_245">
+                        <damage type="indiscernible">之</damage>
+                    </supplied>
+                    <g xlink:href="U+FA19" rend="standard">神</g>本也，一<g rend="variant">切</g>
+                    <lb n="04"/>國玉<supplied reason="damage" source="T_245">
+                        <damage type="indiscernible">之父母</damage>
+                    </supplied>也。<g rend="variant">亦</g>
+                    <g rend="variant">名</g>
+                    <g rend="standard" xlink:href="U+FA19">神</g>
+                    <lb n="T08n0245_0832c25" ed="T"/>
+                    <app>
+                        <lem wit="Ki T_245 LF2">符</lem>
+                        <rdg wit="LF1" type="interpretative">扶</rdg>
+                    </app>，<lb n="05"/>
+                    <g rend="variant">亦</g>
+                    <g rend="variant">名</g>
+                    <term xlink:href="DFB24811">辟鬼珠</term>，亦<g rend="variant">名</g>
+                    <term xlink:href="DFB10060">如意珠</term>，<lb n="06"/>
+                    <g rend="variant">亦</g>
+                    <g rend="variant">名</g>
+                    <term xlink:href="DFB31013">護國珠</term>，<lb n="T08n0245_0832c26" ed="T"/>亦<g rend="variant">名</g>
+                    <term xlink:href="DFB04036">天地鏡</term>，<lb n="07"/>
+                    <g rend="variant">亦</g>
+                    <g rend="variant">名</g>
+                    <g rend="variant">龍</g>寶<g xlink:href="U+FA19" rend="standard">神</g>玉<ptr target="note_zh_2"/>。”</p>
+            </div>
+            <div type="intro">
+                <p>Passage from the <hi rend="italic">Perfection of Wisdom Sutra on Humane
+                        Kings</hi>, on the Nature of the Perfection of Wisdom</p>
+                <p>The passage is drawn from the <hi rend="italic">Perfection of Wisdom Sutra on
+                        Humane Kings Spoken by the Buddha</hi> (<hi rend="italic">Foshuo renwang
+                        bore boluomi jing</hi> 佛說仁王般若波羅蜜經; T#245, 8: 825a-834a), a scripture
+                    traditionally attributed to the translator Kumārajīva (鳩摩羅什; 344-413), but in
+                    all likelihood compiled in China in the 470s, see <ref type="bibli" target="Orzech1998">74-78</ref>. A modern collated edition of the received
+                    version of this passage is located at T#245, 8: 832c23-26. In this received
+                    version the passage does not include the mention of King Prasenajit, but begins
+                    simply “Great King” (<hi rend="italic">dawang</hi> 大王). This passage, which
+                    likens the perfection of wisdom to a series of powerful talismanic objects, is
+                    notable not simply because it does so—many texts employ similar metaphors—but
+                    because some of these objects are rather distinctively Chinese.</p>
+                <ab>
+                    <abbr>PC</abbr>
+                </ab>
+            </div>
+            <div xml:lang="en">
+                <p>The <persName corresp="zh-a1" key="bg0004" reg="Sakyamuni" type="Buddha" xml:id="en-a1">Buddha</persName> told <persName corresp="zh-a2" key="rh0003" reg="Prasenajit" type="emperor" xml:id="en-a2">King Prasenajit</persName>:
+                    This Perfection of Wisdom is the spiritual root of the consciousness of all
+                    Buddhas, bodhisattvas, and all beings. It is the father and mother of all kings.
+                    It is also named the Spiritual Talisman, the Demon-Exorcising Pearl, the
+                    Wish-Fulfilling Pearl, the State-Protecting Pearl, the Mirror of Heaven and
+                    Earth, and the Dragon-Jewel Spirit King. <ptr target="note_en_1"/>
+                </p>
+            </div>
+        </body>
+        <back>
+            <div>
+                <note type="display" xml:id="note_zh_1">
+                    <foreign xml:lang="zh">此處六字《大正藏》僅作“大王”二字，</foreign>T#245, 8: 832c23<foreign xml:lang="zh">。“王”字刻為“玉”。“玉”通“王”，參見《隷辨》，<ref type="biblio" target="SKSLXB">2, 17:
+                            12851a</ref>。 </foreign>
+                </note>
+                <note type="display" xml:id="note_zh_2">
+                    <foreign xml:lang="zh">“玉”通“王”，同上。</foreign>
+                </note>
+                <note type="display" xml:id="note_en_1">Translation by <ref type="biblio" target="Orzech1998">85</ref>.</note>
+            </div>
+        </back>
+    </text>
+</TEI>
