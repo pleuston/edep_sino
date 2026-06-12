@@ -99,6 +99,14 @@ _FILENAME_RE = re.compile(
     r'《(?P<title>[^》]+)》'
 )
 
+# Person filenames: "Pinyin Name 漢字" with optional trailing "(dates)" or ", Surname"
+_PERSON_RE = re.compile(
+    r'^(?P<pinyin>[A-Za-zÀ-ÿ][A-Za-zÀ-ÿ,\.\s]+?)\s+'
+    r'(?P<zh>[一-鿿]{1,10})'
+    r'(?:\s*[\(\（][^)\）]*[\)\）])?'
+    r'\s*$'
+)
+
 # ── XML utilities ─────────────────────────────────────────────────────────────
 
 def xe(s):
@@ -891,17 +899,16 @@ def import_persons(vault, id_map, alias_map, nianhao):
             aliases   = fm_list(fm, 'aliases')
 
             # Extract zh name and pinyin from filename
-            mo = _FILENAME_RE.match(stem)
+            mo = _PERSON_RE.match(stem)
             if mo:
-                pinyin = mo.group('pinyin').strip()
+                pinyin = mo.group('pinyin').strip().rstrip(',')
                 zh     = mo.group('zh').strip()
+            elif re.match(r'^[一-鿿]', stem):
+                # Bare zh-only filename
+                zh     = re.sub(r'[\s（\(].+$', '', stem).strip()
+                pinyin = ''
             else:
-                # Try bare zh-only filename
-                if re.match(r'^[一-鿿]', stem):
-                    zh     = stem
-                    pinyin = ''
-                else:
-                    continue
+                continue
 
             person_id = assign_person_id(id_map, stem, pinyin or zh)
             dates     = parse_dates(dates_str, nianhao) if dates_str else {}
@@ -1368,8 +1375,9 @@ def load_existing_person_map(persons_path):
 
 def merge_persons_xml(vault_persons, existing_path, nianhao):
     """
-    For each vault person with dates, add <birth>/<death>/<floruit> to the
-    matching entry in existing persons.xml (matched by zh name).
+    Merge vault persons into persons.xml:
+    - For existing entries (matched by zh name): add missing birth/death/floruit.
+    - For vault persons with dates not already present: add a new <person> element.
     Write back in-place.
     """
     p = Path(existing_path)
@@ -1383,9 +1391,16 @@ def merge_persons_xml(vault_persons, existing_path, nianhao):
         return
 
     root = tree.getroot()
-    # Build zh→person map
+    # Find the listPerson container
+    list_person = root.find(f'.//{{{TEI_NS}}}listPerson')
+    if list_person is None:
+        return
+
+    # Build zh→person element map
     person_els = {}
-    for el in root.findall(f'.//{{{TEI_NS}}}person'):
+    existing_ids = set()
+    for el in list_person.findall(f'{{{TEI_NS}}}person'):
+        existing_ids.add(el.get(f'{{{XML_NS}}}id', ''))
         for pn in el.findall(f'{{{TEI_NS}}}persName'):
             if pn.get(f'{{{XML_NS}}}lang') == 'zh' and pn.text:
                 person_els[pn.text.strip()] = el
@@ -1394,30 +1409,65 @@ def merge_persons_xml(vault_persons, existing_path, nianhao):
     for vp in vault_persons:
         zh    = vp.get('zh', '')
         dates = vp.get('dates', {})
-        if not zh or not dates:
+        if not zh:
             continue
+        # Need at least one datable anchor to be useful on the timeline
+        has_date = (dates.get('birth') or dates.get('death')
+                    or dates.get('floruit_from'))
         el = person_els.get(zh)
-        if el is None:
-            continue
-        # Add birth/death if not present
-        has_birth  = el.find(f'{{{TEI_NS}}}birth') is not None
-        has_death  = el.find(f'{{{TEI_NS}}}death') is not None
-        has_floruit = el.find(f'{{{TEI_NS}}}floruit') is not None
-        if not has_birth and dates.get('birth'):
-            b = ET.SubElement(el, f'{{{TEI_NS}}}birth')
-            b.set('when', str(dates['birth']))
-            modified = True
-        if not has_death and dates.get('death'):
-            d = ET.SubElement(el, f'{{{TEI_NS}}}death')
-            d.set('when', str(dates['death']))
-            modified = True
-        if not has_floruit and dates.get('floruit_from'):
-            f_el = ET.SubElement(el, f'{{{TEI_NS}}}floruit')
-            f_el.set('notBefore', str(dates['floruit_from']))
-            f_el.set('notAfter',  str(dates['floruit_to']))
-            f_el.set('cert', dates.get('cert', 'low'))
-            if dates.get('literal'):
-                f_el.text = dates['literal']
+
+        if el is not None:
+            # Patch missing date elements onto existing entry
+            has_birth   = el.find(f'{{{TEI_NS}}}birth')   is not None
+            has_death   = el.find(f'{{{TEI_NS}}}death')   is not None
+            has_floruit = el.find(f'{{{TEI_NS}}}floruit') is not None
+            if not has_birth and dates.get('birth'):
+                b = ET.SubElement(el, f'{{{TEI_NS}}}birth')
+                b.set('when', str(dates['birth']))
+                modified = True
+            if not has_death and dates.get('death'):
+                d = ET.SubElement(el, f'{{{TEI_NS}}}death')
+                d.set('when', str(dates['death']))
+                modified = True
+            if not has_floruit and dates.get('floruit_from'):
+                f_el = ET.SubElement(el, f'{{{TEI_NS}}}floruit')
+                f_el.set('notBefore', str(dates['floruit_from']))
+                f_el.set('notAfter',  str(dates.get('floruit_to', dates['floruit_from'])))
+                f_el.set('cert', dates.get('cert', 'low'))
+                if dates.get('literal'):
+                    f_el.text = dates['literal']
+                modified = True
+        elif has_date:
+            # New person with dates — add a minimal entry for the timeline
+            pid = vp.get('id', '')
+            if not pid or pid in existing_ids:
+                continue
+            new_el = ET.SubElement(list_person, f'{{{TEI_NS}}}person')
+            new_el.set(f'{{{XML_NS}}}id', pid)
+            cn = ET.SubElement(new_el, f'{{{TEI_NS}}}persName')
+            cn.set('type', 'canonical')
+            cn.set(f'{{{XML_NS}}}lang', 'zh')
+            cn.text = zh
+            pinyin = vp.get('pinyin', '')
+            if pinyin:
+                py = ET.SubElement(new_el, f'{{{TEI_NS}}}persName')
+                py.set(f'{{{XML_NS}}}lang', 'zh-Latn-pinyin')
+                py.text = pinyin
+            if dates.get('birth'):
+                b = ET.SubElement(new_el, f'{{{TEI_NS}}}birth')
+                b.set('when', str(dates['birth']))
+            if dates.get('death'):
+                d = ET.SubElement(new_el, f'{{{TEI_NS}}}death')
+                d.set('when', str(dates['death']))
+            if dates.get('floruit_from'):
+                f_el = ET.SubElement(new_el, f'{{{TEI_NS}}}floruit')
+                f_el.set('notBefore', str(dates['floruit_from']))
+                f_el.set('notAfter',  str(dates.get('floruit_to', dates['floruit_from'])))
+                f_el.set('cert', dates.get('cert', 'low'))
+                if dates.get('literal'):
+                    f_el.text = dates['literal']
+            existing_ids.add(pid)
+            person_els[zh] = new_el
             modified = True
 
     if modified:

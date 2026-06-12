@@ -12,8 +12,8 @@
 | Inscriptions processed | 259 |
 | Attestation lines total | 1762 |
 | Attestations parsed | 1759 (99.8%) |
-| Persons processed | 1 |
-| Persons with dates | 0 |
+| Persons processed | 633 |
+| Persons with dates | 199 |
 
 ## Unparsed attestation lines
 
