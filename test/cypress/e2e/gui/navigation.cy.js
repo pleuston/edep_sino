@@ -2,19 +2,20 @@
 // the editor reachable from menu and document toolbar.
 
 describe('Site navigation', () => {
-  it('puts Map first and groups the registers', () => {
+  it('puts Map first and exposes the registers as top-level links', () => {
     cy.visit('/browse.html')
     cy.get('nav.menubar ul li a[href$="map.html"]', { timeout: 20000 }).should('exist')
     // Map is the first labeled item after the logo
     cy.get('nav.menubar > ul > li').eq(1).find('a')
       .should('have.attr', 'href')
       .and('include', 'map.html')
-    // registers dropdown holds the three authority lists
-    cy.get('nav.menubar details.dropdown').first().within(() => {
-      cy.get('a[href$="/people"]').should('exist')
-      cy.get('a[href$="/places"]').should('exist')
-      cy.get('a[href$="/bibliography"]').should('exist')
-    })
+    // the authority lists + works + catalogue are now promoted to top-level
+    // links (direct li > a), no longer nested inside a registers dropdown
+    cy.get('nav.menubar > ul > li > a[href$="/people"]').should('exist')
+    cy.get('nav.menubar > ul > li > a[href$="/places"]').should('exist')
+    cy.get('nav.menubar > ul > li > a[href$="/bibliography"]').should('exist')
+    cy.get('nav.menubar > ul > li > a[href$="/works"]').should('exist')
+    cy.get('nav.menubar > ul > li > a[href$="/jinshi-inscriptions"]').should('exist')
   })
 
   it('map page shows clustered sites and opens the site panel', () => {

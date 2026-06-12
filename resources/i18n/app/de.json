@@ -193,9 +193,9 @@
         "places": "Orte",
         "registers": "Register",
         "sites": "Fundorte",
-        "works": "Werke 金石著作",
-        "jinshi": "Inschriften 石刻總目",
-        "chronology": "Chronologie 年表"
+        "works": "Werke",
+        "jinshi": "Katalog",
+        "chronology": "Chronologie"
     },
     "metadata": {
         "additional": "Allgemeine Angaben",

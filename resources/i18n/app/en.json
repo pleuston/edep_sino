@@ -190,13 +190,13 @@
         "inscriptions": "Inscriptions",
         "map": "Map",
         "new": "New inscription",
-        "people": "People",
+        "people": "Persons",
         "places": "Places",
         "registers": "Registers",
         "sites": "Sites",
-        "works": "Works 金石著作",
-        "jinshi": "Inscriptions 石刻總目",
-        "chronology": "Chronology 年表"
+        "works": "Works",
+        "jinshi": "Catalogue",
+        "chronology": "Chronology"
     },
     "metadata": {
         "additional": "General data",
