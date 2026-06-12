@@ -41,4 +41,9 @@
         <catDesc xml:lang="en">brick</catDesc>
         <catDesc xml:lang="de">Ziegel</catDesc>
     </category>
+    <category xml:id="baiyunyan" corresp="sino:material:baiyunyan">
+        <catDesc xml:lang="zh">白雲岩</catDesc>
+        <catDesc xml:lang="en">dolomite</catDesc>
+        <catDesc xml:lang="de">Dolomit</catDesc>
+    </category>
 </taxonomy>

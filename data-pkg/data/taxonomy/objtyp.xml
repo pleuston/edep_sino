@@ -46,4 +46,9 @@
         <catDesc xml:lang="en">pagoda inscription</catDesc>
         <catDesc xml:lang="de">Pagodeninschrift</catDesc>
     </category>
+    <category xml:id="jingshi" corresp="sino:objtyp:jingshi">
+        <catDesc xml:lang="zh">經石</catDesc>
+        <catDesc xml:lang="en">sutra stone</catDesc>
+        <catDesc xml:lang="de">Sutrenstein</catDesc>
+    </category>
 </taxonomy>

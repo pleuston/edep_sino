@@ -696,7 +696,7 @@ def import_inscriptions(vault, id_map, alias_map):
     stats = {'count': 0, 'att_total': 0, 'att_parsed': 0, 'unparsed': []}
     inscriptions = []
 
-    for p in sorted(insc_dir.glob('*.md')):
+    for p in sorted(insc_dir.rglob('*.md')):
         if p.name.startswith('_'):
             continue
         stem = p.stem
@@ -720,26 +720,44 @@ def _parse_inscription(stem, text, fm, id_map, alias_map):
     insc_id = assign_insc_id(id_map, stem)  # also used for attestation work_id resolution
 
     # Names
-    name_zh = fm_str(fm, 'title') or stem
-    # Try to find a shorter main name
-    mo = re.match(r'^([一-鿿《》]+)', stem)
-    if mo:
-        name_zh = mo.group(1).strip('《》')
+    name_zh = fm_str(fm, 'title')
+    if not name_zh:
+        # Strip parenthetical date suffixes like （153 CE） or (616)
+        _clean = re.sub(r'\s*[（(][^）)]*[）)]\s*$', '', stem).strip()
+        if re.match(r'^[一-鿿《》\s]+$', _clean):
+            # Pure Chinese filename — use full cleaned stem (handles multi-word
+            # names like 房山石經 妙法蓮華經 品一 序品)
+            name_zh = _clean
+        else:
+            # Pinyin-prefixed filename: extract leading CJK block only
+            mo = re.match(r'^([一-鿿《》]+)', _clean)
+            name_zh = mo.group(1).strip('《》') if mo else _clean
 
     alt_names = [a.strip().strip('"\'') for a in fm_list(fm, 'aliases')
-                 if a.strip() and not re.match(r'^[A-Za-z]', a.strip())]
+                 if a.strip() and not re.match(r'^[A-Za-z0-9]', a.strip())]
     sort_name = next((a for a in fm_list(fm, 'aliases')
                       if re.match(r'^[A-Za-z]', a.strip())), '')
 
-    # Date
+    # Date — vault uses 'date_dynasty'; 'dynasty' kept as legacy fallback
     orig_when  = str(fm.get('date_year_gregorian', '')).strip()
     orig_when  = _pad_year(orig_when) if orig_when else ''
-    dynasty    = fm_str(fm, 'dynasty')
-    date_label = fm_str(fm, 'date_label') or (
-        f'{dynasty}' if dynasty else '')
+    dynasty    = fm_str(fm, 'date_dynasty') or fm_str(fm, 'dynasty')
+    date_label = fm_str(fm, 'date_label') or dynasty
 
     # Origin place
     orig_place = fm_str(fm, 'origin_place') or ''
+
+    # Buddhist / stone-sutra corpus fields
+    inscription_genre = fm_str(fm, 'inscription_genre')
+    canonical_text    = fm_str(fm, 'canonical_text')
+    canonical_taisho  = fm_str(fm, 'canonical_text_taisho')
+    canonical_section = fm_str(fm, 'canonical_section')
+    sutra_corpus      = fm_str(fm, 'corpus')
+    corpus_loc        = ', '.join(s for s in [
+                            fm_str(fm, 'corpus_cave'),
+                            fm_str(fm, 'corpus_slab'),
+                            fm_str(fm, 'corpus_site'),
+                        ] if s)
 
     # Attestations — prefer "Full list" section
     atts, n_total, n_parsed, unparsed = _parse_attestation_section(
@@ -748,23 +766,29 @@ def _parse_inscription(stem, text, fm, id_map, alias_map):
     # Rubbings
     rubbings = _parse_rubbings(text)
 
-    # Corpus link
+    # Corpus link (TEI edition file ID)
     corpus_id = fm_str(fm, 'corpus_id') or ''
 
     return (
         {
-            'id':         insc_id,
-            'vault_stem': stem,
-            'name_zh':    name_zh,
-            'alt_names':  alt_names,
-            'sort_name':  sort_name,
-            'orig_when':  orig_when,
-            'orig_place': orig_place,
-            'dynasty':    dynasty,
-            'date_label': date_label,
-            'attestations': atts,
-            'rubbings':   rubbings,
-            'corpus_id':  corpus_id,
+            'id':                insc_id,
+            'vault_stem':        stem,
+            'name_zh':           name_zh,
+            'alt_names':         alt_names,
+            'sort_name':         sort_name,
+            'orig_when':         orig_when,
+            'orig_place':        orig_place,
+            'dynasty':           dynasty,
+            'date_label':        date_label,
+            'attestations':      atts,
+            'rubbings':          rubbings,
+            'corpus_id':         corpus_id,
+            'inscription_genre': inscription_genre,
+            'canonical_text':    canonical_text,
+            'canonical_taisho':  canonical_taisho,
+            'canonical_section': canonical_section,
+            'sutra_corpus':      sutra_corpus,
+            'corpus_loc':        corpus_loc,
         },
         n_total, n_parsed, unparsed,
     )
@@ -1088,32 +1112,43 @@ def _et_to_dict(obj):
         })
 
     # corpus_id from idno[@type='corpus']
-    corpus_id = next(
-        (i['text'] for i in idnos if i['type'] == 'corpus'), '')
+    corpus_id         = next((i['text'] for i in idnos if i['type'] == 'corpus'), '')
+    inscription_genre = next((i['text'] for i in idnos if i['type'] == 'genre'), '')
+    canonical_taisho  = next((i['text'] for i in idnos if i['type'] == 'taisho'), '')
+    canonical_text    = next((i['text'] for i in idnos if i['type'] == 'canonical-text'), '')
+    canonical_section = next((i['text'] for i in idnos if i['type'] == 'canonical-section'), '')
+    sutra_corpus      = next((i['text'] for i in idnos if i['type'] == 'sutra-corpus'), '')
+    corpus_loc        = next((i['text'] for i in idnos if i['type'] == 'corpus-loc'), '')
 
     return {
-        'id':           xml_id,
-        'vault_stem':   '',  # not vault-derived
-        'name_zh':      next((n['text'] for n in names
-                              if n['type'] == 'main'), ''),
-        'alt_names':    [n['text'] for n in names if n['type'] == 'alt'],
-        'sort_name':    next((n['text'] for n in names
-                              if n['type'] == 'sort'), ''),
-        'orig_when':    orig_date.get('when', ''),
-        'orig_date_text': orig_date.get('text', ''),
-        'orig_date_method': orig_date.get('method', ''),
-        'orig_date_cert': orig_date.get('cert', ''),
-        'orig_place':   orig_place_text,
-        'dynasty':      '',
-        'date_label':   '',
-        'attestations': [
+        'id':                xml_id,
+        'vault_stem':        '',  # not vault-derived
+        'name_zh':           next((n['text'] for n in names
+                                   if n['type'] == 'main'), ''),
+        'alt_names':         [n['text'] for n in names if n['type'] == 'alt'],
+        'sort_name':         next((n['text'] for n in names
+                                   if n['type'] == 'sort'), ''),
+        'orig_when':         orig_date.get('when', ''),
+        'orig_date_text':    orig_date.get('text', ''),
+        'orig_date_method':  orig_date.get('method', ''),
+        'orig_date_cert':    orig_date.get('cert', ''),
+        'orig_place':        orig_place_text,
+        'dynasty':           '',
+        'date_label':        '',
+        'attestations':      [
             {'work_id': a['work_id'], 'work_link': '',
              'title': a['title'], 'rest': a.get('note', ''), 'juan': ''}
             for a in attestations
         ],
-        'rubbings':     rubbings,
-        'corpus_id':    corpus_id,
-        'extra_notes':  notes,
+        'rubbings':          rubbings,
+        'corpus_id':         corpus_id,
+        'extra_notes':       notes,
+        'inscription_genre': inscription_genre,
+        'canonical_text':    canonical_text,
+        'canonical_taisho':  canonical_taisho,
+        'canonical_section': canonical_section,
+        'sutra_corpus':      sutra_corpus,
+        'corpus_loc':        corpus_loc,
     }
 
 
@@ -1210,6 +1245,26 @@ def _object_xml(insc, depth=3):
     if insc.get('corpus_id'):
         lines.append(
             f'{d2}<idno type="corpus">{xe(insc["corpus_id"])}</idno>')
+    if insc.get('inscription_genre'):
+        lines.append(
+            f'{d2}<idno type="genre">{xe(insc["inscription_genre"])}</idno>')
+    if insc.get('canonical_taisho'):
+        lines.append(
+            f'{d2}<idno type="taisho">{xe(insc["canonical_taisho"])}</idno>')
+    if insc.get('canonical_text'):
+        lines.append(
+            f'{d2}<idno type="canonical-text" xml:lang="zh">'
+            f'{xe(insc["canonical_text"])}</idno>')
+    if insc.get('canonical_section'):
+        lines.append(
+            f'{d2}<idno type="canonical-section" xml:lang="zh">'
+            f'{xe(insc["canonical_section"])}</idno>')
+    if insc.get('sutra_corpus'):
+        lines.append(
+            f'{d2}<idno type="sutra-corpus">{xe(insc["sutra_corpus"])}</idno>')
+    if insc.get('corpus_loc'):
+        lines.append(
+            f'{d2}<idno type="corpus-loc">{xe(insc["corpus_loc"])}</idno>')
     lines.append(f'{d1}</objectIdentifier>')
 
     # History/origin

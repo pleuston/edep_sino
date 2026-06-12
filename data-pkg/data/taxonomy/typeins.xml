@@ -51,4 +51,29 @@
         <catDesc xml:lang="en">model calligraphy engraving</catDesc>
         <catDesc xml:lang="de">Musterkalligraphie-Gravur</catDesc>
     </category>
+    <category xml:id="ji" corresp="sino:typeins:ji">
+        <catDesc xml:lang="zh">記</catDesc>
+        <catDesc xml:lang="en">commemorative record</catDesc>
+        <catDesc xml:lang="de">Gedächtnisinschrift</catDesc>
+    </category>
+    <category xml:id="tiji" corresp="sino:typeins:tiji">
+        <catDesc xml:lang="zh">題記</catDesc>
+        <catDesc xml:lang="en">colophon inscription</catDesc>
+        <catDesc xml:lang="de">Kolophon-Inschrift</catDesc>
+    </category>
+    <category xml:id="kanji" corresp="sino:typeins:kanji">
+        <catDesc xml:lang="zh">刊記</catDesc>
+        <catDesc xml:lang="en">production colophon</catDesc>
+        <catDesc xml:lang="de">Produktionskolophon</catDesc>
+    </category>
+    <category xml:id="yuanwen" corresp="sino:typeins:yuanwen">
+        <catDesc xml:lang="zh">願文</catDesc>
+        <catDesc xml:lang="en">votive dedication</catDesc>
+        <catDesc xml:lang="de">Weihetext</catDesc>
+    </category>
+    <category xml:id="foming" corresp="sino:typeins:foming">
+        <catDesc xml:lang="zh">佛名</catDesc>
+        <catDesc xml:lang="en">Buddha-name inscription</catDesc>
+        <catDesc xml:lang="de">Buddha-Namen-Inschrift</catDesc>
+    </category>
 </taxonomy>
