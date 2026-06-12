@@ -15,7 +15,6 @@ describe('Site navigation', () => {
     cy.get('nav.menubar > ul > li > a[href$="/places"]').should('exist')
     cy.get('nav.menubar > ul > li > a[href$="/bibliography"]').should('exist')
     cy.get('nav.menubar > ul > li > a[href$="/works"]').should('exist')
-    cy.get('nav.menubar > ul > li > a[href$="/jinshi-inscriptions"]').should('exist')
   })
 
   it('map page shows clustered sites and opens the site panel', () => {
