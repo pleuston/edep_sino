@@ -192,7 +192,8 @@
         "registers": "Register",
         "sites": "Fundorte",
         "works": "Werke 金石著作",
-        "jinshi": "Inschriften 石刻總目"
+        "jinshi": "Inschriften 石刻總目",
+        "chronology": "Chronologie 年表"
     },
     "metadata": {
         "additional": "Allgemeine Angaben",
@@ -246,6 +247,11 @@
             "recompiles": "Neu kompiliert",
             "recompiles-by": "Neu kompiliert durch"
         },
-        "contributor": "Mitarbeit"
+        "contributor": "Mitarbeit",
+        "chronology-title": "Chronologie 年表",
+        "chronology-subtitle": "Geschichte der Jinshi-Studien — Personen und Werke auf einer gemeinsamen Zeitachse",
+        "chronology-persons": "Personen",
+        "chronology-works": "Werke",
+        "chronology-loading": "Lade…"
     }
 }

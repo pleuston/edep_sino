@@ -760,6 +760,59 @@
                 }
             }
         },
+        "/api/sino/chronology": {
+            "get": {
+                "summary": "Chronology data for the timeline renderer",
+                "description": "Dynasty bands, person lifespans and work dates for the 年表 timeline. Filters: from/to (ISO year), dynasty (taxonomy key), type (persons|works|both).",
+                "tags": [
+                    "sino"
+                ],
+                "operationId": "eapi:jinshi-chronology",
+                "parameters": [
+                    {
+                        "name": "from",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "to",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "dynasty",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "both"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Chronology data",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/api/sites": {
             "get": {
                 "summary": "Sites (find-spots) with their inscriptions",

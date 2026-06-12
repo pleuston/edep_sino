@@ -26,7 +26,8 @@
         "styles": [
             "transform/teipublisher.css",
             "resources/css/registers-theme.css",
-            "resources/css/jinshi.css"
+            "resources/css/jinshi.css",
+            "resources/css/jinshi-timeline.css"
         ],
         "theme": {
             "layout": {
@@ -48,6 +49,11 @@
     <section class="work jinshi-detail">
         <h1 class="zh">[[ head(($entity-data?root/tei:title[@xml:lang = 'zh'], $entity-data?root/tei:title))/string() ]]</h1>
         <p class="pinyin">[[ $entity-data?root/tei:title[@xml:lang = 'zh-Latn-x-pinyin']/string() ]]</p>
+
+        <div class="mini-timeline" data-entity-type="work"
+             data-entity-id="[[ $entity-data?id ]]"
+             data-app="[[ $context-path ]]"></div>
+        <script src="[[ $context-path ]]/resources/scripts/jinshi-timeline.js" defer="defer"/>
 
         <dl class="work-meta">
             [% if exists($entity-data?root/tei:author) %]

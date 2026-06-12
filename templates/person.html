@@ -25,7 +25,8 @@
         },
         "styles": [
             "transform/teipublisher.css",
-            "resources/css/registers-theme.css"
+            "resources/css/registers-theme.css",
+            "resources/css/jinshi-timeline.css"
         ],
         "theme": {
             "layout": {
@@ -51,6 +52,11 @@
     [% endtemplate %]
     <section class="person">
         [[ page:transform($entity-data?root, map { "mode": "register-details" , "webcomponents": true()}) ]]
+
+        <div class="mini-timeline" data-entity-type="person"
+             data-entity-id="[[ $entity-data?id ]]"
+             data-app="[[ $context-path ]]"></div>
+        <script src="[[ $context-path ]]/resources/scripts/jinshi-timeline.js" defer="defer"/>
 
         [% let $works = jinshi:works-of-person($entity-data?id) %]
         [% if exists($works) %]

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/base.html"
+        },
+        "features": {
+            "toolbar": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "resources/css/jinshi-timeline.css"
+        ]
+    }
+    ---
+    <main class="chronology-page" data-app="[[ $context-path ]]">
+        <header class="chronology-header">
+            <h1><pb-i18n key="jinshi.chronology-title">Chronology 年表</pb-i18n></h1>
+            <p class="subtitle"><pb-i18n key="jinshi.chronology-subtitle">History of Chinese epigraphy — persons and works on a shared time axis</pb-i18n></p>
+        </header>
+
+        <div class="timeline-controls">
+            <div class="dynasty-buttons" role="toolbar" aria-label="dynasty filter"></div>
+            <div class="type-toggles">
+                <label><input type="checkbox" id="toggle-persons" checked="checked"/>
+                    <pb-i18n key="jinshi.chronology-persons">Persons</pb-i18n></label>
+                <label><input type="checkbox" id="toggle-works" checked="checked"/>
+                    <pb-i18n key="jinshi.chronology-works">Works</pb-i18n></label>
+            </div>
+        </div>
+
+        <div class="timeline-container" id="timeline-main">
+            <div class="timeline-loading"><pb-i18n key="jinshi.chronology-loading">Loading…</pb-i18n></div>
+        </div>
+    </main>
+    <script src="[[ $context-path ]]/resources/scripts/jinshi-timeline.js" defer="defer"/>
+</template>

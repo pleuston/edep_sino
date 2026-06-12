@@ -555,3 +555,112 @@ declare function api:render($request as map(*)) {
 declare function api:sites($request as map(*)) {
     map { "sites": array { sites:all(()) } }
 };
+
+declare function api:jinshi-chronology($request as map(*)) {
+    let $p-from    := $request?parameters?from
+    let $p-to      := $request?parameters?to
+    let $p-dynasty := normalize-space($request?parameters?dynasty)
+    let $p-type    := ($request?parameters?type, 'both')[1]
+
+    (: dynasty taxonomy :)
+    let $tax := doc($config:taxonomy-root || '/dynasty.xml')//tei:category[@n]
+    let $dynasty-bounds :=
+        for $cat in $tax
+        let $parts := tokenize($cat/@n, ':')
+        where count($parts) = 2
+        return map {
+            "key":   $cat/@xml:id/string(),
+            "label": ($cat/tei:catDesc[@xml:lang='zh']/string(), $cat/tei:catDesc[1]/string())[1],
+            "from":  xs:integer($parts[1]),
+            "to":    xs:integer($parts[2])
+        }
+
+    (: apply optional dynasty filter → year window :)
+    let $win :=
+        if ($p-dynasty != '') then
+            let $d := $dynasty-bounds[?key = $p-dynasty]
+            return
+                map {
+                    "from": if ($p-from castable as xs:integer) then xs:integer($p-from) else $d?from,
+                    "to":   if ($p-to   castable as xs:integer) then xs:integer($p-to)   else $d?to
+                }
+        else
+            map {
+                "from": if ($p-from castable as xs:integer) then xs:integer($p-from) else -9999,
+                "to":   if ($p-to   castable as xs:integer) then xs:integer($p-to)   else 9999
+            }
+    let $w-from := $win?from
+    let $w-to   := $win?to
+
+    (: person lifespans :)
+    let $persons :=
+        if ($p-type = ('works')) then ()
+        else
+            let $people := collection($config:register-root)/id('pb-persons')//tei:person
+            for $p in $people
+            let $birth := ($p/tei:birth/@when/string(), '')[1]
+            let $death := ($p/tei:death/@when/string(), '')[1]
+            let $fl-from := ($p/tei:floruit/@notBefore/string(), $p/tei:floruit/@when/string(), '')[1]
+            let $fl-to   := ($p/tei:floruit/@notAfter/string(),  $p/tei:floruit/@when/string(), '')[1]
+            let $prec :=
+                if ($birth != '' and $death != '') then 'exact'
+                else if ($birth != '' or $death != '') then 'partial'
+                else if ($fl-from != '') then 'floruit'
+                else ''
+            where $prec != ''
+            let $y-from := xs:integer(
+                if ($birth != '') then $birth
+                else $fl-from)
+            let $y-to   := xs:integer(
+                if ($death != '') then $death
+                else if ($fl-to != '') then $fl-to
+                else $y-from + 30)
+            where $y-to >= $w-from and $y-from <= $w-to
+            order by $y-from
+            return map {
+                "id":        $p/@xml:id/string(),
+                "label":     ($p/tei:persName[@type='canonical']/string(),
+                              $p/tei:persName[1]/string())[1],
+                "from":      $y-from,
+                "to":        $y-to,
+                "precision": $prec,
+                "birth":     $birth,
+                "death":     $death
+            }
+
+    (: work dates :)
+    let $works :=
+        if ($p-type = ('persons')) then ()
+        else
+            let $works-root := collection($config:register-root)/id('pb-works')
+            for $w in $works-root//tei:bibl[@type='work']
+            let $date := $w/tei:date[@type='compiled']
+            let $when := ($date/@when/string(), '')[1]
+            let $nb   := ($date/@notBefore/string(), '')[1]
+            let $na   := ($date/@notAfter/string(), '')[1]
+            let $prec := ($date/@cert/string(), 'high')[1]
+            let $ed-y := ($w/tei:bibl[@type='edition']/tei:date/@when/string()[. != ''])[1]
+            let $y    :=
+                if ($when != '') then xs:integer($when)
+                else if ($nb != '') then xs:integer($nb)
+                else if ($ed-y != '') then xs:integer($ed-y)
+                else ()
+            where exists($y) and $y >= $w-from and $y <= $w-to
+            order by $y
+            return map {
+                "id":        $w/@xml:id/string(),
+                "label":     ($w/tei:title[@xml:lang='zh']/string(),
+                              $w/tei:title[1]/string())[1],
+                "when":      $y,
+                "precision": if ($prec = ('high','')) then 'exact' else 'approx',
+                "date-label": $date/string(),
+                "author":    ($w/tei:author/tei:persName/string(), '')[1],
+                "author-id": ($w/tei:author/tei:persName/@corresp/string(), '')[1]
+            }
+
+    return map {
+        "dynasties": array { $dynasty-bounds },
+        "persons":   array { $persons },
+        "works":     array { $works }
+    }
+};

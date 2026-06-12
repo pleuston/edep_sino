@@ -1,0 +1,147 @@
+/* EpiWen — jinshi timeline (年表) styles */
+
+/* ── Chronology page layout ─────────────────────────────────────────────── */
+
+.chronology-page {
+    padding: 1rem 1.5rem 2rem;
+    max-width: 100%;
+}
+
+.chronology-header {
+    margin-bottom: 1rem;
+}
+
+.chronology-header .subtitle {
+    color: var(--jinks-colors-600, #666);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+}
+
+/* ── Controls ───────────────────────────────────────────────────────────── */
+
+.timeline-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.dynasty-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}
+
+.dynasty-btn {
+    background: var(--jinks-colors-100, #f0ece6);
+    border: 1px solid var(--jinks-colors-300, #c0b8b0);
+    border-radius: 3px;
+    color: var(--jinks-colors-700, #3a2a1a);
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 2px 7px;
+    transition: background 0.1s;
+}
+
+.dynasty-btn:hover {
+    background: var(--jinks-colors-200, #e0d8d0);
+}
+
+.dynasty-btn.active {
+    background: var(--jinks-colors-500, #6a5a4a);
+    border-color: var(--jinks-colors-600, #5a4a3a);
+    color: #fff;
+    font-weight: 600;
+}
+
+.type-toggles {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--jinks-colors-700, #3a2a1a);
+}
+
+.type-toggles label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* ── Timeline container ─────────────────────────────────────────────────── */
+
+.timeline-container {
+    overflow-x: auto;
+    border: 1px solid var(--jinks-colors-200, #e0d8d0);
+    border-radius: 4px;
+    background: #fff;
+}
+
+.timeline-loading,
+.timeline-error,
+.timeline-empty {
+    padding: 1.5rem;
+    color: var(--jinks-colors-500, #6a5a4a);
+    font-size: 0.9rem;
+}
+
+/* ── SVG elements ───────────────────────────────────────────────────────── */
+
+.timeline-svg,
+.mini-timeline-svg,
+.attestation-strip-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.dynasty-label {
+    pointer-events: none;
+    font-family: inherit;
+}
+
+.person-bar:focus {
+    outline: 2px solid var(--jinks-colors-600, #5a4a3a);
+    outline-offset: 2px;
+}
+
+.work-marker:focus {
+    outline: 2px solid var(--jinks-colors-600, #5a4a3a);
+    outline-offset: 2px;
+}
+
+/* ── Mini-timelines (person / work pages) ───────────────────────────────── */
+
+.mini-timeline {
+    margin: 0.75rem 0 1rem;
+    border: 1px solid var(--jinks-colors-200, #e0d8d0);
+    border-radius: 4px;
+    background: #faf8f5;
+    overflow: hidden;
+    min-height: 30px;
+}
+
+.mini-timeline[hidden] {
+    display: none;
+}
+
+/* ── Attestation strip (inscription pages) ──────────────────────────────── */
+
+.attestation-strip {
+    margin: 0.5rem 0 1.25rem;
+    border: 1px solid var(--jinks-colors-200, #e0d8d0);
+    border-radius: 4px;
+    background: #faf8f5;
+    overflow: hidden;
+    min-height: 30px;
+    cursor: default;
+}
+
+.attestation-strip[hidden] {
+    display: none;
+}
+
+.att-marker:hover circle {
+    opacity: 1;
+}

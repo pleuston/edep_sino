@@ -16,6 +16,7 @@
                 <title xml:lang="zh">集古錄</title>
                 <title xml:lang="zh-Latn-x-pinyin">Jiguolu</title>
                 <author><persName corresp="person-ouyang-xiu" xml:lang="zh">歐陽修</persName></author>
+                <date type="compiled" when="1063" cert="medium">嘉祐八年</date>
                 <extent unit="juan">120</extent>
                 <note type="source">vault: Ouyang Xiu 歐陽修《集古錄》</note>
             </bibl>
@@ -23,6 +24,7 @@
                 <title xml:lang="zh">金石萃編</title>
                 <title xml:lang="zh-Latn-x-pinyin">Jinshi cuibian</title>
                 <author><persName corresp="person-wang-chang" xml:lang="zh">王昶</persName></author>
+                <date type="compiled" when="1805" cert="high">嘉慶十年</date>
                 <bibl type="edition" xml:id="work-000002-ed-01">
                     <edition xml:lang="zh">《金石萃編》 — 經訓堂刊本 (同治十年補刊本)</edition>
                     <date when="1805">1805</date>

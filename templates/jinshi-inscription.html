@@ -26,7 +26,8 @@
         "styles": [
             "transform/teipublisher.css",
             "resources/css/registers-theme.css",
-            "resources/css/jinshi.css"
+            "resources/css/jinshi.css",
+            "resources/css/jinshi-timeline.css"
         ],
         "theme": {
             "layout": {
@@ -74,6 +75,12 @@
         [% endif %]
         [% endlet %]
 
+        <div class="attestation-strip"
+             data-entity-id="[[ $entity-data?id ]]"
+             data-origin-year="[[ ($entity-data?root//tei:origin/tei:origDate/@when/string(), '')[1] ]]"
+             data-inscription-name="[[ head(($entity-data?root//tei:objectName[@type = 'main'], $entity-data?root//tei:objectName))/string() ]]"></div>
+        <script src="[[ $context-path ]]/resources/scripts/jinshi-timeline.js" defer="defer"/>
+
         [% let $atts = jinshi:attestations-of($entity-data?id) %]
         [% if exists($atts) %]
         <section class="attestations">
@@ -82,7 +89,7 @@
             <ol class="attestation-list">
                 [% for $a in $atts %]
                 <li>
-                    <span class="work-date">[[ $a?work-date ]]</span>
+                    <span class="work-date" data-year="[[ $a?year ]]">[[ $a?work-date ]]</span>
                     <a class="zh work-title" href="[[ $context-path ]]/works/[[ $a?work-id ]]">[[ $a?work-title ]]</a>
                     [% if $a?work-author != '' %]<span class="zh work-author">[[ $a?work-author ]]</span>[% endif %]
                     [% if $a?title-in-work != '' %]

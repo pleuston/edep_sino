@@ -115,6 +115,10 @@
             "id": "jinshi"
           }
         ]
+      },
+      {
+        "url": "chronology",
+        "id": "chronology"
       }
     ],
     "login": true,

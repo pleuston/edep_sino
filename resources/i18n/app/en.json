@@ -193,7 +193,8 @@
         "registers": "Registers",
         "sites": "Sites",
         "works": "Works 金石著作",
-        "jinshi": "Inscriptions 石刻總目"
+        "jinshi": "Inscriptions 石刻總目",
+        "chronology": "Chronology 年表"
     },
     "metadata": {
         "additional": "General data",
@@ -247,6 +248,11 @@
             "recompiles": "Recompiles",
             "recompiles-by": "Recompiled by"
         },
-        "contributor": "contributor"
+        "contributor": "contributor",
+        "chronology-title": "Chronology 年表",
+        "chronology-subtitle": "History of epigraphic studies — persons and works on a shared time axis",
+        "chronology-persons": "Persons",
+        "chronology-works": "Works",
+        "chronology-loading": "Loading…"
     }
 }

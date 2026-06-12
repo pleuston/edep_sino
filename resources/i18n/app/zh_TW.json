@@ -193,7 +193,8 @@
         "registers": "索引",
         "sites": "遺址",
         "works": "金石著作",
-        "jinshi": "石刻總目"
+        "jinshi": "石刻總目",
+        "chronology": "年表"
     },
     "metadata": {
         "additional": "一般資料",
@@ -247,6 +248,11 @@
             "recompiles": "重編",
             "recompiles-by": "為其所重編"
         },
-        "contributor": "協纂"
+        "contributor": "協纂",
+        "chronology-title": "年表",
+        "chronology-subtitle": "金石學史 — 人物生卒與著作年代共時呈現",
+        "chronology-persons": "人物",
+        "chronology-works": "著作",
+        "chronology-loading": "載入中…"
     }
 }
