@@ -64,7 +64,7 @@ details > fx-group{
     }
 }
 
-nav #addFragment{
+main.editor nav #addFragment{
     button{
         font-size: 0.8rem;
         color: var(--paper-grey-700);
@@ -108,7 +108,8 @@ nav #addFragment{
     overflow: auto;
 }
 
-nav{
+/* editor section navigation only — never the app menubar */
+main.editor nav{
 
     h3 {
         margin-top: 0;

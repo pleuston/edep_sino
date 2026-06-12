@@ -7,7 +7,7 @@
 | Category | Count |
 |---|---|
 | Works processed | 1099 |
-| Works with year | 134 |
+| Works with year | 136 |
 | Works with author | 538 |
 | Inscriptions processed | 259 |
 | Attestation lines total | 1762 |

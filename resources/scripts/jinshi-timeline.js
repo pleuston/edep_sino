@@ -111,8 +111,9 @@ function buildDynastyButtons(page, dynasties, loadFn) {
     all.classList.add('active');
     bar.appendChild(all);
 
-    // Jinshi studies start from about Song dynasty; show dynasties from Tang onwards
-    const shown = dynasties.filter(d => d.to >= 960);
+    // Jinshi studies record inscriptions from the Han onwards, but the
+    // catalogues themselves start around the Song; offer buttons from Tang.
+    const shown = dynasties.filter(d => d.to >= 900);
     shown.forEach(d => {
         bar.appendChild(makeBtn(d.label, `dynasty=${encodeURIComponent(d.key)}`, `${d.from}–${d.to}`));
     });
@@ -162,11 +163,15 @@ function drawFullTimeline(container, data, app, showPersons, showWorks) {
         const g = svgEl('g', { class: 'dynasty-band' });
         g.appendChild(svgEl('rect', { x: x1, y: 0, width: x2 - x1, height: H,
             fill: BAND_COLS[i % 2], opacity: 0.7 }));
-        const lx = x1 + Math.min((x2 - x1) / 2, 50);
-        const lbl = svgEl('text', { x: lx, y: AXIS_H - 6, 'text-anchor': 'middle',
-            'font-size': 10, fill: '#666', class: 'dynasty-label zh' });
-        lbl.textContent = d.label;
-        g.appendChild(lbl);
+        // label only bands wide enough to carry their name; keep the label
+        // below the axis so it never collides with the year ticks above it
+        if (x2 - x1 >= 30) {
+            const lx = x1 + Math.min((x2 - x1) / 2, 50);
+            const lbl = svgEl('text', { x: lx, y: AXIS_H + 13, 'text-anchor': 'middle',
+                'font-size': 10, fill: '#8a7f70', class: 'dynasty-label zh' });
+            lbl.textContent = d.label;
+            g.appendChild(lbl);
+        }
         svg.appendChild(g);
     });
 

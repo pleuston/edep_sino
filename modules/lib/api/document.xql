@@ -140,16 +140,23 @@ declare function dapi:source($request as map(*)) {
     let $doc := xmldb:decode($request?parameters?id)
     return
         if ($doc) then
-            let $path := xmldb:encode-uri($config:data-root || "/" || $doc)
+            (: resolve like config:get-document: data-root first, then the default collection :)
+            let $path :=
+                head((
+                    xmldb:encode-uri($config:data-root || "/" || $doc)[util:binary-doc-available(.) or doc-available(.)],
+                    xmldb:encode-uri($config:data-default || "/" || $doc)[doc-available(.)]
+                ))
             let $filename := replace($doc, "^.*/([^/]+)$", "$1")
-            let $mime := ($request?parameters?type, xmldb:get-mime-type($path))[1]
             return
-                if (util:binary-doc-available($path)) then
-                    response:stream-binary(util:binary-doc($path), $mime, $filename)
-                else if (doc-available($path)) then
-                    router:response(200, $mime, doc($path))
-                else
+                if (empty($path)) then
                     error($errors:NOT_FOUND, "Document " || $doc || " not found")
+                else
+                    let $mime := ($request?parameters?type, xmldb:get-mime-type($path))[1]
+                    return
+                        if (util:binary-doc-available($path)) then
+                            response:stream-binary(util:binary-doc($path), $mime, $filename)
+                        else
+                            router:response(200, $mime, doc($path))
         else
             error($errors:BAD_REQUEST, "No document specified")
 };

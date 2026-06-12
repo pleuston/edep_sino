@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="96" viewBox="0 0 280 96">
+  <!-- EpiWen wordmark for the dark menubar -->
+  <g>
+    <text x="0" y="62" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+          font-size="44" font-weight="600" fill="#ffffff" letter-spacing="0.5">Epi<tspan font-weight="300">Wen</tspan></text>
+    <text x="178" y="63" font-family="Songti TC, Songti SC, Noto Serif CJK TC, serif"
+          font-size="42" fill="#f3ede2">金石</text>
+  </g>
+</svg>

@@ -469,6 +469,12 @@ footer a {
     width: 128px;
 }
 
+footer .footer-logo img {
+    height: 42px;
+    width: auto;
+    display: block;
+}
+
 footer.mobile-footer {
     display: block;
     padding: .375rem 1rem;

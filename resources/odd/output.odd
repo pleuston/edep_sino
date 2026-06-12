@@ -84,9 +84,11 @@
                 <param name="content" value="string-join(addName[@type='temple-name'], '、')"/>
                 <pb:template xmlns="" xml:space="preserve"><p class="addname"><span class="nm-label">廟號</span> [[ content ]]</p></pb:template>
             </model>
-            <model predicate="$parameters?mode='register-details'" behaviour="block">
-                <desc>Dates: birth/death or floruit</desc>
-                <param name="content" value="(birth, death)"/>
+            <model predicate="$parameters?mode='register-details' and (birth/@when|birth/@notBefore|death/@when|death/@notAfter)" behaviour="block" cssClass="lifespan">
+                <desc>Lifespan from birth/death attributes (the elements are usually empty)</desc>
+                <param name="b" value="head((birth/@when, birth/@notBefore, '?'))"/>
+                <param name="d" value="head((death/@when, death/@notAfter, '?'))"/>
+                <pb:template xmlns="" xml:space="preserve"><p class="lifespan">[[ b ]]–[[ d ]]</p></pb:template>
             </model>
             <model predicate="$parameters?mode='register-details' and floruit" behaviour="block" cssClass="floruit">
                 <desc>Floruit range</desc>
@@ -118,7 +120,7 @@
                 <param name="level" value="4"/>
                 <pb:template xmlns="" xml:space="preserve">
                     <a href="[[uri]]">
-                        <pb-i18n key="register-details.document-list"/> ( [[content]] )
+                        <pb-i18n key="register-details.document-list"/> ([[content]])
                     </a></pb:template>
             </model>
         </modelSequence>
@@ -196,7 +198,7 @@
                 <param name="content" value="let $id := @xml:id return count(collection($global:data-default)//text//placeName[@key = $id or @ref = $id]/ancestor::TEI)"/>
                 <pb:template xmlns="" xml:space="preserve">
                     <a href="[[uri]]">
-                        <pb-i18n key="register-details.document-list"/> ( [[content]] )
+                        <pb-i18n key="register-details.document-list"/> ([[content]])
                     </a></pb:template>
             </model>
         </modelSequence>
@@ -245,8 +247,8 @@
                     <model predicate="parent::listBibl and $parameters?mode='register-overview'" behaviour="pass-through">
             <desc>Register entry overview in list</desc>
             <param name="id" value="@xml:id"/>
-            <param name="label" value="(head(author), ' ', head(title), ' ', head(date))"/>
-            <param name="description" value="."/>
+            <param name="label" value="string-join((head(author), head(title), head((date/@when, date))), ' ')"/>
+            <param name="description" value="head(note)"/>
             <pb:template xmlns="" xml:space="preserve"><header>
                             <a href="bibliography/[[ id ]]">[[ label ]]</a>
                             </header>

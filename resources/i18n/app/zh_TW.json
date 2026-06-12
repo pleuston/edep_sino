@@ -254,5 +254,17 @@
         "chronology-persons": "人物",
         "chronology-works": "著作",
         "chronology-loading": "載入中…"
+    },
+    "facets": {
+        "object-type": "形制",
+        "material": "材質",
+        "orig-place": "出土地",
+        "language": "語言"
+    },
+    "browse": {
+        "category": "類別"
+    },
+    "register-details": {
+        "document-list": "見於文獻"
     }
 }

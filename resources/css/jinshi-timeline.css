@@ -2,9 +2,16 @@
 
 /* ── Chronology page layout ─────────────────────────────────────────────── */
 
+/* the fixed layout turns main into a flex row with stretched children —
+   the chronology page is a single document flow */
+.fixed-layout > main.chronology-page {
+    display: block;
+}
+
 .chronology-page {
     padding: 1rem 1.5rem 2rem;
     max-width: 100%;
+    width: 100%;
 }
 
 .chronology-header {

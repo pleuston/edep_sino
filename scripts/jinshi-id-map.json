@@ -272,6 +272,18 @@
     "work-000002": "Jinshi cuibian",
     "work-000003": "Ba qiongshi jinshi buzheng"
   },
+  "work_date_overrides": {
+    "work-000001": {
+      "cert": "medium",
+      "label": "嘉祐八年",
+      "when": 1063
+    },
+    "work-000002": {
+      "cert": "high",
+      "label": "嘉慶十年",
+      "when": 1805
+    }
+  },
   "works": {
     "Bao Changxi 鮑昌熙《金石屑》": "work-000004",
     "Bao Ding 鮑鼎《朱子金石學》": "work-000005",

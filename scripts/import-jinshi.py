@@ -459,6 +459,13 @@ def _parse_work(stem, text, fm, id_map, alias_map):
     # Year: look in title prose / aliases for 4-digit year
     year_when, year_cert, year_label = _extract_work_year(text, stem, edition_list)
 
+    # Compiled-date override from id-map takes priority (hand-curated seeds)
+    date_override = id_map.get('work_date_overrides', {}).get(work_id)
+    if date_override:
+        year_when  = date_override.get('when', year_when)
+        year_cert  = date_override.get('cert', 'high')
+        year_label = date_override.get('label', str(year_when))
+
     # Juan count from Overview prose
     juan = _extract_juan(text)
 
@@ -582,10 +589,12 @@ def _extract_work_year(text, stem, edition_list):
     if mo:
         y = int(mo.group(1))
         if 600 <= y <= 1940:
-            # Find surrounding label
-            start = max(0, mo.start() - 20)
-            snippet = text[start:mo.end() + 10].strip()
-            return y, 'medium', snippet[:40]
+            # Label: a tight era-year token right before the parenthesis
+            # (嘉慶十年 / 光緒五年…), never a prose window.
+            before = text[max(0, mo.start() - 20):mo.start()]
+            m2 = re.search(r'([一-鿿]{2,4}[元一二三四五六七八九十廿卅]{1,4}年)\s*$', before)
+            label = m2.group(1) if m2 else str(y)
+            return y, 'medium', label
 
     # Earliest year from edition list
     years = [e['year'] for e in edition_list if e.get('year')]
@@ -598,7 +607,7 @@ def _extract_work_year(text, stem, edition_list):
 
 def _extract_juan(text):
     """Extract 卷 count from prose."""
-    mo = re.search(r'(\d+)\s*[卷juan]', text[:3000])
+    mo = re.search(r'(\d+)\s*(?:卷|juan)', text[:3000])
     if mo:
         n = int(mo.group(1))
         if 1 <= n <= 999:

@@ -47,6 +47,9 @@ main.sites-map-page {
 }
 
 /* sites index */
+/* the fixed layout turns main into a flex row with stretched children —
+   the sites index is a plain stacked list */
+.fixed-layout > main.sites-index { display: block; }
 .sites-index { width: 100%; max-width: 60rem; margin: 0 auto; padding: 1rem; }
 .sites-index .site-card {
     display: flex;

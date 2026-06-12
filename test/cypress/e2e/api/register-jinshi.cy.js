@@ -29,6 +29,10 @@ describe('Jinshi registers API', () => {
         expect(html).to.include('測試金石著作')
         expect(html).to.include('Ceshi jinshi zhuzuo')
       })
+
+      // clean up — test records must not accumulate in the register
+      cy.request({ method: 'DELETE', url: `/api/register/${id}` })
+        .its('status').should('be.oneOf', [200, 204])
     })
   })
 
@@ -55,6 +59,10 @@ describe('Jinshi registers API', () => {
       cy.request(`/jinshi-inscriptions/${id}`).its('body').then(html => {
         expect(html).to.include('測試刻石（API）')
       })
+
+      // clean up — test records must not accumulate in the register
+      cy.request({ method: 'DELETE', url: `/api/register/${id}` })
+        .its('status').should('be.oneOf', [200, 204])
     })
   })
 

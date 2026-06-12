@@ -58,6 +58,10 @@ declare variable $facets-config:facets := [
         "hierarchical": false(),
         "output": function($label) {
             switch($label)
+                case "lzh" return "文言 Literary Chinese"
+                case "zh" return "中文 Chinese"
+                case "zh-Hant" return "中文（繁體） Traditional Chinese"
+                case "zh-Hans" return "中文（简体） Simplified Chinese"
                 case "de" return "German"
                 case "es" return "Spanish"
                 case "la" return "Latin"

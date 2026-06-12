@@ -183,7 +183,7 @@
     },
     "logo": {
       "width": "140px",
-      "image": "../images/tei-publisher-logo-contrast-color.svg",
+      "image": "../images/epiwen-logo.svg",
       "height": "48px"
     },
     "breadcrumbs": {

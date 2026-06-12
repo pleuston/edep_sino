@@ -23,6 +23,18 @@ declare %private function jinshi:objects-root() {
     collection($config:register-root)/id($config:register-map?inscription?id)
 };
 
+(:~ Imported notes keep raw vault wikilinks for losslessness — strip the
+ : syntax for display: [[target|label]] → label, [[a/b/c]] → c. :)
+declare %private function jinshi:strip-wikilinks($s as xs:string?) as xs:string? {
+    if (empty($s) or $s = '') then $s
+    else
+        replace($s, '\[\[[^\]\|]*\|([^\]]*)\]\]', '$1')
+        => replace('\[\[(?:[^\]/\|]*/)*([^\]/\|]*)\]\]', '$1')
+        (: truncated notes may end mid-link — drop the unclosed tail :)
+        => replace('\[\[[^\]]*$', '…')
+        => normalize-space()
+};
+
 (:~ Numeric sort key for a work: year of compilation (or start of range), else 9999. :)
 declare %private function jinshi:work-year($work as element()?) as xs:integer {
     let $date := $work/tei:date[@type = 'compiled']
@@ -105,7 +117,7 @@ declare function jinshi:attestations-of($insc-id as xs:string?) as map(*)* {
             "year": $year,
             "title-in-work": ($att/tei:title[@type = 'title-in-work']/string(), '')[1],
             "juan": ($att/tei:citedRange[@unit = 'juan']/string(), '')[1],
-            "note": ($att/tei:note/string(), '')[1]
+            "note": jinshi:strip-wikilinks(($att/tei:note/string(), '')[1])
         }
 };
 

@@ -35,7 +35,7 @@
                         <idno type="TM"/>
                     </msIdentifier>
                     <msContents class="sino:typeins:zaoxiangji">
-                        <summary>Fictional specimen votive inscription exercising every EDEp-Sino field (doc/sino-model.md).</summary>
+                        <summary>Fictional specimen votive inscription exercising every EpiWen field — not a real object.</summary>
                     </msContents>
                     <physDesc>
                         <objectDesc form="sino:medium:keshi">
@@ -128,7 +128,7 @@
             </sourceDesc>
         </fileDesc>
         <encodingDesc>
-            <p>Encoded following EpiDoc guidelines 9.2 and the EpiWen conventions (doc/sino-model.md)</p>
+            <p>Encoded following EpiDoc guidelines 9.2 and the EpiWen encoding conventions</p>
             <charDecl>
                 <glyph xml:id="g-demo-wei">
                     <mapping type="standardized">為</mapping>

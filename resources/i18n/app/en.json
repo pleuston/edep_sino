@@ -254,5 +254,17 @@
         "chronology-persons": "Persons",
         "chronology-works": "Works",
         "chronology-loading": "Loading…"
+    },
+    "facets": {
+        "object-type": "Object form",
+        "material": "Material",
+        "orig-place": "Find spot",
+        "language": "Language"
+    },
+    "browse": {
+        "category": "Category"
+    },
+    "register-details": {
+        "document-list": "Mentioned in documents"
     }
 }

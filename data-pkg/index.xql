@@ -42,8 +42,10 @@ declare function idx:get-metadata($root as element(), $field as xs:string) {
                 root($root)//article-meta/contrib-group/contrib/name
             )
             case "language" return
+                (: prefer the language marked main; 'edep' is a processing marker, not a language :)
                 head((
-                    $header//tei:langUsage/tei:language/@ident,
+                    $header//tei:langUsage/tei:language[@ana = 'main']/@ident,
+                    $header//tei:langUsage/tei:language/@ident[not(. = 'edep')],
                     $root/@xml:lang,
                     $header/@xml:lang,
                     root($root)/*/@xml:lang

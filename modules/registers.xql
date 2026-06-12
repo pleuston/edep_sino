@@ -52,22 +52,19 @@ declare function rapi:entry($request as map(*)) {
             error($errors:BAD_REQUEST, "No " || $type || " entry id specified")
 };
 
-(: TODO rewrite, removing entry by id (with update delete) not the filename :)
-
 declare function rapi:delete($request as map(*)) {
     let $id := xmldb:decode($request?parameters?id)
     let $type := xmldb:decode($request?parameters?type)
     let $entry := collection($config:register-root)/id($id)
 
     return
-      if ($entry) then
-            (: let $del := xmldb:remove(util:collection-name($doc), util:document-name($doc)) :)   
-            let $del := 'cant delete entire file'
-
-            return (
-                session:set-attribute($config:session-prefix || ".works", ()),
-                router:response(204, 'Entry not deleted, this feature is not yet implemented')
-            )
+      if ($entry) then (
+            (: entries are elements inside the standOff register documents —
+               remove the element, never the file :)
+            update delete $entry,
+            session:set-attribute($config:session-prefix || ".works", ()),
+            router:response(204, ())
+        )
         else
             error($errors:NOT_FOUND, "Entry for " || $type || ": " || $id || " not found")
 };
@@ -251,8 +248,11 @@ declare function rapi:next($type) {
         default
             return collection($config:register-root)/id($config?id)//tei:person[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
     
-    let $numeric-ids := for $id in $all-ids return if ($id castable as xs:integer) then $id else ()
-    let $last := if (count($all-ids)) then sort($numeric-ids)[last()] else 1
+    (: guard against registers whose ids are all non-numeric slugs:
+       max over the numeric ids, never an empty sequence (() + 1 = ()
+       would pad to a colliding "000000") :)
+    let $numeric-ids := for $id in $all-ids return if ($id castable as xs:integer) then xs:integer($id) else ()
+    let $last := if (count($numeric-ids)) then max($numeric-ids) else 0
     let $next :=
             try {
                 xs:integer($last) + 1
