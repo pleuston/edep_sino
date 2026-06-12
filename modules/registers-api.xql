@@ -23,7 +23,7 @@ declare function rview:sort($people as array(*)*, $dir as xs:string) {
 };
 
 declare function rview:people-all($request as map(*)) {
-    let $people := collection($config:people-root)//tei:person[ft:query(., '*', map {
+    let $people := collection($config:register-root)/id($config:register-map?person?id)//tei:person[ft:query(., '*', map {
         "leading-wildcard": "yes",
         "filter-rewrite": "yes"
     })]
@@ -39,7 +39,7 @@ declare function rview:people-all($request as map(*)) {
         return
             map {
                 "id": $person?2/@xml:id/string(),
-                "name": $person?2/tei:persName[@type="main"]/string(),
+                "name": head(($person?2/tei:persName[@type="main"], $person?2/tei:persName[@type="canonical"], $person?2/tei:persName))/string(),
                 "sort-name": $person?1
             }
      }
@@ -54,9 +54,9 @@ declare function rview:people-categories($request as map(*)){
     let $odd := head(($request?parameters?odd, $config:default-odd))
     let $people :=
             if ($search and $search != '') then
-                collection($config:people-root)//tei:person[ft:query(., 'name:(' || $search || '*)')]
+                collection($config:register-root)/id($config:register-map?person?id)//tei:person[ft:query(., 'name:(' || $search || '*)')]
             else
-                collection($config:people-root)//tei:person[ft:query(., '*', map {
+                collection($config:register-root)/id($config:register-map?person?id)//tei:person[ft:query(., '*', map {
                         "leading-wildcard": "yes",
                         "filter-rewrite": "yes"
                     })]

@@ -41,7 +41,7 @@
             </text>
             <text qname="tei:person">
                 <field name="name" expression="tei:persName"/>
-                <field name="sort-name" expression="head((tei:persName[@type='sort'], tei:persName))=&gt; normalize-unicode('NFD')     =&gt; replace('\p{IsCombiningDiacriticalMarks}', '')"/>
+                <field name="sort-name" expression="head((tei:persName[@type='sort'], tei:persName[@xml:lang='zh-Latn-pinyin'], tei:persName))=&gt; normalize-unicode('NFD')     =&gt; replace('\p{IsCombiningDiacriticalMarks}', '')"/>
             </text>
             <text qname="tei:bibl">
                 <field name="name" expression="."/>

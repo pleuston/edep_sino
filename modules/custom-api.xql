@@ -186,9 +186,9 @@ declare function api:people-browse($request as map(*)) {
     let $limit := $request?parameters?limit
     let $people :=
         if ($search and $search != '') then
-            collection($config:data-root || "/people")//tei:person[ft:query(tei:persName, $search || '*')]
+            collection($config:register-root)/id('pb-persons')//tei:person[ft:query(tei:persName, $search || '*')]
         else
-            collection($config:data-root || "/people")//tei:person
+            collection($config:register-root)/id('pb-persons')//tei:person
     let $sorted :=
         for $person in $people
         order by $person/tei:persName[@type='nomen']

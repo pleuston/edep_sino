@@ -40,12 +40,11 @@
                     <model predicate="parent::listPerson and $parameters?mode='register-overview'" behaviour="pass-through">
             <desc>Register entry overview in list</desc>
             <param name="id" value="@xml:id"/>
-            <param name="label" value="head((persName[@type='sort'], persName[@type='canonical'], persName[@type='main'], persName[1]))"/>
-            <param name="zh" value="head((persName[@type='canonical'], persName[@type='main']))"/>
+            <param name="label" value="string-join((head((persName[@type='canonical'], persName[@type='main'], persName[1])), head((persName[@type='sort'], persName[@xml:lang='zh-Latn-pinyin'])))[normalize-space(.) != ''], ' · ')"/>
             <param name="description" value="note[@type='bio']"/>
             <pb:template xmlns="" xml:space="preserve"><div>
 <header>
-    <a href="people/[[ id ]]">[[ zh ]] · [[ label ]]</a>
+    <a href="people/[[ id ]]">[[ label ]]</a>
 </header>
 [[ description ]]
 </div></pb:template>
