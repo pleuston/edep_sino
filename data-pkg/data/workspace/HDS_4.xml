@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_4">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">僧安道壹</title>
+                <title xml:lang="en">Seng’an Daoyi</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:shu">書丹</resp>
+                    <persName>Seng’an Daoyi</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_4</idno>
+                        <idno type="EDEp">HDS_4</idno>
+                        <idno type="jinshi">sutra-000004</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:tiji">
+                        <summary>Seng’an Daoyi</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="111"/>
+                                        <height quantity="179"/>
+                                    </dimensions>
+                                </support>
+                                <condition>除了最後一字，保存尚佳 / good except for the last character</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="1" writtenLines="3" style="writing-mode: vertical-rl">
+                                    <ab>“V”形和“凵”形刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="32" max="39"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>A: Rubbing of HDS 3 and HDS 4, Shandong Stone Carving Art Museum in Jinan, photograph taken in 2008.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">114</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">267</citedRange></bibl>
+                        <bibl><ref target="#YangHao2002"/><citedRange unit="page">51</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">107</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">81</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">21</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#AnTingshan1997"/><citedRange unit="page">128-129</citedRange></bibl>
+                        <bibl><ref target="#ZhangWeiran1999"/><citedRange unit="page">65-67</citedRange></bibl>
+                        <bibl><ref target="#YangHao2002"/><citedRange unit="page">51-52</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">96, 98-100</citedRange></bibl>
+                        <bibl><ref target="#LiuTao2003a"/><citedRange unit="page">239-240</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2003"/><citedRange unit="page">242-245</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">106-107</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">21</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_04.tif">Right part of rubbing A of HDS 3 and 4</ref></bibl>
+                        <bibl><ref target="HDS_4_Laifei2000a.jpg">Right part of rubbing B of HDS 3 and 4</ref></bibl>
+                        <bibl><ref target="HDS_r_4_total_DSCF0049.JPG">Mount Hongding, rock carving HDS 4; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<persName>僧安道壹</persName>
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>Seng’an Daoyi</p>
+            </div>
+        </body>
+    </text>
+</TEI>

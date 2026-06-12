@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_5">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">《摩訶衍經》碑十八空節文</title>
+                <title xml:lang="en">Mahayana Sutra” Stele with a Passage on Eighteen Aspects of Emptiness</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_5</idno>
+                        <idno type="EDEp">HDS_5</idno>
+                        <idno type="jinshi">sutra-000005</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:kejing">
+                        <summary>Mahayana Sutra” Stele with a Passage on Eighteen Aspects of Emptiness</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="370"/>
+                                        <height quantity="736"/>
+                                    </dimensions>
+                                </support>
+                                <condition>紋飾保存較好，碑身銘文未完成 / decor better preserved; inscription on body of stele never completed</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="4" writtenLines="12" style="writing-mode: vertical-rl">
+                                    <ab>“U”形邊框；文字“凵”形刻法和雙鈎刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="34" max="39"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>A: Rubbing of HDS 5. Shandong Stone Carving Art Museum in Jinan; photograph taken in 2004.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">113-114</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">265</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">22</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">67</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">81</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#AnTingshan1997"/><citedRange unit="page">128</citedRange></bibl>
+                        <bibl><ref target="#XuQing2000"/><citedRange unit="page">4</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2000a"/><citedRange unit="page">66-68</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">265</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2000"/><citedRange unit="page">34</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">9-10, 24</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">125-126</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">74</citedRange></bibl>
+                        <bibl><ref target="#Harrist2004"/><citedRange unit="page">10-11</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">21-23</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_05.jpg">Rubbing A of HDS 5</ref></bibl>
+                        <bibl><ref target="HDS_rub_JN_5_LaiFei2000a.jpg">Rubbing B of HDS 5</ref></bibl>
+                        <bibl><ref target="HDS_r_5_total_IMG_0341.JPG">Mount Hongding, rock carving HDS 5; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="01"/>摩訶
+<lb n="02"/>衍經
+<lb n="01"/>
+<lb n="T08n0223_0250b02"/><supplied reason="lost">菩 大 薩 摩訶薩 摩訶衍，復次，須菩提</supplied>！<supplied reason="lost">菩</supplied>薩
+<lb n="02"/><supplied reason="lost">摩訶薩</supplied>復有<supplied reason="lost">摩訶衍，所謂内空</supplied>、外空、
+<lb n="03"/><supplied reason="lost">内外空，空空、大空，</supplied>弟<supplied reason="lost">一義空</supplied>，有
+<lb n="04"/><supplied reason="lost">為空</supplied>、<supplied reason="lost">無爲空，畢竟空、無始空，</supplied>散
+<lb n="05"/>
+<lb n="T08n0223_0250b06"/><unclear>空</unclear>、<supplied reason="lost">性空，自相空、 諸法空</supplied>、<supplied reason="lost">不</supplied><unclear>可</unclear><supplied reason="lost">得</supplied>
+<lb n="06"/><supplied reason="lost">空，無法空、有法空、無法有法空。</supplied>
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>“Mahayana Sutra” The Mahayana of the bodhisattva—furthermore, Subhūti , the Mahayana of the bodhisattva-mahāsattva —[consists of] what is called the emptiness of the internal, the emptiness of the external, the emptiness of what is both internal and external, the emptiness of emptiness, the great emptiness, the emptiness of the supreme truth, the emptiness of the conditioned, the emptiness of the unconditioned, the emptiness of the final, the emptiness of the beginningless, the emptiness of the analyzed, the emptiness of [intrinsic] nature, the emptiness of self attributes, the emptiness of all entities, the emptiness of non-obtainability, the emptiness of non-existent entities, the emptiness of existent entities, [and] the emptiness of entities that are both existent and non-existent.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

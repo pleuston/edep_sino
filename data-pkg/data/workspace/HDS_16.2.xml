@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_16.2">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">北麓《文殊師利所說般若波羅蜜經》九十八字節文</title>
+                <title xml:lang="en">Passage of 98 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī on the Northern Slope</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:shu">書丹</resp>
+                    <persName>Seng’an Daoyi</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_16.2</idno>
+                        <idno type="EDEp">HDS_16.2</idno>
+                        <idno type="jinshi">sutra-000033</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:kejing">
+                        <summary>Passage of 98 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī on the Northern Slope</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <material ref="sino:material:baiyunyan"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="270"/>
+                                        <height quantity="230"/>
+                                    </dimensions>
+                                </support>
+                                <condition>尚佳 / good</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="10" writtenLines="10" style="writing-mode: vertical-rl">
+                                    <ab>“V”形和“凵”形刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="13" max="22"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>A: Rubbing encompassing from left to right HDS 14, 15, 16.1 and 16.2. Shandong Stone Carving Art Museum in Jinan; photograph taken in 2008.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">114</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">263</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">67-68</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">110-111</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">83-84</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">31</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#AnTingshan1997"/><citedRange unit="page">128</citedRange></bibl>
+                        <bibl><ref target="#LiJingjie1997a"/><citedRange unit="page">45</citedRange></bibl>
+                        <bibl><ref target="#DuJiwen1997"/><citedRange unit="page">5</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">106-107</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">263</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2000a"/><citedRange unit="page">61-66</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2000"/><citedRange unit="page">32-34</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2003"/><citedRange unit="page">249</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">50</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">20-21, 25</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">120-121</citedRange></bibl>
+                        <bibl><ref target="#MaZhongli2003"/><citedRange unit="page">261-262</citedRange></bibl>
+                        <bibl><ref target="#LuoZhao2014"/><citedRange unit="page">3-5</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">110-111</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">31-33</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_16.2.jpg">Rubbing of HDS 16.2, detail of rubbing A</ref></bibl>
+                        <bibl><ref target="HDS_16.2_LaiFei2000a_cut.jpg">Rubbing of HDS 16.2, detail of rubbing B</ref></bibl>
+                        <bibl><ref target="HDS_16.2_rock.tif">Mount Hongding, rock carving HDS 16.2; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="01"/>
+<lb n="T08n0232_0731a15"/><persName>文殊 師利 文殊師利 文殊</persName>白<persName>佛</persName>言：“<persName>世 尊</persName>，何以
+<lb n="02"/>故名般
+<lb n="T08n0232_0731a16"/>若波羅蜜？”<persName>佛</persName>言：“般
+<lb n="03"/>若波羅蜜，无邊、无際，无名、
+<lb n="04"/>
+<lb n="T08n0232_0731a17"/>无相，非思量、无歸依、无洲
+<lb n="05"/>渚，无犯、无福，无晦、
+<lb n="T08n0232_0731a18"/>无朙， 如猶如
+<lb n="06"/>法界无有分齊，亦无限數，
+<lb n="07"/>是名般
+<lb n="T08n0232_0731a19"/>若波羅蜜，亦名菩
+<lb n="08"/>薩摩訶薩行處。非 行處、非不
+<lb n="09"/>
+<lb n="T08n0232_0731a20"/>行處，悉入一乗，名非行處。
+<lb n="10"/>何以故？无念无作
+<lb n="T08n0232_0731a21"/>故。”
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>Mañjuśrī addressed the Buddha, saying: “ World-Honored One , why is it named prajñāpāramitā ?” The Buddha said: “ Prajñāpāramitā is without boundary, without bourn; without name, without attributes; inconceivable, without refuge, without sandbank; without sin, without merit; without obscurity, without illumination. Like the Realm of the Law it is without demarcation and also limitless in number. This is named prajñāpāramitā . It is also named the Site of Bodhisattva-Mahāsattva Practice. Since it is neither a site of practice nor of non-practice — all [Sites of Bodhisattva-Mahāsattva Practice] belonging to the One Vehicle — it is named the Site of Non-Practice. Why is this? Because it is unthought and unconditioned.”</p>
+            </div>
+        </body>
+    </text>
+</TEI>

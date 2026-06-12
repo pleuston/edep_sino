@@ -1,0 +1,12 @@
+<place xmlns="http://www.tei-c.org/ns/1.0" xml:id="place-hongdingshan">
+    <placeName type="findspot">洪頂山</placeName>
+    <placeName type="modern">洪頂山 Hongdingshan</placeName>
+    <placeName type="sort">Hongdingshan</placeName>
+    <region type="province">shandong</region>
+    <region type="modern">山東</region>
+    <country>cn</country>
+    <location>
+        <geo>36.064 116.238</geo>
+    </location>
+    <ptr type="tgaz" target=""/>
+</place>

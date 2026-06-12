@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_6">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">《佛說仁王般若波羅蜜經》節文</title>
+                <title xml:lang="en">Passage from the Sutra Spoken by the Buddha on the Perfection of Wisdom of Humane Kings</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_6</idno>
+                        <idno type="EDEp">HDS_6</idno>
+                        <idno type="jinshi">sutra-000006</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:kejing">
+                        <summary>Passage from the Sutra Spoken by the Buddha on the Perfection of Wisdom of Humane Kings</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="200"/>
+                                        <height quantity="212"/>
+                                    </dimensions>
+                                </support>
+                                <condition>尚佳，第四排風化嚴重 / good, the fourth row weathered</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="10" writtenLines="10" style="writing-mode: vertical-rl">
+                                    <ab>“V”形刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="5" max="26"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>Rubbing of HDS 6 made in 1998. Shandong Stone Carving Art Museum in Jinan, published in 48 .</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">113</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">265</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">67</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">107-108</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">81</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">23</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">265</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2000a"/><citedRange unit="page">70</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">10, 25</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">50, 67</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">126</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">107-108</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">23-24</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_06.jpg">Rubbing of HDS 6</ref></bibl>
+                        <bibl><ref target="HDS_r_6_total_IMG_0412.JPG">Mount Hongding, rock carving HDS 6; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="01"/>佛告<persName>波斯 匿 大 玉</persName>：“是般若波
+<lb n="02"/>羅蜜，是諸佛菩薩一切
+<lb n="03"/>眾生
+<lb n="T08n0245_0832c24"/>心識<supplied reason="lost">之</supplied>神本也，一切
+<lb n="04"/>國玉<supplied reason="lost">之父母</supplied>也。亦名神
+<lb n="T08n0245_0832c25"/>符扶，
+<lb n="05"/>亦名辟鬼珠，亦名如意珠，
+<lb n="06"/>亦名護國珠，
+<lb n="T08n0245_0832c26"/>亦名天地鏡，
+<lb n="07"/>亦名龍寶神玉。”
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>The Buddha told King Prasenajit: This Perfection of Wisdom is the spiritual root of the consciousness of all Buddhas, bodhisattvas, and all beings. It is the father and mother of all kings. It is also named the Spiritual Talisman, the Demon-Exorcising Pearl, the Wish-Fulfilling Pearl, the State-Protecting Pearl, the Mirror of Heaven and Earth, and the Dragon-Jewel Spirit King.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

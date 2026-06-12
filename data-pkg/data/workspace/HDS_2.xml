@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_2">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">《大集經》六波羅蜜節文</title>
+                <title xml:lang="en">Passage from the Great Compilation Sutra on the Six Perfections</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_2</idno>
+                        <idno type="EDEp">HDS_2</idno>
+                        <idno type="jinshi">sutra-000002</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:kejing">
+                        <summary>Passage from the Great Compilation Sutra on the Six Perfections</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="120"/>
+                                        <height quantity="27"/>
+                                    </dimensions>
+                                </support>
+                                <condition>毀於1995至1999年間，現僅存第一和第二排的部分銘文 / Destroyed between 1995 and 1999, only the first and part of the second row are still extant</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="5" writtenLines="1" style="writing-mode: vertical-rl">
+                                    <ab>“V”形刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="10" max="16"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>A: Rubbing of HDS 2 made in 1998. Shandong Stone Carving Art Museum in Jinan.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#LiJingjie1997a"/><citedRange unit="page">45</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">266</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">67</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">106</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">80</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">18-20</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">109</citedRange></bibl>
+                        <bibl><ref target="#LiJingjie1997a"/><citedRange unit="page">45</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">266</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">12, 24-25</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">50, 67</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">106</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">18-20</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_02.jpg">Rubbing A of HDS 2</ref></bibl>
+                        <bibl><ref target="HDS_02_B.tif">Rubbing B of HDS 2</ref></bibl>
+                        <bibl><ref target="HDS_r_2_detail_DSCF0118.JPG">Mount Hongding, detail of rock carving HDS 2; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="01"/><supplied reason="lost">經主 道門</supplied>
+<lb n="01"/>
+<lb n="T13n0397_0050b15"/>能調<supplied reason="lost">心 者，名之為施。</supplied>
+<lb n="02"/>身心<supplied reason="lost">清涼，名之為戒</supplied>。
+<lb n="03"/>諸法<supplied reason="lost">無常，名之為忍</supplied>。
+<lb n="04"/>勤<supplied reason="lost">修是智，名為精進</supplied>。
+<lb n="05"/>内<supplied reason="lost">外清淨，名為三昧</supplied>。
+<lb n="06"/>觀<supplied reason="lost">真實故，名為智慧</supplied>。
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>He can harmonize his mind; this is named Generosity. He keeps body and mind clear and cool; this is named Discipline. He sees that all entities are impermanent; this is named Patience. He diligently cultivates this knowledge; this is named Vigorous Effort. He sees that inner and outer are clear and pure; this is named Samadhi. He contemplates true reality; this is named Wisdom.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

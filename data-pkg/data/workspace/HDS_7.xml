@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_7">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">《大空王佛》題記</title>
+                <title xml:lang="en">Colophon to “Buddha King of Great Emptiness</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_7</idno>
+                        <idno type="EDEp">HDS_7</idno>
+                        <idno type="jinshi">sutra-000007</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:tiji">
+                        <summary>Colophon to “Buddha King of Great Emptiness</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="107"/>
+                                        <height quantity="245"/>
+                                    </dimensions>
+                                </support>
+                                <condition>風化嚴重 / eroded and poor</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="5" writtenLines="14" style="writing-mode: vertical-rl">
+                                    <ab>“V”形刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="13" max="19"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate when="0556" period="sino:dynasty:xiwei" cert="low" datingMethod="#gregorian-converted"></origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>A: Rubbing of HDS 7. Shandong Stone Carving Art Museum in Jinan; photograph taken in 2004.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">266</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">24</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2000"/><citedRange unit="page">29</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">68</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2001a"/><citedRange unit="page">145</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">14, 43</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">82</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#ZhangWeiran1999"/><citedRange unit="page">65-67</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2000"/><citedRange unit="page">34-35</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000b"/><citedRange unit="page">8</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2000b"/><citedRange unit="page">12-13</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2000a"/><citedRange unit="page">68-70</citedRange></bibl>
+                        <bibl><ref target="#YangHao2002"/><citedRange unit="page">50-51</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">116</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">64</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2003"/><citedRange unit="page">242-245, 249</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">14</citedRange></bibl>
+                        <bibl><ref target="#Kitajima2003"/><citedRange unit="page">278</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">96, 98-101</citedRange></bibl>
+                        <bibl><ref target="#Harrist2004"/><citedRange unit="page">5</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">108</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">24-26</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_07.jpg">Rubbing A of HDS 7</ref></bibl>
+                        <bibl><ref target="HDS_rub_JN_7_2_total_46.jpg">Rubbing B of HDS 7</ref></bibl>
+                        <bibl><ref target="HDS_rub_7_3_total_ZT010b.jpg">Rubbing C of HDS 7</ref></bibl>
+                        <bibl><ref target="HDS_rub_7_4_total_DSC0151.tif">Rubbing D of HDS 7</ref></bibl>
+                        <bibl><ref target="HDS_07_rock.tif">Mount Hongding, rock carving HDS 7; photograph taken in 2006</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="1"/><persName>釋迦</persName>雙林後一千六百廿三年，
+<lb n="2"/><persName>大沙門僧安道壹</persName>書刊<persName>大空王佛</persName>七
+<lb n="3"/><unclear>□</unclear><unclear>佛</unclear><unclear>□□□□□</unclear><unclear>□</unclear><unclear>手</unclear>書經<unclear>□□</unclear><unclear>□</unclear><unclear>頌</unclear><unclear>願</unclear><unclear>□</unclear>此
+<lb n="4"/>功徳具神<unclear>通</unclear><unclear>思</unclear><unclear>□</unclear>力，<unclear>行</unclear><unclear>□</unclear><unclear>□□□□</unclear><unclear>薩</unclear><unclear>□</unclear>婆若
+<lb n="5"/><unclear>□□□</unclear>界<unclear>□□□□</unclear><unclear>手成戌百</unclear><unclear>□□</unclear><unclear>佊</unclear><unclear>彼</unclear><unclear>□</unclear><unclear>□□□</unclear>助成。
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>One thousand six hundred twenty three years after Śākyamuni [entered into nirvana] under the twin trees [556], the Great Renunciant (śramaṇa) Seng’an Daoyi wrote and carved: Buddha King of Great Emptiness, seven [...] [...] [...] [...] [...] [...] [...] wrote sutras [...] [...] [...] [...] this merit and virtue is endowed with supernatural powers, practicing [...] [...] [...] [...] perfect knowledge [...] [...] [...] sphere [...] [...] [...] [...] that [...] [...] [...] support the completion.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

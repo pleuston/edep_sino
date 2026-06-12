@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_20">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">大空王佛</title>
+                <title xml:lang="en">Buddha King of Great Emptiness</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_20</idno>
+                        <idno type="EDEp">HDS_20</idno>
+                        <idno type="jinshi">sutra-000037</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:foming">
+                        <summary>Buddha King of Great Emptiness</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <material ref="sino:material:shihuiyan"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="53"/>
+                                        <height quantity="141"/>
+                                    </dimensions>
+                                </support>
+                                <condition>風化嚴重 / eroded and poor</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="1" writtenLines="4" style="writing-mode: vertical-rl">
+                                    <ab>“雙鈎”刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="24" max="43"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>Rubbing of HDS 20. Shandong Stone Carving Art Museum in Jinan; photograph taken in 2008.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">111</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">84</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">35-36</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#XuQing2000"/><citedRange unit="page">4</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">14</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">120, 125</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2003"/><citedRange unit="page">249</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">111</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">35-36</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_20.jpg">Rubbing of HDS 20</ref></bibl>
+                        <bibl><ref target="HDS_r_20_total_DSCF0105-1.JPG">Mount Hongding, rock carving HDS 20; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="1"/><persName>大空王佛</persName>
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>Buddha King of Great Emptiness</p>
+            </div>
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_15">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">《安公之碑》</title>
+                <title xml:lang="en">Stele of Sire Serenity</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_15</idno>
+                        <idno type="EDEp">HDS_15</idno>
+                        <idno type="jinshi">sutra-000031</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:tiji">
+                        <summary>Stele of Sire Serenity</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <material ref="sino:material:baiyunyan"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="62"/>
+                                        <height quantity="99"/>
+                                    </dimensions>
+                                </support>
+                                <condition>基本完整，碑的右上角殘損，第八行第一個字磨滅 / fair, upper left corner of stele head broken off, character 8/1 missing</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="8" writtenLines="12" style="writing-mode: vertical-rl">
+                                    <ab>“V”形刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="0" max="13"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate when="0553" period="sino:dynasty:xiwei" cert="low" datingMethod="#gregorian-converted"></origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>A: Rubbing encompassing from left to right HDS 14, 15, 16.1 and 16.2. Shandong Stone Carving Art Museum in Jinan; photograph taken in 2008.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">115</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">268</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2000"/><citedRange unit="page">32</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2001a"/><citedRange unit="page">146</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">68</citedRange></bibl>
+                        <bibl><ref target="#LiuTao2003a"/><citedRange unit="page">238</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">109</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">83</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">30</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#AnTingshan1997"/><citedRange unit="page">128</citedRange></bibl>
+                        <bibl><ref target="#LiJingjie1997a"/><citedRange unit="page">45</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">101</citedRange></bibl>
+                        <bibl><ref target="#DuJiwen1997"/><citedRange unit="page">6</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">267-268</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000b"/><citedRange unit="page">8</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2000"/><citedRange unit="page">32-34</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2000a"/><citedRange unit="page">68-70</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2000b"/><citedRange unit="page">11-12</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2001a"/><citedRange unit="page">146</citedRange></bibl>
+                        <bibl><ref target="#YangHao2002"/><citedRange unit="page">51-52</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">64</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2003"/><citedRange unit="page">248-250</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">96 and 116</citedRange></bibl>
+                        <bibl><ref target="#LiuTao2003a"/><citedRange unit="page">238-239</citedRange></bibl>
+                        <bibl><ref target="#Kitajima2003"/><citedRange unit="page">279</citedRange></bibl>
+                        <bibl><ref target="#ChenKunlin2003"/><citedRange unit="page">326-329</citedRange></bibl>
+                        <bibl><ref target="#Harrist2004"/><citedRange unit="page">5</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">109-110</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">30-31</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_15.jpg">Rubbing of HDS 15, detail of rubbing A</ref></bibl>
+                        <bibl><ref target="HDS_r_15_total_DSCF0116.jpg">Mount Hongding, rock carving HDS 15; photograph taken in 2004</ref></bibl>
+                        <bibl><ref target="HDS_15-color.svg">Illustration of the wordplay of the inscription HDS 15</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="1"/><persName>安公</persName>
+<lb n="2"/>之碑
+<lb n="1"/><persName>大沙門僧安</persName>，不安所安，安所不
+<lb n="2"/>能安。大道一，不一所一，一所不
+<lb n="3"/>能一。不安所安，不安扵安。安所
+<lb n="4"/>不安，能安扵安。不一所一，不一
+<lb n="5"/>其一。一所不一，能一其一。詞曰：
+<lb n="6"/>安故能一，一故能安。安一，一安。
+<lb n="7"/>巖上雕刊
+<lb n="8"/><supplied reason="lost">雙</supplied>林後千六百廿秊。
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>The Stele of Sire SerenityThe Great Renunciant (śramaṇa) “Monk Serenity”: [that is to say, he] does not consider serene that which has been made serene, but considers serene that which cannot be made serene. “Great Way of Unity”: [that is to say, he] does not consider as unified that which has been unified, but considers as unified that which cannot be unified. “He does not consider serene that which has been made serene”— he does not find serenity in serenity. “He considers serene that which cannot be made serene”— he is able to be serene in serenity. “He does not consider as unified that which has been unified”— he does not consider that unity as unity. “He considers as unified that which is not unified”— he is able to consider that unity as unity.The encomium says: He is serene, thus he is able to unify; he sees unity, thus he is able to make things serene. Serene, thus unity; unity, thus serene. Carved on the cliff one thousand six hundred and twenty years after [Śākyamuni entered into nirvana under] the twin trees [553].</p>
+            </div>
+        </body>
+    </text>
+</TEI>

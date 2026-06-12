@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_21.2">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">法洪供養題記</title>
+                <title xml:lang="en">Votive Inscription by Fahong</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:shu">書丹</resp>
+                    <persName>Fahong</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_21.2</idno>
+                        <idno type="EDEp">HDS_21.2</idno>
+                        <idno type="jinshi">sutra-000039</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:tiji">
+                        <summary>Votive Inscription by Fahong</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <material ref="sino:material:shihuiyan"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="28"/>
+                                        <height quantity="124"/>
+                                    </dimensions>
+                                </support>
+                                <condition>劣 / very poor</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="1" writtenLines="6" style="writing-mode: vertical-rl">
+                                    <ab>“雙鈎”刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="14" max="18"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>A: Rubbing of HDS 21.1 and 21.2. Shandong Stone Carving Art Museum in Jinan; photograph taken in 2008.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">121</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">33</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">111</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">84</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">36</citedRange></bibl>
+                        <bibl><ref target="#LuoZhao2014"/><citedRange unit="page">待刊</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">50</citedRange></bibl>
+                        <bibl><ref target="#LuoZhao2014"/></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_21.2.tif">Rubbing of HDS 21.2, detail of rubbing A</ref></bibl>
+                        <bibl><ref target="HDS_r_21.2-22_part_scan90.jpg">Mount Hongding, rock carving HDS 21.2; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<persName>經主釋法洪</persName>供<unclear>□</unclear>
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>Offered [respectfully] by the Donor of Sutras, Venerable Fahong.</p>
+            </div>
+        </body>
+    </text>
+</TEI>

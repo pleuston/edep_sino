@@ -25,6 +25,14 @@
                 <region type="sheng" xml:lang="zh">山東</region>
                 <note xml:lang="en">Cliff-inscription site near Laizhou associated with Zheng Daozhao (Northern Wei).</note>
             </place>
+            <place xml:id="place-hongdingshan" type="feature">
+                <placeName type="main" xml:lang="zh">洪頂山</placeName>
+                <placeName xml:lang="zh-Latn-pinyin">Hongdingshan</placeName>
+                <placeName type="sort">Hongdingshan</placeName>
+                <location><geo>36.064 116.238</geo></location>
+                <region type="sheng" xml:lang="zh">山東</region>
+                <note xml:lang="en">Mount Hongding, 山東; Buddhist stone-sutra and Buddha-name carvings. Source: stonesutras.org.</note>
+            </place>
         </listPlace>
     </standOff>
 </TEI>

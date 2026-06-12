@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="pb-sutras">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt><title>EpiWen register: stone sutras 石經</title></titleStmt>
+            <publicationStmt><p>Authority register of Buddhist stone-sutra and Buddha-name
+                inscriptions. Entry shape: doc/sino-model.md §10. One entry per inscription
+                (not per monument); the carrying site is a place (registers/places.xml) and the
+                carved text is a corpus edition (data/workspace).</p></publicationStmt>
+            <sourceDesc><p>Imported by scripts/import-sutras-data.py from the stonesutras.org
+                research dataset.</p></sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff>
+        <listObject type="sutra">
+            <object xml:id="sutra-000001" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">《文殊師利所說摩訶般若波羅蜜經》五十四字節文</objectName>
+                    <objectName type="sort">Passage of 54 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī</objectName>
+                    <objectName type="alt" xml:lang="en">Passage of 54 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī</objectName>
+                    <idno type="corpus">HDS_1</idno>
+                    <idno type="genre">kejing</idno>
+                    <idno type="taisho">T_232</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 1; 116.238316,36.064669</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000002" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">《大集經》六波羅蜜節文</objectName>
+                    <objectName type="sort">Passage from the Great Compilation Sutra on the Six Perfections</objectName>
+                    <objectName type="alt" xml:lang="en">Passage from the Great Compilation Sutra on the Six Perfections</objectName>
+                    <idno type="corpus">HDS_2</idno>
+                    <idno type="genre">kejing</idno>
+                    <idno type="taisho">T_397.5</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 2; 116.238331,36.064664</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000003" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">僧安道壹銘讚</objectName>
+                    <objectName type="sort">Encomium to Seng’an Daoyi</objectName>
+                    <objectName type="alt" xml:lang="en">Encomium to Seng’an Daoyi</objectName>
+                    <idno type="corpus">HDS_3</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 3; 116.383568,35.936246</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000004" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">僧安道壹</objectName>
+                    <objectName type="sort">Seng’an Daoyi</objectName>
+                    <objectName type="alt" xml:lang="en">Seng’an Daoyi</objectName>
+                    <idno type="corpus">HDS_4</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 4; 116.238354,36.064648</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000005" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">《摩訶衍經》碑十八空節文</objectName>
+                    <objectName type="sort">Mahayana Sutra” Stele with a Passage on Eighteen Aspects of Emptiness</objectName>
+                    <objectName type="alt" xml:lang="en">Mahayana Sutra” Stele with a Passage on Eighteen Aspects of Emptiness</objectName>
+                    <idno type="corpus">HDS_5</idno>
+                    <idno type="genre">kejing</idno>
+                    <idno type="taisho">T_223</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 5; 116.238438,36.064593</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000006" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">《佛說仁王般若波羅蜜經》節文</objectName>
+                    <objectName type="sort">Passage from the Sutra Spoken by the Buddha on the Perfection of Wisdom of Humane Kings</objectName>
+                    <objectName type="alt" xml:lang="en">Passage from the Sutra Spoken by the Buddha on the Perfection of Wisdom of Humane Kings</objectName>
+                    <idno type="corpus">HDS_6</idno>
+                    <idno type="genre">kejing</idno>
+                    <idno type="taisho">T_245</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 6; 116.238457,36.064570</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000007" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">《大空王佛》題記</objectName>
+                    <objectName type="sort">Colophon to “Buddha King of Great Emptiness</objectName>
+                    <objectName type="alt" xml:lang="en">Colophon to “Buddha King of Great Emptiness</objectName>
+                    <idno type="corpus">HDS_7</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 7; 116.238560,36.064508</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate when="0556" period="sino:dynasty:xiwei" cert="low" datingMethod="#gregorian-converted"></origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000008" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">大空王佛</objectName>
+                    <objectName type="sort">Buddha King of Great Emptiness</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha King of Great Emptiness</objectName>
+                    <idno type="corpus">HDS_8</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 8; 116.238578,36.064495</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000009" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">洪頂山9.1號至9.16號整體概覽</objectName>
+                    <objectName type="sort">Combined View of HDS 9.1 to HDS 9.16</objectName>
+                    <objectName type="alt" xml:lang="en">Combined View of HDS 9.1 to HDS 9.16</objectName>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc"> HDS_9</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000010" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">式佛</objectName>
+                    <objectName type="sort">Buddha Śikhin</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Śikhin</objectName>
+                    <idno type="corpus">HDS_9.1</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1332</idno>
+                    <idno type="taisho">T_1336</idno>
+                    <idno type="taisho">T_1339</idno>
+                    <idno type="taisho">T_1393</idno>
+                    <idno type="taisho">T_2045</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.1; 116.238655,36.064448</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000011" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">維衛佛</objectName>
+                    <objectName type="sort">Buddha Vipaśyin</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Vipaśyin</objectName>
+                    <idno type="corpus">HDS_9.2</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1332</idno>
+                    <idno type="taisho">T_1336</idno>
+                    <idno type="taisho">T_1339</idno>
+                    <idno type="taisho">T_1393</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.2; 116.238655,36.064452</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000012" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">式佛</objectName>
+                    <objectName type="sort">Buddha Śikhin</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Śikhin</objectName>
+                    <idno type="corpus">HDS_9.3</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1336</idno>
+                    <idno type="taisho">T_1339</idno>
+                    <idno type="taisho">T_1393</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.3; 116.238652,36.064456</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000013" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">隨葉佛</objectName>
+                    <objectName type="sort">Buddha Viśvabhū</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Viśvabhū</objectName>
+                    <idno type="corpus">HDS_9.4</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1332</idno>
+                    <idno type="taisho">T_1336</idno>
+                    <idno type="taisho">T_1339</idno>
+                    <idno type="taisho">T_1393</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.4; 116.238648,36.064456</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000014" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">拘樓秦佛</objectName>
+                    <objectName type="sort">Buddha Krakucchanda</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Krakucchanda</objectName>
+                    <idno type="corpus">HDS_9.5</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1332</idno>
+                    <idno type="taisho">T_1336</idno>
+                    <idno type="taisho">T_1339</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.5; 116.238643,36.064458</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000015" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">拘那含牟尼佛</objectName>
+                    <objectName type="sort">Buddha Kanakamuni</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Kanakamuni</objectName>
+                    <idno type="corpus">HDS_9.6</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1332</idno>
+                    <idno type="taisho">T_1336</idno>
+                    <idno type="taisho">T_1339</idno>
+                    <idno type="taisho">T_1393</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.6; 116.238639,36.064458</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000016" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">迦葉佛</objectName>
+                    <objectName type="sort">Buddha Kāśyapa</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Kāśyapa</objectName>
+                    <idno type="corpus">HDS_9.7</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1332</idno>
+                    <idno type="taisho">T_1336</idno>
+                    <idno type="taisho">T_1339</idno>
+                    <idno type="taisho">T_1393</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.7; 116.238637,36.064463</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000017" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">釋迦牟尼佛</objectName>
+                    <objectName type="sort">Buddha Śākyamuni</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Śākyamuni</objectName>
+                    <idno type="corpus">HDS_9.8</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1332</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.8; 116.238632,36.064469</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000018" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">弥勒佛</objectName>
+                    <objectName type="sort">Buddha Maitreya</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Maitreya</objectName>
+                    <idno type="corpus">HDS_9.9</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_454</idno>
+                    <idno type="taisho">T_456</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.9; 116.238629,36.064473</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000019" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">阿弥陁佛</objectName>
+                    <objectName type="sort">Buddha Amitābha</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Amitābha</objectName>
+                    <idno type="corpus">HDS_9.10</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_157</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.10; 116.238624,36.064476</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000020" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">觀世音佛</objectName>
+                    <objectName type="sort">Buddha Perceiver of the World’s Sounds</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Perceiver of the World’s Sounds</objectName>
+                    <idno type="corpus">HDS_9.11</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_440</idno>
+                    <idno type="taisho">T_441</idno>
+                    <idno type="taisho">T_442</idno>
+                    <idno type="taisho">T_440</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.11; 116.238620,36.064478</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000021" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">大勢至佛</objectName>
+                    <objectName type="sort">Buddha Great Power Obtained</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Great Power Obtained</objectName>
+                    <idno type="corpus">HDS_9.12</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_440</idno>
+                    <idno type="taisho">T_441</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.12; 116.238617,36.064480</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000022" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">釋迦牟尼佛</objectName>
+                    <objectName type="sort">Buddha Śākyamuni</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Śākyamuni</objectName>
+                    <idno type="corpus">HDS_9.13</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1332</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.13; 116.238610,36.064481</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000023" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">具足千万光相佛</objectName>
+                    <objectName type="sort">Buddha with the Complete Attributes of a Thousand Ten Thousand Rays of Light</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha with the Complete Attributes of a Thousand Ten Thousand Rays of Light</objectName>
+                    <idno type="corpus">HDS_9.14</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_262</idno>
+                    <idno type="taisho">T_1941</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.14; 116.238604,36.064483</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000024" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">安樂佛</objectName>
+                    <objectName type="sort">Buddha Serenity and Joy</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Serenity and Joy</objectName>
+                    <idno type="corpus">HDS_9.15</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_440</idno>
+                    <idno type="taisho">T_441</idno>
+                    <idno type="taisho">T_425</idno>
+                    <idno type="taisho">T_447a</idno>
+                    <idno type="taisho">T_447b</idno>
+                    <idno type="taisho">T_1909</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.15; 116.238594,36.064486</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000025" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">主法鴻</objectName>
+                    <objectName type="sort">Donor Fahong</objectName>
+                    <objectName type="alt" xml:lang="en">Donor Fahong</objectName>
+                    <idno type="corpus">HDS_9.16</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 9.16; 116.238594,36.064486</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000026" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">高山佛</objectName>
+                    <objectName type="sort">Buddha Lofty Mountain</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Lofty Mountain</objectName>
+                    <idno type="corpus">HDS_10</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_440</idno>
+                    <idno type="taisho">T_441</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 10; 116.238650,36.064477</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000027" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">安王佛</objectName>
+                    <objectName type="sort">Buddha King of Serenity</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha King of Serenity</objectName>
+                    <idno type="corpus">HDS_11</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_657</idno>
+                    <idno type="taisho">T_442</idno>
+                    <idno type="taisho">T_448</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 11; 116.238662,36.064470</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000028" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">大山巖佛</objectName>
+                    <objectName type="sort">Buddha Great Mountain Cliff</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Great Mountain Cliff</objectName>
+                    <idno type="corpus">HDS_12</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_440</idno>
+                    <idno type="taisho">T_441</idno>
+                    <idno type="taisho">T_447a</idno>
+                    <idno type="taisho">T_447b</idno>
+                    <idno type="taisho">T_1909</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 12; 116.238649,36.064489</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000029" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">藥師琉璃光佛</objectName>
+                    <objectName type="sort">Buddha Medicine Master of Beryline Radiance</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha Medicine Master of Beryline Radiance</objectName>
+                    <idno type="corpus">HDS_13</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="taisho">T_1331</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 13; 116.238690,36.064489</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000030" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">風門口碑</objectName>
+                    <objectName type="sort">Stele of Wind Entrance</objectName>
+                    <objectName type="alt" xml:lang="en">Stele of Wind Entrance</objectName>
+                    <idno type="corpus">HDS_14</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 14; 116.238696,36.064487</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000031" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">《安公之碑》</objectName>
+                    <objectName type="sort">Stele of Sire Serenity</objectName>
+                    <objectName type="alt" xml:lang="en">Stele of Sire Serenity</objectName>
+                    <idno type="corpus">HDS_15</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 15; 116.238701,36.064485</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate when="0553" period="sino:dynasty:xiwei" cert="low" datingMethod="#gregorian-converted"></origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000032" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">僧安道一</objectName>
+                    <objectName type="sort">Seng’an Daoyi</objectName>
+                    <objectName type="alt" xml:lang="en">Seng’an Daoyi</objectName>
+                    <idno type="corpus">HDS_16.1</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 16.1; 116.238730,36.064467</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000033" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">北麓《文殊師利所說般若波羅蜜經》九十八字節文</objectName>
+                    <objectName type="sort">Passage of 98 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī on the Northern Slope</objectName>
+                    <objectName type="alt" xml:lang="en">Passage of 98 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī on the Northern Slope</objectName>
+                    <idno type="corpus">HDS_16.2</idno>
+                    <idno type="genre">kejing</idno>
+                    <idno type="taisho">T_232</idno>
+                    <idno type="taisho">T_233</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 16.2; 116.238717,36.064476</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000034" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">大[空王佛]</objectName>
+                    <objectName type="sort">[Buddha King of] Great [Emptiness]</objectName>
+                    <objectName type="alt" xml:lang="en">[Buddha King of] Great [Emptiness]</objectName>
+                    <idno type="corpus">HDS_17</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 17; 116.238703,36.064465</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000035" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">法洪銘讚</objectName>
+                    <objectName type="sort">Encomium to Fahong</objectName>
+                    <objectName type="alt" xml:lang="en">Encomium to Fahong</objectName>
+                    <idno type="corpus">HDS_18</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 18; 116.237459,36.063498</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate when="0564" period="sino:dynasty:beizhou" cert="high" datingMethod="#gregorian-converted"></origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000036" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">大空王佛</objectName>
+                    <objectName type="sort">Buddha King of Great Emptiness</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha King of Great Emptiness</objectName>
+                    <idno type="corpus">HDS_19</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 19; 116.237435,36.063500</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000037" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">大空王佛</objectName>
+                    <objectName type="sort">Buddha King of Great Emptiness</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha King of Great Emptiness</objectName>
+                    <idno type="corpus">HDS_20</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 20; 116.237277,36.063501</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000038" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">大空王佛</objectName>
+                    <objectName type="sort">Buddha King of Great Emptiness</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha King of Great Emptiness</objectName>
+                    <idno type="corpus">HDS_21.1</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 21.1; 116.237212,36.063531</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000039" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">法洪供養題記</objectName>
+                    <objectName type="sort">Votive Inscription by Fahong</objectName>
+                    <objectName type="alt" xml:lang="en">Votive Inscription by Fahong</objectName>
+                    <idno type="corpus">HDS_21.2</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 21.2; 116.237207,36.063534</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000040" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">南麓《文殊師利所說般若波羅蜜經》九十八字節文</objectName>
+                    <objectName type="sort">Passage of 98 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī on the Southern Slope</objectName>
+                    <objectName type="alt" xml:lang="en">Passage of 98 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī on the Southern Slope</objectName>
+                    <idno type="corpus">HDS_22</idno>
+                    <idno type="genre">kejing</idno>
+                    <idno type="taisho">T_232</idno>
+                    <idno type="taisho">T_233</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 22; 116.237192,36.063539</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000041" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">大空王佛</objectName>
+                    <objectName type="sort">Buddha King of Great Emptiness</objectName>
+                    <objectName type="alt" xml:lang="en">Buddha King of Great Emptiness</objectName>
+                    <idno type="corpus">HDS_23.1</idno>
+                    <idno type="genre">foming</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 23.1; 116.237161,36.063556</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+            <object xml:id="sutra-000042" type="sutra">
+                <objectIdentifier>
+                    <objectName type="main" xml:lang="zh">法洪供養題記</objectName>
+                    <objectName type="sort">Votive Inscription by Fahong</objectName>
+                    <objectName type="alt" xml:lang="en">Votive Inscription by Fahong</objectName>
+                    <idno type="corpus">HDS_23.2</idno>
+                    <idno type="genre">tiji</idno>
+                    <idno type="sutra-corpus">Hongdingshan</idno>
+                    <idno type="corpus-loc">HDS 23.2; 116.237160,36.063560</idno>
+                </objectIdentifier>
+                <history>
+                    <origin>
+                        <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                        <origPlace corresp="place-hongdingshan"/>
+                    </origin>
+                </history>
+            </object>
+        </listObject>
+    </standOff>
+</TEI>

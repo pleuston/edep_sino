@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_18">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">法洪銘讚</title>
+                <title xml:lang="en">Encomium to Fahong</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_18</idno>
+                        <idno type="EDEp">HDS_18</idno>
+                        <idno type="jinshi">sutra-000035</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:tiji">
+                        <summary>Encomium to Fahong</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <material ref="sino:material:shihuiyan"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="144"/>
+                                        <height quantity="217"/>
+                                    </dimensions>
+                                </support>
+                                <condition>尚佳，輕微風化 / good, slightly weathered</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="9" writtenLines="16" style="writing-mode: vertical-rl">
+                                    <ab>“V”形刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="6" max="19"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate when="0564" period="sino:dynasty:beizhou" cert="high" datingMethod="#gregorian-converted"></origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>A: Rubbing of HDS 18. Shandong Stone Carving Art Museum in Jinan; photograph taken in 2008.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">113</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">268</citedRange></bibl>
+                        <bibl><ref target="#XuHongguo2000"/><citedRange unit="page">30</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2001a"/><citedRange unit="page">148</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">68-69</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">111</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">84</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">34</citedRange></bibl>
+                        <bibl><ref target="#LuoZhao2014"/><citedRange unit="page">待刊</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#AnTingshan1997"/><citedRange unit="page">130</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000b"/><citedRange unit="page">8-9</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">103</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong2003a"/><citedRange unit="page">25</citedRange></bibl>
+                        <bibl><ref target="#LuoZhao2014"/><citedRange unit="page">1-2</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">111</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">33-35</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_18neu.jpg">Rubbing A of HDS 18</ref></bibl>
+                        <bibl><ref target="HDS_rub_JN_18_1_total_01.jpg">Rubbing B of HDS 18</ref></bibl>
+                        <bibl><ref target="HDS_r_18_part_DSCF0111-1.JPG">Mount Hongding, part of rock carving HDS 18; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="01"/><persName>沙門釋法洪</persName>， 娑婆國土閻浮聚落天竺人
+<lb n="02"/>也。挺特三空，<persName>空王</persName>之初；紛綸萬行，<persName>盧舍</persName>之
+<lb n="03"/>後。搆神<unclear>苕</unclear><unclear>茗</unclear><unclear>若</unclear>亭，與有頂而爭峰；機翰廣大，共
+<lb n="04"/>無邊而<unclear>竸</unclear><unclear>竟</unclear>遠。道性融<unclear>冶</unclear><unclear>治</unclear><unclear>通</unclear>，徳侔今古。蕩〃其
+<lb n="05"/>懷，蕭哉攸哉。非空不談，非如不說。談空說
+<lb n="06"/>如，是非兩氓。無說無談，有无雙亡。詞曰:
+<lb n="07"/>中天沙門，姓<persName>釋</persName>名<persName>洪</persName>。道隆朗出，内外閑通。
+<lb n="08"/><unclear>□</unclear><unclear>哀</unclear><unclear>其</unclear><unclear>風</unclear><unclear>亹</unclear>斖興<unclear>□</unclear><unclear>故</unclear><unclear>碬</unclear>，厥行邑邑。確尒法界，冥心大空。
+<lb n="09"/>大亝河清三年歳次實沈。 
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>The Renunciant (śramaṇa) Shi Fahong is a man from India within the Jambudvīpa settlements of the Sahā Lands. He is surpassing [in his understanding of] the three kinds of emptiness, due to his earlier [incarnation] during the time of the [Buddha] King of Emptiness. He is profound and erudite in the myriad practices, due to his later [incarnation] during the time of Vairocana. His constructive intelligence is lofty, competing with the summits of the Apex Heaven. His talents are vast, vying with the distances of the boundless. His religious nature is utterly comprehensive; his virtue equals any of past or present. How unfettered and magnanimous is his heart! How free! How unrestrained! If it is not emptiness, he does not discuss it. If it is not thusness, he does not speak on it. When he discusses emptiness and speaks on thusness, affirmation and negation are both extinguished. When he neither discusses nor speaks, being and non-being both vanish. The verse says: This renunciant from India, his surname is Shi and his name Hong. His way flourishes and shines forth, penetrating utterly inner and outer. [ … ] his character indefatigable [ … ], his behavior is great-hearted. He affirms the Realm of the Law; darkens his mind in the Great Emptiness. Third year of the heqing era of the Great Qi dynasty, Jupiter in Gemini [564].</p>
+            </div>
+        </body>
+    </text>
+</TEI>

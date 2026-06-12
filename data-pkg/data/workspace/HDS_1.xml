@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://epidoc.stoa.org/schema/latest/tei-epidoc.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="HDS_1">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title xml:lang="zh">《文殊師利所說摩訶般若波羅蜜經》五十四字節文</title>
+                <title xml:lang="en">Passage of 54 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī</title>
+                <editor/>
+                <respStmt>
+                    <resp key="sino:role:ke">刻</resp>
+                    <persName key="">未詳</persName>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <authority>EpiWen</authority>
+                <availability>
+                    <licence target="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</licence>
+                </availability>
+            </publicationStmt>
+            <sourceDesc>
+                <msDesc>
+                    <msIdentifier>
+                        <repository>HDS（摩崖原石）</repository>
+                        <idno type="inventory">HDS_1</idno>
+                        <idno type="EDEp">HDS_1</idno>
+                        <idno type="jinshi">sutra-000001</idno>
+                        <idno type="TM"/>
+                    </msIdentifier>
+                    <msContents class="sino:typeins:kejing">
+                        <summary>Passage of 54 Characters from the Sutra on the Great Perfection of Wisdom Spoken by Mañjuśrī</summary>
+                    </msContents>
+                    <physDesc>
+                        <objectDesc form="sino:medium:keshi">
+                            <supportDesc>
+                                <support>
+                                    <objectType ref="sino:objtyp:moya"/>
+                                    <dimensions unit="cm">
+                                        <width quantity="134"/>
+                                        <height quantity="202"/>
+                                    </dimensions>
+                                </support>
+                                <condition>尚佳，5/1磨滅 / good, 5/1 effaced</condition>
+                            </supportDesc>
+                            <layoutDesc>
+                                <layout columns="6" writtenLines="10" style="writing-mode: vertical-rl">
+                                    <ab>“V”形刻法</ab>
+                                </layout>
+                            </layoutDesc>
+                        </objectDesc>
+                        <handDesc>
+                            <handNote scope="letterHeight">
+                                <dimensions>
+                                    <height min="15" max="27"/>
+                                </dimensions>
+                            </handNote>
+                        </handDesc>
+                    </physDesc>
+                    <history>
+                        <origin>
+                            <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
+                            <origPlace corresp="place-hongdingshan"/>
+                        </origin>
+                    </history>
+                </msDesc>
+                <listWit>
+                    <witness type="rubbing">
+                        <msDesc>
+                            <msIdentifier><repository>山東省石刻藝術博物館</repository></msIdentifier>
+                            <physDesc><objectDesc><supportDesc>
+                                <support>紙本墨拓</support>
+                                <condition>Rubbing of HDS 1 made in 1998. Shandong Stone Carving Art Museum in Jinan.</condition>
+                            </supportDesc></objectDesc></physDesc>
+                        </msDesc>
+                    </witness>
+                </listWit>
+                <listBibl>
+                    <listBibl type="transmission">
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">105, 114</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">262-263</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">67</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">106</citedRange></bibl>
+                        <bibl><ref target="#SDSKYS_HAW2006"/><citedRange unit="page">80</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">18</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="previousEditions"/>
+                    <listBibl type="bibliography">
+                        <bibl><ref target="#LiJingjie1997a"/><citedRange unit="page">45</citedRange></bibl>
+                        <bibl><ref target="#AnTingshan1997"/><citedRange unit="page">130</citedRange></bibl>
+                        <bibl><ref target="#DuJiwen1997"/><citedRange unit="page">5</citedRange></bibl>
+                        <bibl><ref target="#ZhangZong1997"/><citedRange unit="page">105-107</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2000a"/><citedRange unit="page">262</citedRange></bibl>
+                        <bibl><ref target="#Kiriya2003a"/><citedRange unit="page">50</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2003c"/><citedRange unit="page">125</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2004"/><citedRange unit="page">106</citedRange></bibl>
+                        <bibl><ref target="#LaiFei2007"/><citedRange unit="page">18</citedRange></bibl>
+                    </listBibl>
+                    <listBibl type="images">
+                        <bibl><ref target="HDS_01.jpg">Rubbing of HDS 1</ref></bibl>
+                        <bibl><ref target="HDS_r_1_total_IMG_0328.JPG">Mount Hongding, rock carving HDS 1; photograph taken in 2004</ref></bibl>
+                    </listBibl>
+                </listBibl>
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc>
+            <p>Encoded following EpiDoc guidelines and the EpiWen encoding conventions. Imported from stonesutras.org.</p>
+        </encodingDesc>
+        <profileDesc>
+            <textClass>
+                <keywords scheme="https://edh.ub.uni-heidelberg.de/edep/religion">
+                    <term ref="sino:religion:fojiao"/>
+                </keywords>
+            </textClass>
+            <langUsage>
+                <language ident="lzh" ana="main"/>
+            </langUsage>
+        </profileDesc>
+        <revisionDesc status="draft">
+            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+        </revisionDesc>
+    </teiHeader>
+    <text>
+        <body>
+            <div type="edition" xml:lang="lzh" xml:space="preserve">
+<ab>
+<lb n="1"/><persName>佛</persName>言：佛告
+<lb n="T08n0232_0728a26"/>復次<persName>“舍利弗</persName>，汝問云何名
+<lb n="2"/>佛，云何觀佛者。不
+<lb n="T08n0232_0728a27"/>生、不滅，
+<lb n="3"/>不来、不去，非名 、非相，是名
+<lb n="4"/>為佛。如自
+<lb n="T08n0232_0728a28"/>觀身實相，觀佛
+<lb n="5"/><supplied reason="lost">亦</supplied>然。唯有智者，乃能知耳。
+<lb n="6"/>是
+<lb n="T08n0232_0728a29"/>名觀佛。”
+</ab>
+            </div>
+            <div type="apparatus"/>
+            <div type="translation" xml:lang="en">
+                <p>The Buddha said: “ Śāriputra , you ask, what is it that is named the Buddha? How does one contemplate the Buddha? Not produced, not extinguished; not come, not gone; not a name, not an attribute—this is called the Buddha. As one contemplates the real attributes of one’s body, just so one contemplates the Buddha. Only those with wisdom can understand this. This is named contemplating the Buddha.”</p>
+            </div>
+        </body>
+    </text>
+</TEI>
