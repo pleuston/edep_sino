@@ -312,7 +312,10 @@ declare function api:inscription($request as map(*)) {
             let $store := xmldb:store($collection, concat($edepId, ".xml"), api:clean($request?body, $edepId, true()))
             return $request?body//tei:idno[@type="EDEp"]/text()
         else
-            let $ids := sort(collection($collection)//tei:idno[@type="EDEp"][not(contains(.,'-'))]/text())
+            (: only E-numbered ids feed the sequence — ignore imported corpus ids
+               (e.g. sutra editions' idno[@type='EDEp']=HDS_11), fragments (E…-1) and
+               the demo (demo-zaoxiangji), which would otherwise break xs:integer() :)
+            let $ids := sort(collection($collection)//tei:idno[@type="EDEp"][matches(., '^E\d+$')]/text())
             let $id-new := if (empty($ids)) then "0000001" else format-number(xs:integer(replace($ids[last()], "E", "")) + 1, "0000000")
             let $store := xmldb:store($collection, concat("E", $id-new, ".xml"), api:clean($request?body, "E" || $id-new, true()))
             return concat("E", $id-new)

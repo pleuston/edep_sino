@@ -77,6 +77,7 @@ declare function rapi:save($request as map(*)) {
 
     let $user := request:get-attribute("teipublisher.com.login.user")
     let $body := $request?body/*[1]
+    let $id := ($body/@xml:id, $request?parameters?id)[1]
 
     let $type := local-name($body)
     let $type := switch($type)
@@ -84,9 +85,10 @@ declare function rapi:save($request as map(*)) {
                         if (starts-with($id, "coll-")) then "collection" else "organization"
                     case "bibl" return "work"
                     case "object" return
-                        if (starts-with($id, "rub-")) then "rubbing" else "inscription"
+                        if (starts-with($id, "rub-")) then "rubbing"
+                        else if (starts-with($id, "sutra-")) then "sutra"
+                        else "inscription"
                     default return $type
-    let $id := ($body/@xml:id, $request?parameters?id)[1]
 
     let $data := rapi:prepare-record($body, $user, $type)
     let $record := rapi:insert-point($type)/id($id)
@@ -134,6 +136,8 @@ declare function rapi:insert-point($type as xs:string) {
             collection($config:register-root)/id($root)//tei:listOrg[@xml:id = 'pb-collections']
         case "rubbing" return
             collection($config:register-root)/id($root)//tei:listObject[@type = 'rubbing']
+        case "sutra" return
+            collection($config:register-root)/id($root)//tei:listObject[@type = 'sutra']
         default return
             collection($config:register-root)/id($root)//tei:listPerson
 };
@@ -270,6 +274,8 @@ declare function rapi:next($type) {
             return collection($config:register-root)/id($config?id)//tei:org[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
         case 'rubbing'
             return collection($config:register-root)/id($config?id)//tei:object[@type='rubbing'][starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
+        case 'sutra'
+            return collection($config:register-root)/id($config?id)//tei:object[@type='sutra'][starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
         default
             return collection($config:register-root)/id($config?id)//tei:person[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
     
