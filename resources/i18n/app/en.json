@@ -196,7 +196,9 @@
         "sites": "Sites",
         "works": "Works",
         "jinshi": "Catalogue",
-        "chronology": "Chronology"
+        "chronology": "Chronology",
+        "collections": "Collections",
+        "rubbings": "Rubbings"
     },
     "metadata": {
         "additional": "General data",
@@ -265,6 +267,17 @@
     },
     "browse": {
         "category": "Category"
+    },
+    "rubbings": {
+        "collection": "Collection",
+        "catalog-url": "Catalog URL",
+        "local-shelfmark": "Local shelfmark",
+        "sheets": "Sheets",
+        "dimensions": "Dimensions",
+        "condition": "Condition",
+        "published-in": "Published in",
+        "digital-facsimile": "Digital facsimile",
+        "view-iiif": "View IIIF facsimile"
     },
     "register-details": {
         "document-list": "Mentioned in documents"

@@ -196,7 +196,9 @@
         "sites": "遺址",
         "works": "金石著作",
         "jinshi": "石刻總目",
-        "chronology": "年表"
+        "chronology": "年表",
+        "collections": "拓片收藏",
+        "rubbings": "拓片"
     },
     "metadata": {
         "additional": "一般資料",

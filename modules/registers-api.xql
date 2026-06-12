@@ -466,3 +466,80 @@ declare function rview:jinshi-categories($request as map(*)) {
         rview:register-categories(rview:jinshi-objects($search), $request,
             rview:object-sort-label#1, rview:output-register-entries#2)
 };
+
+(: ─── Rubbing Collections ──────────────────────────────────────────────── :)
+
+declare %private function rview:collection-sort-label($org as element()) as xs:string {
+    normalize-space(head(($org/tei:orgName[@type='sort'],
+        $org/tei:orgName[@type='main'], $org/tei:orgName)))
+};
+
+declare %private function rview:collections($search as xs:string?) {
+    let $root := collection($config:register-root)/id($config:register-map?collection?id)
+    return
+        if ($search and $search != '') then
+            $root//tei:org[ft:query(., 'name:(' || $search || '*)')]
+        else
+            $root//tei:org
+};
+
+declare function rview:collections-all($request as map(*)) {
+    array {
+        for $org in rview:collections(())
+        let $label := rview:collection-sort-label($org)
+        order by lower-case($label) collation "?lang=de-DE"
+        return
+            map {
+                "id": $org/@xml:id/string(),
+                "name": head(($org/tei:orgName[@type='main'], $org/tei:orgName))/string(),
+                "sort-name": $label,
+                "country": $org/tei:country/@key/string()
+            }
+    }
+};
+
+declare function rview:collections-categories($request as map(*)) {
+    let $search := normalize-space($request?parameters?search)
+    return
+        rview:register-categories(rview:collections($search), $request,
+            rview:collection-sort-label#1, rview:output-register-entries#2)
+};
+
+(: ─── Rubbings (拓片) ───────────────────────────────────────────────────── :)
+
+declare %private function rview:rubbing-sort-label($obj as element()) as xs:string {
+    normalize-space(head(($obj//tei:objectName[@type='sort'],
+        $obj//tei:objectName[@type='main'], $obj//tei:objectName)))
+};
+
+declare %private function rview:rubbings($search as xs:string?) {
+    let $root := collection($config:register-root)/id($config:register-map?rubbing?id)
+    return
+        if ($search and $search != '') then
+            $root//tei:object[@type='rubbing'][ft:query(., 'name:(' || $search || '*)')]
+        else
+            $root//tei:object[@type='rubbing']
+};
+
+declare function rview:rubbings-all($request as map(*)) {
+    array {
+        for $obj in rview:rubbings(())
+        let $label := rview:rubbing-sort-label($obj)
+        order by lower-case($label) collation "?lang=de-DE"
+        return
+            map {
+                "id": $obj/@xml:id/string(),
+                "name": head(($obj//tei:objectName[@type='main'], $obj//tei:objectName))/string(),
+                "sort-name": $label,
+                "collection": ($obj//tei:objectIdentifier/tei:repository/@corresp)[1]/string(),
+                "inscription": $obj/@corresp/string()
+            }
+    }
+};
+
+declare function rview:rubbings-categories($request as map(*)) {
+    let $search := normalize-space($request?parameters?search)
+    return
+        rview:register-categories(rview:rubbings($search), $request,
+            rview:rubbing-sort-label#1, rview:output-register-entries#2)
+};

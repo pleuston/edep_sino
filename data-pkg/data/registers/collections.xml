@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt><title>Rubbing Collections 拓片收藏</title></titleStmt>
+            <publicationStmt><p>EpiWen</p></publicationStmt>
+            <sourceDesc><p>Imported from research vault</p></sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff xml:id="pb-collections">
+        <listOrg>
+            <org xml:id="coll-000001">
+                <orgName type="main">Academia Sinica 中央研究院</orgName>
+                <country key="TW">TW</country>
+            </org>
+            <org xml:id="coll-000002">
+                <orgName type="main">Berkeley East Asian Library</orgName>
+                <country key="US">US</country>
+            </org>
+            <org xml:id="coll-000003">
+                <orgName type="main">Bodleian Library</orgName>
+                <country key="GB">GB</country>
+            </org>
+            <org xml:id="coll-000004">
+                <orgName type="main">British Library</orgName>
+                <country key="GB">GB</country>
+            </org>
+            <org xml:id="coll-000005">
+                <orgName type="main">Chongshan Temple 崇善寺 (Taiyuan)</orgName>
+                <country key="CN">CN</country>
+            </org>
+            <org xml:id="coll-000006">
+                <orgName type="main">Estampages chinois conservés en Europe (EFEO aggregator)</orgName>
+                <country key="FR">FR</country>
+            </org>
+            <org xml:id="coll-000007">
+                <orgName type="main">Field Museum (Chicago)</orgName>
+                <country key="US">US</country>
+            </org>
+            <org xml:id="coll-000008">
+                <orgName type="main">Fu Ssu-nien Library 傅斯年圖書館</orgName>
+                <country key="TW">TW</country>
+            </org>
+            <org xml:id="coll-000009">
+                <orgName type="main">Harvard-Yenching Library</orgName>
+                <country key="US">US</country>
+            </org>
+            <org xml:id="coll-000010">
+                <orgName type="main">Heidelberg Academy of Sciences and Humanities</orgName>
+                <country key="DE">DE</country>
+            </org>
+            <org xml:id="coll-000011">
+                <orgName type="main">Institut des hautes études chinoises (IHEC) — Collège de France</orgName>
+                <country key="FR">FR</country>
+            </org>
+            <org xml:id="coll-000012">
+                <orgName type="main">Kampokan Museum 観峰館</orgName>
+                <country key="JP">JP</country>
+            </org>
+            <org xml:id="coll-000013">
+                <orgName type="main">Kyoto University Jinbun Institute 京都大學人文科學研究所</orgName>
+                <country key="JP">JP</country>
+            </org>
+            <org xml:id="coll-000014">
+                <orgName type="main">Musée Guimet (MNAAG)</orgName>
+                <country key="FR">FR</country>
+            </org>
+            <org xml:id="coll-000015">
+                <orgName type="main">National Central Library 國家圖書館 (Taipei)</orgName>
+                <country key="TW">TW</country>
+            </org>
+            <org xml:id="coll-000016">
+                <orgName type="main">National Library of China 中國國家圖書館</orgName>
+                <country key="CN">CN</country>
+            </org>
+            <org xml:id="coll-000017">
+                <orgName type="main">Private collection</orgName>
+                <country key="XX">XX</country>
+            </org>
+            <org xml:id="coll-000018">
+                <orgName type="main">Rietberg Museum</orgName>
+                <country key="CH">CH</country>
+            </org>
+            <org xml:id="coll-000019">
+                <orgName type="main">Seoul National Museum of Korea 國立中央博物館</orgName>
+                <country key="KR">KR</country>
+            </org>
+            <org xml:id="coll-000020">
+                <orgName type="main">Shandong Stone Carving Art Museum 山東石刻藝術博物館</orgName>
+                <country key="CN">CN</country>
+            </org>
+            <org xml:id="coll-000021">
+                <orgName type="main">Shukutoku University Calligraphy and Culture Center 淑徳大学書学文化センター</orgName>
+                <country key="JP">JP</country>
+            </org>
+            <org xml:id="coll-000022">
+                <orgName type="main">Société asiatique</orgName>
+                <country key="FR">FR</country>
+            </org>
+            <org xml:id="coll-000023">
+                <orgName type="main">Tai’an Municipal Museum 泰安市博物館</orgName>
+                <country key="CN">CN</country>
+            </org>
+            <org xml:id="coll-000024">
+                <orgName type="main">Tokyo Metropolitan Library 東京都立図書館</orgName>
+                <country key="JP">JP</country>
+            </org>
+            <org xml:id="coll-000025">
+                <orgName type="main">Tokyo University Historiographical Institute 東京大学史料編纂所</orgName>
+                <country key="JP">JP</country>
+            </org>
+            <org xml:id="coll-000026">
+                <orgName type="main">University of Tokyo Institute of Advanced Studies on Asia 東京大學東洋文化研究所</orgName>
+                <country key="JP">JP</country>
+            </org>
+            <org xml:id="coll-000027">
+                <orgName type="main">École française d’Extrême-Orient (EFEO)</orgName>
+                <country key="FR">FR</country>
+            </org>
+        </listOrg>
+    </standOff>
+</TEI>

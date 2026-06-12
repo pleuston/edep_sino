@@ -259,6 +259,21 @@
                      (doc/sino-model.md par.10). ident "object" does not exist in
                      teipublisher.odd, hence mode="add". -->
                 <elementSpec ident="object" mode="add">
+                    <!-- Rubbings 拓片 — must come before the inscription model -->
+                    <model predicate="parent::listObject[@type='rubbing'] and $parameters?mode='register-overview'" behaviour="pass-through">
+            <desc>Rubbing overview in list</desc>
+            <param name="id" value="@xml:id"/>
+            <param name="name" value="head((.//objectName[@type='main'], .//objectName))"/>
+            <param name="coll" value=".//objectIdentifier/repository"/>
+            <param name="inv" value=".//objectIdentifier/idno[@type='inventory']"/>
+            <pb:template xmlns="" xml:space="preserve"><div>
+<header>
+    <a href="rubbings/[[ id ]]">[[ name ]]</a>
+</header>
+<p class="object-meta">[[ coll ]] [[ inv ]]</p>
+</div></pb:template>
+        </model>
+                    <!-- Inscription authority records (default) -->
                     <model predicate="parent::listObject and $parameters?mode='register-overview'" behaviour="pass-through">
             <desc>Inscription authority overview in list</desc>
             <param name="id" value="@xml:id"/>
@@ -271,6 +286,22 @@
     <a href="jinshi-inscriptions/[[ id ]]">[[ zh ]] · [[ label ]]</a>
 </header>
 <p class="object-meta">[[ date ]] [[ place ]]</p>
+</div></pb:template>
+        </model>
+                </elementSpec>
+
+                <!-- EDEp Sino: rubbing collections (拓片收藏). ident "org" mode="add". -->
+                <elementSpec ident="org" mode="add">
+                    <model predicate="parent::listOrg and $parameters?mode='register-overview'" behaviour="pass-through">
+            <desc>Rubbing collection overview in list</desc>
+            <param name="id" value="@xml:id"/>
+            <param name="name" value="head((orgName[@type='main'], orgName))"/>
+            <param name="country" value="country/@key"/>
+            <pb:template xmlns="" xml:space="preserve"><div>
+<header>
+    <a href="collections/[[ id ]]">[[ name ]]</a>
+</header>
+<p class="object-meta">[[ country ]]</p>
 </div></pb:template>
         </model>
                 </elementSpec>

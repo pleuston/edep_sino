@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/content.html"
+        },
+        "features": {
+            "toolbar": {
+                "zoom": false,
+                "navigation": false
+            },
+            "timeline": {
+                "enabled": false
+            },
+            "upload": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "transform/teipublisher.css",
+            "resources/css/registers-theme.css"
+        ]
+    }
+    ---
+    [% template breadcrumb %]
+    <li>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="[[ $context-path ]]/collections"><pb-i18n key="menu.collections"/></a></li>
+                <li>[[ head(($entity-data?root/tei:orgName[@type='main'], $entity-data?root/tei:orgName))/string() ]]</li>
+            </ul>
+        </nav>
+    </li>
+    [% endtemplate %]
+    <section class="collection jinshi-detail">
+        <h1>[[ head(($entity-data?root/tei:orgName[@type='main'], $entity-data?root/tei:orgName))/string() ]]</h1>
+        [% if $entity-data?root/tei:country/@key != '' %]
+        <p class="country">[[ $entity-data?root/tei:country/string() ]] ([[ $entity-data?root/tei:country/@key ]])</p>
+        [% endif %]
+
+        [% for $n in $entity-data?root/tei:note %]
+        <p class="note">[[ $n/string() ]]</p>
+        [% endfor %]
+
+        [% if exists($entity-data?root/tei:ptr) %]
+        <dl class="collection-meta">
+            [% for $p in $entity-data?root/tei:ptr %]
+            <dt><pb-i18n key="rubbings.catalog-url"/></dt>
+            <dd><a href="[[ $p/@target ]]" target="_blank" rel="noopener">[[ $p/@target ]]</a></dd>
+            [% endfor %]
+        </dl>
+        [% endif %]
+
+        <section class="rubbings-held">
+            <h2><pb-i18n key="menu.rubbings"/></h2>
+            <pb-split-list url="api/rubbings?collection=[[ $entity-data?id ]]" selected="all"/>
+        </section>
+    </section>
+</template>

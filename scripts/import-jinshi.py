@@ -19,11 +19,15 @@ Vault structure read (read-only):
     {vault}/knowledge base/Texts/Epigraphy 金石學/Editions/*.md — editions
     {vault}/knowledge base/Inscriptions/*.md              — inscriptions
     {vault}/knowledge base/Persons/*.md                   — persons
+    {vault}/knowledge base/Rubbings/Rubbing Collections/*.md — collections
+    {vault}/knowledge base/Rubbings/Rubbings by Inscriptions/**/*.md — rubbings
 
 Outputs written:
-    {data_pkg}/data/registers/works.xml   (complete, vault-derived)
-    {data_pkg}/data/registers/jinshi.xml  (complete, vault-derived + preserved non-vault)
-    {data_pkg}/data/registers/persons.xml (merged: existing + vault dates + new authors)
+    {data_pkg}/data/registers/works.xml       (complete, vault-derived)
+    {data_pkg}/data/registers/jinshi.xml      (complete, vault-derived + preserved non-vault)
+    {data_pkg}/data/registers/persons.xml     (merged: existing + vault dates + new authors)
+    {data_pkg}/data/registers/collections.xml (complete, vault-derived)
+    {data_pkg}/data/registers/rubbings.xml    (complete, vault-derived)
     {report}  (import statistics and unparsed-line log)
 """
 
@@ -41,6 +45,8 @@ VAULT_WORKS     = Path('knowledge base/Texts/Epigraphy 金石學')
 VAULT_EDITIONS  = VAULT_WORKS / 'Editions'
 VAULT_INSCR     = Path('knowledge base/Inscriptions')
 VAULT_PERSONS   = Path('knowledge base/Persons')
+VAULT_COLLECTIONS = Path('knowledge base/Rubbings/Rubbing Collections')
+VAULT_RUBBINGS    = Path('knowledge base/Rubbings/Rubbings by Inscriptions')
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -1528,6 +1534,254 @@ def write_report(work_stats, insc_stats, person_stats,
     Path(path).write_text('\n'.join(lines), encoding='utf-8')
 
 
+# ── Rubbings import ───────────────────────────────────────────────────────────
+
+_WIKILINK_NAME_RE = re.compile(r'^\[\[([^\]|#]+?)(?:\|[^\]]*)?\]\]$')
+
+def _int_field(v):
+    """Return string of integer if v is numeric, else ''."""
+    if isinstance(v, (int, float)):
+        return str(int(v))
+    s = str(v).strip()
+    return s if s.lstrip('-').isdigit() else ''
+
+def strip_wikilink(s):
+    """
+    '[[British Library]]' → 'British Library'
+    '"[[景教碑]]"   # comment' → '景教碑'
+    plain strings (not starting with '#') pass through.
+    """
+    if not s:
+        return ''
+    if isinstance(s, list):
+        s = s[0] if s else ''
+    s = str(s).strip().strip('"\'')
+    # Drop inline YAML comments: anything after the first ' # '
+    if ' # ' in s:
+        s = s[:s.index(' # ')].strip().strip('"\'')
+    if not s or s.startswith('#'):
+        return ''
+    # Try to match a wikilink anywhere in the string
+    m = _WIKILINK_RE.search(s)
+    if m:
+        return m.group(1).strip()
+    # Direct wikilink syntax at start
+    m = _WIKILINK_NAME_RE.match(s)
+    return m.group(1).strip() if m else s
+
+
+def import_collections(vault, id_map):
+    """
+    Parse vault rubbing-collection pages → list of dicts.
+    Assigns stable coll-NNNNNN ids via id_map['collections'].
+    """
+    coll_dir = vault / VAULT_COLLECTIONS
+    if not coll_dir.exists():
+        return [], {'count': 0}
+
+    if 'collections' not in id_map:
+        id_map['collections'] = {}
+    coll_map = id_map['collections']
+
+    # Next available numeric suffix
+    def next_coll_id():
+        used = [int(v.replace('coll-', '')) for v in coll_map.values()
+                if v.startswith('coll-') and v[5:].isdigit()]
+        n = (max(used) + 1) if used else 1
+        return f'coll-{n:06d}'
+
+    results = []
+    for md in sorted(coll_dir.glob('*.md')):
+        if md.stem == 'Rubbing Collections':
+            continue
+        text = md.read_text(encoding='utf-8')
+        fm = parse_fm(text)
+        if fm.get('type') != 'rubbingCollection':
+            continue
+
+        institution = strip_wikilink(fm.get('institution', '')) or md.stem
+        country = fm.get('country', '')
+
+        key = institution
+        if key not in coll_map:
+            coll_map[key] = next_coll_id()
+        cid = coll_map[key]
+
+        results.append({
+            'id': cid,
+            'name': institution,
+            'country': country,
+        })
+
+    return results, {'count': len(results)}
+
+
+def import_rubbings(vault, id_map, coll_map_by_name, insc_id_map):
+    """
+    Parse vault rubbing pages under 'Rubbings by Inscriptions/'.
+    Links each rubbing to its inscription (insc-NNNNNN) and collection (coll-NNNNNN).
+    """
+    rub_root = vault / VAULT_RUBBINGS
+    if not rub_root.exists():
+        return [], {'count': 0}
+
+    if 'rubbings' not in id_map:
+        id_map['rubbings'] = {}
+    rub_map = id_map['rubbings']
+
+    def next_rub_id():
+        used = [int(v.replace('rub-', '')) for v in rub_map.values()
+                if v.startswith('rub-') and v[4:].isdigit()]
+        n = (max(used) + 1) if used else 1
+        return f'rub-{n:06d}'
+
+    results = []
+    for md in sorted(rub_root.rglob('*.md')):
+        text = md.read_text(encoding='utf-8')
+        fm = parse_fm(text)
+        if fm.get('type') != 'rubbing':
+            continue
+
+        rubbing_id = fm.get('rubbing_id', '') or md.stem
+        key = rubbing_id
+
+        if key not in rub_map:
+            rub_map[key] = next_rub_id()
+        rid = rub_map[key]
+
+        # Resolve inscription → insc-NNNNNN
+        insc_link = strip_wikilink(fm.get('inscription', ''))
+        insc_id = insc_id_map.get(insc_link, '')
+
+        # Resolve holding institution → coll-NNNNNN
+        inst_name = strip_wikilink(fm.get('holding_institution', ''))
+        coll_id = coll_map_by_name.get(inst_name, '')
+
+        # Inventory: skip empty lists
+        inv_raw = fm.get('inventory_number', '')
+        if isinstance(inv_raw, list) or inv_raw == '[]':
+            inv_raw = ''
+        inv = str(inv_raw).strip() if inv_raw else ''
+
+        # Name: prefer main objectName form from rubbing_id
+        parts = [p for p in [insc_link, inst_name, inv] if p]
+        name = ' — '.join(parts) if parts else rubbing_id
+
+        results.append({
+            'id': rid,
+            'rubbing_id': rubbing_id,
+            'name': name,
+            'inscription_id': insc_id,
+            'inscription_name': insc_link,
+            'collection_id': coll_id,
+            'collection_name': inst_name,
+            'inventory_number': inv,
+            'inventory_number_local': fm.get('inventory_number_local', ''),
+            'inventory_url': fm.get('inventory_url', ''),
+            'iiif_manifest': fm.get('iiif_manifest', ''),
+            'holding_country': fm.get('holding_country', ''),
+            'sheet_count': _int_field(fm.get('sheet_count', '')),
+            'sheet_height_mm': _int_field(fm.get('sheet_height_mm', '')),
+            'sheet_width_mm': _int_field(fm.get('sheet_width_mm', '')),
+            'coverage': fm.get('coverage_en', ''),
+        })
+
+    return results, {'count': len(results)}
+
+
+def write_collections_xml(collections, path):
+    """Write data/registers/collections.xml."""
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<TEI xmlns="http://www.tei-c.org/ns/1.0">',
+        f'{INDENT}<teiHeader>',
+        f'{INDENT*2}<fileDesc>',
+        f'{INDENT*3}<titleStmt><title>Rubbing Collections 拓片收藏</title></titleStmt>',
+        f'{INDENT*3}<publicationStmt><p>EpiWen</p></publicationStmt>',
+        f'{INDENT*3}<sourceDesc><p>Imported from research vault</p></sourceDesc>',
+        f'{INDENT*2}</fileDesc>',
+        f'{INDENT}</teiHeader>',
+        f'{INDENT}<standOff xml:id="pb-collections">',
+        f'{INDENT*2}<listOrg>',
+    ]
+    for c in sorted(collections, key=lambda x: x['name'].lower()):
+        lines.append(f'{INDENT*3}<org xml:id="{xe(c["id"])}">',)
+        lines.append(f'{INDENT*4}<orgName type="main">{xe(c["name"])}</orgName>')
+        if c.get('country'):
+            lines.append(f'{INDENT*4}<country key="{xe(c["country"])}">{xe(c["country"])}</country>')
+        lines.append(f'{INDENT*3}</org>')
+    lines += [
+        f'{INDENT*2}</listOrg>',
+        f'{INDENT}</standOff>',
+        '</TEI>',
+    ]
+    Path(path).write_text('\n'.join(lines), encoding='utf-8')
+
+
+def write_rubbings_xml(rubbings, path):
+    """Write data/registers/rubbings.xml."""
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<TEI xmlns="http://www.tei-c.org/ns/1.0">',
+        f'{INDENT}<teiHeader>',
+        f'{INDENT*2}<fileDesc>',
+        f'{INDENT*3}<titleStmt><title>Rubbings 拓片</title></titleStmt>',
+        f'{INDENT*3}<publicationStmt><p>EpiWen</p></publicationStmt>',
+        f'{INDENT*3}<sourceDesc><p>Imported from research vault</p></sourceDesc>',
+        f'{INDENT*2}</fileDesc>',
+        f'{INDENT}</teiHeader>',
+        f'{INDENT}<standOff xml:id="pb-rubbings">',
+        f'{INDENT*2}<listObject type="rubbing">',
+    ]
+    for r in sorted(rubbings, key=lambda x: x['name'].lower()):
+        corresp = r['inscription_id'] or r['inscription_name']
+        attrs = f'xml:id="{xe(r["id"])}" type="rubbing"'
+        if corresp:
+            attrs += f' corresp="{xe(corresp)}"'
+        lines.append(f'{INDENT*3}<object {attrs}>')
+        lines.append(f'{INDENT*4}<objectName type="main">{xe(r["name"])}</objectName>')
+        if r.get('rubbing_id'):
+            lines.append(f'{INDENT*4}<objectName type="rubbing-id">{xe(r["rubbing_id"])}</objectName>')
+        # objectIdentifier block
+        lines.append(f'{INDENT*4}<objectIdentifier>')
+        if r.get('collection_name'):
+            cref = f' corresp="{xe(r["collection_id"])}"' if r.get('collection_id') else ''
+            lines.append(f'{INDENT*5}<repository{cref}>{xe(r["collection_name"])}</repository>')
+        if r.get('holding_country'):
+            lines.append(f'{INDENT*5}<country key="{xe(r["holding_country"])}"/>')
+        if r.get('inventory_number'):
+            lines.append(f'{INDENT*5}<idno type="inventory">{xe(r["inventory_number"])}</idno>')
+        if r.get('inventory_number_local'):
+            lines.append(f'{INDENT*5}<idno type="local">{xe(r["inventory_number_local"])}</idno>')
+        if r.get('inventory_url'):
+            lines.append(f'{INDENT*5}<ptr type="catalog" target="{xe(r["inventory_url"])}"/>')
+        if r.get('iiif_manifest'):
+            lines.append(f'{INDENT*5}<ptr type="iiif" target="{xe(r["iiif_manifest"])}"/>')
+        lines.append(f'{INDENT*4}</objectIdentifier>')
+        # physDesc block
+        if r.get('sheet_count') or r.get('sheet_height_mm'):
+            lines.append(f'{INDENT*4}<physDesc>')
+            lines.append(f'{INDENT*5}<objectDesc><supportDesc><support>')
+            if r.get('sheet_count'):
+                lines.append(f'{INDENT*6}<measure type="sheets" quantity="{xe(r["sheet_count"])}"/>')
+            if r.get('sheet_height_mm') and r.get('sheet_width_mm'):
+                lines.append(f'{INDENT*6}<dimensions unit="mm">')
+                lines.append(f'{INDENT*7}<height>{xe(r["sheet_height_mm"])}</height>')
+                lines.append(f'{INDENT*7}<width>{xe(r["sheet_width_mm"])}</width>')
+                lines.append(f'{INDENT*6}</dimensions>')
+            if r.get('coverage'):
+                lines.append(f'{INDENT*6}<condition>{xe(r["coverage"])}</condition>')
+            lines.append(f'{INDENT*5}</support></supportDesc></objectDesc>')
+            lines.append(f'{INDENT*4}</physDesc>')
+        lines.append(f'{INDENT*3}</object>')
+    lines += [
+        f'{INDENT*2}</listObject>',
+        f'{INDENT}</standOff>',
+        '</TEI>',
+    ]
+    Path(path).write_text('\n'.join(lines), encoding='utf-8')
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def main():
@@ -1593,13 +1847,27 @@ def main():
     existing_pmap  = load_existing_person_map(persons_path)
     resolve_author_ids(works, vault_persons, existing_pmap)
 
-    # 9. Save id map (assigns have already been made above)
+    # 9. Import rubbing collections
+    print('Importing rubbing collections …', file=sys.stderr)
+    collections, coll_stats = import_collections(vault, id_map)
+    print(f'  {coll_stats["count"]} collections', file=sys.stderr)
+
+    # 10. Import rubbings (link to inscriptions and collections)
+    print('Importing rubbings …', file=sys.stderr)
+    coll_map_by_name = {c['name']: c['id'] for c in collections}
+    insc_id_map = id_map.get('inscriptions', {})
+    rubbings, rub_stats = import_rubbings(vault, id_map, coll_map_by_name, insc_id_map)
+    print(f'  {rub_stats["count"]} rubbings', file=sys.stderr)
+
+    # 11. Save id map (assigns have already been made above)
     if not args.dry_run:
         save_id_map(id_map, args.id_map)
 
-    # 10. Write works.xml
-    works_path  = data_pkg / 'data/registers/works.xml'
-    jinshi_path = data_pkg / 'data/registers/jinshi.xml'
+    # 12. Write works.xml
+    works_path       = data_pkg / 'data/registers/works.xml'
+    jinshi_path      = data_pkg / 'data/registers/jinshi.xml'
+    collections_path = data_pkg / 'data/registers/collections.xml'
+    rubbings_path    = data_pkg / 'data/registers/rubbings.xml'
 
     if not args.dry_run:
         # Preserve non-vault objects (e.g. insc-demo-000001)
@@ -1610,10 +1878,14 @@ def main():
         write_works_xml(works, works_path)
         write_jinshi_xml(inscriptions, preserved, jinshi_path)
         merge_persons_xml(vault_persons, persons_path, nianhao)
+        write_collections_xml(collections, collections_path)
+        write_rubbings_xml(rubbings, rubbings_path)
         print(f'Wrote {works_path}', file=sys.stderr)
         print(f'Wrote {jinshi_path}', file=sys.stderr)
+        print(f'Wrote {collections_path}', file=sys.stderr)
+        print(f'Wrote {rubbings_path}', file=sys.stderr)
 
-    # 11. Write report
+    # 13. Write report
     write_report(work_stats, insc_stats, person_stats,
                  inscriptions, args.report, args.dry_run)
     print(f'Wrote {args.report}', file=sys.stderr)

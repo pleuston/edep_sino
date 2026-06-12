@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    ---json
+    {
+        "templating": {
+            "extends": "templates/layouts/content.html"
+        },
+        "features": {
+            "toolbar": {
+                "zoom": false,
+                "navigation": false
+            },
+            "timeline": {
+                "enabled": false
+            },
+            "upload": {
+                "enabled": false
+            }
+        },
+        "styles": [
+            "transform/teipublisher.css",
+            "resources/css/registers-theme.css"
+        ]
+    }
+    ---
+    [% template breadcrumb %]
+    <li>
+        <nav aria-label="breadcrumb">
+            <ul>
+                <li><a href="[[ $context-path ]]/rubbings"><pb-i18n key="menu.rubbings"/></a></li>
+                <li>[[ head(($entity-data?root//tei:objectName[@type='main'], $entity-data?root//tei:objectName))/string() ]]</li>
+            </ul>
+        </nav>
+    </li>
+    [% endtemplate %]
+    <section class="rubbing jinshi-detail">
+        <h1>[[ head(($entity-data?root//tei:objectName[@type='main'], $entity-data?root//tei:objectName))/string() ]]</h1>
+
+        <dl class="rubbing-meta">
+            [% if $entity-data?root//tei:objectIdentifier/tei:repository != '' %]
+            <dt><pb-i18n key="rubbings.collection"/></dt>
+            <dd>
+                [% let $cref = $entity-data?root//tei:objectIdentifier/tei:repository/@corresp %]
+                [% if $cref != '' %]
+                <a href="[[ $context-path ]]/collections/[[ $cref ]]">[[ $entity-data?root//tei:objectIdentifier/tei:repository/string() ]]</a>
+                [% else %]
+                [[ $entity-data?root//tei:objectIdentifier/tei:repository/string() ]]
+                [% endif %]
+                [% endlet %]
+            </dd>
+            [% endif %]
+            [% if $entity-data?root//tei:objectIdentifier/tei:idno[@type='inventory'] != '' %]
+            <dt><pb-i18n key="form.inventory-number"/></dt>
+            <dd>[[ $entity-data?root//tei:objectIdentifier/tei:idno[@type='inventory']/string() ]]</dd>
+            [% endif %]
+            [% if $entity-data?root//tei:objectIdentifier/tei:idno[@type='local'] != '' %]
+            <dt><pb-i18n key="rubbings.local-shelfmark"/></dt>
+            <dd>[[ $entity-data?root//tei:objectIdentifier/tei:idno[@type='local']/string() ]]</dd>
+            [% endif %]
+            [% if $entity-data?root/tei:physDesc//tei:measure[@type='sheets'] != '' %]
+            <dt><pb-i18n key="rubbings.sheets"/></dt>
+            <dd>[[ $entity-data?root/tei:physDesc//tei:measure[@type='sheets']/@quantity ]]</dd>
+            [% endif %]
+            [% if $entity-data?root/tei:physDesc//tei:dimensions %]
+            <dt><pb-i18n key="rubbings.dimensions"/></dt>
+            <dd>[[ $entity-data?root/tei:physDesc//tei:dimensions/tei:height ]] × [[ $entity-data?root/tei:physDesc//tei:dimensions/tei:width ]] mm</dd>
+            [% endif %]
+            [% if $entity-data?root/tei:physDesc//tei:condition != '' %]
+            <dt><pb-i18n key="rubbings.condition"/></dt>
+            <dd>[[ $entity-data?root/tei:physDesc//tei:condition/string() ]]</dd>
+            [% endif %]
+        </dl>
+
+        [% if $entity-data?root/@corresp != '' %]
+        <section class="inscription-link">
+            <h2><pb-i18n key="jinshi.authority-record"/></h2>
+            <p><a href="[[ $context-path ]]/jinshi-inscriptions/[[ $entity-data?root/@corresp ]]">[[ $entity-data?root/@corresp ]]</a></p>
+        </section>
+        [% endif %]
+
+        [% if exists($entity-data?root//tei:listBibl[@type='published-in']/tei:bibl) %]
+        <section class="published-in">
+            <h2><pb-i18n key="rubbings.published-in"/></h2>
+            <ul>
+                [% for $b in $entity-data?root//tei:listBibl[@type='published-in']/tei:bibl %]
+                <li>[[ $b/string() ]]</li>
+                [% endfor %]
+            </ul>
+        </section>
+        [% endif %]
+
+        [% for $n in $entity-data?root/tei:note %]
+        <p class="note">[[ $n/string() ]]</p>
+        [% endfor %]
+
+        [% if $entity-data?root//tei:ptr[@type='iiif'] != '' %]
+        <section class="iiif-viewer">
+            <h2><pb-i18n key="rubbings.digital-facsimile"/></h2>
+            <a href="[[ $entity-data?root//tei:ptr[@type='iiif']/@target ]]" target="_blank" rel="noopener">
+                <pb-i18n key="rubbings.view-iiif"/>
+            </a>
+        </section>
+        [% endif %]
+    </section>
+</template>

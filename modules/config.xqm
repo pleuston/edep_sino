@@ -335,6 +335,16 @@ declare variable $config:register-map := map {
         "id": "pb-jinshi",
         "default": "inscription-default",
         "prefix": "insc-"
+    },
+    "collection": map {
+        "id": "pb-collections",
+        "default": "collection-default",
+        "prefix": "coll-"
+    },
+    "rubbing": map {
+        "id": "pb-rubbings",
+        "default": "rubbing-default",
+        "prefix": "rub-"
     }
 };
 

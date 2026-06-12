@@ -96,6 +96,14 @@
         "id": "works"
       },
       {
+        "url": "collections",
+        "id": "collections"
+      },
+      {
+        "url": "rubbings",
+        "id": "rubbings"
+      },
+      {
         "url": "people",
         "id": "people"
       },

@@ -195,7 +195,9 @@
         "sites": "Fundorte",
         "works": "Werke",
         "jinshi": "Katalog",
-        "chronology": "Chronologie"
+        "chronology": "Chronologie",
+        "collections": "Sammlungen",
+        "rubbings": "Abreibungen"
     },
     "metadata": {
         "additional": "Allgemeine Angaben",

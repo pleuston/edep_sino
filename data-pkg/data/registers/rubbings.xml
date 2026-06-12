@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt><title>Rubbings 拓片</title></titleStmt>
+            <publicationStmt><p>EpiWen</p></publicationStmt>
+            <sourceDesc><p>Imported from research vault</p></sourceDesc>
+        </fileDesc>
+    </teiHeader>
+    <standOff xml:id="pb-rubbings">
+        <listObject type="rubbing">
+            <object xml:id="rub-000001" type="rubbing" corresp="JSY_1">
+                <objectName type="main">JSY_1</objectName>
+                <objectName type="rubbing-id">SNS 1_Yanagi Muneyoshi 杉山亨司</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000011" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_LOST_1764_Leontev</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000013" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_MTA_1879_Szechenyi</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000014" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_PRIV_2006_Keevak</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000016" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_PUB_1898_Grenard</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000020" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_UNK_1625_LiZhizao</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000021" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_UNK_1629_Terencio</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000022" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_UNK_1652_Boym</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000023" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_UNK_1850_Bridgman</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000024" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_UNK_1853_BridgmanWylie</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000025" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_UNK_1866_Williamson</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000026" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑</objectName>
+                <objectName type="rubbing-id">景教碑_rub_UNK_1872_Richthofen</objectName>
+                <objectIdentifier>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000005" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Bibliothèque nationale de France (BnF), Paris — framed</objectName>
+                <objectName type="rubbing-id">景教碑_rub_BNF_1728_Premare</objectName>
+                <objectIdentifier>
+                    <repository>Bibliothèque nationale de France (BnF), Paris — framed</repository>
+                    <country key="# see institution wiki page"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000006" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Bodleian Library — MS.Or.Polygl.a.2(R)   # Bodleian's own shelfmark</objectName>
+                <objectName type="rubbing-id">景教碑_rub_BodL_MSOrPolyglA2R</objectName>
+                <objectIdentifier>
+                    <repository corresp="coll-000003">Bodleian Library</repository>
+                    <country key="GB"/>
+                    <idno type="inventory">MS.Or.Polygl.a.2(R)   # Bodleian's own shelfmark</idno>
+                    <idno type="local">MS.Or.Polygl.a.2(R)</idno>
+                    <ptr type="catalog" target="https://digital.bodleian.ox.ac.uk/objects/421b7939-9679-49bd-9a9b-b0aa7fdbdefa/   # Digital.Bodleian item page"/>
+                    <ptr type="iiif" target="https://iiif.bodleian.ox.ac.uk/iiif/manifest/421b7939-9679-49bd-9a9b-b0aa7fdbdefa.json"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000007" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Bodleian Library — OB506d1-4   # EFEO côte (cross-walked to local shelfmark when available)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_BodL_OB506d1-4</objectName>
+                <objectIdentifier>
+                    <repository corresp="coll-000003">Bodleian Library</repository>
+                    <country key="GB"/>
+                    <idno type="inventory">OB506d1-4   # EFEO côte (cross-walked to local shelfmark when available)</idno>
+                    <idno type="local"># TBD: query the holding institution directly</idno>
+                    <ptr type="catalog" target="https://solo.bodleian.ox.ac.uk/   # Bodleian SOLO catalogue (also try digital.bodleian.ox.ac.uk for IIIF)"/>
+                    <ptr type="iiif" target="# TBD: many of these institutions expose IIIF (use connectors/iiif.py)"/>
+                </objectIdentifier>
+                <physDesc>
+                    <objectDesc><supportDesc><support>
+                        <measure type="sheets" quantity="4"/>
+                        <condition>whole</condition>
+                    </support></supportDesc></objectDesc>
+                </physDesc>
+            </object>
+            <object xml:id="rub-000003" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — British Library — BL120   # EFEO côte (cross-walked to local shelfmark when available)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_BL_120</objectName>
+                <objectIdentifier>
+                    <repository corresp="coll-000004">British Library</repository>
+                    <country key="GB"/>
+                    <idno type="inventory">BL120   # EFEO côte (cross-walked to local shelfmark when available)</idno>
+                    <idno type="local"># likely Or. 15406.a.X (sister BL holding to BLchS5c which is Or. 15406.a.35); exact sub-shelfmark TBD</idno>
+                    <ptr type="catalog" target="https://searcharchives.bl.uk/   # BL Archives &amp; Manuscripts catalogue"/>
+                    <ptr type="iiif" target="# TBD: many of these institutions expose IIIF (use connectors/iiif.py)"/>
+                </objectIdentifier>
+                <physDesc>
+                    <objectDesc><supportDesc><support>
+                        <measure type="sheets" quantity="2"/>
+                        <condition>partial</condition>
+                    </support></supportDesc></objectDesc>
+                </physDesc>
+            </object>
+            <object xml:id="rub-000004" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — British Library — BLchS5c   # EFEO côte (cross-walked to local shelfmark when available)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_BL_Or15406a35</objectName>
+                <objectIdentifier>
+                    <repository corresp="coll-000004">British Library</repository>
+                    <country key="GB"/>
+                    <idno type="inventory">BLchS5c   # EFEO côte (cross-walked to local shelfmark when available)</idno>
+                    <idno type="local">&quot;Or. 15406.a.35&quot;   # inferred from EFEO record `Ancienne cote: BL15406a35` mapped to BL Oriental shelfmark series Or. 15406.a.X (confirmed series in use for Chinese rubbings — see Or. 15406.a.66 = Yellow Temple inscription Beijing 1780)</idno>
+                    <ptr type="catalog" target="https://searcharchives.bl.uk/   # BL Archives &amp; Manuscripts catalogue (search by shelfmark &quot;Or. 15406&quot;)"/>
+                    <ptr type="iiif" target="# TBD: many of these institutions expose IIIF (use connectors/iiif.py)"/>
+                </objectIdentifier>
+                <physDesc>
+                    <objectDesc><supportDesc><support>
+                        <measure type="sheets" quantity="1"/>
+                        <condition>partial</condition>
+                    </support></supportDesc></objectDesc>
+                </physDesc>
+            </object>
+            <object xml:id="rub-000017" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Casa Professa (Domus Professa) of the Jesuits in Rome</objectName>
+                <objectName type="rubbing-id">景教碑_rub_ROM-CasaProfessa_pre1636_Kircher</objectName>
+                <objectIdentifier>
+                    <repository>Casa Professa (Domus Professa) of the Jesuits in Rome</repository>
+                    <country key="# see institution wiki page"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000010" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Franciscan convent Santa Maria in Aracoeli, Rome</objectName>
+                <objectName type="rubbing-id">景教碑_rub_LOST_1734_Castorano</objectName>
+                <objectIdentifier>
+                    <repository>Franciscan convent Santa Maria in Aracoeli, Rome</repository>
+                    <country key="# see institution wiki page"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000009" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Institut des hautes études chinoises (IHEC) — Collège de France — IH1178   # EFEO côte (cross-walked to local shelfmark when available)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_IHEC_IH1178</objectName>
+                <objectIdentifier>
+                    <repository corresp="coll-000011">Institut des hautes études chinoises (IHEC) — Collège de France</repository>
+                    <country key="FR"/>
+                    <idno type="inventory">IH1178   # EFEO côte (cross-walked to local shelfmark when available)</idno>
+                    <idno type="local"># TBD: query the holding institution directly</idno>
+                    <ptr type="catalog" target="https://www.college-de-france.fr/en/institut-hautes-etudes-chinoises   # IHEC at Collège de France; catalogue search via SUDOC or the College library"/>
+                    <ptr type="iiif" target="# TBD: many of these institutions expose IIIF (use connectors/iiif.py)"/>
+                </objectIdentifier>
+                <physDesc>
+                    <objectDesc><supportDesc><support>
+                        <measure type="sheets" quantity="2"/>
+                        <condition>partial</condition>
+                    </support></supportDesc></objectDesc>
+                </physDesc>
+            </object>
+            <object xml:id="rub-000002" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Jesuit Archives, Rome (Japonica-Sinica I-IV)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_ARSI_1644_DiasJr</objectName>
+                <objectIdentifier>
+                    <repository>Jesuit Archives, Rome (Japonica-Sinica I-IV)</repository>
+                    <country key="# see institution wiki page"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000012" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Metropolitan Museum of Art (?) — Hall was their first curator of sculptures and antiquities until his death; rubbing's institutional disposition still unconfirmed</objectName>
+                <objectName type="rubbing-id">景教碑_rub_MET_1886_Hall</objectName>
+                <objectIdentifier>
+                    <repository>Metropolitan Museum of Art (?) — Hall was their first curator of sculptures and antiquities until his death; rubbing's institutional disposition still unconfirmed</repository>
+                    <country key="US"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000027" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Original rubbings: location unknown (probably in Holm's papers / estate). Stone replica: Vatican (since 1917 via Mrs. George Leary's gift to the Pope) — NOT Yale (correction).</objectName>
+                <objectName type="rubbing-id">景教碑_rub_UNK_1907_Holm</objectName>
+                <objectIdentifier>
+                    <repository>Original rubbings: location unknown (probably in Holm's papers / estate). Stone replica: Vatican (since 1917 via Mrs. George Leary's gift to the Pope) — NOT Yale (correction).</repository>
+                    <country key="# see institution wiki page"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000018" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Originally Musaeum Collegii Romani (Museum of the Roman College); possibly post-1709 in 'second chamber'; current location in Rome unknown</objectName>
+                <objectName type="rubbing-id">景教碑_rub_ROM-CollegioRomano_post1636_Kircher</objectName>
+                <objectIdentifier>
+                    <repository>Originally Musaeum Collegii Romani (Museum of the Roman College); possibly post-1709 in 'second chamber'; current location in Rome unknown</repository>
+                    <country key="# see institution wiki page"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000015" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Published facsimile (3 vols, Imprimerie de la Mission catholique, Shanghai, 1895-1902); freely available digital surrogates on Gallica + Internet Archive. Source rubbing: unspecified by Havret.</objectName>
+                <objectName type="rubbing-id">景教碑_rub_PUB_1895_Havret</objectName>
+                <objectIdentifier>
+                    <repository>Published facsimile (3 vols, Imprimerie de la Mission catholique, Shanghai, 1895-1902); freely available digital surrogates on Gallica + Internet Archive. Source rubbing: unspecified by Havret.</repository>
+                    <country key="FR"/>
+                    <ptr type="catalog" target="https://archive.org/details/lastlechrtienne00havrgoog"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000019" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Société asiatique — SA386   # EFEO côte (cross-walked to local shelfmark when available)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_SA_386</objectName>
+                <objectIdentifier>
+                    <repository corresp="coll-000022">Société asiatique</repository>
+                    <country key="FR"/>
+                    <idno type="inventory">SA386   # EFEO côte (cross-walked to local shelfmark when available)</idno>
+                    <idno type="local"># TBD: query the holding institution directly</idno>
+                    <ptr type="catalog" target="https://www.college-de-france.fr/en/library-archives/asian-society-library   # SA library is hosted at Collège de France"/>
+                    <ptr type="iiif" target="# TBD: many of these institutions expose IIIF (use connectors/iiif.py)"/>
+                </objectIdentifier>
+                <physDesc>
+                    <objectDesc><supportDesc><support>
+                        <measure type="sheets" quantity="4"/>
+                        <condition>whole</condition>
+                    </support></supportDesc></objectDesc>
+                </physDesc>
+            </object>
+            <object xml:id="rub-000029" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Vatican (Vaticano / Status Civitatis Vaticanae)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_VAT_1680_Couplet</objectName>
+                <objectIdentifier>
+                    <repository>Vatican (Vaticano / Status Civitatis Vaticanae)</repository>
+                    <country key="# see institution wiki page"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000028" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — Victoria and Albert Museum — E.690-1922   # V&amp;A's own accession number (acquired 1922)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_VAM_E690-1922</objectName>
+                <objectIdentifier>
+                    <repository>Victoria and Albert Museum</repository>
+                    <country key="GB"/>
+                    <idno type="inventory">E.690-1922   # V&amp;A's own accession number (acquired 1922)</idno>
+                    <idno type="local">E.690-1922</idno>
+                    <ptr type="catalog" target="https://collections.vam.ac.uk/item/O487928/rubbing-of-the-nestorian-stele-rubbing/"/>
+                </objectIdentifier>
+            </object>
+            <object xml:id="rub-000008" type="rubbing" corresp="insc-000144">
+                <objectName type="main">景教碑 — École française d'Extrême-Orient (EFEO) — EF89   # EFEO côte (cross-walked to local shelfmark when available)</objectName>
+                <objectName type="rubbing-id">景教碑_rub_EFEO_EF89</objectName>
+                <objectIdentifier>
+                    <repository>École française d'Extrême-Orient (EFEO)</repository>
+                    <country key="FR"/>
+                    <idno type="inventory">EF89   # EFEO côte (cross-walked to local shelfmark when available)</idno>
+                    <idno type="local"># TBD: query the holding institution directly</idno>
+                    <ptr type="catalog" target="https://estampages.efeo.fr/detfich.php?estamp_id=201&amp;table=est_EFEO&amp;pageCrte=0   # EFEO Paris uses the Estampages aggregator AS its own catalogue"/>
+                    <ptr type="iiif" target="# TBD: many of these institutions expose IIIF (use connectors/iiif.py)"/>
+                </objectIdentifier>
+                <physDesc>
+                    <objectDesc><supportDesc><support>
+                        <measure type="sheets" quantity="1"/>
+                        <condition>whole</condition>
+                    </support></supportDesc></objectDesc>
+                </physDesc>
+            </object>
+        </listObject>
+    </standOff>
+</TEI>

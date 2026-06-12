@@ -80,9 +80,11 @@ declare function rapi:save($request as map(*)) {
 
     let $type := local-name($body)
     let $type := switch($type)
-                    case "org" return "organization"
+                    case "org" return
+                        if (starts-with($id, "coll-")) then "collection" else "organization"
                     case "bibl" return "work"
-                    case "object" return "inscription"
+                    case "object" return
+                        if (starts-with($id, "rub-")) then "rubbing" else "inscription"
                     default return $type
     let $id := ($body/@xml:id, $request?parameters?id)[1]
 
@@ -128,6 +130,10 @@ declare function rapi:insert-point($type as xs:string) {
             collection($config:register-root)/id($root)//tei:listBibl
         case "inscription" return
             collection($config:register-root)/id($root)//tei:listObject
+        case "collection" return
+            collection($config:register-root)/id($root)//tei:listOrg[@xml:id = 'pb-collections']
+        case "rubbing" return
+            collection($config:register-root)/id($root)//tei:listObject[@type = 'rubbing']
         default return
             collection($config:register-root)/id($root)//tei:listPerson
 };
@@ -217,6 +223,21 @@ declare function rapi:prepare-record($node as item()*, $resp, $type) {
                 for $child in $node/node()
                    return $child
               }
+        case element(tei:org)
+            return
+                element {node-name($node)} {
+                for $att in $node/@* except ($node/@xml:id, $node/@resp, $node/@when)
+                   return $att
+                ,
+                attribute xml:id {$id}
+                ,
+                attribute when {format-date(current-date(), '[Y]-[M,2]-[D,2]')}
+                ,
+                attribute resp {$resp}
+                ,
+                for $child in $node/node()
+                   return $child
+              }
         (: all the rest pass it through :)
         default
             return $node
@@ -245,6 +266,10 @@ declare function rapi:next($type) {
             return collection($config:register-root)/id($config?id)//tei:bibl[@type eq 'work'][starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
         case 'inscription'
             return collection($config:register-root)/id($config?id)//tei:object[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
+        case 'collection'
+            return collection($config:register-root)/id($config?id)//tei:org[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
+        case 'rubbing'
+            return collection($config:register-root)/id($config?id)//tei:object[@type='rubbing'][starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
         default
             return collection($config:register-root)/id($config?id)//tei:person[starts-with(@xml:id, $config?prefix)]/substring-after(@xml:id, $config?prefix)
     

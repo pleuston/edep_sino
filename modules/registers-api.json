@@ -41,85 +41,29 @@
     "paths": {
         "/people": {
             "get": {
-				"summary": "Landing page for people",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "people"
-						}
-					},
-					{
-                        "name": "search",
+                "summary": "Landing page for people",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
                         "in": "query",
-                        "schema":{
-                            "type": "string"
+                        "schema": {
+                            "type": "string",
+                            "default": "people"
                         }
                     },
                     {
-                        "name": "odd",
+                        "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
-                    }				
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
-        },
-        "/people/{id}": {
-            "get": {
-				"summary": "Landing page for people",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "rview:detail-html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-                    {
-						"name": "id",
-						"in": "path",
-						"description": "ID of the person",
-						"required": true,						
-						"schema":{
-							"type": "string",
-							"default": "all"
-						}
-					},
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "person"
-						}
-					},
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -127,45 +71,107 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/people/{id}": {
+            "get": {
+                "summary": "Landing page for people",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the person",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "person"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/api/people": {
             "get": {
                 "summary": "List people",
                 "description": "Retrieve list of people in format required by pb-split-list",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:people-categories",
                 "parameters": [
-					{
-						"name": "category",
-						"in": "query",
-						"schema": {
-							"type": "string"
-						}
-					},
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "name": "limit",
                         "in": "query",
@@ -177,7 +183,7 @@
                     {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -202,7 +208,7 @@
                         "description": "Categories and people to display",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -211,11 +217,13 @@
                 }
             }
         },
-		"/api/people/all": {
+        "/api/people/all": {
             "get": {
                 "summary": "List all people",
                 "description": "Retrieve list of all people",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:people-all",
                 "parameters": [
                     {
@@ -227,101 +235,45 @@
                         }
                     }
                 ],
-				"responses": {
+                "responses": {
                     "200": {
                         "description": "List of all people as JSON array",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "array"
                                 }
                             }
                         }
                     }
-				}
-			}			
-		},
+                }
+            }
+        },
         "/bibliography": {
             "get": {
-				"summary": "Landing page for bibliography",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "bibliography"
-						}
-					},
-					{
-                        "name": "search",
+                "summary": "Landing page for bibliography",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
                         "in": "query",
-                        "schema":{
-                            "type": "string"
+                        "schema": {
+                            "type": "string",
+                            "default": "bibliography"
                         }
                     },
                     {
-                        "name": "odd",
+                        "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
-                    }				
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
-        },
-        "/bibliography/{id}": {
-            "get": {
-				"summary": "Landing page for bibliography entry",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["registers"],
-				"operationId": "rview:detail-html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-                    {
-						"name": "id",
-						"in": "path",
-						"description": "ID of the entry",
-						"required": true,						
-						"schema":{
-							"type": "string",
-							"default": "all"
-						}
-					},
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "bibliography-entry"
-						}
-					},
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -329,45 +281,107 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/bibliography/{id}": {
+            "get": {
+                "summary": "Landing page for bibliography entry",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the entry",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "bibliography-entry"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/api/bibliography": {
             "get": {
                 "summary": "List bibliography",
                 "description": "Retrieve list of bibliography in format required by pb-split-list",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:bibliography-categories",
                 "parameters": [
-					{
-						"name": "category",
-						"in": "query",
-						"schema": {
-							"type": "string"
-						}
-					},
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "name": "limit",
                         "in": "query",
@@ -379,7 +393,7 @@
                     {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -396,7 +410,7 @@
                         "description": "Categories and entries to display",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -405,107 +419,53 @@
                 }
             }
         },
-		"/api/bibliography/all": {
+        "/api/bibliography/all": {
             "get": {
                 "summary": "List all bibliography",
                 "description": "Retrieve list of all bibliography",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:bibliography-all",
-				"responses": {
+                "responses": {
                     "200": {
                         "description": "List of all bibliography entries as JSON array",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "array"
                                 }
                             }
                         }
                     }
-				}
-			}			
-		},
-		"/works": {
+                }
+            }
+        },
+        "/works": {
             "get": {
-				"summary": "Landing page for jinshi works 金石著作",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "works"
-						}
-					},
-					{
-                        "name": "search",
+                "summary": "Landing page for jinshi works 金石著作",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
                         "in": "query",
-                        "schema":{
-                            "type": "string"
+                        "schema": {
+                            "type": "string",
+                            "default": "works"
                         }
                     },
                     {
-                        "name": "odd",
+                        "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
-                    }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
-        },
-        "/works/{id}": {
-            "get": {
-				"summary": "Detail page for a jinshi work",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["registers"],
-				"operationId": "rview:detail-html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-                    {
-						"name": "id",
-						"in": "path",
-						"description": "ID of the work",
-						"required": true,
-						"schema":{
-							"type": "string",
-							"default": "all"
-						}
-					},
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "work"
-						}
-					},
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -513,45 +473,107 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/works/{id}": {
+            "get": {
+                "summary": "Detail page for a jinshi work",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the work",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "work"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/api/works": {
             "get": {
                 "summary": "List jinshi works",
                 "description": "Retrieve list of jinshi works in format required by pb-split-list",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:works-categories",
                 "parameters": [
-					{
-						"name": "category",
-						"in": "query",
-						"schema": {
-							"type": "string"
-						}
-					},
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "name": "limit",
                         "in": "query",
@@ -563,7 +585,7 @@
                     {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -580,7 +602,7 @@
                         "description": "Categories and works to display",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -589,107 +611,53 @@
                 }
             }
         },
-		"/api/works/all": {
+        "/api/works/all": {
             "get": {
                 "summary": "List all jinshi works",
                 "description": "Retrieve list of all jinshi works",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:works-all",
-				"responses": {
+                "responses": {
                     "200": {
                         "description": "List of all jinshi works as JSON array",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "array"
                                 }
                             }
                         }
                     }
-				}
-			}
-		},
-		"/jinshi-inscriptions": {
+                }
+            }
+        },
+        "/jinshi-inscriptions": {
             "get": {
-				"summary": "Landing page for the inscription authority register 石刻總目",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "jinshi-inscriptions"
-						}
-					},
-					{
-                        "name": "search",
+                "summary": "Landing page for the inscription authority register 石刻總目",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
                         "in": "query",
-                        "schema":{
-                            "type": "string"
+                        "schema": {
+                            "type": "string",
+                            "default": "jinshi-inscriptions"
                         }
                     },
                     {
-                        "name": "odd",
+                        "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
-                    }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
-        },
-        "/jinshi-inscriptions/{id}": {
-            "get": {
-				"summary": "Detail page for an inscription authority record",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["registers"],
-				"operationId": "rview:detail-html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-                    {
-						"name": "id",
-						"in": "path",
-						"description": "ID of the inscription authority record",
-						"required": true,
-						"schema":{
-							"type": "string",
-							"default": "all"
-						}
-					},
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
-                            "default": "jinshi-inscription"
-						}
-					},
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -697,45 +665,107 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/jinshi-inscriptions/{id}": {
+            "get": {
+                "summary": "Detail page for an inscription authority record",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "registers"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the inscription authority record",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "jinshi-inscription"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
         "/api/jinshi-inscriptions": {
             "get": {
                 "summary": "List inscription authority records",
                 "description": "Retrieve list of inscription authority records in format required by pb-split-list",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:jinshi-categories",
                 "parameters": [
-					{
-						"name": "category",
-						"in": "query",
-						"schema": {
-							"type": "string"
-						}
-					},
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "name": "limit",
                         "in": "query",
@@ -747,7 +777,7 @@
                     {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -764,7 +794,7 @@
                         "description": "Categories and records to display",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -773,42 +803,46 @@
                 }
             }
         },
-		"/api/jinshi-inscriptions/all": {
+        "/api/jinshi-inscriptions/all": {
             "get": {
                 "summary": "List all inscription authority records",
                 "description": "Retrieve list of all inscription authority records",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:jinshi-all",
-				"responses": {
+                "responses": {
                     "200": {
                         "description": "List of all inscription authority records as JSON array",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "array"
                                 }
                             }
                         }
                     }
-				}
-			}
-		},
-		"/chronology": {
+                }
+            }
+        },
+        "/chronology": {
             "get": {
-				"summary": "Chronology page 年表",
-				"description": "Full-field timeline: person lifespans and work dates with dynasty bands.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
+                "summary": "Chronology page 年表",
+                "description": "Full-field timeline: person lifespans and work dates with dynasty bands.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
                             "default": "chronology"
-						}
-					},
+                        }
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -816,51 +850,53 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
-		"/places": {
+        "/places": {
             "get": {
-				"summary": "Landing page for places",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "vapi:html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
+                "summary": "Landing page for places",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
                             "default": "places"
-						}
-					},
-					{
+                        }
+                    },
+                    {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -871,57 +907,59 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
-		"/places/{id}": {
+        "/places/{id}": {
             "get": {
-				"summary": "HTML page for place details",
-				"description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
-				"tags": ["view"],
-				"operationId": "rview:detail-html",
-				"x-error-handler": "vapi:handle-error",
-				"parameters": [
+                "summary": "HTML page for place details",
+                "description": "Retrieve an HTML page expanded through eXist templating. This is used to load the top-level HTML pages, e.g. `index.html`.",
+                "tags": [
+                    "view"
+                ],
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "parameters": [
                     {
-						"name": "id",
-						"in": "path",
-						"description": "ID of the person or place",
-						"required": true,						
-						"schema":{
-							"type": "string",
-							"default": "all"
-						}
-					},
-					{
-						"name": "file",
-						"in": "query",
-						"schema": {
-							"type": "string",
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the person or place",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
                             "default": "place"
-						}
-					},
+                        }
+                    },
                     {
                         "name": "odd",
                         "in": "query",
@@ -929,45 +967,47 @@
                             "type": "string"
                         }
                     }
-				],
-				"responses": {
-					"200": {
-						"description": "HTML of the page",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"404": {
-						"description": "The document was not found",
-						"content": {
-							"text/html": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					}
-				}
-			}
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         },
-		"/api/places": {
+        "/api/places": {
             "get": {
                 "summary": "List places",
                 "description": "Retrieve list of places in format required by pb-split-list",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:places",
                 "parameters": [
-					{
-						"name": "category",
-						"in": "query",
-						"schema": {
-							"type": "string"
-						}
-					},
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
                     {
                         "name": "limit",
                         "in": "query",
@@ -979,7 +1019,7 @@
                     {
                         "name": "search",
                         "in": "query",
-                        "schema":{
+                        "schema": {
                             "type": "string"
                         }
                     },
@@ -1004,7 +1044,7 @@
                         "description": "Categories and places to display",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "object"
                                 }
                             }
@@ -1013,11 +1053,13 @@
                 }
             }
         },
-		"/api/places/all": {
+        "/api/places/all": {
             "get": {
                 "summary": "List all places",
                 "description": "Retrieve list of all places",
-				"tags": ["registers"],
+                "tags": [
+                    "registers"
+                ],
                 "operationId": "rview:places-all",
                 "parameters": [
                     {
@@ -1029,25 +1071,27 @@
                         }
                     }
                 ],
-				"responses": {
+                "responses": {
                     "200": {
                         "description": "List of all places",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
                                     "type": "array"
                                 }
                             }
                         }
                     }
-				}
-			}			
-		},
-		"/api/static/{id}/single": {
+                }
+            }
+        },
+        "/api/static/{id}/single": {
             "get": {
                 "summary": "Retrieve index entry for the document given by id",
                 "description": "Retrieve index entry for the document given by id",
-                "tags": ["static"],
+                "tags": [
+                    "static"
+                ],
                 "operationId": "ridx:entry",
                 "parameters": [
                     {
@@ -1073,7 +1117,399 @@
                         "description": "A single index entry for the document",
                         "content": {
                             "application/json": {
-                                "schema":{
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/collections": {
+            "get": {
+                "summary": "Landing page for rubbing collections 拓片收藏",
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "tags": [
+                    "view"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "collections"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/collections/{id}": {
+            "get": {
+                "summary": "Detail page for a rubbing collection",
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the collection",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "collection"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/collections": {
+            "get": {
+                "summary": "Browse rubbing collections A-Z",
+                "operationId": "rview:collections-categories",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/collections/all": {
+            "get": {
+                "summary": "All rubbing collections as a flat array",
+                "operationId": "rview:collections-all",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rubbings": {
+            "get": {
+                "summary": "Landing page for rubbings 拓片",
+                "operationId": "vapi:html",
+                "x-error-handler": "vapi:handle-error",
+                "tags": [
+                    "view"
+                ],
+                "parameters": [
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "rubbings"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/rubbings/{id}": {
+            "get": {
+                "summary": "Detail page for a rubbing",
+                "operationId": "rview:detail-html",
+                "x-error-handler": "vapi:handle-error",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the rubbing",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "all"
+                        }
+                    },
+                    {
+                        "name": "file",
+                        "in": "query",
+                        "schema": {
+                            "type": "string",
+                            "default": "rubbing"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "HTML of the page",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The document was not found",
+                        "content": {
+                            "text/html": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/rubbings": {
+            "get": {
+                "summary": "Browse rubbings A-Z",
+                "operationId": "rview:rubbings-categories",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "category",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/rubbings/all": {
+            "get": {
+                "summary": "All rubbings as a flat array",
+                "operationId": "rview:rubbings-all",
+                "tags": [
+                    "registers"
+                ],
+                "parameters": [
+                    {
+                        "name": "odd",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "JSON",
+                        "content": {
+                            "application/json": {
+                                "schema": {
                                     "type": "object"
                                 }
                             }
