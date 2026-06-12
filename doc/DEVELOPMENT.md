@@ -106,6 +106,12 @@ curl -u admin: --data-urlencode '_query=xmldb:reindex("/db/apps/epiwen-data/data
 
 New ids are appended to `scripts/jinshi-id-map.json` (committed). Hand-seeded ids (`work-000001`, `work-000002`, `insc-000001`, etc.) are pre-registered there; the importer merges rather than duplicates. Import report at `scripts/jinshi-import-report.md` lists parse rates, unresolved links, and unparsed attestation lines.
 
+## Data permissions (why editor saves 500)
+
+The editor saves as `tei`/simple via `xmldb:store`, so the data collections must be **`tei:tei`, group-writable**. `data-pkg/post-install.xql` sets this (`rwxrwxr-x` on collections, `rw-rw-r--` on files) for `workspace`, `registers`, `places`, `people`, etc. If a save returns **500 "Write permission is not granted on the Collection"** — or in-place register edits fail — the deployed permissions have drifted (commonly: files re-stored by `admin` via REST PUT). Fix by re-running the `post-install.xql` chown/chgrp/chmod block as admin. Register files specifically need **`tei` ownership** (eXist takes a collection-wide write lock for in-place updates), so after deploying a register XML via admin PUT, restore `tei` ownership.
+
+**Persons store:** `registers/persons.xml` (`pb-persons`) is the single read source — list, detail, chronology, and editor person-picker (`/api/editor/people`). The legacy `data/people/*.xml` per-file store is retained only for the editor person-entity CRUD route (`/api/editor/people/{id}`).
+
 ## Adding a new register type
 
 Checklist (pattern: the `inscription` type added in M-J1):
