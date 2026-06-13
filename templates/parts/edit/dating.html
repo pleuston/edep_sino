@@ -58,8 +58,12 @@
                         <span class="era-label">{@dynasty} · {@emperor} · {@name}{if (string(@nToken)) then concat(' — ', @nToken) else ''}</span>
                         <span class="era-dates">{if (string(@when)) then concat(@when, ' (', @notBefore, ' … ', @notAfter, ')') else concat(@notBefore, '–', @notAfter)}</span>
                         <span class="era-gz">{@gz}</span>
-                        <span class="era-warning gz-mismatch">{if (@gzMatch = 'false') then concat('干支不合: 應為 ', @gz) else ''}</span>
-                        <span class="era-warning">{if (@yearOutOfRange = 'true') then '年份超出此年號範圍' else ''}</span>
+                        <fx-group ref=".[@gzMatch = 'false']">
+                            <span class="era-warning gz-mismatch"><pb-i18n key="form.gz-mismatch">干支不合，應為</pb-i18n> {@gz}</span>
+                        </fx-group>
+                        <fx-group ref=".[@yearOutOfRange = 'true']">
+                            <span class="era-warning"><pb-i18n key="form.year-out-of-range">年份超出此年號範圍</pb-i18n></span>
+                        </fx-group>
                         <fx-trigger>
                             <button class="apply"><pb-i18n key="form.apply-date">Übernehmen</pb-i18n></button>
                             <fx-setvalue ref="instance('default')//origin/origDate/@when" value="context()/@when"></fx-setvalue>
@@ -123,5 +127,27 @@
                 </fx-repeat>
             </select>
         </fx-control>
+
+        <section class="form-row">
+            <!-- dating confidence (doc/sino-model.md §1: dynasty-only / contested = low) -->
+            <fx-control ref="@cert" create="create">
+                <label><pb-i18n key="form.date-cert">Sicherheit</pb-i18n></label>
+                <select class="widget">
+                    <option value=""></option>
+                    <option value="high" data-i18n="form.cert-high">certain</option>
+                    <option value="medium" data-i18n="form.cert-medium">probable</option>
+                    <option value="low" data-i18n="form.cert-low">uncertain</option>
+                </select>
+            </fx-control>
+            <!-- calendar systems referenced (multi-valued CURIEs, e.g. #reign-tang #ganzhi) -->
+            <fx-control ref="@calendar" create="create">
+                <label><pb-i18n key="form.calendar">Kalender</pb-i18n></label>
+                <input class="widget" placeholder="#reign-tang #ganzhi"/>
+                <pb-popover>
+                    <edep-icon name="help-circle-outline"></edep-icon>
+                    <template slot="alternate"><pb-i18n key="form.hint-calendar"/></template>
+                </pb-popover>
+            </fx-control>
+        </section>
     </fx-group>
 </details>

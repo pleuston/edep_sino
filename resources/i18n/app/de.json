@@ -179,7 +179,23 @@
         "jinshi-id": "Normdatensatz (石刻總目)",
         "hint-jinshi-id": "Id dieser Inschrift im Jinshi-Normregister, z. B. insc-000001 — verknüpft die Edition mit ihrer Überlieferungsgeschichte.",
         "identifier": "Identifikator",
-        "view": "Inschrift ansehen"
+        "view": "Inschrift ansehen",
+        "gz-mismatch": "Ganzhi stimmt nicht — erwartet",
+        "year-out-of-range": "Jahr außerhalb der Ära",
+        "idno-type": "Typ",
+        "date-cert": "Sicherheit",
+        "cert-high": "sicher",
+        "cert-medium": "wahrscheinlich",
+        "cert-low": "unsicher",
+        "calendar": "Kalender",
+        "hint-calendar": "Leerzeichengetrennte Kalenderzeiger, z. B. #reign-tang #ganzhi",
+        "scribe": "Kalligraph (書丹)",
+        "scribe-model": "Kalligraphisches Vorbild",
+        "verification-status": "Verifizierungsstatus",
+        "hint-verification-status": "Entwurf = KI-/Import-Entwurf, ungeprüft. Geprüft = adversarial kontrolliert. Verifiziert = menschlich bestätigt.",
+        "status-draft": "Entwurf",
+        "status-reviewed": "geprüft",
+        "status-verified": "verifiziert"
     },
     "menu": {
         "about": "Über das Projekt",
@@ -275,6 +291,7 @@
         "location": "Standort",
         "corpus": "Korpus",
         "taisho": "Taishō-Kanon",
-        "edition": "Transkription (dieses Korpus)"
+        "edition": "Transkription (dieses Korpus)",
+        "same-support": "Weitere Texte auf demselben Träger (同石)"
     }
 }

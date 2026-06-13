@@ -180,7 +180,23 @@
         "jinshi-id": "Authority record (石刻總目)",
         "hint-jinshi-id": "Id of this inscription in the jinshi authority register, e.g. insc-000001 — links the edition to its attestation history.",
         "identifier": "Identifier",
-        "view": "View inscription"
+        "view": "View inscription",
+        "gz-mismatch": "Ganzhi mismatch — expected",
+        "year-out-of-range": "year out of era range",
+        "idno-type": "Type",
+        "date-cert": "Certainty",
+        "cert-high": "certain",
+        "cert-medium": "probable",
+        "cert-low": "uncertain",
+        "calendar": "Calendar",
+        "hint-calendar": "Space-separated calendar pointers, e.g. #reign-tang #ganzhi",
+        "scribe": "Calligrapher (書丹)",
+        "scribe-model": "Calligraphic model",
+        "verification-status": "Verification status",
+        "hint-verification-status": "Draft = AI/import-drafted, unverified. Reviewed = adversarially checked. Verified = human-confirmed.",
+        "status-draft": "draft",
+        "status-reviewed": "reviewed",
+        "status-verified": "verified"
     },
     "menu": {
         "about": "About",
@@ -287,6 +303,7 @@
         "location": "Site",
         "corpus": "Corpus",
         "taisho": "Taishō canon",
-        "edition": "Transcription (this corpus)"
+        "edition": "Transcription (this corpus)",
+        "same-support": "Other texts on this support (同石)"
     }
 }

@@ -202,62 +202,26 @@
 
     <div class="alternatives">
         <fx-group ref="msContents">
+            <!-- Genre 銘文類別 lives in msContents/@class — the canonical home used
+                 by the corpus editions, the new-doc template and import-sutras-data.py.
+                 Single-valued select from the typeins vocabulary; reading it here is
+                 what makes an imported genre (刻經/佛名/題記…) show and round-trip. -->
+            <fx-control ref="@class" create="create" id="msc-genre">
+                <label>
+                    <pb-i18n key="form.type-of-inscription"/>
+                </label>
+                <select class="widget" ref="sortNames(instance('typeins')//category)">
+                    <template>
+                        <option value="{@corresp}">{catDesc[@xml:lang = $lang]}</option>
+                    </template>
+                </select>
+            </fx-control>
             <fx-control ref="summary">
                 <label>
                     <pb-i18n key="form.remarks"/>
                 </label>
                 <textarea class="widget"></textarea>
             </fx-control>
-        </fx-group>
-
-        <fx-group class="neutral" ref="ancestor::teiHeader/profileDesc/textClass">
-            <fx-group ref="keywords[@scheme='https://edh.ub.uni-heidelberg.de/edep/inscription-type']">
-                <fieldset>
-                    <legend>
-                        <pb-i18n key="form.type-of-inscription"/>
-                    </legend>
-                    <fx-repeat
-                        class="nested-repeat repeat-flex"
-                        ref="term"
-                        id="r-inscription-type">
-                        <template>
-                                <fx-control ref="@ref" create="create">
-                                    <label>
-                                        <pb-i18n key="form.type-of-inscription"/>
-                                    </label>
-                                    <select
-                                    class="widget"
-                                    ref="sortNames(instance('typeins')//category)">
-                                        <template>
-                                            <option value="{@corresp}">{catDesc[@xml:lang = $lang]}</option>
-                                        </template>
-                                    </select>
-                                </fx-control>
-                            <fx-trigger>
-                                <pb-popover>
-                                    <edep-icon name="remove-circle-outline"></edep-icon>
-                                    <template slot="alternate">
-                                        <pb-i18n key="form.hint-delete"/>
-                                    </template>
-                                </pb-popover>
-                                <fx-delete ref="."></fx-delete>
-                            </fx-trigger>
-                        </template>
-                    </fx-repeat>
-                    <fx-trigger class="add">
-                        <pb-popover>
-                            <edep-icon name="add-circle-outline"></edep-icon>
-                            <template slot="alternate">
-                                <pb-i18n key="form.hint-add"/>
-                            </template>
-                        </pb-popover>
-                        <fx-insert
-                            context="."
-                            ref="term"
-                            origin="instance('templates')/keywords/term"></fx-insert>
-                    </fx-trigger>
-                </fieldset>
-            </fx-group>
         </fx-group>
     </div>
 

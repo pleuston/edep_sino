@@ -180,7 +180,23 @@
         "jinshi-id": "石刻總目編號",
         "hint-jinshi-id": "本刻石在石刻總目權威檔中的編號（如 insc-000001），用以連結歷代著錄。",
         "identifier": "識別資訊",
-        "view": "查看石刻"
+        "view": "查看石刻",
+        "gz-mismatch": "干支不合，應為",
+        "year-out-of-range": "年份超出此年號範圍",
+        "idno-type": "類型",
+        "date-cert": "確定度",
+        "cert-high": "確定",
+        "cert-medium": "較確定",
+        "cert-low": "存疑",
+        "calendar": "曆法",
+        "hint-calendar": "空格分隔之曆法指標，如 #reign-tang #ganzhi",
+        "scribe": "書丹者",
+        "scribe-model": "書法淵源",
+        "verification-status": "核驗狀態",
+        "hint-verification-status": "草稿＝AI／匯入起草，未核驗。已審＝經對抗式審查。已驗＝人工確認。",
+        "status-draft": "草稿",
+        "status-reviewed": "已審",
+        "status-verified": "已驗"
     },
     "menu": {
         "about": "關於",
@@ -276,6 +292,7 @@
         "location": "位置",
         "corpus": "石經叢",
         "taisho": "大正藏",
-        "edition": "本庫錄文"
+        "edition": "本庫錄文",
+        "same-support": "同石其他刻文"
     }
 }

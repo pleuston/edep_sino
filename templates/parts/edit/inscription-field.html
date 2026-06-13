@@ -71,7 +71,7 @@
                     <pb-popover>
                         <edep-icon name="add-circle-outline"></edep-icon>
                         <template slot="alternate">
-                            <pb-i18n key="form.hint-add-language"/>
+                            <pb-i18n key="form.hint-add"/>
                         </template>
                     </pb-popover>
                     <fx-insert
@@ -86,7 +86,7 @@
                 id="r-letterHeight">
                     <template>
                         <fx-group>
-                            <fx-group class="form-row">                             
+                            <fx-group class="form-row">
                                 <fx-control ref="locus">
                                     <label>
                                         <pb-i18n key="form.line"/>
@@ -115,6 +115,18 @@
                                         <pb-i18n key="form.letter-size-free"></pb-i18n>
                                     </label>
                                     <textarea class="widget"></textarea>
+                                </fx-control>
+                            </fx-group>
+                            <fx-group class="form-row">
+                                <!-- calligrapher cross-ref (doc/sino-model.md §3): links handNote to person authority -->
+                                <fx-control ref="@scribe" create="create" update-event="input">
+                                    <label><pb-i18n key="form.scribe">Calligrapher (書丹)</pb-i18n></label>
+                                    <input class="widget" placeholder="#person-..."/>
+                                </fx-control>
+                                <!-- calligraphic model (法二王 etc.) -->
+                                <fx-control ref="persName[@role='model']" create="create" update-event="input">
+                                    <label><pb-i18n key="form.scribe-model">Calligraphic model</pb-i18n></label>
+                                    <input class="widget" placeholder="法二王"/>
                                 </fx-control>
                             </fx-group>
 

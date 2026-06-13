@@ -17,7 +17,7 @@
         </label>
     </fx-output>
     <fieldset id="idnos">
-        <legend>Identifier
+        <legend><pb-i18n key="form.identifier">Identifier</pb-i18n>
             <fx-trigger class="add">
                 <pb-popover>
                     <edep-icon name="add-circle-outline"></edep-icon>
@@ -34,7 +34,7 @@
         <fx-repeat ref="idno[@type != 'EDEp' and @type != 'jinshi']" class="idno-repeat">
             <template>
                 <fx-control ref="@type">
-                    <label>Type</label>
+                    <label><pb-i18n key="form.idno-type">Type</pb-i18n></label>
                 </fx-control>
                 <fx-control class="idno" ref=".">
                     <label>

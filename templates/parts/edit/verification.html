@@ -2,6 +2,30 @@
     <summary>
         <h2><pb-i18n key="form.verification">Verifizierung</pb-i18n></h2>
     </summary>
+
+    <!-- Verification state machine (doc/sino-model.md §11, 核验): every edition is
+         draft-by-default; promotion to reviewed/verified is a deliberate, audited
+         act. The status rides revisionDesc/@status and is snapshotted into the
+         append-only change trail on every save (api:postprocess). -->
+    <fx-group ref="revisionDesc" class="neutral">
+        <fx-control id="verification-status" ref="@status" create="create">
+            <label>
+                <pb-i18n key="form.verification-status">Verifizierungsstatus</pb-i18n>
+                <pb-popover>
+                    <edep-icon name="info-outline"></edep-icon>
+                    <template slot="alternate">
+                        <pb-i18n key="form.hint-verification-status">Draft = AI/import-drafted, unverified. Reviewed = adversarially checked. Verified = human-confirmed.</pb-i18n>
+                    </template>
+                </pb-popover>
+            </label>
+            <select class="widget">
+                <option value="draft" data-i18n="form.status-draft">Entwurf</option>
+                <option value="reviewed" data-i18n="form.status-reviewed">geprüft</option>
+                <option value="verified" data-i18n="form.status-verified">verifiziert</option>
+            </select>
+        </fx-control>
+    </fx-group>
+
     <fx-group ref="fileDesc/titleStmt">
         <fx-trigger class="add">
             <pb-popover>
