@@ -45,6 +45,10 @@ Pages are `templates/{name}.html`, served at `/{name}.html` via `modules/lib/api
 - `[% include "templates/parts/edit/x.html" %]` splices a fragment.
 - Literal `{ … }` braces pass through untouched (the engine escapes them) — Fore AVT expressions like `url="api/inscription?id={instance('params')/id}"` are safe.
 
+**Template-expression gotchas (each causes a generic "Ooops" page; both bit M-S1):**
+- **Output `string()`, not the node.** `[[ $x/@attr ]]` or `[[ $x/tei:foo ]]` in *element content* emits an attribute/element node and throws `XQTY0024: An attribute node cannot follow a node that is not an element` the moment the data hits that path (so it can lurk until one record has the field). Always `[[ $x/@attr/string() ]]`. In a quoted attribute (`href="[[ … ]]"`) the node is fine (string-interpolated).
+- **No bare leading-paren sequences.** `[% if (a, b) != '' %]` or `[[ ($a?route, 'x')[1] ]]` break the jinks expression parser ("expected char: '&'"). Use predicate/function forms instead: `[% if $x[@a or @b] %]`, `[[ head(($a?route, 'x')) ]]`, `gt` instead of `>`. Because `templating.use` (e.g. `metadata-blocks.html`) runs on **every** page, one bad expression there 500s the whole site.
+
 ## The editor (`templates/edit.html`)
 
 Ported from upstream `altered-model` (tag `editor-port-src`); the Fore form edits the EpiDoc XML directly in the browser.

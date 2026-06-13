@@ -21,15 +21,16 @@ describe('Site navigation', () => {
     cy.visit('/map.html')
     cy.get('#sites-map .leaflet-container, #sites-map.leaflet-container', { timeout: 30000 })
       .should('exist')
-    // a site marker with holdings renders and the panel auto-opens on it
-    cy.get('#site-panel h2', { timeout: 30000 }).should('contain.text', '雲峰山')
+    // the panel auto-opens on the site with most holdings — since the M-S1
+    // stone-sutra import that is 洪頂山 (Hongdingshan, 41 inscriptions)
+    cy.get('#site-panel h2', { timeout: 30000 }).should('contain.text', '洪頂山')
     cy.get('#site-panel .site-inscriptions a')
       .first()
       .should('have.attr', 'href')
-      .and('include', 'demo-zaoxiangji.xml')
+      .and('include', '.xml')
     cy.get('#site-panel .site-meta a')
       .should('have.attr', 'href')
-      .and('include', '/places/place-yunfengshan')
+      .and('include', '/places/place-hongdingshan')
     cy.screenshot('map-page', { capture: 'viewport', overwrite: true })
   })
 
@@ -37,12 +38,13 @@ describe('Site navigation', () => {
     cy.visit('/sites.html')
     cy.get('.sites-index .site-card', { timeout: 20000 })
       .should('have.length.greaterThan', 1)
+    // top card = most holdings = 洪頂山 (Hongdingshan) after the M-S1 import
     cy.get('.sites-index .site-card').first().within(() => {
-      cy.get('.count').should('contain.text', '1')
-      cy.get('.names').should('contain.text', '雲峰山')
+      cy.get('.count').invoke('text').should('match', /\d+/)
+      cy.get('.names').should('contain.text', '洪頂山')
       cy.get('.links a').first()
         .should('have.attr', 'href')
-        .and('include', '/places/place-yunfengshan')
+        .and('include', '/places/place-hongdingshan')
     })
   })
 
