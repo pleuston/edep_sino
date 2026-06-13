@@ -387,7 +387,8 @@ declare function rview:jinshi-all($request as map(*)) {
                 "id": $object/@xml:id/string(),
                 "name": head(($object//tei:objectName[@type = 'main'], $object//tei:objectName))/string(),
                 "sort-name": $label,
-                "date": $object//tei:origin/tei:origDate/@when/string()
+                "date": head(($object//tei:origin/tei:origDate/@when,
+                              $object//tei:origin/tei:origDate/@notBefore))/string()
             }
     }
 };
@@ -552,12 +553,21 @@ declare %private function rview:sutra-sort-label($obj as element()) as xs:string
 };
 
 declare %private function rview:sutras($search as xs:string?) {
+    rview:sutras($search, (), ())
+};
+
+(: Faceted query: optional genre (sino:typeins id) and corpus (site) filters. :)
+declare %private function rview:sutras($search as xs:string?, $genre as xs:string?,
+        $corpus as xs:string?) {
     let $root := collection($config:register-root)/id($config:register-map?sutra?id)
-    return
+    let $base :=
         if ($search and $search != '') then
             $root//tei:object[@type='sutra'][ft:query(., 'name:(' || $search || '*)')]
         else
             $root//tei:object[@type='sutra']
+    return
+        $base[empty($genre) or $genre = '' or .//tei:idno[@type='genre'] = $genre]
+             [empty($corpus) or $corpus = '' or .//tei:idno[@type='sutra-corpus'] = $corpus]
 };
 
 declare function rview:sutras-all($request as map(*)) {
@@ -570,14 +580,45 @@ declare function rview:sutras-all($request as map(*)) {
                 "id": $object/@xml:id/string(),
                 "name": head(($object//tei:objectName[@type='main'], $object//tei:objectName))/string(),
                 "sort-name": $label,
-                "date": $object//tei:origin/tei:origDate/@when/string()
+                "date": head(($object//tei:origin/tei:origDate/@when,
+                              $object//tei:origin/tei:origDate/@notBefore))/string()
             }
+    }
+};
+
+(: Sutra list items are rendered directly (not via the shared ODD transform) so
+   they link to /sutras/{id} and show the era literal + Gregorian span. :)
+declare %private function rview:output-sutra-entries($list as array(*)*, $odd as xs:string) {
+    array {
+        for $entry in $list
+        let $o := $entry?3
+        let $name := head(($o//tei:objectName[@type='main'], $o//tei:objectName))/string()
+        let $sort := ($o//tei:objectName[@type='sort']/string(), '')[1]
+        let $od := $o//tei:origin/tei:origDate
+        let $greg := head(($od/@when[. != ''],
+                           string-join(($od/@notBefore, $od/@notAfter)[. != ''], '–')))
+        return
+            <div class="split-list-item">
+                <div>
+                    <header>
+                        <a href="sutras/{$o/@xml:id/string()}">{
+                            $name || (if ($sort != '') then ' · ' || $sort else '')
+                        }</a>
+                    </header>
+                    <p class="object-meta">{
+                        normalize-space($od/string()) ||
+                        (if ($greg != '') then ' （' || $greg || ' CE）' else '')
+                    }</p>
+                </div>
+            </div>
     }
 };
 
 declare function rview:sutras-categories($request as map(*)) {
     let $search := normalize-space($request?parameters?search)
+    let $genre  := $request?parameters?genre
+    let $corpus := $request?parameters?corpus
     return
-        rview:register-categories(rview:sutras($search), $request,
-            rview:sutra-sort-label#1, rview:output-register-entries#2)
+        rview:register-categories(rview:sutras($search, $genre, $corpus), $request,
+            rview:sutra-sort-label#1, rview:output-sutra-entries#2)
 };

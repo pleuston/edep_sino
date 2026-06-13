@@ -29,8 +29,18 @@
     </li>
     [% endtemplate %]
     <div class="list">
-        <pb-custom-form id="options" auto-submit="input" emit="transcription">
+        <pb-custom-form id="options" auto-submit="input change" emit="transcription">
             <input id="query" type="search" name="search" data-i18n="[placeholder]search.search" value="[[ $request?parameters?search ]]"/>
+            <select name="genre" aria-label="genre">
+                <option value="">— 類別 / genre —</option>
+                <option value="foming">佛名 · Buddha-name</option>
+                <option value="kejing">刻經 · sutra engraving</option>
+                <option value="tiji">題記 · colophon</option>
+            </select>
+            <select name="corpus" aria-label="corpus">
+                <option value="">— 石經叢 / corpus —</option>
+                <option value="Hongdingshan">洪頂山 · Hongdingshan</option>
+            </select>
         </pb-custom-form>
         <pb-split-list url="api/sutras" subforms="#options" selected="A" emit="transcription" subscribe="transcription"/>
     </div>

@@ -29,8 +29,10 @@
             <h2><pb-i18n key="jinshi.authority-record">Authority record 石刻總目</pb-i18n></h2>
             [% for $a in $auth %]
             <p>
-                <a class="zh" href="[[ $context-path ]]/jinshi-inscriptions/[[ $a?id ]]">[[ $a?name ]]</a>
+                <a class="zh" href="[[ $context-path ]]/[[ head(($a?route, 'jinshi-inscriptions')) ]]/[[ $a?id ]]">[[ $a?name ]]</a>
+                [% if $a?attestations gt 0 %]
                 <span class="attestation-count">([[ $a?attestations ]] <pb-i18n key="jinshi.attestation-count">attestations</pb-i18n>)</span>
+                [% endif %]
             </p>
             [% endfor %]
         </div>

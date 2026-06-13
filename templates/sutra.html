@@ -45,7 +45,8 @@
         <dl class="work-meta">
             [% if $entity-data?root//tei:origin/tei:origDate != '' %]
             <dt><pb-i18n key="jinshi.origin">Origin</pb-i18n></dt>
-            <dd><span class="zh">[[ $entity-data?root//tei:origin/tei:origDate/string() ]]</span></dd>
+            <dd><span class="zh">[[ $entity-data?root//tei:origin/tei:origDate/string() ]]</span>
+                [% if $entity-data?root//tei:origin/tei:origDate[@when or @notBefore] %]<span class="gregorian">（[[ head(($entity-data?root//tei:origin/tei:origDate/@when[. != ''], string-join(($entity-data?root//tei:origin/tei:origDate/@notBefore, $entity-data?root//tei:origin/tei:origDate/@notAfter), '–'))) ]] CE）</span>[% endif %]</dd>
             [% endif %]
             [% let $place = $entity-data?root//tei:origin/tei:origPlace/@corresp/string() %]
             [% if $place != '' %]

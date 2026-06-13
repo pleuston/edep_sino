@@ -64,7 +64,9 @@ declare %private function jinshi:object-summary($object as element()) as map(*) 
         "sort-name": ($object//tei:objectName[@type = 'sort']/string(), '')[1],
         "date": ($object//tei:origin/tei:origDate/string(), '')[1],
         "when": ($object//tei:origin/tei:origDate/@when/string(), '')[1],
-        "place": ($object//tei:origin/tei:origPlace/string(), '')[1]
+        "place": ($object//tei:origin/tei:origPlace/string(), '')[1],
+        (: route the authority backlink to the owning register :)
+        "route": if ($object/@type = 'sutra') then 'sutras' else 'jinshi-inscriptions'
     }
 };
 
@@ -176,7 +178,8 @@ declare function jinshi:authority-for-corpus-doc($path as xs:string?) as map(*)*
     let $doc := if (exists($path) and $path != '') then config:get-document($path) else ()
     let $insc-id := normalize-space(($doc//tei:msIdentifier/tei:idno[@type = 'jinshi'])[1])
     where $insc-id != ''
-    let $object := jinshi:objects-root()//tei:object[@xml:id = $insc-id]
+    (: resolve the authority record in EITHER register (jinshi 石刻總目 or sutras 石經) :)
+    let $object := collection($config:register-root)//tei:object[@xml:id = $insc-id]
     where $object
     return
         map:merge((jinshi:object-summary($object), map {
