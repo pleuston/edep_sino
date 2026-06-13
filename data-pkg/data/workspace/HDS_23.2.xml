@@ -107,7 +107,7 @@
             </langUsage>
         </profileDesc>
         <revisionDesc status="draft">
-            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+            <change type="created" status="draft" when="2026-06-12T00:00:00Z" who="import-sutras-data" source="stonesutras:HDS_23.2"/>
         </revisionDesc>
     </teiHeader>
     <text>

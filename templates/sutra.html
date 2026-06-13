@@ -73,9 +73,27 @@
             <a class="corpus-edition" href="[[ $context-path ]]/[[ $cid ]].xml">
                 <pb-i18n key="sutras.edition">Transcription (this corpus)</pb-i18n>
             </a>
+            <!-- verification badge (doc/sino-model.md §11, 核验): the edition's
+                 revisionDesc/@status, read live from the edition (single source of truth). -->
+            [% if collection($config:data-root)/id($cid)//tei:revisionDesc/@status = 'verified' %]<span class="verify-badge verify-verified"><pb-i18n key="form.status-verified"/></span>[% endif %]
+            [% if collection($config:data-root)/id($cid)//tei:revisionDesc/@status = 'reviewed' %]<span class="verify-badge verify-reviewed"><pb-i18n key="form.status-reviewed"/></span>[% endif %]
+            [% if empty(collection($config:data-root)/id($cid)//tei:revisionDesc/@status) or collection($config:data-root)/id($cid)//tei:revisionDesc/@status = 'draft' %]<span class="verify-badge verify-draft"><pb-i18n key="form.status-draft"/></span>[% endif %]
         </section>
         [% endif %]
         [% endlet %]
+
+        <!-- one support → many texts (doc/sino-model.md §11, E-SUP): sibling inscriptions
+             sharing this support key (idno[@type='support']), e.g. HDS_9.1…HDS_9.16. -->
+        [% if exists(collection($config:register-root)/id($config:register-map?sutra?id)//tei:object[tei:objectIdentifier/tei:idno[@type='support'] = $entity-data?root//tei:idno[@type='support']][@xml:id != $entity-data?root/@xml:id]) %]
+        <section class="same-support">
+            <h2><pb-i18n key="sutras.same-support">Other texts on this support</pb-i18n></h2>
+            <ul class="same-support-list">
+            [% for $sib in collection($config:register-root)/id($config:register-map?sutra?id)//tei:object[tei:objectIdentifier/tei:idno[@type='support'] = $entity-data?root//tei:idno[@type='support']][@xml:id != $entity-data?root/@xml:id] %]
+                <li><a href="[[ $context-path ]]/sutras/[[ $sib/@xml:id/string() ]]">[[ head(($sib//tei:objectName[@type='main'], $sib//tei:objectName))/string() ]]</a></li>
+            [% endfor %]
+            </ul>
+        </section>
+        [% endif %]
 
         [% for $n in $entity-data?root/tei:note[not(@type='source')] %]
         <p class="note">[[ $n/string() ]]</p>

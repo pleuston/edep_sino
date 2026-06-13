@@ -59,7 +59,7 @@
                     </physDesc>
                     <history>
                         <origin>
-                            <origDate when="0564" period="sino:dynasty:beizhou" cert="high" datingMethod="#gregorian-converted"></origDate>
+                            <origDate when="0564" when-custom="河清:3" period="sino:dynasty:beiqi" cert="high" datingMethod="#gregorian-converted"></origDate>
                             <origPlace corresp="place-hongdingshan"/>
                         </origin>
                     </history>
@@ -119,7 +119,7 @@
             </langUsage>
         </profileDesc>
         <revisionDesc status="draft">
-            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+            <change type="created" status="draft" when="2026-06-12T00:00:00Z" who="import-sutras-data" source="stonesutras:HDS_18"/>
         </revisionDesc>
     </teiHeader>
     <text>

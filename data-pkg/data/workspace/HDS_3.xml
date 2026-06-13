@@ -9,7 +9,7 @@
                 <editor/>
                 <respStmt>
                     <resp key="sino:role:shu">書丹</resp>
-                    <persName>Seng’an Daoyi</persName>
+                    <persName xml:id="prod-shu" cert="low">Seng’an Daoyi</persName>
                 </respStmt>
             </titleStmt>
             <publicationStmt>
@@ -58,8 +58,11 @@
                     </physDesc>
                     <history>
                         <origin>
-                            <origDate cert="high" datingMethod="#gregorian-converted"></origDate>
+                            <origDate period="sino:dynasty:beiqi" cert="high" datingMethod="#gregorian-converted"></origDate>
                             <origPlace corresp="place-hongdingshan"/>
+                            <certainty target="#prod-shu" locus="value" degree="0.5" resp="#stonesutras">
+                                <desc>書丹 attribution is a scholarly conjecture (stonesutras.org), not signed on the stone; contested.</desc>
+                            </certainty>
                         </origin>
                     </history>
                 </msDesc>
@@ -124,7 +127,7 @@
             </langUsage>
         </profileDesc>
         <revisionDesc status="draft">
-            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+            <change type="created" status="draft" when="2026-06-12T00:00:00Z" who="import-sutras-data" source="stonesutras:HDS_3"/>
         </revisionDesc>
     </teiHeader>
     <text>

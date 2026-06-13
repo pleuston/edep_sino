@@ -504,11 +504,20 @@ declare %private function api:postprocess($nodes as node()*, $edepId as xs:strin
                     $node/tei:div[@type = "commentary"]
                 }
             case element(tei:revisionDesc) return
+                (: Append-only audit trail (doc/sino-model.md §11, 核验): preserve the
+                   FULL change history — not just @type='created' — and snapshot the
+                   verification @status on each save. The old code dropped every change
+                   except 'created', silently destroying the verification trail (the
+                   self-pollution failure mode the verification layer exists to prevent).
+                   @status defaults to 'draft' so imported/AI-drafted editions are
+                   draft-by-default until promotion. :)
                 element { node-name($node) } {
-                    $node/@*,
-                    $node/tei:change[@type='created'],
+                    $node/@* except $node/@status,
+                    attribute status { ($node/@status[string() ne ''], 'draft')[1] },
+                    $node/tei:change,
                     <change xmlns="http://www.tei-c.org/ns/1.0"
                         type="{if (empty($node/tei:change)) then 'created' else 'changed'}"
+                        status="{($node/@status[string() ne ''], 'draft')[1]}"
                         when="{current-dateTime()}"
                         who="{sm:id()//sm:real/sm:username/string()}"/>
                 }

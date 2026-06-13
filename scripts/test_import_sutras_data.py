@@ -152,6 +152,19 @@ def main():
         else:
             fail('edition HDS_11 missing jinshi backlink')
 
+        # -- §11 verification layer: draft-by-default + provenance anchor (溯源) --
+        if 'status="draft"' in ed11 and 'source="stonesutras:HDS_11"' in ed11:
+            ok('edition is draft-by-default with a provenance source anchor')
+        else:
+            fail('edition missing draft status / provenance source')
+
+        # -- §11 E-SUP one-support-many-texts: HDS_9.1 carries support key HDS_9 --
+        sutras_xml = (tmp_pkg / 'data/registers/sutras.xml').read_text(encoding='utf-8')
+        if '<idno type="support">HDS_9</idno>' in sutras_xml:
+            ok('authority object carries the support grouping key (HDS_9.1 → HDS_9)')
+        else:
+            fail('authority object missing support grouping key')
+
         # ── Run 2: idempotency ─────────────────────────────────────────────────
         print('\nRun 2: idempotency check ...')
         run_import(tmp_pkg, id_map_path)

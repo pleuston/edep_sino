@@ -9,7 +9,7 @@
                 <editor/>
                 <respStmt>
                     <resp key="sino:role:shu">書丹</resp>
-                    <persName>法鴻 Fahong</persName>
+                    <persName xml:id="prod-shu" cert="low">法鴻 Fahong</persName>
                 </respStmt>
             </titleStmt>
             <publicationStmt>
@@ -60,6 +60,9 @@
                         <origin>
                             <origDate notBefore="0550" notAfter="0564" n="天保元年至河清三年" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted">天保元年至河清三年</origDate>
                             <origPlace corresp="place-hongdingshan"/>
+                            <certainty target="#prod-shu" locus="value" degree="0.5" resp="#stonesutras">
+                                <desc>書丹 attribution is a scholarly conjecture (stonesutras.org), not signed on the stone; contested.</desc>
+                            </certainty>
                         </origin>
                     </history>
                 </msDesc>
@@ -104,7 +107,7 @@
             </langUsage>
         </profileDesc>
         <revisionDesc status="draft">
-            <change type="created" when="2026-06-12T00:00:00Z" who="import-sutras-data"/>
+            <change type="created" status="draft" when="2026-06-12T00:00:00Z" who="import-sutras-data" source="stonesutras:HDS_9.9"/>
         </revisionDesc>
     </teiHeader>
     <text>

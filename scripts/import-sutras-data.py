@@ -64,7 +64,8 @@ CREATED  = '2026-06-12T00:00:00Z'
 # Generalising pinyin romanisation is out of scope; sites are added here as imported.
 SITE_META = {
     'HDS': {'place_id': 'place-hongdingshan', 'pinyin': 'Hongdingshan',
-            'region_zh': '山東', 'province': 'shandong', 'country': 'cn'},
+            'region_zh': '山東', 'province': 'shandong', 'country': 'cn',
+            'dynasty': 'beiqi'},  # all Hongdingshan carvings are Northern Qi
 }
 
 # Northern-Qi (and neighbouring) reign eras → dynasty xml:id, for @period resolution.
@@ -228,6 +229,54 @@ def load_dynasties(data_pkg):
     return out
 
 
+def load_nianhao(data_pkg):
+    """Load nianhao.xml → list of era dicts for reverse ISO→era:year lookup."""
+    p = Path(data_pkg) / 'data/taxonomy/nianhao.xml'
+    out = []
+    if not p.exists():
+        return out
+    root = ET.parse(p).getroot()
+    for era in root:
+        if era.tag != 'era':
+            continue
+        out.append({
+            'name': era.get('name', ''),
+            'dynasty': era.get('dynasty', ''),
+            'from': int(era.get('from', '0')),
+            'to': int(era.get('to', '0')),
+        })
+    return out
+
+
+def iso_to_when_custom(iso_year_str, period_curie, nianhao_list):
+    """Return 'era:reign_year' for a single-point ISO year, or '' if ambiguous.
+
+    Prefers the era whose dynasty matches the given @period CURIE, then picks
+    the narrowest range among ties so we get the specific Northern-Qi era rather
+    than a homonymous era from another state.
+    """
+    if not iso_year_str or not nianhao_list:
+        return ''
+    try:
+        iso = int(iso_year_str)
+    except ValueError:
+        return ''
+    period_short = period_curie.rsplit(':', 1)[-1] if period_curie else ''
+    # collect all eras covering this ISO year
+    candidates = [e for e in nianhao_list if e['from'] <= iso <= e['to']]
+    if not candidates:
+        return ''
+    # prefer those whose dynasty maps to the expected period
+    preferred = [e for e in candidates
+                 if ERA2DYN.get(e['name']) == period_short]
+    pool = preferred if preferred else candidates
+    # among the pool, pick the narrowest era (most specific)
+    pool.sort(key=lambda e: e['to'] - e['from'])
+    best = pool[0]
+    reign_year = iso - best['from'] + 1
+    return f"{best['name']}:{reign_year}"
+
+
 # ── parse a catalog SITE file → place dict ────────────────────────────────────
 
 def parse_site(path, site_code):
@@ -272,7 +321,7 @@ def parse_site(path, site_code):
 
 # ── parse a catalog INSCRIPTION file → dict ───────────────────────────────────
 
-def parse_inscription(path, dynasties):
+def parse_inscription(path, dynasties, nianhao=None, site_dynasty=''):
     root = ET.parse(path).getroot()
     cat_id = axml_id(root)
     site = root.get('site', '')
@@ -314,6 +363,19 @@ def parse_inscription(path, dynasties):
     hi_i = int(na_y) if na_y else None
     pt_i = int(when_y) if when_y else None
     period = resolve_period(literal, pt_i if pt_i else lo_i, hi_i, dynasties)
+    # If the literal is absent (uncertain archaeological estimate), dynasty-span lookup may
+    # pick a neighbouring state. Override with the site's known dynasty when provided.
+    if not literal and site_dynasty and not period:
+        period = f'sino:dynasty:{site_dynasty}'
+    elif not literal and site_dynasty:
+        # prefer site dynasty if the resolved period is implausible (not in ERA2DYN for this site)
+        period_short = period.rsplit(':', 1)[-1] if period else ''
+        site_curie = f'sino:dynasty:{site_dynasty}'
+        if period_short and period_short != site_dynasty:
+            period = site_curie
+    # when-custom (era:year) — only for single-point dates, so the form can pre-fill on reopen
+    when_custom = (iso_to_when_custom(when_y, period, nianhao or '')
+                   if when_y and not nb_y else '')
 
     # Producer (signatory) — usually empty; recorded if present
     producer = itext(child(header, 'producer'))
@@ -396,11 +458,15 @@ def parse_inscription(path, dynasties):
         genre = 'tiji'             # colophon / occasional
 
     num = cat_id[len(site) + 1:] if site and cat_id.startswith(site + '_') else cat_id
+    # support key = catalog base id before the dot (HDS_9.1 → HDS_9): one physical
+    # support carries many texts (doc/sino-model.md §11, E-SUP).
+    support = cat_id.split('.')[0]
 
     return {
         'cat_id':       cat_id,
         'site':         site,
         'num':          num,
+        'support':      support,
         'name_zh':      name_zh,
         'name_en':      name_en,
         'alt_names':    [a for a in (name_en, strip_quotes(title_abbr),
@@ -411,6 +477,7 @@ def parse_inscription(path, dynasties):
         'notBefore':    nb_y,
         'notAfter':     na_y,
         'date_literal': literal,
+        'when_custom':  when_custom,
         'date_cert':    'low' if (uncertain or src == 'discussion'
                                   or (nb_y and not when_y)) else 'high',
         'genre':        genre,
@@ -478,6 +545,10 @@ def sutra_object_xml(insc, sutra_id, place_id, site_pinyin, has_edition, depth=3
     if insc['coord']:
         loc += f'; {insc["coord"]}'
     lines.append(f'{d2}<idno type="corpus-loc">{xe(loc)}</idno>')
+    # support grouping key (doc/sino-model.md §11, E-SUP one-support-many-texts):
+    # the catalog base id before the dot is one physical support — HDS_9 carries
+    # HDS_9.1…HDS_9.16. Editions sharing this key are texts on the same support.
+    lines.append(f'{d2}<idno type="support">{xe(insc["support"])}</idno>')
     lines.append(f'{d1}</objectIdentifier>')
     # history / origin
     has_date = insc['when'] or insc['notBefore'] or insc['notAfter'] or insc['date_literal']
@@ -494,6 +565,8 @@ def sutra_object_xml(insc, sutra_id, place_id, site_pinyin, has_edition, depth=3
                 attrs += f' notAfter="{insc["notAfter"]}"'
         if insc['date_literal']:
             attrs += f' n="{xe(insc["date_literal"])}"'
+        if insc.get('when_custom'):
+            attrs += f' when-custom="{xe(insc["when_custom"])}"'
         if insc['period']:
             attrs += f' period="{insc["period"]}"'
         if insc['date_cert']:
@@ -687,9 +760,14 @@ def edition_xml(insc, sutra_id, place_id, edition_inner, translation):
         a(f'                <title xml:lang="en">{xe(insc["name_en"])}</title>')
     a('                <editor/>')
     if insc['producer']:
+        # The calligrapher (書丹) is a SCHOLARLY attribution (the research catalog's
+        # producer field), not signed on the stone — the contestable-claim case the
+        # certainty model exists for (doc/sino-model.md §11; the 僧安道壹 Hongdingshan
+        # attributions are famously debated). Encode the doubt as structured, attributed,
+        # queryable data: @cert on the name + a <certainty> with degree, locus and source.
         a('                <respStmt>')
         a('                    <resp key="sino:role:shu">書丹</resp>')
-        a(f'                    <persName>{xe(insc["producer"])}</persName>')
+        a(f'                    <persName xml:id="prod-shu" cert="low">{xe(insc["producer"])}</persName>')
         a('                </respStmt>')
     else:
         a('                <respStmt>')
@@ -771,6 +849,8 @@ def edition_xml(insc, sutra_id, place_id, edition_inner, translation):
             attrs += f' notAfter="{insc["notAfter"]}"'
     if insc['date_literal']:
         attrs += f' n="{xe(insc["date_literal"])}"'
+    if insc.get('when_custom'):
+        attrs += f' when-custom="{xe(insc["when_custom"])}"'
     if insc['period']:
         attrs += f' period="{insc["period"]}"'
     if insc['date_cert']:
@@ -778,6 +858,14 @@ def edition_xml(insc, sutra_id, place_id, edition_inner, translation):
     attrs += ' datingMethod="#gregorian-converted"'
     a(f'                            <origDate{attrs}>{xe(insc["date_literal"])}</origDate>')
     a(f'                            <origPlace corresp="{place_id}"/>')
+    if insc['producer']:
+        # Structured certainty (doc/sino-model.md §11, Epiwen §13) about the calligrapher
+        # attribution (書丹, #prod-shu in titleStmt). Home = <origin> = the production event
+        # (E-PRD, Epiwen §3), so the doubt about who carried out the 書丹 role sits with the
+        # act. @degree/@locus/@resp make the contested 僧安道壹/法洪 attribution queryable.
+        a('                            <certainty target="#prod-shu" locus="value" degree="0.5" resp="#stonesutras">')
+        a('                                <desc>書丹 attribution is a scholarly conjecture (stonesutras.org), not signed on the stone; contested.</desc>')
+        a('                            </certainty>')
     a('                        </origin>')
     a('                    </history>')
     a('                </msDesc>')
@@ -840,8 +928,11 @@ def edition_xml(insc, sutra_id, place_id, edition_inner, translation):
     a('                <language ident="lzh" ana="main"/>')
     a('            </langUsage>')
     a('        </profileDesc>')
+    # draft-by-default (doc/sino-model.md §11, 核验): imported = unverified until a
+    # human promotes it; the change records the upstream source (溯源 provenance anchor).
     a(f'        <revisionDesc status="draft">')
-    a(f'            <change type="created" when="{CREATED}" who="import-sutras-data"/>')
+    a(f'            <change type="created" status="draft" when="{CREATED}"'
+      f' who="import-sutras-data" source="stonesutras:{xe(insc["cat_id"])}"/>')
     a('        </revisionDesc>')
     a('    </teiHeader>')
     a('    <text>')
@@ -917,6 +1008,7 @@ def main():
 
     id_map = load_id_map(args.id_map)
     dynasties = load_dynasties(data_pkg)
+    nianhao = load_nianhao(data_pkg)
 
     # 1. Site → place
     site_file = source / 'catalog' / f'{site}_site.xml'
@@ -937,11 +1029,12 @@ def main():
     for d in (source / 'docs').rglob(f'{site}_*.xml'):
         doc_index.setdefault(d.stem, d)
 
+    site_dynasty = SITE_META.get(site, {}).get('dynasty', '')
     inscs = []
     editions = {}          # cat_id → edition xml string
     missing_docs = []
     for cf in cat_files:
-        insc = parse_inscription(cf, dynasties)
+        insc = parse_inscription(cf, dynasties, nianhao, site_dynasty)
         insc['genre'] = insc.get('genre') or 'tiji'
         sutra_id = assign_sutra_id(id_map, insc['cat_id'])
         insc['sutra_id'] = sutra_id

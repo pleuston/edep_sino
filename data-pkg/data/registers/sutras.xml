@@ -23,6 +23,7 @@
                     <idno type="taisho">T_232</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 1; 116.238316,36.064669</idno>
+                    <idno type="support">HDS_1</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -41,6 +42,7 @@
                     <idno type="taisho">T_397.5</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 2; 116.238331,36.064664</idno>
+                    <idno type="support">HDS_2</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -58,6 +60,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 3; 116.383568,35.936246</idno>
+                    <idno type="support">HDS_3</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -74,6 +77,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 4; 116.238354,36.064648</idno>
+                    <idno type="support">HDS_4</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -92,6 +96,7 @@
                     <idno type="taisho">T_223</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 5; 116.238438,36.064593</idno>
+                    <idno type="support">HDS_5</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -110,6 +115,7 @@
                     <idno type="taisho">T_245</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 6; 116.238457,36.064570</idno>
+                    <idno type="support">HDS_6</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -127,10 +133,11 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 7; 116.238560,36.064508</idno>
+                    <idno type="support">HDS_7</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
-                        <origDate when="0556" period="sino:dynasty:xiwei" cert="low" datingMethod="#gregorian-converted"></origDate>
+                        <origDate when="0556" when-custom="天保:7" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted"></origDate>
                         <origPlace corresp="place-hongdingshan"/>
                     </origin>
                 </history>
@@ -144,6 +151,7 @@
                     <idno type="genre">foming</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 8; 116.238578,36.064495</idno>
+                    <idno type="support">HDS_8</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -160,6 +168,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc"> HDS_9</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -181,6 +190,7 @@
                     <idno type="taisho">T_2045</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.1; 116.238655,36.064448</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -202,6 +212,7 @@
                     <idno type="taisho">T_1393</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.2; 116.238655,36.064452</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -222,6 +233,7 @@
                     <idno type="taisho">T_1393</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.3; 116.238652,36.064456</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -243,6 +255,7 @@
                     <idno type="taisho">T_1393</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.4; 116.238648,36.064456</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -263,6 +276,7 @@
                     <idno type="taisho">T_1339</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.5; 116.238643,36.064458</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -284,6 +298,7 @@
                     <idno type="taisho">T_1393</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.6; 116.238639,36.064458</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -305,6 +320,7 @@
                     <idno type="taisho">T_1393</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.7; 116.238637,36.064463</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -323,6 +339,7 @@
                     <idno type="taisho">T_1332</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.8; 116.238632,36.064469</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -342,6 +359,7 @@
                     <idno type="taisho">T_456</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.9; 116.238629,36.064473</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -360,6 +378,7 @@
                     <idno type="taisho">T_157</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.10; 116.238624,36.064476</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -381,6 +400,7 @@
                     <idno type="taisho">T_440</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.11; 116.238620,36.064478</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -400,6 +420,7 @@
                     <idno type="taisho">T_441</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.12; 116.238617,36.064480</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -418,6 +439,7 @@
                     <idno type="taisho">T_1332</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.13; 116.238610,36.064481</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -437,6 +459,7 @@
                     <idno type="taisho">T_1941</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.14; 116.238604,36.064483</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -460,6 +483,7 @@
                     <idno type="taisho">T_1909</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.15; 116.238594,36.064486</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -477,6 +501,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 9.16; 116.238594,36.064486</idno>
+                    <idno type="support">HDS_9</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -496,6 +521,7 @@
                     <idno type="taisho">T_441</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 10; 116.238650,36.064477</idno>
+                    <idno type="support">HDS_10</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -516,6 +542,7 @@
                     <idno type="taisho">T_448</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 11; 116.238662,36.064470</idno>
+                    <idno type="support">HDS_11</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -538,6 +565,7 @@
                     <idno type="taisho">T_1909</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 12; 116.238649,36.064489</idno>
+                    <idno type="support">HDS_12</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -556,6 +584,7 @@
                     <idno type="taisho">T_1331</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 13; 116.238690,36.064489</idno>
+                    <idno type="support">HDS_13</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -573,6 +602,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 14; 116.238696,36.064487</idno>
+                    <idno type="support">HDS_14</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -590,10 +620,11 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 15; 116.238701,36.064485</idno>
+                    <idno type="support">HDS_15</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
-                        <origDate when="0553" period="sino:dynasty:xiwei" cert="low" datingMethod="#gregorian-converted"></origDate>
+                        <origDate when="0553" when-custom="天保:4" period="sino:dynasty:beiqi" cert="low" datingMethod="#gregorian-converted"></origDate>
                         <origPlace corresp="place-hongdingshan"/>
                     </origin>
                 </history>
@@ -607,6 +638,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 16.1; 116.238730,36.064467</idno>
+                    <idno type="support">HDS_16</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -626,6 +658,7 @@
                     <idno type="taisho">T_233</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 16.2; 116.238717,36.064476</idno>
+                    <idno type="support">HDS_16</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -643,6 +676,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 17; 116.238703,36.064465</idno>
+                    <idno type="support">HDS_17</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -660,10 +694,11 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 18; 116.237459,36.063498</idno>
+                    <idno type="support">HDS_18</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
-                        <origDate when="0564" period="sino:dynasty:beizhou" cert="high" datingMethod="#gregorian-converted"></origDate>
+                        <origDate when="0564" when-custom="河清:3" period="sino:dynasty:beiqi" cert="high" datingMethod="#gregorian-converted"></origDate>
                         <origPlace corresp="place-hongdingshan"/>
                     </origin>
                 </history>
@@ -677,6 +712,7 @@
                     <idno type="genre">foming</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 19; 116.237435,36.063500</idno>
+                    <idno type="support">HDS_19</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -694,6 +730,7 @@
                     <idno type="genre">foming</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 20; 116.237277,36.063501</idno>
+                    <idno type="support">HDS_20</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -711,6 +748,7 @@
                     <idno type="genre">foming</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 21.1; 116.237212,36.063531</idno>
+                    <idno type="support">HDS_21</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -728,6 +766,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 21.2; 116.237207,36.063534</idno>
+                    <idno type="support">HDS_21</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -747,6 +786,7 @@
                     <idno type="taisho">T_233</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 22; 116.237192,36.063539</idno>
+                    <idno type="support">HDS_22</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -764,6 +804,7 @@
                     <idno type="genre">foming</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 23.1; 116.237161,36.063556</idno>
+                    <idno type="support">HDS_23</idno>
                 </objectIdentifier>
                 <history>
                     <origin>
@@ -781,6 +822,7 @@
                     <idno type="genre">tiji</idno>
                     <idno type="sutra-corpus">Hongdingshan</idno>
                     <idno type="corpus-loc">HDS 23.2; 116.237160,36.063560</idno>
+                    <idno type="support">HDS_23</idno>
                 </objectIdentifier>
                 <history>
                     <origin>

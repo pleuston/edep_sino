@@ -79,3 +79,36 @@ pb-leaflet-map {
         white-space: normal;
     }
 }
+
+/* verification badges (doc/sino-model.md §11, 核验): the edition's revisionDesc/@status.
+   draft = AI/import-drafted & unverified; reviewed = adversarially checked; verified = human-confirmed. */
+.verify-badge {
+    display: inline-block;
+    margin-left: 0.5em;
+    padding: 0.05em 0.5em;
+    border-radius: 0.75em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.verify-draft {
+    background: #fdecea;
+    color: #b3261e;
+    border: 1px solid #f3b9b3;
+}
+.verify-reviewed {
+    background: #fff6e5;
+    color: #8a5a00;
+    border: 1px solid #f0d49a;
+}
+.verify-verified {
+    background: #e7f4ea;
+    color: #1e6b34;
+    border: 1px solid #aedcbb;
+}
+.corpus-link .verify-badge {
+    margin-left: 0.75em;
+}

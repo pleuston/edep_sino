@@ -576,12 +576,17 @@ declare function rview:sutras-all($request as map(*)) {
         let $label := rview:sutra-sort-label($object)
         order by lower-case($label) collation "?lang=de-DE"
         return
+            let $cid := $object//tei:idno[@type='corpus']/string()
+            return
             map {
                 "id": $object/@xml:id/string(),
                 "name": head(($object//tei:objectName[@type='main'], $object//tei:objectName))/string(),
                 "sort-name": $label,
                 "date": head(($object//tei:origin/tei:origDate/@when,
-                              $object//tei:origin/tei:origDate/@notBefore))/string()
+                              $object//tei:origin/tei:origDate/@notBefore))/string(),
+                "status": if ($cid != '')
+                    then head((collection($config:data-root)/id($cid)//tei:revisionDesc/@status/string(), 'draft'))
+                    else "draft"
             }
     }
 };
@@ -597,14 +602,23 @@ declare %private function rview:output-sutra-entries($list as array(*)*, $odd as
         let $od := $o//tei:origin/tei:origDate
         let $greg := head(($od/@when[. != ''],
                            string-join(($od/@notBefore, $od/@notAfter)[. != ''], '–')))
+        (: verification badge (doc/sino-model.md §11, 核验): read the linked edition's
+           revisionDesc/@status live via idno[@type='corpus']; draft-by-default. :)
+        let $cid := $o//tei:idno[@type='corpus']/string()
+        let $status := if ($cid != '')
+            then head((collection($config:data-root)/id($cid)//tei:revisionDesc/@status/string(), 'draft'))
+            else ()
         return
             <div class="split-list-item">
                 <div>
                     <header>
                         <a href="sutras/{$o/@xml:id/string()}">{
                             $name || (if ($sort != '') then ' · ' || $sort else '')
-                        }</a>
-                    </header>
+                        }</a>{
+                        if ($status) then
+                            <span class="verify-badge verify-{$status}"><pb-i18n key="form.status-{$status}">{$status}</pb-i18n></span>
+                        else ()
+                    }</header>
                     <p class="object-meta">{
                         normalize-space($od/string()) ||
                         (if ($greg != '') then ' （' || $greg || ' CE）' else '')

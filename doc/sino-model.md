@@ -246,6 +246,37 @@ non-negotiable as a **three-way** import:
 - **Vocab additions**: `typeins.xml` `foming` 佛名; `material.xml` `baiyunyan` 白雲岩 (dolomite); `objtyp.xml` `jingshi` 經石.
 - **Importer**: `scripts/import-sutras-data.py --site HDS` (idempotent; `scripts/sutras-id-map.json`). Pilot only; the full 605-inscription / 4,978-doc corpus is the next milestone.
 
+## §11 Provenance & verification layer 溯源・核验 **[M-E1, Epiwen workshop]**
+
+The Epiwen workshop frames two demands *beyond* EpiDoc: (a) a CIDOC-CRM **entity/relation ontology** on top of the document (the five entities E-TXT/E-SUP/E-PRD/E-WIT/E-ED), and (b) an **epistemic discipline** — every claim source-anchored (溯源), errors made visible rather than silently single-point-patched (自污染), and contested claims carried as attributed, queryable data with adversarial verification (核验). This layer implements the highest-value, gate-safe slice of both, exercised by the live Hongdingshan corpus.
+
+### Verification state machine (核验, draft-by-default)
+
+- `revisionDesc/@status` ∈ `draft | reviewed | verified`. **Draft-by-default**: imported / AI-drafted editions are `draft` (unverified) until a human deliberately promotes them. `reviewed` = adversarially checked; `verified` = human-confirmed.
+- The `<change>` trail is **append-only** (the permanent audit trail). `api:postprocess` (custom-api.xql) preserves the *full* change history and snapshots `@status` onto each save's `<change>`; it previously dropped every change except `@type='created'`, which silently destroyed history — the self-pollution failure mode this layer exists to prevent. **[fix]**
+- Provenance anchor (溯源): the importer stamps `<change … source="stonesutras:{cat-id}">` so every imported edition records where it came from.
+- **Editor**: a status select in `templates/parts/edit/verification.html` (`revisionDesc/@status`). **Display**: a `.verify-badge` on the sutra detail + list + the `/api/sutras/all` `status` field (read live from the edition via `idno[@type='corpus']` — single source of truth, no stale copy).
+- **Implements:** `modules/custom-api.xql` (append-only `revisionDesc` case) · `verification.html` status select + i18n `form.status-*` · `templates/sutra.html` + `modules/registers-api.xql` (badge, list, API) · `resources/css/registers-theme.css`. Test: `test/cypress/e2e/gui/editor-verification.cy.js`.
+
+### One support → many texts (E-SUP) **[Epiwen object-model §2]**
+
+- A moya field carries many inscriptions on distinct surfaces; "same site" ≠ "same support" (per-inscription coordinates scatter across the mountain). The catalog id encodes the real support: `HDS_9.1 … HDS_9.16` are 16 texts on support `HDS_9`.
+- Encoded as `idno[@type='support']` on the authority `<object>` (the support grouping key = catalog base id before the dot). The sutra detail derives **"other texts on this support"** by querying siblings sharing the key. Singletons show no section.
+- **Implements:** `import-sutras-data.py` (support key) · `templates/sutra.html` (derived sibling list) · i18n `sutras.same-support`. Test: `register-sutras.cy.js`.
+
+### Structured certainty for contested attributions (the 安道一 case) **[Epiwen §13]**
+
+- The calligrapher (書丹) is a *scholarly attribution* (the research catalog's producer field), not signed on the stone — the contestable-claim case. The 僧安道壹 Hongdingshan attributions (e.g. `sutra-000003 僧安道壹銘讚`, editions HDS_3/4/8/16.x) are famously debated.
+- Encoded as `@cert="low"` on the `<persName xml:id="prod-shu">` **plus** a structured `<certainty target="#prod-shu" locus="value" degree="0.5" resp="#stonesutras">` with a `<desc>` rationale. Home = `<origin>` (= E-PRD, the production event, Epiwen §3) — so the doubt about *who carried out the 書丹 role* sits with the act, and the name string stays clean. Both survive the EpiDoc gate and the save pipeline.
+- `<certainty>` is **not** valid in `respStmt`/`titleStmt` under tei-epidoc.rng (it is in `<origin>` and `<persName>`); the `<origin>` placement is the chosen, name-clean home. **[schema-conformance]**
+- **Implements:** `import-sutras-data.py` (cert + certainty). Test: `register-sutras.cy.js`.
+
+### Deferred (documented, not yet built)
+
+- **E-PRD as a standoff `<event>`** with role-typed `P14` participants (Epiwen §12): v1 keeps the flat `titleStmt/respStmt` editing surface; the production *event* + CRM `@ref="crm:…"` CURIEs are v1.x (open fork #4, "assert CRM now vs later").
+- **金石 compendium-as-witness double-modeling** (`biblStruct` in both `listWit` and `listBibl`, Epiwen §14): 録文 stay `listBibl[@type='transmission']`; apparatus `@wit` keying grows with the apparatus build-out.
+- **殘石 `<join>`/`<msFrag>`** (Epiwen §14): no live-corpus pressure (HDS is single-surface moya) and it collides with EDEp's `@fragments` mechanism (§9 divergence #6) — needs design reconciliation first.
+
 ## Milestone map
 
 | Milestone | Implements from this contract |
@@ -257,3 +288,4 @@ non-negotiable as a **three-way** import:
 | M9 | Rendition set + vertical preview, variant-char display, zh UI |
 | M-J1–M-J5 | §10: works register, inscription authority register, person lifespans, timelines |
 | M-S1 | Stone Sutras corpus: separate `sutras` register, site→place, transcription→edition; `import-sutras-data.py` (pilot: Hongdingshan) |
+| M-E1 | §11 Provenance & verification layer: verification state machine (`revisionDesc/@status`, draft-by-default, append-only trail), one-support-many-texts (`idno[@type='support']`), structured `<certainty>` for contested attributions |

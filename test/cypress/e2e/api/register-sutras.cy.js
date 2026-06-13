@@ -56,6 +56,41 @@ describe('Stone Sutras register API', () => {
     })
   })
 
+  it('exposes the verification status (draft-by-default) in the list API', () => {
+    cy.request('/api/sutras/all').its('body').then(list => {
+      list.forEach(e => expect(e, 'status field').to.have.property('status'))
+      const statuses = [...new Set(list.map(e => e.status))]
+      // imported corpus is draft-by-default (doc/sino-model.md §11, 核验)
+      expect(statuses, 'draft present').to.include('draft')
+    })
+  })
+
+  it('shows "other texts on this support" for a multi-text support (HDS_9)', () => {
+    // sutra-000010 = HDS_9.1, one of 17 texts on support HDS_9 (E-SUP one-support-many-texts)
+    cy.request('/sutras/sutra-000010').its('body').then(html => {
+      expect(html, 'same-support section').to.include('class="same-support"')
+      const siblings = (html.match(/<li><a href="[^"]*sutras\/sutra-/g) || []).length
+      expect(siblings, 'sibling texts on the support').to.be.greaterThan(5)
+    })
+    // a singleton support shows no such section
+    cy.request('/sutras/sutra-000001').its('body').then(html => {
+      expect(html, 'singleton has no same-support').to.not.include('class="same-support"')
+    })
+  })
+
+  it('records the contested calligrapher attribution as structured certainty (安道一)', () => {
+    // HDS_3 attributes 書丹 to 僧安道壹 (Seng'an Daoyi) — a scholarly, unsigned, contested
+    // claim. doc/sino-model.md §11: encode as @cert on the name + a structured <certainty>
+    // in <origin> (E-PRD), with degree/locus/source, surviving the EpiDoc gate + save pipeline.
+    cy.request('/api/inscription?id=HDS_3&collection=workspace').its('body').then(xml => {
+      // attribute order is not significant (the serializer may reorder)
+      expect(xml, 'calligrapher persName id').to.include('xml:id="prod-shu"')
+      expect(xml, 'calligrapher flagged uncertain').to.match(/<persName[^>]*cert="low"/)
+      expect(xml, 'structured certainty targets the name').to.include('<certainty target="#prod-shu"')
+      expect(xml, 'certainty degree').to.include('degree="0.5"')
+    })
+  })
+
   it('merged the site into the places register (existing seeds kept)', () => {
     cy.request('/api/places/all').its('body').then(list => {
       const names = list.map(e => e.name || e.label || '')
