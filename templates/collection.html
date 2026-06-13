@@ -36,7 +36,7 @@
     <section class="collection jinshi-detail">
         <h1>[[ head(($entity-data?root/tei:orgName[@type='main'], $entity-data?root/tei:orgName))/string() ]]</h1>
         [% if $entity-data?root/tei:country/@key != '' %]
-        <p class="country">[[ $entity-data?root/tei:country/string() ]] ([[ $entity-data?root/tei:country/@key ]])</p>
+        <p class="country">[[ $entity-data?root/tei:country/string() ]] ([[ $entity-data?root/tei:country/@key/string() ]])</p>
         [% endif %]
 
         [% for $n in $entity-data?root/tei:note %]
@@ -47,7 +47,7 @@
         <dl class="collection-meta">
             [% for $p in $entity-data?root/tei:ptr %]
             <dt><pb-i18n key="rubbings.catalog-url"/></dt>
-            <dd><a href="[[ $p/@target ]]" target="_blank" rel="noopener">[[ $p/@target ]]</a></dd>
+            <dd><a href="[[ $p/@target ]]" target="_blank" rel="noopener">[[ $p/@target/string() ]]</a></dd>
             [% endfor %]
         </dl>
         [% endif %]

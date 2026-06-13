@@ -59,7 +59,7 @@
             [% endif %]
             [% if $entity-data?root/tei:physDesc//tei:measure[@type='sheets'] != '' %]
             <dt><pb-i18n key="rubbings.sheets"/></dt>
-            <dd>[[ $entity-data?root/tei:physDesc//tei:measure[@type='sheets']/@quantity ]]</dd>
+            <dd>[[ $entity-data?root/tei:physDesc//tei:measure[@type='sheets']/@quantity/string() ]]</dd>
             [% endif %]
             [% if $entity-data?root/tei:physDesc//tei:dimensions %]
             <dt><pb-i18n key="rubbings.dimensions"/></dt>
