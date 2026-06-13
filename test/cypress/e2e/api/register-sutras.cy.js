@@ -14,6 +14,17 @@ describe('Stone Sutras register API', () => {
     })
   })
 
+  it('filters the list by the genre facet (佛名/刻經/題記)', () => {
+    cy.request('/api/sutras?limit=200').its('body').then(all => {
+      const total = (all.items || []).length
+      expect(total, 'unfiltered count').to.be.at.least(40)
+      cy.request('/api/sutras?limit=200&genre=foming').its('body').then(f => {
+        const n = (f.items || []).length
+        expect(n, 'foming subset').to.be.greaterThan(0).and.to.be.lessThan(total)
+      })
+    })
+  })
+
   it('renders a Buddha-name detail with date, Taishō and the linked edition', () => {
     cy.request('/api/sutras/all').its('body').then(list => {
       const anwang = list.find(e => e.name === '安王佛')
